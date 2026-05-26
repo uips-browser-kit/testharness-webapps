@@ -26,16 +26,16 @@ Browser / UiPath
 Caddy
     |
     +--> harness-api
-    +--> fake-idp
-    +--> metrics-api
+    +--> keycloak
+    +--> prometheus
 ```
 
 ## Services
 
 ```text
 harness-api   8000
-fake-idp      8100
-metrics-api   8200
+keycloak      8080
+prometheus    9090
 caddy         80 / 443
 ```
 
@@ -49,10 +49,10 @@ hosts:
     environment: dev
 
   - host: idp.local
-    service: fake-idp
+    service: keycloak
 
   - host: metrics.local
-    service: metrics-api
+    service: prometheus
 ```
 
 ## Caddy output
@@ -63,11 +63,11 @@ sf-dev.local {
 }
 
 idp.local {
-  reverse_proxy fake-idp:8100
+  reverse_proxy keycloak:8080
 }
 
 metrics.local {
-  reverse_proxy metrics-api:8200
+  reverse_proxy prometheus:9090
 }
 ```
 
