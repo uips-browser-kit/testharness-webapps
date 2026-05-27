@@ -4,24 +4,26 @@
 
 The platform consists of independent services composed through a local environment layer.
 
-```text
-Browser / UiPath
-    |
-    v
-Caddy
-    |
-    +------> Harness API
-    |
-    +------> Keycloak
-    |
-    +------> Prometheus
+```mermaid
+flowchart TD
+    App["Browser / UiPath"]
+    Caddy["Caddy"]
+    Harness["Harness"]
+    Keycloak["Keycloak"]
+    Prometheus["Prometheus"]
+
+    App -->|HTTPS| Caddy
+    Caddy --> Harness
+    Caddy --> Keycloak
+    Caddy --> Prometheus
+    Harness -->|/metrics| Prometheus
 ```
 
 The architecture follows a service-oriented adapter pattern.
 
 ## Service responsibilities
 
-### Harness API
+### Harness
 
 Owns:
 
@@ -79,7 +81,7 @@ Does not own:
 Operated as:
 
 * Docker container
-* scrapes harness-api `/metrics` endpoint
+* scrapes Harness `/metrics` endpoint
 * config generated from `harness.yaml`
 
 ---
@@ -102,30 +104,36 @@ Does not own:
 
 ### CLI
 
-Owns:
+The project exposes two CLI entry points:
 
-* developer workflow
+**Developer CLI** (`src/cli/`):
+
 * initialization
 * validation
-* generation
-* local execution commands
+* config generation
+* data seeding
 * realm export/import
+* platform start/stop
 
-Does not own:
+**Server CLI** (`src/harness/`):
 
-* runtime behavior
+* starts the Harness web server
+* loads config and extensions at startup
+
+Neither CLI depends on the other. Both depend on Core.
 
 ## Package structure
 
 ```text
-test-platform/
+testharness-webapps/
 
-packages/
+src/
     core/
+    harness/
     cli/
 
 services/
-    harness-api/
+    harness/
 
 infra/
     caddy/
@@ -141,24 +149,33 @@ config/
 
 ## Dependency rules
 
+Core is the foundation. All other components depend on Core. No component depends on another service.
+
+```text
+          Core
+         / | \ \
+        /  |  \ \
+  Harness CLI CLI Caddy
+          dev srv
+```
+
 Allowed:
 
 ```text
-CLI
-    ↓
-
-Harness API
-    ↓
-
-Core
+Core → Harness
+Core → CLI (developer)
+Core → CLI (server)
+Core → Caddy
 ```
 
 Forbidden:
 
 ```text
-Core → API
-Core → CLI
-Core → Caddy
+Harness → CLI
+CLI → Harness
+CLI → Caddy
+Core → Keycloak
+Core → Prometheus
 ```
 
 ## Extension model
@@ -180,9 +197,9 @@ Request flow:
 
 1. Browser sends request
 2. Caddy resolves host and environment
-3. Request routed to harness-api
+3. Request routed to Harness
 4. Variant information injected
-5. harness-api processes request
+5. Harness processes request
 6. Metrics recorded to /metrics endpoint
 7. Prometheus scrapes metrics
 8. Response returned
@@ -190,10 +207,10 @@ Request flow:
 ## Ports
 
 ```text
-harness-api   8000
-keycloak      8080
-prometheus    9090
-caddy         80 / 443
+harness     8000
+keycloak    8080
+prometheus  9090
+caddy       80 / 443
 ```
 
 ## Architectural principles
@@ -208,7 +225,7 @@ Enterprise mimics provide implementations.
 
 ### Adapters consume contracts
 
-CLI, API, and future protocols interact through contracts.
+CLI, Harness, and future protocols interact through Core contracts.
 
 ### Services remain isolated
 
