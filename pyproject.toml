@@ -1,0 +1,12 @@
+[project]
+name = "testharness-webapps"
+version = "0.1.0"
+description = "Local platform mimicking enterprise web apps for automation testing"
+requires-python = ">=3.12"
+dependencies = [
+    "faker>=40.19.1",
+    "pyyaml>=6.0.3",
+]
+
+[tool.uv]
+virtual = true
