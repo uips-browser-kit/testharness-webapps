@@ -1,0 +1,20 @@
+app:
+  id: dynamics
+  vendor: Microsoft
+  product: Dynamics 365
+  environments:
+    dev:
+      host: org.crm.dynamics.com
+      base_path: /
+    prod:
+      host: crm.company.com
+      base_path: /
+  routes:
+  - id: record
+    path: /main.aspx
+    pattern_type: query
+    query_params:
+    - appid
+    - pagetype
+    - id
+    server_visible: true

@@ -1,0 +1,13 @@
+cases:
+- route_id: shell
+  env_id: dev
+  params:
+    sap-client: '100'
+    so: '12345'
+  expected_url: http://erp-dev.company.com/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
+- route_id: shell
+  env_id: prod
+  params:
+    sap-client: '100'
+    so: '12345'
+  expected_url: http://erp.company.com/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345

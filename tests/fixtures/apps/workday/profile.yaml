@@ -1,0 +1,24 @@
+app:
+  id: workday
+  vendor: Workday
+  product: Workday
+  environments:
+    dev:
+      host: tenant.workday.com
+      base_path: /
+    prod:
+      host: hr.company.com
+      base_path: /
+  routes:
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: task
+    path: /home.htmld
+    pattern_type: query
+    query_params:
+    - redirect
+    - id
+    server_visible: true

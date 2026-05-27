@@ -1,0 +1,17 @@
+app:
+  id: servicenow
+  vendor: ServiceNow
+  product: Workspace
+  environments:
+    dev:
+      host: instance.service-now.com
+      base_path: /
+    prod:
+      host: servicedesk.company.com
+      base_path: /
+  routes:
+  - id: incident
+    path: /now/workspace/agent/record/incident/{sys_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true

@@ -1,0 +1,19 @@
+cases:
+- route_id: account-detail
+  env_id: dev
+  params:
+    id: '001'
+  expected_url: http://sf-dev.local/lightning/r/Account/001/view
+- route_id: account-detail
+  env_id: prod
+  params:
+    id: '001'
+  expected_url: http://crm.company.com/lightning/r/Account/001/view
+- route_id: dashboard
+  env_id: dev
+  params: {}
+  expected_url: http://sf-dev.local/lightning/page/home
+- route_id: dashboard
+  env_id: prod
+  params: {}
+  expected_url: http://crm.company.com/lightning/page/home

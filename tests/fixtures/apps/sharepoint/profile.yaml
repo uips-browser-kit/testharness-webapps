@@ -1,0 +1,18 @@
+app:
+  id: sharepoint
+  vendor: Microsoft
+  product: SharePoint
+  environments:
+    cloud:
+      host: tenant.sharepoint.com
+      base_path: /
+    self-hosted:
+      host: intranet.company.com
+      base_path: /
+  routes:
+  - id: documents
+    path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    note: URL-encoded space is a static segment — preserved as-is

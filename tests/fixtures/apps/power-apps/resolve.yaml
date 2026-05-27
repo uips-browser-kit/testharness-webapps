@@ -1,0 +1,17 @@
+cases:
+- route_id: app
+  env_id: cloud
+  params:
+    env_id: env-001
+    app_id: app-001
+    tenantId: tenant-001
+    screen: Orders
+  expected_url: http://apps.powerapps.com/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders
+- route_id: app
+  env_id: self-hosted
+  params:
+    env_id: env-001
+    app_id: app-001
+    tenantId: tenant-001
+    screen: Orders
+  expected_url: http://apps.company.com/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders

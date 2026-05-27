@@ -1,0 +1,15 @@
+cases:
+- url: http://company.atlassian.net/wiki/spaces/ENG/pages/98765
+  expected_app: confluence
+  expected_route: page
+  expected_env: cloud
+  expected_params:
+    space_key: ENG
+    page_id: '98765'
+- url: http://wiki.company.com/spaces/ENG/pages/98765
+  expected_app: confluence
+  expected_route: page
+  expected_env: self-hosted
+  expected_params:
+    space_key: ENG
+    page_id: '98765'

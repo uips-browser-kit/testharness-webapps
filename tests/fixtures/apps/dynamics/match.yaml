@@ -1,0 +1,17 @@
+cases:
+- url: http://org.crm.dynamics.com/main.aspx?appid=app-001&pagetype=entityrecord&id=001
+  expected_app: dynamics
+  expected_route: record
+  expected_env: dev
+  expected_params:
+    appid: app-001
+    pagetype: entityrecord
+    id: '001'
+- url: http://crm.company.com/main.aspx?appid=app-001&pagetype=entityrecord&id=001
+  expected_app: dynamics
+  expected_route: record
+  expected_env: prod
+  expected_params:
+    appid: app-001
+    pagetype: entityrecord
+    id: '001'

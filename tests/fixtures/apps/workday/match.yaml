@@ -1,0 +1,25 @@
+cases:
+- url: http://tenant.workday.com/home
+  expected_app: workday
+  expected_route: home
+  expected_env: dev
+  expected_params: {}
+- url: http://hr.company.com/home
+  expected_app: workday
+  expected_route: home
+  expected_env: prod
+  expected_params: {}
+- url: http://tenant.workday.com/home.htmld?redirect=n&id=001
+  expected_app: workday
+  expected_route: task
+  expected_env: dev
+  expected_params:
+    redirect: n
+    id: '001'
+- url: http://hr.company.com/home.htmld?redirect=n&id=001
+  expected_app: workday
+  expected_route: task
+  expected_env: prod
+  expected_params:
+    redirect: n
+    id: '001'

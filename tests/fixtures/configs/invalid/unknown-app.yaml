@@ -1,0 +1,19 @@
+apps:
+- id: salesforce
+  vendor: Salesforce
+  product: Lightning
+  environments:
+    dev:
+      host: sf-dev.local
+      base_path: /
+  routes:
+  - id: account-detail
+    path: /lightning/r/Account/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+hosts:
+- host: sf-dev.local
+  service: harness-api
+  app: no-such-app
+  environment: dev

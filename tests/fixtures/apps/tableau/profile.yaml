@@ -1,0 +1,20 @@
+app:
+  id: tableau
+  vendor: Tableau
+  product: Tableau Server
+  environments:
+    cloud:
+      host: server.tableau.com
+      base_path: /
+    self-hosted:
+      host: tableau.company.com
+      base_path: /
+  routes:
+  - id: view
+    path: /views/{workbook}/{view}
+    pattern_type: path
+    query_params:
+    - :showVizHome
+    server_visible: true
+    note: Tableau colon-prefixed params are treated as regular query params; urlencode
+      will percent-encode the colon

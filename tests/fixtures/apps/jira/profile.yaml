@@ -1,0 +1,17 @@
+app:
+  id: jira
+  vendor: Atlassian
+  product: Jira
+  environments:
+    cloud:
+      host: company.atlassian.net
+      base_path: /
+    self-hosted:
+      host: jira.company.com
+      base_path: /
+  routes:
+  - id: issue
+    path: /browse/{issue_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true

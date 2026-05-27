@@ -1,0 +1,21 @@
+app:
+  id: sap
+  vendor: SAP
+  product: Fiori
+  environments:
+    dev:
+      host: erp-dev.company.com
+      base_path: /
+    prod:
+      host: erp.company.com
+      base_path: /
+  routes:
+  - id: shell
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: query
+    query_params:
+    - sap-client
+    - so
+    server_visible: true
+    note: Hash fragment (#SalesOrder-display?SO=...) is not server-visible; 'so' is
+      the harness server-side representation

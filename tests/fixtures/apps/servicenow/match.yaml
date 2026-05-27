@@ -1,0 +1,13 @@
+cases:
+- url: http://instance.service-now.com/now/workspace/agent/record/incident/abc123def456
+  expected_app: servicenow
+  expected_route: incident
+  expected_env: dev
+  expected_params:
+    sys_id: abc123def456
+- url: http://servicedesk.company.com/now/workspace/agent/record/incident/abc123def456
+  expected_app: servicenow
+  expected_route: incident
+  expected_env: prod
+  expected_params:
+    sys_id: abc123def456

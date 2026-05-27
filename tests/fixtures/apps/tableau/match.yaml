@@ -1,0 +1,17 @@
+cases:
+- url: http://server.tableau.com/views/Sales/Overview?%3AshowVizHome=no
+  expected_app: tableau
+  expected_route: view
+  expected_env: cloud
+  expected_params:
+    workbook: Sales
+    view: Overview
+    :showVizHome: 'no'
+- url: http://tableau.company.com/views/Sales/Overview?%3AshowVizHome=no
+  expected_app: tableau
+  expected_route: view
+  expected_env: self-hosted
+  expected_params:
+    workbook: Sales
+    view: Overview
+    :showVizHome: 'no'

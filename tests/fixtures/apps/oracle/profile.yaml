@@ -1,0 +1,18 @@
+app:
+  id: oracle
+  vendor: Oracle
+  product: Fusion / EBS
+  environments:
+    dev:
+      host: oracle-dev.company.com
+      base_path: /
+    prod:
+      host: finance.company.com
+      base_path: /
+  routes:
+  - id: welcome
+    path: /fscmUI/faces/FuseWelcome
+    pattern_type: query
+    query_params:
+    - _adf.ctrl-state
+    server_visible: true

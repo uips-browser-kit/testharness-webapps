@@ -1,0 +1,15 @@
+cases:
+- route_id: view
+  env_id: cloud
+  params:
+    workbook: Sales
+    view: Overview
+    :showVizHome: 'no'
+  expected_url: http://server.tableau.com/views/Sales/Overview?%3AshowVizHome=no
+- route_id: view
+  env_id: self-hosted
+  params:
+    workbook: Sales
+    view: Overview
+    :showVizHome: 'no'
+  expected_url: http://tableau.company.com/views/Sales/Overview?%3AshowVizHome=no

@@ -1,0 +1,36 @@
+apps:
+- id: salesforce
+  vendor: Salesforce
+  product: Lightning
+  environments:
+    dev:
+      host: sf-dev.local
+      base_path: /
+  routes:
+  - id: account-detail
+    path: /lightning/r/Account/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+- id: jira
+  vendor: Atlassian
+  product: Jira
+  environments:
+    cloud:
+      host: company.atlassian.net
+      base_path: /
+  routes:
+  - id: issue
+    path: /browse/{issue_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+hosts:
+- host: sf-dev.local
+  service: harness-api
+  app: salesforce
+  environment: dev
+- host: company.atlassian.net
+  service: harness-api
+  app: jira
+  environment: cloud

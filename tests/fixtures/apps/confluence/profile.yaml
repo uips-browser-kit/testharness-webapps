@@ -1,0 +1,17 @@
+app:
+  id: confluence
+  vendor: Atlassian
+  product: Confluence
+  environments:
+    cloud:
+      host: company.atlassian.net
+      base_path: /wiki
+    self-hosted:
+      host: wiki.company.com
+      base_path: /
+  routes:
+  - id: page
+    path: /spaces/{space_key}/pages/{page_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true

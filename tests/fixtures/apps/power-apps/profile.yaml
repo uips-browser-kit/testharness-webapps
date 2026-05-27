@@ -1,0 +1,19 @@
+app:
+  id: power-apps
+  vendor: Microsoft
+  product: Power Apps
+  environments:
+    cloud:
+      host: apps.powerapps.com
+      base_path: /
+    self-hosted:
+      host: apps.company.com
+      base_path: /
+  routes:
+  - id: app
+    path: /play/e/{env_id}/a/{app_id}
+    pattern_type: path
+    query_params:
+    - tenantId
+    - screen
+    server_visible: true

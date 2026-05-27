@@ -1,0 +1,11 @@
+cases:
+- route_id: welcome
+  env_id: dev
+  params:
+    _adf.ctrl-state: state-xyz
+  expected_url: http://oracle-dev.company.com/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
+- route_id: welcome
+  env_id: prod
+  params:
+    _adf.ctrl-state: state-xyz
+  expected_url: http://finance.company.com/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz

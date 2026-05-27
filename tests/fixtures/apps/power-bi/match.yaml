@@ -1,0 +1,17 @@
+cases:
+- url: http://app.powerbi.com/groups/my-workspace/reports/rpt-001?filter=Region+eq+%27EMEA%27
+  expected_app: power-bi
+  expected_route: report
+  expected_env: cloud
+  expected_params:
+    workspace: my-workspace
+    report_id: rpt-001
+    filter: Region eq 'EMEA'
+- url: http://analytics.company.com/groups/my-workspace/reports/rpt-001?filter=Region+eq+%27EMEA%27
+  expected_app: power-bi
+  expected_route: report
+  expected_env: self-hosted
+  expected_params:
+    workspace: my-workspace
+    report_id: rpt-001
+    filter: Region eq 'EMEA'

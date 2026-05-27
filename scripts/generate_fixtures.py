@@ -1,0 +1,261 @@
+"""
+Generate YAML test fixtures from catalog_urls.py.
+
+Outputs:
+  tests/fixtures/apps/{app.id}/profile.yaml   — App in harness.yaml app-section format
+  tests/fixtures/apps/{app.id}/resolve.yaml   — resolve input → expected URL cases
+  tests/fixtures/apps/{app.id}/match.yaml     — URL → expected app/route/env/params cases
+  tests/fixtures/configs/valid/minimal.yaml
+  tests/fixtures/configs/valid/multi-app.yaml
+  tests/fixtures/configs/valid/full.yaml
+  tests/fixtures/configs/invalid/*.yaml       — one file per validation rule violation
+
+Run:
+    uv run python scripts/generate_fixtures.py
+"""
+
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+import yaml
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+from catalog_urls import (  # noqa: E402
+    CATALOG_APPS,
+    SAMPLE_PARAMS,
+    App,
+    NotServerVisible,
+    Route,
+)
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+
+def _relevant_params(route: Route) -> list[str]:
+    path_params = re.findall(r"\{(\w+)\}", route.path)
+    return list(dict.fromkeys(path_params + route.query_params))
+
+
+def write_yaml(path: Path, data: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as fh:
+        yaml.dump(data, fh, allow_unicode=True, sort_keys=False)
+
+
+# ---------------------------------------------------------------------------
+# Per-app fixture generators
+# ---------------------------------------------------------------------------
+
+
+def profile_yaml(app: App) -> dict:
+    return {
+        "id": app.id,
+        "vendor": app.vendor,
+        "product": app.product,
+        "environments": {
+            env_id: {"host": env.host, "base_path": env.base_path}
+            for env_id, env in app.environments.items()
+        },
+        "routes": [
+            {
+                "id": r.id,
+                "path": r.path,
+                "pattern_type": r.pattern_type.value,
+                "query_params": r.query_params,
+                "server_visible": r.server_visible,
+                **({"note": r.note} if r.note else {}),
+            }
+            for r in app.routes
+        ],
+    }
+
+
+def resolve_cases(app: App) -> list[dict]:
+    cases = []
+    for route in app.routes:
+        for env_id in app.environments:
+            try:
+                url = app.resolve(route.id, env_id, SAMPLE_PARAMS)
+                params = {k: SAMPLE_PARAMS[k] for k in _relevant_params(route) if k in SAMPLE_PARAMS}
+                cases.append(
+                    {
+                        "route_id": route.id,
+                        "env_id": env_id,
+                        "params": params,
+                        "expected_url": url,
+                    }
+                )
+            except NotServerVisible:
+                cases.append(
+                    {
+                        "route_id": route.id,
+                        "env_id": env_id,
+                        "expected_error": "NotServerVisible",
+                    }
+                )
+    return cases
+
+
+def match_cases(app: App) -> list[dict]:
+    cases = []
+    for route in app.routes:
+        for env_id in app.environments:
+            try:
+                url = app.resolve(route.id, env_id, SAMPLE_PARAMS)
+                params = {k: SAMPLE_PARAMS[k] for k in _relevant_params(route) if k in SAMPLE_PARAMS}
+                cases.append(
+                    {
+                        "url": url,
+                        "expected_app": app.id,
+                        "expected_route": route.id,
+                        "expected_env": env_id,
+                        "expected_params": params,
+                    }
+                )
+            except NotServerVisible:
+                pass
+    return cases
+
+
+# ---------------------------------------------------------------------------
+# Config fixture generators
+# ---------------------------------------------------------------------------
+
+_MINIMAL_APP = {
+    "id": "salesforce",
+    "vendor": "Salesforce",
+    "product": "Lightning",
+    "environments": {
+        "dev": {"host": "sf-dev.local", "base_path": "/"},
+    },
+    "routes": [
+        {
+            "id": "account-detail",
+            "path": "/lightning/r/Account/{id}/view",
+            "pattern_type": "path",
+            "query_params": [],
+            "server_visible": True,
+        }
+    ],
+}
+
+_HOSTS_MINIMAL = [
+    {"host": "sf-dev.local", "service": "harness-api", "app": "salesforce", "environment": "dev"}
+]
+
+
+def minimal_config() -> dict:
+    return {
+        "apps": [_MINIMAL_APP],
+        "hosts": _HOSTS_MINIMAL,
+    }
+
+
+def multi_app_config() -> dict:
+    jira_app = {
+        "id": "jira",
+        "vendor": "Atlassian",
+        "product": "Jira",
+        "environments": {
+            "cloud": {"host": "company.atlassian.net", "base_path": "/"},
+        },
+        "routes": [
+            {
+                "id": "issue",
+                "path": "/browse/{issue_key}",
+                "pattern_type": "path",
+                "query_params": [],
+                "server_visible": True,
+            }
+        ],
+    }
+    return {
+        "apps": [_MINIMAL_APP, jira_app],
+        "hosts": _HOSTS_MINIMAL + [
+            {"host": "company.atlassian.net", "service": "harness-api", "app": "jira", "environment": "cloud"}
+        ],
+    }
+
+
+def full_config() -> dict:
+    apps = [profile_yaml(app) for app in CATALOG_APPS]
+    hosts = []
+    for app in CATALOG_APPS:
+        for env_id, env in app.environments.items():
+            hosts.append(
+                {
+                    "host": env.host,
+                    "service": "harness-api",
+                    "app": app.id,
+                    "environment": env_id,
+                }
+            )
+    return {"apps": apps, "hosts": hosts}
+
+
+def invalid_config_cases() -> dict[str, dict]:
+    base_host = {"host": "sf-dev.local", "service": "harness-api", "app": "salesforce", "environment": "dev"}
+
+    return {
+        "duplicate-host.yaml": {
+            "apps": [_MINIMAL_APP],
+            "hosts": [base_host, base_host],
+        },
+        "unknown-service.yaml": {
+            "apps": [_MINIMAL_APP],
+            "hosts": [{"host": "sf-dev.local", "service": "no-such-service", "app": "salesforce", "environment": "dev"}],
+        },
+        "unknown-app.yaml": {
+            "apps": [_MINIMAL_APP],
+            "hosts": [{"host": "sf-dev.local", "service": "harness-api", "app": "no-such-app", "environment": "dev"}],
+        },
+        "unknown-environment.yaml": {
+            "apps": [_MINIMAL_APP],
+            "hosts": [{"host": "sf-dev.local", "service": "harness-api", "app": "salesforce", "environment": "staging"}],
+        },
+        "invalid-port.yaml": {
+            "apps": [_MINIMAL_APP],
+            "hosts": [base_host],
+            "services": {"harness-api": {"port": 99999}},
+        },
+        "missing-host-entry.yaml": {
+            "apps": [_MINIMAL_APP],
+            "hosts": [],
+        },
+    }
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+
+def main() -> None:
+    fixtures_root = Path(__file__).parent.parent / "tests" / "fixtures"
+
+    for app in CATALOG_APPS:
+        d = fixtures_root / "apps" / app.id
+        write_yaml(d / "profile.yaml", {"app": profile_yaml(app)})
+        write_yaml(d / "resolve.yaml", {"cases": resolve_cases(app)})
+        write_yaml(d / "match.yaml", {"cases": match_cases(app)})
+
+    valid_dir = fixtures_root / "configs" / "valid"
+    invalid_dir = fixtures_root / "configs" / "invalid"
+
+    write_yaml(valid_dir / "minimal.yaml", minimal_config())
+    write_yaml(valid_dir / "multi-app.yaml", multi_app_config())
+    write_yaml(valid_dir / "full.yaml", full_config())
+
+    for filename, data in invalid_config_cases().items():
+        write_yaml(invalid_dir / filename, data)
+
+
+if __name__ == "__main__":
+    main()

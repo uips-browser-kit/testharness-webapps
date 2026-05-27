@@ -1,0 +1,22 @@
+app:
+  id: salesforce
+  vendor: Salesforce
+  product: Lightning
+  environments:
+    dev:
+      host: sf-dev.local
+      base_path: /
+    prod:
+      host: crm.company.com
+      base_path: /
+  routes:
+  - id: account-detail
+    path: /lightning/r/Account/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: dashboard
+    path: /lightning/page/home
+    pattern_type: path
+    query_params: []
+    server_visible: true

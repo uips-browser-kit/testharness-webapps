@@ -1,0 +1,18 @@
+app:
+  id: power-bi
+  vendor: Microsoft
+  product: Power BI
+  environments:
+    cloud:
+      host: app.powerbi.com
+      base_path: /
+    self-hosted:
+      host: analytics.company.com
+      base_path: /
+  routes:
+  - id: report
+    path: /groups/{workspace}/reports/{report_id}
+    pattern_type: path
+    query_params:
+    - filter
+    server_visible: true

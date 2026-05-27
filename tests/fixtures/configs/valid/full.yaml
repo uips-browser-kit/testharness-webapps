@@ -1,0 +1,317 @@
+apps:
+- id: salesforce
+  vendor: Salesforce
+  product: Lightning
+  environments:
+    dev:
+      host: sf-dev.local
+      base_path: /
+    prod:
+      host: crm.company.com
+      base_path: /
+  routes:
+  - id: account-detail
+    path: /lightning/r/Account/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: dashboard
+    path: /lightning/page/home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+- id: dynamics
+  vendor: Microsoft
+  product: Dynamics 365
+  environments:
+    dev:
+      host: org.crm.dynamics.com
+      base_path: /
+    prod:
+      host: crm.company.com
+      base_path: /
+  routes:
+  - id: record
+    path: /main.aspx
+    pattern_type: query
+    query_params:
+    - appid
+    - pagetype
+    - id
+    server_visible: true
+- id: servicenow
+  vendor: ServiceNow
+  product: Workspace
+  environments:
+    dev:
+      host: instance.service-now.com
+      base_path: /
+    prod:
+      host: servicedesk.company.com
+      base_path: /
+  routes:
+  - id: incident
+    path: /now/workspace/agent/record/incident/{sys_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+- id: sap
+  vendor: SAP
+  product: Fiori
+  environments:
+    dev:
+      host: erp-dev.company.com
+      base_path: /
+    prod:
+      host: erp.company.com
+      base_path: /
+  routes:
+  - id: shell
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: query
+    query_params:
+    - sap-client
+    - so
+    server_visible: true
+    note: Hash fragment (#SalesOrder-display?SO=...) is not server-visible; 'so' is
+      the harness server-side representation
+- id: oracle
+  vendor: Oracle
+  product: Fusion / EBS
+  environments:
+    dev:
+      host: oracle-dev.company.com
+      base_path: /
+    prod:
+      host: finance.company.com
+      base_path: /
+  routes:
+  - id: welcome
+    path: /fscmUI/faces/FuseWelcome
+    pattern_type: query
+    query_params:
+    - _adf.ctrl-state
+    server_visible: true
+- id: workday
+  vendor: Workday
+  product: Workday
+  environments:
+    dev:
+      host: tenant.workday.com
+      base_path: /
+    prod:
+      host: hr.company.com
+      base_path: /
+  routes:
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: task
+    path: /home.htmld
+    pattern_type: query
+    query_params:
+    - redirect
+    - id
+    server_visible: true
+- id: jira
+  vendor: Atlassian
+  product: Jira
+  environments:
+    cloud:
+      host: company.atlassian.net
+      base_path: /
+    self-hosted:
+      host: jira.company.com
+      base_path: /
+  routes:
+  - id: issue
+    path: /browse/{issue_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+- id: confluence
+  vendor: Atlassian
+  product: Confluence
+  environments:
+    cloud:
+      host: company.atlassian.net
+      base_path: /wiki
+    self-hosted:
+      host: wiki.company.com
+      base_path: /
+  routes:
+  - id: page
+    path: /spaces/{space_key}/pages/{page_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+- id: sharepoint
+  vendor: Microsoft
+  product: SharePoint
+  environments:
+    cloud:
+      host: tenant.sharepoint.com
+      base_path: /
+    self-hosted:
+      host: intranet.company.com
+      base_path: /
+  routes:
+  - id: documents
+    path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    note: URL-encoded space is a static segment — preserved as-is
+- id: power-bi
+  vendor: Microsoft
+  product: Power BI
+  environments:
+    cloud:
+      host: app.powerbi.com
+      base_path: /
+    self-hosted:
+      host: analytics.company.com
+      base_path: /
+  routes:
+  - id: report
+    path: /groups/{workspace}/reports/{report_id}
+    pattern_type: path
+    query_params:
+    - filter
+    server_visible: true
+- id: tableau
+  vendor: Tableau
+  product: Tableau Server
+  environments:
+    cloud:
+      host: server.tableau.com
+      base_path: /
+    self-hosted:
+      host: tableau.company.com
+      base_path: /
+  routes:
+  - id: view
+    path: /views/{workbook}/{view}
+    pattern_type: path
+    query_params:
+    - :showVizHome
+    server_visible: true
+    note: Tableau colon-prefixed params are treated as regular query params; urlencode
+      will percent-encode the colon
+- id: power-apps
+  vendor: Microsoft
+  product: Power Apps
+  environments:
+    cloud:
+      host: apps.powerapps.com
+      base_path: /
+    self-hosted:
+      host: apps.company.com
+      base_path: /
+  routes:
+  - id: app
+    path: /play/e/{env_id}/a/{app_id}
+    pattern_type: path
+    query_params:
+    - tenantId
+    - screen
+    server_visible: true
+hosts:
+- host: sf-dev.local
+  service: harness-api
+  app: salesforce
+  environment: dev
+- host: crm.company.com
+  service: harness-api
+  app: salesforce
+  environment: prod
+- host: org.crm.dynamics.com
+  service: harness-api
+  app: dynamics
+  environment: dev
+- host: crm.company.com
+  service: harness-api
+  app: dynamics
+  environment: prod
+- host: instance.service-now.com
+  service: harness-api
+  app: servicenow
+  environment: dev
+- host: servicedesk.company.com
+  service: harness-api
+  app: servicenow
+  environment: prod
+- host: erp-dev.company.com
+  service: harness-api
+  app: sap
+  environment: dev
+- host: erp.company.com
+  service: harness-api
+  app: sap
+  environment: prod
+- host: oracle-dev.company.com
+  service: harness-api
+  app: oracle
+  environment: dev
+- host: finance.company.com
+  service: harness-api
+  app: oracle
+  environment: prod
+- host: tenant.workday.com
+  service: harness-api
+  app: workday
+  environment: dev
+- host: hr.company.com
+  service: harness-api
+  app: workday
+  environment: prod
+- host: company.atlassian.net
+  service: harness-api
+  app: jira
+  environment: cloud
+- host: jira.company.com
+  service: harness-api
+  app: jira
+  environment: self-hosted
+- host: company.atlassian.net
+  service: harness-api
+  app: confluence
+  environment: cloud
+- host: wiki.company.com
+  service: harness-api
+  app: confluence
+  environment: self-hosted
+- host: tenant.sharepoint.com
+  service: harness-api
+  app: sharepoint
+  environment: cloud
+- host: intranet.company.com
+  service: harness-api
+  app: sharepoint
+  environment: self-hosted
+- host: app.powerbi.com
+  service: harness-api
+  app: power-bi
+  environment: cloud
+- host: analytics.company.com
+  service: harness-api
+  app: power-bi
+  environment: self-hosted
+- host: server.tableau.com
+  service: harness-api
+  app: tableau
+  environment: cloud
+- host: tableau.company.com
+  service: harness-api
+  app: tableau
+  environment: self-hosted
+- host: apps.powerapps.com
+  service: harness-api
+  app: power-apps
+  environment: cloud
+- host: apps.company.com
+  service: harness-api
+  app: power-apps
+  environment: self-hosted
