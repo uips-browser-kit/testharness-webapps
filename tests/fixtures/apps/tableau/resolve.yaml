@@ -5,11 +5,11 @@ cases:
     workbook: Sales
     view: Overview
     :showVizHome: 'no'
-  expected_url: http://server.tableau.local/views/Sales/Overview?%3AshowVizHome=no
+  expected_url: http://tableau-cloud.local/views/Sales/Overview?%3AshowVizHome=no
 - route_id: view
   env_id: self-hosted
   params:
     workbook: Sales
     view: Overview
     :showVizHome: 'no'
-  expected_url: http://tableau.company.local/views/Sales/Overview?%3AshowVizHome=no
+  expected_url: http://tableau-onprem.local/views/Sales/Overview?%3AshowVizHome=no

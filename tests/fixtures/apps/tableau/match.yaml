@@ -1,5 +1,5 @@
 cases:
-- url: http://server.tableau.local/views/Sales/Overview?%3AshowVizHome=no
+- url: http://tableau-cloud.local/views/Sales/Overview?%3AshowVizHome=no
   expected_app: tableau
   expected_route: view
   expected_env: cloud
@@ -7,7 +7,7 @@ cases:
     workbook: Sales
     view: Overview
     :showVizHome: 'no'
-- url: http://tableau.company.local/views/Sales/Overview?%3AshowVizHome=no
+- url: http://tableau-onprem.local/views/Sales/Overview?%3AshowVizHome=no
   expected_app: tableau
   expected_route: view
   expected_env: self-hosted

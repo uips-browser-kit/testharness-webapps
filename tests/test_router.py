@@ -25,7 +25,7 @@ def test_health(client):
 def test_path_route_returns_match(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -35,7 +35,7 @@ def test_path_route_returns_match(client):
 def test_query_route_returns_match(client):
     r = client.get(
         "/main.aspx?appid=app-001&pagetype=entityrecord&id=001",
-        headers={"host": "org.crm.dynamics.local"},
+        headers={"host": "dynamics-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -48,7 +48,7 @@ def test_unknown_host_returns_404(client):
 
 
 def test_unknown_path_returns_404(client):
-    r = client.get("/does/not/exist", headers={"host": "sf-dev.local"})
+    r = client.get("/does/not/exist", headers={"host": "salesforce-dev.local"})
     assert r.status_code == 404
 
 
@@ -59,7 +59,7 @@ def test_post_match_known_route(client):
     r = client.post(
         "/match",
         json={
-            "host": "sf-dev.local",
+            "host": "salesforce-dev.local",
             "path": "/lightning/r/Account/001/view",
             "method": "GET",
         },
@@ -75,7 +75,7 @@ def test_post_match_known_route(client):
 def test_post_match_no_match_returns_404(client):
     r = client.post(
         "/match",
-        json={"host": "sf-dev.local", "path": "/nonexistent"},
+        json={"host": "salesforce-dev.local", "path": "/nonexistent"},
     )
     assert r.status_code == 404
 
@@ -84,7 +84,7 @@ def test_post_match_jira(client):
     r = client.post(
         "/match",
         json={
-            "host": "jira.company.atlassian.local",
+            "host": "jira-cloud.local",
             "path": "/browse/ABC-123",
         },
     )
@@ -109,7 +109,7 @@ def test_post_resolve_path_route(client):
         },
     )
     assert r.status_code == 200
-    assert r.json()["url"] == "http://sf-dev.local/lightning/r/Account/001/view"
+    assert r.json()["url"] == "http://salesforce-dev.local/lightning/r/Account/001/view"
 
 
 def test_post_resolve_query_route(client):

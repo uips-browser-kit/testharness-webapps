@@ -49,6 +49,13 @@ def write_yaml(path: Path, data: object) -> None:
         yaml.dump(data, fh, allow_unicode=True, sort_keys=False)
 
 
+_STATIC_HOSTS = [
+    ("harness.local", "test harness API"),
+    ("idp.local", "identity provider"),
+    ("metrics.local", "Prometheus UI"),
+]
+
+
 def write_hosts_txt(path: Path, apps: list[App]) -> None:
     app_hosts = sorted(env.host for app in apps for env in app.environments.values())
     lines = [
@@ -56,8 +63,7 @@ def write_hosts_txt(path: Path, apps: list[App]) -> None:
         "# Do not edit manually. Re-run: uv run python scripts/generate_fixtures.py",
         "#",
         "# Platform",
-        "127.0.0.1  harness.local",
-        "127.0.0.1  idp.local",
+        *[f"127.0.0.1  {h:<30}  # {comment}" for h, comment in _STATIC_HOSTS],
         "#",
         "# App environments",
         *[f"127.0.0.1  {h}" for h in app_hosts],
@@ -154,7 +160,7 @@ _MINIMAL_APP = {
     "vendor": "Salesforce",
     "product": "Lightning",
     "environments": {
-        "dev": {"host": "sf-dev.local", "base_path": "/"},
+        "dev": {"host": "salesforce-dev.local", "base_path": "/"},
     },
     "routes": [
         {
@@ -178,7 +184,7 @@ def multi_app_config() -> dict:
         "vendor": "Atlassian",
         "product": "Jira",
         "environments": {
-            "cloud": {"host": "jira.company.atlassian.local", "base_path": "/"},
+            "cloud": {"host": "jira-cloud.local", "base_path": "/"},
         },
         "routes": [
             {
@@ -200,7 +206,7 @@ def full_config() -> dict:
 
 def invalid_config_cases() -> dict[str, dict]:
     base_host = {
-        "host": "sf-dev.local",
+        "host": "salesforce-dev.local",
         "service": "harness-api",
         "app": "salesforce",
         "environment": "dev",
@@ -215,7 +221,7 @@ def invalid_config_cases() -> dict[str, dict]:
             "apps": [_MINIMAL_APP],
             "hosts": [
                 {
-                    "host": "sf-dev.local",
+                    "host": "salesforce-dev.local",
                     "service": "no-such-service",
                     "app": "salesforce",
                     "environment": "dev",
@@ -226,7 +232,7 @@ def invalid_config_cases() -> dict[str, dict]:
             "apps": [_MINIMAL_APP],
             "hosts": [
                 {
-                    "host": "sf-dev.local",
+                    "host": "salesforce-dev.local",
                     "service": "harness-api",
                     "app": "no-such-app",
                     "environment": "dev",
@@ -237,7 +243,7 @@ def invalid_config_cases() -> dict[str, dict]:
             "apps": [_MINIMAL_APP],
             "hosts": [
                 {
-                    "host": "sf-dev.local",
+                    "host": "salesforce-dev.local",
                     "service": "harness-api",
                     "app": "salesforce",
                     "environment": "staging",

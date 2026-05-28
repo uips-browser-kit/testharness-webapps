@@ -3,9 +3,9 @@ cases:
   env_id: dev
   params:
     _adf.ctrl-state: state-xyz
-  expected_url: http://oracle-dev.company.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
+  expected_url: http://oracle-dev.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
 - route_id: welcome
   env_id: prod
   params:
     _adf.ctrl-state: state-xyz
-  expected_url: http://finance.company.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
+  expected_url: http://oracle-prod.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz

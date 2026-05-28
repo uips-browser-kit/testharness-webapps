@@ -2,31 +2,32 @@
 # Do not edit manually. Re-run: uv run python scripts/generate_fixtures.py
 #
 # Platform
-127.0.0.1  harness.local
-127.0.0.1  idp.local
+127.0.0.1  harness.local                   # test harness API
+127.0.0.1  idp.local                       # identity provider
+127.0.0.1  metrics.local                   # Prometheus UI
 #
 # App environments
-127.0.0.1  analytics.company.local
-127.0.0.1  app.powerbi.local
-127.0.0.1  apps.company.local
-127.0.0.1  apps.powerapps.local
-127.0.0.1  confluence.company.atlassian.local
-127.0.0.1  dynamics.company.local
-127.0.0.1  erp-dev.company.local
-127.0.0.1  erp.company.local
-127.0.0.1  finance.company.local
-127.0.0.1  hr.company.local
-127.0.0.1  instance.service-now.local
-127.0.0.1  intranet.company.local
-127.0.0.1  jira.company.atlassian.local
-127.0.0.1  jira.company.local
-127.0.0.1  oracle-dev.company.local
-127.0.0.1  org.crm.dynamics.local
-127.0.0.1  salesforce.company.local
-127.0.0.1  server.tableau.local
-127.0.0.1  servicedesk.company.local
-127.0.0.1  sf-dev.local
-127.0.0.1  tableau.company.local
-127.0.0.1  tenant.sharepoint.local
-127.0.0.1  tenant.workday.local
-127.0.0.1  wiki.company.local
+127.0.0.1  confluence-cloud.local
+127.0.0.1  confluence-onprem.local
+127.0.0.1  dynamics-dev.local
+127.0.0.1  dynamics-prod.local
+127.0.0.1  jira-cloud.local
+127.0.0.1  jira-onprem.local
+127.0.0.1  oracle-dev.local
+127.0.0.1  oracle-prod.local
+127.0.0.1  power-apps-cloud.local
+127.0.0.1  power-apps-onprem.local
+127.0.0.1  power-bi-cloud.local
+127.0.0.1  power-bi-onprem.local
+127.0.0.1  salesforce-dev.local
+127.0.0.1  salesforce-prod.local
+127.0.0.1  sap-dev.local
+127.0.0.1  sap-prod.local
+127.0.0.1  servicenow-dev.local
+127.0.0.1  servicenow-prod.local
+127.0.0.1  sharepoint-cloud.local
+127.0.0.1  sharepoint-onprem.local
+127.0.0.1  tableau-cloud.local
+127.0.0.1  tableau-onprem.local
+127.0.0.1  workday-dev.local
+127.0.0.1  workday-prod.local

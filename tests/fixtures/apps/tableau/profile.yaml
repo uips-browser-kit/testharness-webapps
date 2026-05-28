@@ -4,10 +4,10 @@ app:
   product: Tableau Server
   environments:
     cloud:
-      host: server.tableau.local
+      host: tableau-cloud.local
       base_path: /
     self-hosted:
-      host: tableau.company.local
+      host: tableau-onprem.local
       base_path: /
   routes:
   - id: view

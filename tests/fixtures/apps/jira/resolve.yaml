@@ -3,9 +3,9 @@ cases:
   env_id: cloud
   params:
     issue_key: ABC-123
-  expected_url: http://jira.company.atlassian.local/browse/ABC-123
+  expected_url: http://jira-cloud.local/browse/ABC-123
 - route_id: issue
   env_id: self-hosted
   params:
     issue_key: ABC-123
-  expected_url: http://jira.company.local/browse/ABC-123
+  expected_url: http://jira-onprem.local/browse/ABC-123

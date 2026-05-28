@@ -4,10 +4,10 @@ app:
   product: Jira
   environments:
     cloud:
-      host: jira.company.atlassian.local
+      host: jira-cloud.local
       base_path: /
     self-hosted:
-      host: jira.company.local
+      host: jira-onprem.local
       base_path: /
   routes:
   - id: issue

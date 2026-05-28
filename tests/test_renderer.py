@@ -35,7 +35,7 @@ def test_app_css_served(client):
 def test_account_detail_returns_html(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -44,7 +44,7 @@ def test_account_detail_returns_html(client):
 def test_account_detail_contains_record_name(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert "Rodriguez" in r.text
 
@@ -52,7 +52,7 @@ def test_account_detail_contains_record_name(client):
 def test_account_detail_contains_app_name(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert "Lightning" in r.text
 
@@ -60,7 +60,7 @@ def test_account_detail_contains_app_name(client):
 def test_account_detail_contains_env_badge(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert "dev" in r.text.lower()
 
@@ -68,7 +68,7 @@ def test_account_detail_contains_env_badge(client):
 def test_account_detail_loads_app_css(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert "apps/salesforce.css" in r.text
 
@@ -76,7 +76,7 @@ def test_account_detail_loads_app_css(client):
 def test_account_detail_nav_active_item(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert 'class="active"' in r.text
     assert 'aria-current="page"' in r.text
@@ -85,7 +85,7 @@ def test_account_detail_nav_active_item(client):
 def test_account_detail_subnav_expanded(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert 'aria-expanded="true"' in r.text
 
@@ -93,7 +93,7 @@ def test_account_detail_subnav_expanded(client):
 def test_nonexistent_account_still_renders(client):
     r = client.get(
         "/lightning/r/Account/does-not-exist/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -105,7 +105,7 @@ def test_nonexistent_account_still_renders(client):
 def test_sap_shell_renders_html(client):
     r = client.get(
         "/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345",
-        headers={"host": "erp-dev.company.local"},
+        headers={"host": "sap-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -115,7 +115,7 @@ def test_sap_shell_renders_html(client):
 def test_jira_issue_renders_html(client):
     r = client.get(
         "/browse/ABC-123",
-        headers={"host": "jira.company.atlassian.local"},
+        headers={"host": "jira-cloud.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]

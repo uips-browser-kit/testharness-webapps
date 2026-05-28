@@ -4,10 +4,10 @@ app:
   product: Power BI
   environments:
     cloud:
-      host: app.powerbi.local
+      host: power-bi-cloud.local
       base_path: /
     self-hosted:
-      host: analytics.company.local
+      host: power-bi-onprem.local
       base_path: /
   routes:
   - id: report

@@ -4,7 +4,7 @@ apps:
   product: Lightning
   environments:
     dev:
-      host: sf-dev.local
+      host: salesforce-dev.local
       base_path: /
   routes:
   - id: account-detail
@@ -14,7 +14,7 @@ apps:
     server_visible: true
 hosts:
 - &id001
-  host: sf-dev.local
+  host: salesforce-dev.local
   service: harness-api
   app: salesforce
   environment: dev

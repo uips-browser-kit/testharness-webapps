@@ -4,10 +4,10 @@ apps:
   product: Lightning
   environments:
     dev:
-      host: sf-dev.local
+      host: salesforce-dev.local
       base_path: /
     prod:
-      host: salesforce.company.local
+      host: salesforce-prod.local
       base_path: /
   routes:
   - id: account-list
@@ -30,10 +30,10 @@ apps:
   product: Dynamics 365
   environments:
     dev:
-      host: org.crm.dynamics.local
+      host: dynamics-dev.local
       base_path: /
     prod:
-      host: dynamics.company.local
+      host: dynamics-prod.local
       base_path: /
   routes:
   - id: record
@@ -49,10 +49,10 @@ apps:
   product: Workspace
   environments:
     dev:
-      host: instance.service-now.local
+      host: servicenow-dev.local
       base_path: /
     prod:
-      host: servicedesk.company.local
+      host: servicenow-prod.local
       base_path: /
   routes:
   - id: incident
@@ -65,10 +65,10 @@ apps:
   product: Fiori
   environments:
     dev:
-      host: erp-dev.company.local
+      host: sap-dev.local
       base_path: /
     prod:
-      host: erp.company.local
+      host: sap-prod.local
       base_path: /
   routes:
   - id: shell
@@ -85,10 +85,10 @@ apps:
   product: Fusion / EBS
   environments:
     dev:
-      host: oracle-dev.company.local
+      host: oracle-dev.local
       base_path: /
     prod:
-      host: finance.company.local
+      host: oracle-prod.local
       base_path: /
   routes:
   - id: welcome
@@ -102,10 +102,10 @@ apps:
   product: Workday
   environments:
     dev:
-      host: tenant.workday.local
+      host: workday-dev.local
       base_path: /
     prod:
-      host: hr.company.local
+      host: workday-prod.local
       base_path: /
   routes:
   - id: home
@@ -125,10 +125,10 @@ apps:
   product: Jira
   environments:
     cloud:
-      host: jira.company.atlassian.local
+      host: jira-cloud.local
       base_path: /
     self-hosted:
-      host: jira.company.local
+      host: jira-onprem.local
       base_path: /
   routes:
   - id: issue
@@ -141,10 +141,10 @@ apps:
   product: Confluence
   environments:
     cloud:
-      host: confluence.company.atlassian.local
+      host: confluence-cloud.local
       base_path: /wiki
     self-hosted:
-      host: wiki.company.local
+      host: confluence-onprem.local
       base_path: /
   routes:
   - id: page
@@ -157,10 +157,10 @@ apps:
   product: SharePoint
   environments:
     cloud:
-      host: tenant.sharepoint.local
+      host: sharepoint-cloud.local
       base_path: /
     self-hosted:
-      host: intranet.company.local
+      host: sharepoint-onprem.local
       base_path: /
   routes:
   - id: documents
@@ -174,10 +174,10 @@ apps:
   product: Power BI
   environments:
     cloud:
-      host: app.powerbi.local
+      host: power-bi-cloud.local
       base_path: /
     self-hosted:
-      host: analytics.company.local
+      host: power-bi-onprem.local
       base_path: /
   routes:
   - id: report
@@ -191,10 +191,10 @@ apps:
   product: Tableau Server
   environments:
     cloud:
-      host: server.tableau.local
+      host: tableau-cloud.local
       base_path: /
     self-hosted:
-      host: tableau.company.local
+      host: tableau-onprem.local
       base_path: /
   routes:
   - id: view
@@ -210,10 +210,10 @@ apps:
   product: Power Apps
   environments:
     cloud:
-      host: apps.powerapps.local
+      host: power-apps-cloud.local
       base_path: /
     self-hosted:
-      host: apps.company.local
+      host: power-apps-onprem.local
       base_path: /
   routes:
   - id: app

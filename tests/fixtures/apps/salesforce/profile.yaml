@@ -4,10 +4,10 @@ app:
   product: Lightning
   environments:
     dev:
-      host: sf-dev.local
+      host: salesforce-dev.local
       base_path: /
     prod:
-      host: salesforce.company.local
+      host: salesforce-prod.local
       base_path: /
   routes:
   - id: account-list

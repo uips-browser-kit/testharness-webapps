@@ -4,10 +4,10 @@ app:
   product: Power Apps
   environments:
     cloud:
-      host: apps.powerapps.local
+      host: power-apps-cloud.local
       base_path: /
     self-hosted:
-      host: apps.company.local
+      host: power-apps-onprem.local
       base_path: /
   routes:
   - id: app

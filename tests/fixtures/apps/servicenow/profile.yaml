@@ -4,10 +4,10 @@ app:
   product: Workspace
   environments:
     dev:
-      host: instance.service-now.local
+      host: servicenow-dev.local
       base_path: /
     prod:
-      host: servicedesk.company.local
+      host: servicenow-prod.local
       base_path: /
   routes:
   - id: incident

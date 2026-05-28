@@ -1,12 +1,12 @@
 cases:
-- url: http://erp-dev.company.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
+- url: http://sap-dev.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
   expected_app: sap
   expected_route: shell
   expected_env: dev
   expected_params:
     sap-client: '100'
     so: '12345'
-- url: http://erp.company.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
+- url: http://sap-prod.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
   expected_app: sap
   expected_route: shell
   expected_env: prod

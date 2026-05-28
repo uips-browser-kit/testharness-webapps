@@ -1,32 +1,32 @@
 cases:
-- url: http://sf-dev.local/lightning/r/Account/list/view
+- url: http://salesforce-dev.local/lightning/r/Account/list/view
   expected_app: salesforce
   expected_route: account-list
   expected_env: dev
   expected_params: {}
-- url: http://salesforce.company.local/lightning/r/Account/list/view
+- url: http://salesforce-prod.local/lightning/r/Account/list/view
   expected_app: salesforce
   expected_route: account-list
   expected_env: prod
   expected_params: {}
-- url: http://sf-dev.local/lightning/r/Account/001/view
+- url: http://salesforce-dev.local/lightning/r/Account/001/view
   expected_app: salesforce
   expected_route: account-detail
   expected_env: dev
   expected_params:
     id: '001'
-- url: http://salesforce.company.local/lightning/r/Account/001/view
+- url: http://salesforce-prod.local/lightning/r/Account/001/view
   expected_app: salesforce
   expected_route: account-detail
   expected_env: prod
   expected_params:
     id: '001'
-- url: http://sf-dev.local/lightning/page/home
+- url: http://salesforce-dev.local/lightning/page/home
   expected_app: salesforce
   expected_route: dashboard
   expected_env: dev
   expected_params: {}
-- url: http://salesforce.company.local/lightning/page/home
+- url: http://salesforce-prod.local/lightning/page/home
   expected_app: salesforce
   expected_route: dashboard
   expected_env: prod

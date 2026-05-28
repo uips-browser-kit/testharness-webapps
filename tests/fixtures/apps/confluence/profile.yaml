@@ -4,10 +4,10 @@ app:
   product: Confluence
   environments:
     cloud:
-      host: confluence.company.atlassian.local
+      host: confluence-cloud.local
       base_path: /wiki
     self-hosted:
-      host: wiki.company.local
+      host: confluence-onprem.local
       base_path: /
   routes:
   - id: page

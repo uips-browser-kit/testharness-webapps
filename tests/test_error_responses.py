@@ -21,7 +21,7 @@ def client():
 def test_200_route_matched(client):
     r = client.get(
         "/lightning/r/Account/001/view",
-        headers={"host": "sf-dev.local"},
+        headers={"host": "salesforce-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -37,7 +37,7 @@ def test_404_no_host_match(client):
 
 
 def test_404_no_path_match(client):
-    r = client.get("/no/matching/path", headers={"host": "sf-dev.local"})
+    r = client.get("/no/matching/path", headers={"host": "salesforce-dev.local"})
     assert r.status_code == 404
 
 
@@ -77,6 +77,6 @@ def test_500_unhandled_exception(client):
     with patch("src.harness.app.resolve_route", side_effect=RuntimeError("boom")):
         r = client.get(
             "/lightning/r/Account/001/view",
-            headers={"host": "sf-dev.local"},
+            headers={"host": "salesforce-dev.local"},
         )
     assert r.status_code == 500

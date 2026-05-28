@@ -4,10 +4,10 @@ cases:
   params:
     sap-client: '100'
     so: '12345'
-  expected_url: http://erp-dev.company.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
+  expected_url: http://sap-dev.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
 - route_id: shell
   env_id: prod
   params:
     sap-client: '100'
     so: '12345'
-  expected_url: http://erp.company.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
+  expected_url: http://sap-prod.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345

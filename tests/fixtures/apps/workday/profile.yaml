@@ -4,10 +4,10 @@ app:
   product: Workday
   environments:
     dev:
-      host: tenant.workday.local
+      host: workday-dev.local
       base_path: /
     prod:
-      host: hr.company.local
+      host: workday-prod.local
       base_path: /
   routes:
   - id: home

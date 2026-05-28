@@ -4,10 +4,10 @@ app:
   product: Dynamics 365
   environments:
     dev:
-      host: org.crm.dynamics.local
+      host: dynamics-dev.local
       base_path: /
     prod:
-      host: dynamics.company.local
+      host: dynamics-prod.local
       base_path: /
   routes:
   - id: record

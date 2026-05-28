@@ -1,11 +1,11 @@
 cases:
-- url: http://tenant.sharepoint.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
+- url: http://sharepoint-cloud.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
   expected_app: sharepoint
   expected_route: documents
   expected_env: cloud
   expected_params:
     site_name: HR
-- url: http://intranet.company.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
+- url: http://sharepoint-onprem.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
   expected_app: sharepoint
   expected_route: documents
   expected_env: self-hosted

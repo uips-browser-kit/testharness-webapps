@@ -4,10 +4,10 @@ app:
   product: SharePoint
   environments:
     cloud:
-      host: tenant.sharepoint.local
+      host: sharepoint-cloud.local
       base_path: /
     self-hosted:
-      host: intranet.company.local
+      host: sharepoint-onprem.local
       base_path: /
   routes:
   - id: documents

@@ -1,11 +1,11 @@
 cases:
-- url: http://jira.company.atlassian.local/browse/ABC-123
+- url: http://jira-cloud.local/browse/ABC-123
   expected_app: jira
   expected_route: issue
   expected_env: cloud
   expected_params:
     issue_key: ABC-123
-- url: http://jira.company.local/browse/ABC-123
+- url: http://jira-onprem.local/browse/ABC-123
   expected_app: jira
   expected_route: issue
   expected_env: self-hosted

@@ -4,7 +4,7 @@ apps:
   product: Lightning
   environments:
     dev:
-      host: sf-dev.local
+      host: salesforce-dev.local
       base_path: /
   routes:
   - id: account-detail
