@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import yaml
@@ -5,6 +6,7 @@ import yaml
 from src.core.models import App, Environment, PatternType, Route
 
 APPS_DIR = Path(__file__).parent / "fixtures" / "apps"
+DATA_DIR = Path(__file__).parent.parent / "data" / "default"
 
 
 def load_app(app_id: str) -> App:
@@ -33,3 +35,7 @@ def load_app(app_id: str) -> App:
 
 def load_all_apps() -> list[App]:
     return [load_app(p.name) for p in sorted(APPS_DIR.iterdir()) if p.is_dir()]
+
+
+def load_data(app_id: str, filename: str) -> list[dict]:
+    return json.loads((DATA_DIR / app_id / filename).read_text())

@@ -37,6 +37,10 @@ logs *args:
 restart service:
     docker compose -f infra/docker-compose.yml restart {{service}}
 
+# Run integration tests against the live stack (requires: just up)
+integration:
+    uv run pytest -m integration -v
+
 # Smoke-test: verify all app hostnames reach the Harness /health endpoint
 smoke:
     @$hosts = Get-Content infra/hosts.txt | Where-Object { $_ -match '^\d' } | ForEach-Object { ($_ -split '\s+')[1] } | Where-Object { $_ -ne 'idp.local' }; \
