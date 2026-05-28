@@ -4,7 +4,7 @@ app:
   product: Workspace
   environments:
     dev:
-      host: instance.service-now.com
+      host: instance.service-now.local
       base_path: /
     prod:
       host: servicedesk.company.com

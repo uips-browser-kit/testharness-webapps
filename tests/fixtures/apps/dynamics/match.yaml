@@ -1,5 +1,5 @@
 cases:
-- url: http://org.crm.dynamics.com/main.aspx?appid=app-001&pagetype=entityrecord&id=001
+- url: http://org.crm.dynamics.local/main.aspx?appid=app-001&pagetype=entityrecord&id=001
   expected_app: dynamics
   expected_route: record
   expected_env: dev

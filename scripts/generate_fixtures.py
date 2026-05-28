@@ -178,7 +178,7 @@ def multi_app_config() -> dict:
         "vendor": "Atlassian",
         "product": "Jira",
         "environments": {
-            "cloud": {"host": "jira.company.atlassian.net", "base_path": "/"},
+            "cloud": {"host": "jira.company.atlassian.local", "base_path": "/"},
         },
         "routes": [
             {

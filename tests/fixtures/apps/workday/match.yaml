@@ -1,5 +1,5 @@
 cases:
-- url: http://tenant.workday.com/home
+- url: http://tenant.workday.local/home
   expected_app: workday
   expected_route: home
   expected_env: dev
@@ -9,7 +9,7 @@ cases:
   expected_route: home
   expected_env: prod
   expected_params: {}
-- url: http://tenant.workday.com/home.htmld?redirect=n&id=001
+- url: http://tenant.workday.local/home.htmld?redirect=n&id=001
   expected_app: workday
   expected_route: task
   expected_env: dev

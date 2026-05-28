@@ -6,7 +6,7 @@ cases:
     app_id: app-001
     tenantId: tenant-001
     screen: Orders
-  expected_url: http://apps.powerapps.com/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders
+  expected_url: http://apps.powerapps.local/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders
 - route_id: app
   env_id: self-hosted
   params:

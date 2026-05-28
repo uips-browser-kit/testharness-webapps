@@ -1,5 +1,5 @@
 cases:
-- url: http://apps.powerapps.com/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders
+- url: http://apps.powerapps.local/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders
   expected_app: power-apps
   expected_route: app
   expected_env: cloud

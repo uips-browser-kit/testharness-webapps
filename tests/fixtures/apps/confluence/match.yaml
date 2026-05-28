@@ -1,5 +1,5 @@
 cases:
-- url: http://confluence.company.atlassian.net/wiki/spaces/ENG/pages/98765
+- url: http://confluence.company.atlassian.local/wiki/spaces/ENG/pages/98765
   expected_app: confluence
   expected_route: page
   expected_env: cloud

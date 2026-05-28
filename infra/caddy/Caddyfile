@@ -38,7 +38,7 @@ http://salesforce.company.com {
 }
 
 # Dynamics 365 — dev
-http://org.crm.dynamics.com {
+http://org.crm.dynamics.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "dynamics"
@@ -56,7 +56,7 @@ http://dynamics.company.com {
 }
 
 # ServiceNow — dev
-http://instance.service-now.com {
+http://instance.service-now.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "servicenow"
@@ -110,7 +110,7 @@ http://finance.company.com {
 }
 
 # Workday — dev
-http://tenant.workday.com {
+http://tenant.workday.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "workday"
@@ -128,7 +128,7 @@ http://hr.company.com {
 }
 
 # Jira — cloud
-http://jira.company.atlassian.net {
+http://jira.company.atlassian.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "jira"
@@ -146,7 +146,7 @@ http://jira.company.com {
 }
 
 # Confluence — cloud
-http://confluence.company.atlassian.net {
+http://confluence.company.atlassian.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "confluence"
@@ -164,7 +164,7 @@ http://wiki.company.com {
 }
 
 # SharePoint — cloud
-http://tenant.sharepoint.com {
+http://tenant.sharepoint.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "sharepoint"
@@ -182,7 +182,7 @@ http://intranet.company.com {
 }
 
 # Power BI — cloud
-http://app.powerbi.com {
+http://app.powerbi.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "power-bi"
@@ -200,7 +200,7 @@ http://analytics.company.com {
 }
 
 # Tableau — cloud
-http://server.tableau.com {
+http://server.tableau.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "tableau"
@@ -218,7 +218,7 @@ http://tableau.company.com {
 }
 
 # Power Apps — cloud
-http://apps.powerapps.com {
+http://apps.powerapps.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "power-apps"

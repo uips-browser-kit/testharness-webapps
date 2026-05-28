@@ -4,7 +4,7 @@ app:
   product: SharePoint
   environments:
     cloud:
-      host: tenant.sharepoint.com
+      host: tenant.sharepoint.local
       base_path: /
     self-hosted:
       host: intranet.company.com

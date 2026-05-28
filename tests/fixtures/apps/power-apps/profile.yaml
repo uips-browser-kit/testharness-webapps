@@ -4,7 +4,7 @@ app:
   product: Power Apps
   environments:
     cloud:
-      host: apps.powerapps.com
+      host: apps.powerapps.local
       base_path: /
     self-hosted:
       host: apps.company.com

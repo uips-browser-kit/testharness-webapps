@@ -4,7 +4,7 @@ app:
   product: Jira
   environments:
     cloud:
-      host: jira.company.atlassian.net
+      host: jira.company.atlassian.local
       base_path: /
     self-hosted:
       host: jira.company.com

@@ -52,7 +52,7 @@ apps:
   layout: layouts/default.html
   environments:
     dev:
-      host: org.crm.dynamics.com
+      host: org.crm.dynamics.local
       base_path: /
       scheme: http
     prod:
@@ -82,7 +82,7 @@ apps:
   layout: layouts/default.html
   environments:
     dev:
-      host: instance.service-now.com
+      host: instance.service-now.local
       base_path: /
       scheme: http
     prod:
@@ -168,7 +168,7 @@ apps:
   layout: layouts/default.html
   environments:
     dev:
-      host: tenant.workday.com
+      host: tenant.workday.local
       base_path: /
       scheme: http
     prod:
@@ -207,7 +207,7 @@ apps:
   layout: layouts/default.html
   environments:
     cloud:
-      host: jira.company.atlassian.net
+      host: jira.company.atlassian.local
       base_path: /
       scheme: http
     self-hosted:
@@ -235,7 +235,7 @@ apps:
   layout: layouts/default.html
   environments:
     cloud:
-      host: confluence.company.atlassian.net
+      host: confluence.company.atlassian.local
       base_path: /wiki
       scheme: http
     self-hosted:
@@ -262,7 +262,7 @@ apps:
   layout: layouts/default.html
   environments:
     cloud:
-      host: tenant.sharepoint.com
+      host: tenant.sharepoint.local
       base_path: /
       scheme: http
     self-hosted:
@@ -289,7 +289,7 @@ apps:
   layout: layouts/default.html
   environments:
     cloud:
-      host: app.powerbi.com
+      host: app.powerbi.local
       base_path: /
       scheme: http
     self-hosted:
@@ -316,7 +316,7 @@ apps:
   layout: layouts/default.html
   environments:
     cloud:
-      host: server.tableau.com
+      host: server.tableau.local
       base_path: /
       scheme: http
     self-hosted:
@@ -345,7 +345,7 @@ apps:
   layout: layouts/default.html
   environments:
     cloud:
-      host: apps.powerapps.com
+      host: apps.powerapps.local
       base_path: /
       scheme: http
     self-hosted:

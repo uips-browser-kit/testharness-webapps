@@ -5,7 +5,7 @@ cases:
     appid: app-001
     pagetype: entityrecord
     id: '001'
-  expected_url: http://org.crm.dynamics.com/main.aspx?appid=app-001&pagetype=entityrecord&id=001
+  expected_url: http://org.crm.dynamics.local/main.aspx?appid=app-001&pagetype=entityrecord&id=001
 - route_id: record
   env_id: prod
   params:

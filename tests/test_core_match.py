@@ -41,7 +41,7 @@ def test_percent_encoded_static_segment_matches_decoded_path():
         id="sharepoint",
         vendor="Microsoft",
         product="SharePoint",
-        environments={"cloud": Environment(host="tenant.sharepoint.com")},
+        environments={"cloud": Environment(host="tenant.sharepoint.local")},
         routes=[
             Route(
                 id="documents",
@@ -51,7 +51,7 @@ def test_percent_encoded_static_segment_matches_decoded_path():
         ],
     )
     result = match(
-        host="tenant.sharepoint.com",
+        host="tenant.sharepoint.local",
         path="/sites/HR/Shared Documents/Forms/AllItems.aspx",
         query={},
         apps=[app],

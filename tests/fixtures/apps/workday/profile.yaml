@@ -4,7 +4,7 @@ app:
   product: Workday
   environments:
     dev:
-      host: tenant.workday.com
+      host: tenant.workday.local
       base_path: /
     prod:
       host: hr.company.com

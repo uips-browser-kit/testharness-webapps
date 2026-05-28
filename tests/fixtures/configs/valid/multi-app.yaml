@@ -17,7 +17,7 @@ apps:
   product: Jira
   environments:
     cloud:
-      host: jira.company.atlassian.net
+      host: jira.company.atlassian.local
       base_path: /
   routes:
   - id: issue

@@ -4,7 +4,7 @@ app:
   product: Power BI
   environments:
     cloud:
-      host: app.powerbi.com
+      host: app.powerbi.local
       base_path: /
     self-hosted:
       host: analytics.company.com

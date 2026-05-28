@@ -4,7 +4,7 @@ app:
   product: Confluence
   environments:
     cloud:
-      host: confluence.company.atlassian.net
+      host: confluence.company.atlassian.local
       base_path: /wiki
     self-hosted:
       host: wiki.company.com

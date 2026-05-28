@@ -35,7 +35,7 @@ def test_path_route_returns_match(client):
 def test_query_route_returns_match(client):
     r = client.get(
         "/main.aspx?appid=app-001&pagetype=entityrecord&id=001",
-        headers={"host": "org.crm.dynamics.com"},
+        headers={"host": "org.crm.dynamics.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
@@ -84,7 +84,7 @@ def test_post_match_jira(client):
     r = client.post(
         "/match",
         json={
-            "host": "jira.company.atlassian.net",
+            "host": "jira.company.atlassian.local",
             "path": "/browse/ABC-123",
         },
     )

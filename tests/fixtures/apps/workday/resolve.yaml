@@ -2,7 +2,7 @@ cases:
 - route_id: home
   env_id: dev
   params: {}
-  expected_url: http://tenant.workday.com/home
+  expected_url: http://tenant.workday.local/home
 - route_id: home
   env_id: prod
   params: {}
@@ -12,7 +12,7 @@ cases:
   params:
     redirect: n
     id: '001'
-  expected_url: http://tenant.workday.com/home.htmld?redirect=n&id=001
+  expected_url: http://tenant.workday.local/home.htmld?redirect=n&id=001
 - route_id: task
   env_id: prod
   params:

@@ -1,4 +1,12 @@
 cases:
+- route_id: account-list
+  env_id: dev
+  params: {}
+  expected_url: http://sf-dev.local/lightning/r/Account/list/view
+- route_id: account-list
+  env_id: prod
+  params: {}
+  expected_url: http://salesforce.company.com/lightning/r/Account/list/view
 - route_id: account-detail
   env_id: dev
   params:

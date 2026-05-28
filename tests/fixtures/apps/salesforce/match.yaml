@@ -1,4 +1,14 @@
 cases:
+- url: http://sf-dev.local/lightning/r/Account/list/view
+  expected_app: salesforce
+  expected_route: account-list
+  expected_env: dev
+  expected_params: {}
+- url: http://salesforce.company.com/lightning/r/Account/list/view
+  expected_app: salesforce
+  expected_route: account-list
+  expected_env: prod
+  expected_params: {}
 - url: http://sf-dev.local/lightning/r/Account/001/view
   expected_app: salesforce
   expected_route: account-detail

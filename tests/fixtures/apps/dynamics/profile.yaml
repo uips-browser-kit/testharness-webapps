@@ -4,7 +4,7 @@ app:
   product: Dynamics 365
   environments:
     dev:
-      host: org.crm.dynamics.com
+      host: org.crm.dynamics.local
       base_path: /
     prod:
       host: dynamics.company.com

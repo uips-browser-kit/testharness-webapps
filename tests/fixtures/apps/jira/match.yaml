@@ -1,5 +1,5 @@
 cases:
-- url: http://jira.company.atlassian.net/browse/ABC-123
+- url: http://jira.company.atlassian.local/browse/ABC-123
   expected_app: jira
   expected_route: issue
   expected_env: cloud

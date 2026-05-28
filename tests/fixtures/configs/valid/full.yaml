@@ -10,6 +10,11 @@ apps:
       host: salesforce.company.com
       base_path: /
   routes:
+  - id: account-list
+    path: /lightning/r/Account/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
   - id: account-detail
     path: /lightning/r/Account/{id}/view
     pattern_type: path
@@ -25,7 +30,7 @@ apps:
   product: Dynamics 365
   environments:
     dev:
-      host: org.crm.dynamics.com
+      host: org.crm.dynamics.local
       base_path: /
     prod:
       host: dynamics.company.com
@@ -44,7 +49,7 @@ apps:
   product: Workspace
   environments:
     dev:
-      host: instance.service-now.com
+      host: instance.service-now.local
       base_path: /
     prod:
       host: servicedesk.company.com
@@ -97,7 +102,7 @@ apps:
   product: Workday
   environments:
     dev:
-      host: tenant.workday.com
+      host: tenant.workday.local
       base_path: /
     prod:
       host: hr.company.com
@@ -120,7 +125,7 @@ apps:
   product: Jira
   environments:
     cloud:
-      host: jira.company.atlassian.net
+      host: jira.company.atlassian.local
       base_path: /
     self-hosted:
       host: jira.company.com
@@ -136,7 +141,7 @@ apps:
   product: Confluence
   environments:
     cloud:
-      host: confluence.company.atlassian.net
+      host: confluence.company.atlassian.local
       base_path: /wiki
     self-hosted:
       host: wiki.company.com
@@ -152,7 +157,7 @@ apps:
   product: SharePoint
   environments:
     cloud:
-      host: tenant.sharepoint.com
+      host: tenant.sharepoint.local
       base_path: /
     self-hosted:
       host: intranet.company.com
@@ -169,7 +174,7 @@ apps:
   product: Power BI
   environments:
     cloud:
-      host: app.powerbi.com
+      host: app.powerbi.local
       base_path: /
     self-hosted:
       host: analytics.company.com
@@ -182,11 +187,11 @@ apps:
     - filter
     server_visible: true
 - id: tableau
-  vendor: Tableau
+  vendor: Tableau Server
   product: Tableau Server
   environments:
     cloud:
-      host: server.tableau.com
+      host: server.tableau.local
       base_path: /
     self-hosted:
       host: tableau.company.com
@@ -205,7 +210,7 @@ apps:
   product: Power Apps
   environments:
     cloud:
-      host: apps.powerapps.com
+      host: apps.powerapps.local
       base_path: /
     self-hosted:
       host: apps.company.com

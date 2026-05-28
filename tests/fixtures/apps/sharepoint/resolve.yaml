@@ -3,7 +3,7 @@ cases:
   env_id: cloud
   params:
     site_name: HR
-  expected_url: http://tenant.sharepoint.com/sites/HR/Shared%20Documents/Forms/AllItems.aspx
+  expected_url: http://tenant.sharepoint.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
 - route_id: documents
   env_id: self-hosted
   params:

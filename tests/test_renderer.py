@@ -115,7 +115,7 @@ def test_sap_shell_renders_html(client):
 def test_jira_issue_renders_html(client):
     r = client.get(
         "/browse/ABC-123",
-        headers={"host": "jira.company.atlassian.net"},
+        headers={"host": "jira.company.atlassian.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]

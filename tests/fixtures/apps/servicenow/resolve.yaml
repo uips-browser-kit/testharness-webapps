@@ -3,7 +3,7 @@ cases:
   env_id: dev
   params:
     sys_id: abc123def456
-  expected_url: http://instance.service-now.com/now/workspace/agent/record/incident/abc123def456
+  expected_url: http://instance.service-now.local/now/workspace/agent/record/incident/abc123def456
 - route_id: incident
   env_id: prod
   params:

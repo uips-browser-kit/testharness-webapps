@@ -1,10 +1,10 @@
 app:
   id: tableau
-  vendor: Tableau
+  vendor: Tableau Server
   product: Tableau Server
   environments:
     cloud:
-      host: server.tableau.com
+      host: server.tableau.local
       base_path: /
     self-hosted:
       host: tableau.company.com
