@@ -10,5 +10,8 @@ dependencies = [
     "uvicorn[standard]>=0.34",
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.uv]
 virtual = true

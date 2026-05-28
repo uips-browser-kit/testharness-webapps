@@ -1,0 +1,8 @@
+apps:
+- id: salesforce
+  vendor: Salesforce
+  product: Lightning
+  environments:
+    dev:
+      host: sf-dev.local
+      base_path: /
