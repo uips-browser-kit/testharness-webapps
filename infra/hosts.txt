@@ -4,6 +4,7 @@
 # Platform
 127.0.0.1  harness.local
 127.0.0.1  idp.local
+127.0.0.1  metrics.local
 #
 # App environments
 127.0.0.1  analytics.company.com
