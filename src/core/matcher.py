@@ -23,7 +23,7 @@ def match(host: str, path: str, query: dict[str, str], apps: list[App]) -> Match
             if base:
                 if not path.startswith(base):
                     continue
-                rel_path = path[len(base):]
+                rel_path = path[len(base) :]
             else:
                 rel_path = path
             for route in app.routes:
@@ -35,7 +35,9 @@ def match(host: str, path: str, query: dict[str, str], apps: list[App]) -> Match
     return None
 
 
-def _try_match(app_id: str, route, env_id: str, path: str, query: dict[str, str]) -> MatchResult | None:
+def _try_match(
+    app_id: str, route, env_id: str, path: str, query: dict[str, str]
+) -> MatchResult | None:
     if route.pattern_type == PatternType.PATH:
         pattern, names = _path_to_regex(route.path)
         m = pattern.match(path)

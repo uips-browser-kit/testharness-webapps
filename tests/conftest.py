@@ -1,5 +1,6 @@
-import yaml
 from pathlib import Path
+
+import yaml
 
 from src.core.models import App, Environment, PatternType, Route
 

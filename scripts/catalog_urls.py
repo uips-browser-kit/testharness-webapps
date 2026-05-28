@@ -15,17 +15,16 @@ from dataclasses import dataclass, field
 from enum import Enum
 from urllib.parse import urlencode
 
-
 # ---------------------------------------------------------------------------
 # Core types
 # ---------------------------------------------------------------------------
 
 
 class PatternType(Enum):
-    PATH = "path"           # /resource/{id}          — path substitution
-    QUERY_ONLY = "query"    # /page?id={id}            — static path, params in query
-    HASH = "hash"           # /#/resource/{id}         — NOT server-visible
-    PROTOCOL = "protocol"   # myapp://open/123         — NOT server-visible
+    PATH = "path"  # /resource/{id}          — path substitution
+    QUERY_ONLY = "query"  # /page?id={id}            — static path, params in query
+    HASH = "hash"  # /#/resource/{id}         — NOT server-visible
+    PROTOCOL = "protocol"  # myapp://open/123         — NOT server-visible
 
 
 class NotServerVisible(Exception):
@@ -174,12 +173,12 @@ SALESFORCE = App(
     vendor="Salesforce",
     product="Lightning",
     environments={
-        "dev":  Environment("sf-dev.local"),
+        "dev": Environment("sf-dev.local"),
         "prod": Environment("salesforce.company.com"),
     },
     routes=[
         Route("account-detail", "/lightning/r/Account/{id}/view", PatternType.PATH),
-        Route("dashboard",      "/lightning/page/home",           PatternType.PATH),
+        Route("dashboard", "/lightning/page/home", PatternType.PATH),
     ],
 )
 
@@ -188,7 +187,7 @@ DYNAMICS = App(
     vendor="Microsoft",
     product="Dynamics 365",
     environments={
-        "dev":  Environment("org.crm.dynamics.com"),
+        "dev": Environment("org.crm.dynamics.com"),
         "prod": Environment("dynamics.company.com"),
     },
     routes=[
@@ -206,7 +205,7 @@ SERVICENOW = App(
     vendor="ServiceNow",
     product="Workspace",
     environments={
-        "dev":  Environment("instance.service-now.com"),
+        "dev": Environment("instance.service-now.com"),
         "prod": Environment("servicedesk.company.com"),
     },
     routes=[
@@ -223,7 +222,7 @@ SAP = App(
     vendor="SAP",
     product="Fiori",
     environments={
-        "dev":  Environment("erp-dev.company.com"),
+        "dev": Environment("erp-dev.company.com"),
         "prod": Environment("erp.company.com"),
     },
     routes=[
@@ -233,7 +232,7 @@ SAP = App(
             PatternType.QUERY_ONLY,
             query_params=["sap-client", "so"],
             note="Hash fragment (#SalesOrder-display?SO=...) is not server-visible; "
-                 "'so' is the harness server-side representation",
+            "'so' is the harness server-side representation",
         ),
     ],
 )
@@ -243,7 +242,7 @@ ORACLE = App(
     vendor="Oracle",
     product="Fusion / EBS",
     environments={
-        "dev":  Environment("oracle-dev.company.com"),
+        "dev": Environment("oracle-dev.company.com"),
         "prod": Environment("finance.company.com"),
     },
     routes=[
@@ -261,11 +260,11 @@ WORKDAY = App(
     vendor="Workday",
     product="Workday",
     environments={
-        "dev":  Environment("tenant.workday.com"),
+        "dev": Environment("tenant.workday.com"),
         "prod": Environment("hr.company.com"),
     },
     routes=[
-        Route("home", "/home",       PatternType.PATH),
+        Route("home", "/home", PatternType.PATH),
         Route("task", "/home.htmld", PatternType.QUERY_ONLY, query_params=["redirect", "id"]),
     ],
 )
@@ -275,7 +274,7 @@ JIRA = App(
     vendor="Atlassian",
     product="Jira",
     environments={
-        "cloud":       Environment("jira.company.atlassian.net"),
+        "cloud": Environment("jira.company.atlassian.net"),
         "self-hosted": Environment("jira.company.com"),
     },
     routes=[
@@ -288,7 +287,7 @@ CONFLUENCE = App(
     vendor="Atlassian",
     product="Confluence",
     environments={
-        "cloud":       Environment("confluence.company.atlassian.net", base_path="/wiki"),
+        "cloud": Environment("confluence.company.atlassian.net", base_path="/wiki"),
         "self-hosted": Environment("wiki.company.com"),
     },
     routes=[
@@ -301,7 +300,7 @@ SHAREPOINT = App(
     vendor="Microsoft",
     product="SharePoint",
     environments={
-        "cloud":       Environment("tenant.sharepoint.com"),
+        "cloud": Environment("tenant.sharepoint.com"),
         "self-hosted": Environment("intranet.company.com"),
     },
     routes=[
@@ -319,7 +318,7 @@ POWER_BI = App(
     vendor="Microsoft",
     product="Power BI",
     environments={
-        "cloud":       Environment("app.powerbi.com"),
+        "cloud": Environment("app.powerbi.com"),
         "self-hosted": Environment("analytics.company.com"),
     },
     routes=[
@@ -337,7 +336,7 @@ TABLEAU = App(
     vendor="Tableau",
     product="Tableau Server",
     environments={
-        "cloud":       Environment("server.tableau.com"),
+        "cloud": Environment("server.tableau.com"),
         "self-hosted": Environment("tableau.company.com"),
     },
     routes=[
@@ -347,7 +346,7 @@ TABLEAU = App(
             PatternType.PATH,
             query_params=[":showVizHome"],
             note="Tableau colon-prefixed params are treated as regular query params; "
-                 "urlencode will percent-encode the colon",
+            "urlencode will percent-encode the colon",
         ),
     ],
 )
@@ -357,7 +356,7 @@ POWER_APPS = App(
     vendor="Microsoft",
     product="Power Apps",
     environments={
-        "cloud":       Environment("apps.powerapps.com"),
+        "cloud": Environment("apps.powerapps.com"),
         "self-hosted": Environment("apps.company.com"),
     },
     routes=[
@@ -371,8 +370,18 @@ POWER_APPS = App(
 )
 
 CATALOG_APPS: list[App] = [
-    SALESFORCE, DYNAMICS, SERVICENOW, SAP, ORACLE, WORKDAY,
-    JIRA, CONFLUENCE, SHAREPOINT, POWER_BI, TABLEAU, POWER_APPS,
+    SALESFORCE,
+    DYNAMICS,
+    SERVICENOW,
+    SAP,
+    ORACLE,
+    WORKDAY,
+    JIRA,
+    CONFLUENCE,
+    SHAREPOINT,
+    POWER_BI,
+    TABLEAU,
+    POWER_APPS,
 ]
 
 # ---------------------------------------------------------------------------
@@ -380,29 +389,29 @@ CATALOG_APPS: list[App] = [
 # ---------------------------------------------------------------------------
 
 SAMPLE_PARAMS: dict[str, str] = {
-    "id":               "001",
-    "sys_id":           "abc123def456",
-    "issue_key":        "ABC-123",
-    "space_key":        "ENG",
-    "page_id":          "98765",
-    "site_name":        "HR",
-    "workspace":        "my-workspace",
-    "report_id":        "rpt-001",
-    "workbook":         "Sales",
-    "view":             "Overview",
-    "env_id":           "env-001",
-    "app_id":           "app-001",
-    "appid":            "app-001",
-    "pagetype":         "entityrecord",
-    "sap-client":       "100",
-    "so":               "12345",
-    "_adf.ctrl-state":  "state-xyz",
-    "redirect":         "n",
-    "filter":           "Region eq 'EMEA'",
-    ":showVizHome":     "no",
-    "tenantId":         "tenant-001",
-    "screen":           "Orders",
-    "page":             "1",
+    "id": "001",
+    "sys_id": "abc123def456",
+    "issue_key": "ABC-123",
+    "space_key": "ENG",
+    "page_id": "98765",
+    "site_name": "HR",
+    "workspace": "my-workspace",
+    "report_id": "rpt-001",
+    "workbook": "Sales",
+    "view": "Overview",
+    "env_id": "env-001",
+    "app_id": "app-001",
+    "appid": "app-001",
+    "pagetype": "entityrecord",
+    "sap-client": "100",
+    "so": "12345",
+    "_adf.ctrl-state": "state-xyz",
+    "redirect": "n",
+    "filter": "Region eq 'EMEA'",
+    ":showVizHome": "no",
+    "tenantId": "tenant-001",
+    "screen": "Orders",
+    "page": "1",
 }
 
 

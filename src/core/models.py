@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import StrEnum
 
 
-class PatternType(str, Enum):
+class PatternType(StrEnum):
     PATH = "path"
     QUERY_ONLY = "query"
     HASH = "hash"
@@ -19,6 +19,7 @@ class NotServerVisible(Exception):
 class Environment:
     host: str
     base_path: str = "/"
+    scheme: str = "http"
 
 
 @dataclass

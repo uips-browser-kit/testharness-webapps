@@ -32,7 +32,7 @@ def resolve(app: App, route_id: str, env_id: str, params: dict[str, str]) -> str
             if qp in params:
                 query[qp] = params[qp]
 
-    url = f"http://{env.host}{base}{path}"
+    url = f"{env.scheme}://{env.host}{base}{path}"
     if query:
         url += "?" + urlencode(query)
     return url

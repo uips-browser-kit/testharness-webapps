@@ -46,14 +46,20 @@ def load_config(path: Path) -> list[App]:
 
 
 def _parse_app(path: Path, raw: dict, index: int) -> App:
-    _require_fields(path, raw, ["id", "vendor", "product", "environments", "routes"], f"apps[{index}]")
+    _require_fields(
+        path, raw, ["id", "vendor", "product", "environments", "routes"], f"apps[{index}]"
+    )
 
     envs_raw = raw["environments"]
     if not isinstance(envs_raw, dict) or len(envs_raw) == 0:
         raise ConfigError(f"{path}: apps[{index}].environments must be a non-empty mapping")
 
     environments = {
-        env_id: Environment(host=env["host"], base_path=env.get("base_path", "/"))
+        env_id: Environment(
+            host=env["host"],
+            base_path=env.get("base_path", "/"),
+            scheme=env.get("scheme", "http"),
+        )
         for env_id, env in envs_raw.items()
     }
 

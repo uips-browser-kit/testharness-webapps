@@ -1,6 +1,7 @@
+from urllib.parse import parse_qs, urlparse
+
 import pytest
 import yaml
-from urllib.parse import urlparse, parse_qs
 
 from src.core.matcher import match
 from tests.conftest import APPS_DIR, load_all_apps
