@@ -1,0 +1,27 @@
+{% extends layout %}
+{% block title %}{{ params.report_id or "Report" }} — {{ app_name }}{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem;">
+  <h1 style="font-size:18px;font-weight:700;color:var(--app-primary);">
+    Report{% if params.report_id %}: {{ params.report_id }}{% endif %}
+  </h1>
+  <span class="badge">{{ params.workspace or "workspace" }}</span>
+  <span class="badge">{{ records | length }} data points</span>
+</div>
+<table>
+  <thead>
+    <tr><th>Region</th><th>Period</th><th>Metric</th><th>Value</th><th>Currency</th></tr>
+  </thead>
+  <tbody>
+    {% for r in records %}
+    <tr>
+      <td>{{ r.region }}</td>
+      <td>{{ r.period }}</td>
+      <td>{{ r.metric_name }}</td>
+      <td>{{ "{:,.2f}".format(r.value) }}</td>
+      <td>{{ r.currency }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

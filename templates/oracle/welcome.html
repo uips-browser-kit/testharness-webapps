@@ -1,0 +1,26 @@
+{% extends layout %}
+{% block title %}Invoices — {{ app_name }}{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem;">
+  <h1 style="font-size:18px;font-weight:700;color:var(--app-primary);">Invoices</h1>
+  <span class="badge">{{ records | length }} records</span>
+</div>
+<table>
+  <thead>
+    <tr><th>Invoice #</th><th>Supplier</th><th>Amount</th><th>Invoice Date</th><th>Due Date</th><th>GL Account</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    {% for r in records %}
+    <tr>
+      <td style="font-family:monospace;">{{ r.invoice_number }}</td>
+      <td>{{ r.supplier_name }}</td>
+      <td>{{ r.currency }} {{ "{:,.2f}".format(r.amount) }}</td>
+      <td>{{ r.invoice_date }}</td>
+      <td>{{ r.due_date }}</td>
+      <td style="font-family:monospace;">{{ r.gl_account }}</td>
+      <td><span class="badge">{{ r.status }}</span></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

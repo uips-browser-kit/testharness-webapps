@@ -49,6 +49,7 @@ apps:
 - id: dynamics
   vendor: Microsoft
   product: Dynamics 365
+  layout: layouts/default.html
   environments:
     dev:
       host: org.crm.dynamics.com
@@ -58,6 +59,10 @@ apps:
       host: dynamics.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Accounts
+    route_id: record
+    href: /main.aspx
   routes:
   - id: record
     path: /main.aspx
@@ -67,10 +72,14 @@ apps:
     - pagetype
     - id
     server_visible: true
+    template: record
+    data_entity: accounts
+    data_key_field: id
 
 - id: servicenow
   vendor: ServiceNow
   product: Workspace
+  layout: layouts/default.html
   environments:
     dev:
       host: instance.service-now.com
@@ -80,16 +89,24 @@ apps:
       host: servicedesk.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Incidents
+    route_id: incident
+    href: /now/workspace/agent/record/incident
   routes:
   - id: incident
     path: /now/workspace/agent/record/incident/{sys_id}
     pattern_type: path
     query_params: []
     server_visible: true
+    template: incident
+    data_entity: incidents
+    data_key_field: sys_id
 
 - id: sap
   vendor: SAP
   product: Fiori
+  layout: layouts/default.html
   environments:
     dev:
       host: erp-dev.company.com
@@ -99,6 +116,10 @@ apps:
       host: erp.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Sales Orders
+    route_id: shell
+    href: /sap/bc/ui5_ui5/ui2/ushell
   routes:
   - id: shell
     path: /sap/bc/ui5_ui5/ui2/ushell
@@ -109,10 +130,15 @@ apps:
     server_visible: true
     note: Hash fragment (#SalesOrder-display?SO=...) is not server-visible; 'so' is
       the harness server-side representation
+    template: shell
+    data_entity: sales_orders
+    data_key_field: order_number
+    data_key_param: so
 
 - id: oracle
   vendor: Oracle
   product: Fusion / EBS
+  layout: layouts/default.html
   environments:
     dev:
       host: oracle-dev.company.com
@@ -122,6 +148,10 @@ apps:
       host: finance.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Invoices
+    route_id: welcome
+    href: /fscmUI/faces/FuseWelcome
   routes:
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
@@ -129,10 +159,13 @@ apps:
     query_params:
     - _adf.ctrl-state
     server_visible: true
+    template: welcome
+    data_entity: invoices
 
 - id: workday
   vendor: Workday
   product: Workday
+  layout: layouts/default.html
   environments:
     dev:
       host: tenant.workday.com
@@ -142,12 +175,20 @@ apps:
       host: hr.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Home
+    route_id: home
+    href: /home
+  - label: Employees
+    route_id: task
+    href: /home.htmld
   routes:
   - id: home
     path: /home
     pattern_type: path
     query_params: []
     server_visible: true
+    template: home
   - id: task
     path: /home.htmld
     pattern_type: query
@@ -155,10 +196,15 @@ apps:
     - redirect
     - id
     server_visible: true
+    template: task
+    data_entity: employees
+    data_key_field: employee_id
+    data_key_param: id
 
 - id: jira
   vendor: Atlassian
   product: Jira
+  layout: layouts/default.html
   environments:
     cloud:
       host: jira.company.atlassian.net
@@ -168,16 +214,25 @@ apps:
       host: jira.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Issues
+    route_id: issue
+    href: /browse
   routes:
   - id: issue
     path: /browse/{issue_key}
     pattern_type: path
     query_params: []
     server_visible: true
+    template: issue
+    data_entity: issues
+    data_key_field: key
+    data_key_param: issue_key
 
 - id: confluence
   vendor: Atlassian
   product: Confluence
+  layout: layouts/default.html
   environments:
     cloud:
       host: confluence.company.atlassian.net
@@ -187,16 +242,24 @@ apps:
       host: wiki.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Pages
+    route_id: page
+    href: /spaces
   routes:
   - id: page
     path: /spaces/{space_key}/pages/{page_id}
     pattern_type: path
     query_params: []
     server_visible: true
+    template: page
+    data_entity: pages
+    data_key_field: page_id
 
 - id: sharepoint
   vendor: Microsoft
   product: SharePoint
+  layout: layouts/default.html
   environments:
     cloud:
       host: tenant.sharepoint.com
@@ -206,6 +269,10 @@ apps:
       host: intranet.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Documents
+    route_id: documents
+    href: /sites
   routes:
   - id: documents
     path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
@@ -213,10 +280,13 @@ apps:
     query_params: []
     server_visible: true
     note: URL-encoded space is a static segment — preserved as-is
+    template: documents
+    data_entity: documents
 
 - id: power-bi
   vendor: Microsoft
   product: Power BI
+  layout: layouts/default.html
   environments:
     cloud:
       host: app.powerbi.com
@@ -226,6 +296,10 @@ apps:
       host: analytics.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Reports
+    route_id: report
+    href: /groups
   routes:
   - id: report
     path: /groups/{workspace}/reports/{report_id}
@@ -233,10 +307,13 @@ apps:
     query_params:
     - filter
     server_visible: true
+    template: report
+    data_entity: sales_metrics
 
 - id: tableau
-  vendor: Tableau
+  vendor: Tableau Server
   product: Tableau Server
+  layout: layouts/default.html
   environments:
     cloud:
       host: server.tableau.com
@@ -246,6 +323,10 @@ apps:
       host: tableau.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Views
+    route_id: view
+    href: /views
   routes:
   - id: view
     path: /views/{workbook}/{view}
@@ -255,10 +336,13 @@ apps:
     server_visible: true
     note: Tableau colon-prefixed params are treated as regular query params; urlencode
       will percent-encode the colon
+    template: view
+    data_entity: sales_metrics
 
 - id: power-apps
   vendor: Microsoft
   product: Power Apps
+  layout: layouts/default.html
   environments:
     cloud:
       host: apps.powerapps.com
@@ -268,6 +352,10 @@ apps:
       host: apps.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Apps
+    route_id: app
+    href: /play
   routes:
   - id: app
     path: /play/e/{env_id}/a/{app_id}
@@ -276,6 +364,8 @@ apps:
     - tenantId
     - screen
     server_visible: true
+    template: app
+    data_entity: sales_orders
 
 data:
   set: default

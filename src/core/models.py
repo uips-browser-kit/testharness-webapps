@@ -33,6 +33,7 @@ class Route:
     template: str = ""
     data_entity: str = ""
     data_key_field: str = ""
+    data_key_param: str = ""
 
 
 @dataclass

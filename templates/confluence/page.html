@@ -1,0 +1,26 @@
+{% extends layout %}
+{% block title %}{% if record %}{{ record.title }}{% else %}Page{% endif %} — {{ app_name }}{% endblock %}
+{% block content %}
+{% if record %}
+<div style="margin-bottom:1rem;">
+  <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">{{ record.title }}</h1>
+  <span class="badge">{{ record.space_key }}</span>
+  {% for l in record.labels %}<span class="badge" style="margin-left:.25rem;">{{ l }}</span>{% endfor %}
+</div>
+{% if record.excerpt %}
+<p style="font-size:14px;color:var(--sol-base1);margin-bottom:1.25rem;font-style:italic;">{{ record.excerpt }}</p>
+{% endif %}
+<table style="max-width:640px;">
+  <thead><tr><th colspan="2">Page Info</th></tr></thead>
+  <tbody>
+    <tr><td>Page ID</td><td style="font-family:monospace;">{{ record.page_id }}</td></tr>
+    <tr><td>Space</td><td>{{ record.space_key }}</td></tr>
+    <tr><td>Author</td><td>{{ record.author }}</td></tr>
+    <tr><td>Created</td><td>{{ record.created_date }}</td></tr>
+    <tr><td>Last Modified</td><td>{{ record.last_modified }}</td></tr>
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-red);">Page not found.</p>
+{% endif %}
+{% endblock %}

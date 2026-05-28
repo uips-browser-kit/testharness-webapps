@@ -1,0 +1,28 @@
+{% extends layout %}
+{% block title %}{% if record %}{{ record.number }}{% else %}Incident{% endif %} — {{ app_name }}{% endblock %}
+{% block content %}
+{% if record %}
+<div style="margin-bottom:1rem;">
+  <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">{{ record.number }}</h1>
+  <span class="badge">{{ record.category }}</span>
+  <span class="badge" style="margin-left:.5rem;background:{% if record.priority == 1 %}var(--sol-red){% elif record.priority == 2 %}var(--sol-orange){% else %}var(--sol-base01){% endif %};color:#fff;">P{{ record.priority }}</span>
+  <span class="badge" style="margin-left:.5rem;">{{ record.state }}</span>
+</div>
+<table style="max-width:720px;">
+  <thead><tr><th colspan="2">Incident Details</th></tr></thead>
+  <tbody>
+    <tr><td>Short Description</td><td>{{ record.short_description }}</td></tr>
+    <tr><td>Description</td><td>{{ record.description }}</td></tr>
+    <tr><td>Category</td><td>{{ record.category }}</td></tr>
+    <tr><td>Priority</td><td>{{ record.priority }}</td></tr>
+    <tr><td>State</td><td>{{ record.state }}</td></tr>
+    <tr><td>Assigned To</td><td>{{ record.assigned_to }}</td></tr>
+    <tr><td>Caller</td><td>{{ record.caller }}</td></tr>
+    <tr><td>Opened</td><td>{{ record.opened_at }}</td></tr>
+    <tr><td>Sys ID</td><td style="font-family:monospace;font-size:12px;">{{ record.sys_id }}</td></tr>
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-red);">Incident not found.</p>
+{% endif %}
+{% endblock %}

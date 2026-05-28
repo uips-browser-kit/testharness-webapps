@@ -89,7 +89,8 @@ async def catch_all(request: Request, path: str):
 
     extra: dict = {}
     if route.data_entity and route.data_key_field:
-        key_value = ctx.params.get(route.data_key_field, "")
+        param_name = route.data_key_param or route.data_key_field
+        key_value = ctx.params.get(param_name, "")
         extra["record"] = request.app.state.data_loader.get_record(
             ctx.app_id, route.data_entity, route.data_key_field, key_value
         )

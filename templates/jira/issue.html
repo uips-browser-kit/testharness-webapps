@@ -1,0 +1,35 @@
+{% extends layout %}
+{% block title %}{% if record %}{{ record.key }}{% else %}Issue{% endif %} — {{ app_name }}{% endblock %}
+{% block content %}
+{% if record %}
+<div style="margin-bottom:1rem;">
+  <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">{{ record.key }}</h1>
+  <span class="badge">{{ record.issue_type }}</span>
+  <span class="badge" style="margin-left:.5rem;">{{ record.status }}</span>
+  <span class="badge" style="margin-left:.5rem;">{{ record.priority }}</span>
+</div>
+<p style="font-size:15px;margin-bottom:1.25rem;color:var(--app-content-text);">{{ record.summary }}</p>
+<table style="max-width:720px;">
+  <thead><tr><th colspan="2">Details</th></tr></thead>
+  <tbody>
+    <tr><td>Type</td><td>{{ record.issue_type }}</td></tr>
+    <tr><td>Status</td><td>{{ record.status }}</td></tr>
+    <tr><td>Priority</td><td>{{ record.priority }}</td></tr>
+    <tr><td>Assignee</td><td>{{ record.assignee }}</td></tr>
+    <tr><td>Reporter</td><td>{{ record.reporter }}</td></tr>
+    <tr><td>Sprint</td><td>{{ record.sprint }}</td></tr>
+    <tr><td>Labels</td><td>{% for l in record.labels %}<span class="badge" style="margin-right:.25rem;">{{ l }}</span>{% endfor %}</td></tr>
+    <tr><td>Created</td><td>{{ record.created }}</td></tr>
+    <tr><td>Updated</td><td>{{ record.updated }}</td></tr>
+  </tbody>
+</table>
+{% if record.description %}
+<div style="margin-top:1rem;padding:1rem;background:var(--sol-base02);border-radius:4px;max-width:720px;">
+  <div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--sol-base1);margin-bottom:.5rem;">Description</div>
+  <p style="font-size:13px;">{{ record.description }}</p>
+</div>
+{% endif %}
+{% else %}
+<p style="color:var(--sol-red);">Issue not found.</p>
+{% endif %}
+{% endblock %}

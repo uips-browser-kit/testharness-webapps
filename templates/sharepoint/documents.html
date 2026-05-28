@@ -1,0 +1,29 @@
+{% extends layout %}
+{% block title %}Documents — {{ params.site_name or "All Sites" }} — {{ app_name }}{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem;">
+  <h1 style="font-size:18px;font-weight:700;color:var(--app-primary);">
+    Shared Documents{% if params.site_name %} — {{ params.site_name }}{% endif %}
+  </h1>
+  <span class="badge">{{ records | length }} files</span>
+</div>
+<table>
+  <thead>
+    <tr><th>Name</th><th>Type</th><th>Author</th><th>Modified</th><th>Size</th><th>Library</th></tr>
+  </thead>
+  <tbody>
+    {% for r in records %}
+    {% if not params.site_name or r.site_name == params.site_name %}
+    <tr>
+      <td>{{ r.filename }}</td>
+      <td><span class="badge">{{ r.content_type }}</span></td>
+      <td>{{ r.author }}</td>
+      <td>{{ r.modified_date }}</td>
+      <td>{{ "{:,.0f}".format(r.size_bytes / 1024) }} KB</td>
+      <td>{{ r.library }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
