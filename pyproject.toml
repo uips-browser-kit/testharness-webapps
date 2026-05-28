@@ -48,5 +48,3 @@ ignore = ["E501"]
 [tool.ruff.format]
 quote-style = "double"
 
-[tool.uv]
-virtual = true
