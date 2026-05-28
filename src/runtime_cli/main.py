@@ -172,15 +172,16 @@ def challenge_set(
     env: Annotated[str, typer.Option("--env", help="Environment identifier")],
     route: Annotated[str, typer.Option("--route", help="Route identifier")],
     delay_ms: Annotated[int, typer.Option("--delay-ms", help="Delay in milliseconds")] = 0,
-    fault_kind: Annotated[Optional[str], typer.Option("--fault-kind", help="Fault kind: server_error | unavailable | business_error | not_found")] = None,
+    fault_kind: Annotated[Optional[str], typer.Option("--fault-kind", help="Fault kind: server_error | unavailable | business_error | not_found | rate_limit")] = None,
     detail: Annotated[str, typer.Option("--detail", help="Fault detail message")] = "Simulated fault",
+    retriable: Annotated[bool, typer.Option("--retriable/--no-retriable", help="Mark fault as retriable")] = False,
     api_url: Annotated[str, typer.Option("--api-url", help="Running API base URL")] = "http://localhost:8000",
     duration_s: Annotated[Optional[int], typer.Option("--duration-s", help="Auto-remove challenge after N seconds")] = None,
 ) -> None:
     """Inject a delay/fault challenge on the running API."""
     body: dict = {"delay_ms": delay_ms}
     if fault_kind:
-        body["fault"] = {"kind": fault_kind, "detail": detail}
+        body["fault"] = {"kind": fault_kind, "detail": detail, "retriable": retriable}
 
     try:
         r = httpx.post(f"{api_url}/challenges/{app_id}/{env}/{route}", json=body, timeout=5)

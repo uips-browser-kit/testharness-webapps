@@ -104,9 +104,22 @@ ViewData = DetailViewData | ListViewData | TemplateOnlyViewData
 
 
 @dataclass
+class ErrorViewData:
+    kind: Literal["error"] = "error"
+    status_code: int = 500
+    title: str = ""
+    message: str = ""
+    retriable: bool = False
+    retry_after_s: int | None = None
+    request_id: str = ""
+    support_code: str = ""
+
+
+@dataclass
 class Fault:
-    kind: str  # "server_error" | "unavailable" | "business_error" | "not_found"
+    kind: str  # "server_error" | "unavailable" | "business_error" | "not_found" | "rate_limit"
     detail: str = "Simulated fault"
+    retriable: bool = False
 
 
 @dataclass

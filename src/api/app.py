@@ -1,13 +1,14 @@
 import asyncio
 import os
 import time
+import uuid
 from contextlib import asynccontextmanager
 from dataclasses import asdict
 from pathlib import Path
 from typing import Awaitable, Callable
 
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse, RedirectResponse, Response
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from src.api.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
@@ -15,7 +16,7 @@ from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore
 from src.core.config import load_config, parse_data_set
-from src.core.models import Challenge, Fault, TemplateOnlyViewData
+from src.core.models import Challenge, ErrorViewData, Fault, RouteContext, TemplateOnlyViewData
 from src.frontend.renderer import render
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
@@ -27,9 +28,45 @@ _FAULT_TO_STATUS: dict[str, int] = {
     "unavailable": 503,
     "business_error": 409,
     "not_found": 404,
+    "rate_limit": 429,
 }
 
+_STATUS_TITLES: dict[int, str] = {
+    400: "Bad Request",
+    404: "Not Found",
+    406: "Not Acceptable",
+    409: "Business Error",
+    422: "Unprocessable",
+    429: "Too Many Requests",
+    500: "Server Error",
+    503: "Service Unavailable",
+}
+
+_API_PREFIXES = ("/challenges", "/match", "/resolve", "/health", "/metrics", "/static")
+
 _sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep
+
+
+def _make_request_id(request: Request) -> str:
+    return request.headers.get("x-request-id") or str(uuid.uuid4())
+
+
+def _is_api_request(request: Request) -> bool:
+    return request.url.path.startswith(_API_PREFIXES)
+
+
+def _render_plain_error(error: ErrorViewData) -> str:
+    retry = "<p>This error is temporary — you can retry the request.</p>" if error.retriable else ""
+    return (
+        "<!DOCTYPE html><html><head><meta charset=utf-8>"
+        f"<title>{error.status_code} {error.title}</title>"
+        "<style>body{font-family:sans-serif;padding:2rem;background:#002b36;color:#839496}"
+        ".code{font-size:3rem;color:#dc322f;font-weight:700}</style></head>"
+        f"<body><div class=code>{error.status_code}</div>"
+        f"<h1>{error.title}</h1><p>{error.message}</p>{retry}"
+        f"<p style='font-size:11px;color:#586e75'>Request ID: {error.request_id}</p>"
+        "</body></html>"
+    )
 
 
 def _negotiate(request: Request) -> str | None:
@@ -113,6 +150,51 @@ app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=str(_STATIC_DIR)), name="static")
 
 
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    request_id = _make_request_id(request)
+    retriable = exc.status_code in (503, 429)
+    title = _STATUS_TITLES.get(exc.status_code, "Error")
+    error_data = ErrorViewData(
+        status_code=exc.status_code,
+        title=title,
+        message=str(exc.detail),
+        retriable=retriable,
+        request_id=request_id,
+    )
+
+    if _is_api_request(request):
+        return JSONResponse(status_code=exc.status_code, content=asdict(error_data))
+
+    representation = _negotiate(request)
+    if representation == "json":
+        return JSONResponse(status_code=exc.status_code, content=asdict(error_data))
+
+    # HTML — try branded template with app context, fall back to plain
+    apps = getattr(request.app.state, "apps", [])
+    host = request.headers.get("host", "").split(":")[0]
+    matched_app = None
+    matched_env_id = None
+    for a in apps:
+        for env_id, env_obj in a.environments.items():
+            if env_obj.host == host:
+                matched_app = a
+                matched_env_id = env_id
+                break
+        if matched_app:
+            break
+
+    if matched_app:
+        try:
+            ctx = RouteContext(app_id=matched_app.id, route_id="", env_id=matched_env_id, params={})
+            html = render(matched_app, "shared/error", ctx, asdict(error_data))
+            return HTMLResponse(status_code=exc.status_code, content=html)
+        except Exception:
+            pass
+
+    return HTMLResponse(status_code=exc.status_code, content=_render_plain_error(error_data))
+
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
@@ -138,7 +220,11 @@ def match_endpoint(body: MatchRequest, request: Request):
 def set_challenge(app_id: str, env_id: str, route_id: str, body: dict, request: Request):
     fault = None
     if fault_data := body.get("fault"):
-        fault = Fault(kind=fault_data["kind"], detail=fault_data.get("detail", "Simulated fault"))
+        fault = Fault(
+            kind=fault_data["kind"],
+            detail=fault_data.get("detail", "Simulated fault"),
+            retriable=fault_data.get("retriable", False),
+        )
     challenge = Challenge(delay_ms=body.get("delay_ms", 0), fault=fault)
     request.app.state.service.set_challenge((app_id, env_id, route_id), challenge)
     return {"status": "set", "app": app_id, "env": env_id, "route": route_id}
