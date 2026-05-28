@@ -1,0 +1,182 @@
+[
+  {
+    "id": "opp001",
+    "name": "Garcia-Miles Deal",
+    "account_id": "018",
+    "amount": 930000,
+    "stage": "Qualification",
+    "close_date": "2026-10-05",
+    "owner": "Darryl Morgan"
+  },
+  {
+    "id": "opp002",
+    "name": "Ross-Blair Deal",
+    "account_id": "011",
+    "amount": 555000,
+    "stage": "Proposal",
+    "close_date": "2026-07-07",
+    "owner": "Christian Leblanc"
+  },
+  {
+    "id": "opp003",
+    "name": "Davis Inc Deal",
+    "account_id": "003",
+    "amount": 560000,
+    "stage": "Prospecting",
+    "close_date": "2026-09-05",
+    "owner": "Kristie Willis"
+  },
+  {
+    "id": "opp004",
+    "name": "Hoffman, Santiago and Jenkins Deal",
+    "account_id": "014",
+    "amount": 930000,
+    "stage": "Prospecting",
+    "close_date": "2026-07-24",
+    "owner": "Heather Lane"
+  },
+  {
+    "id": "opp005",
+    "name": "Moore Group Deal",
+    "account_id": "008",
+    "amount": 145000,
+    "stage": "Proposal",
+    "close_date": "2026-09-03",
+    "owner": "Donald Perez"
+  },
+  {
+    "id": "opp006",
+    "name": "Bruce-Villegas Deal",
+    "account_id": "020",
+    "amount": 795000,
+    "stage": "Closed Lost",
+    "close_date": "2026-03-12",
+    "owner": "Mary Steele"
+  },
+  {
+    "id": "opp007",
+    "name": "White Ltd Deal",
+    "account_id": "010",
+    "amount": 440000,
+    "stage": "Proposal",
+    "close_date": "2026-03-02",
+    "owner": "Charles Sandoval"
+  },
+  {
+    "id": "opp008",
+    "name": "Thomas Ltd Deal",
+    "account_id": "001",
+    "amount": 125000,
+    "stage": "Closed Lost",
+    "close_date": "2026-06-17",
+    "owner": "Jesse Moore"
+  },
+  {
+    "id": "opp009",
+    "name": "Griffith-Frank Deal",
+    "account_id": "019",
+    "amount": 770000,
+    "stage": "Prospecting",
+    "close_date": "2026-03-25",
+    "owner": "Paul Williams"
+  },
+  {
+    "id": "opp010",
+    "name": "Nelson Ltd Deal",
+    "account_id": "014",
+    "amount": 630000,
+    "stage": "Closed Won",
+    "close_date": "2026-10-11",
+    "owner": "Daniel Hunt"
+  },
+  {
+    "id": "opp011",
+    "name": "Jordan-Campbell Deal",
+    "account_id": "019",
+    "amount": 630000,
+    "stage": "Closed Won",
+    "close_date": "2026-08-03",
+    "owner": "James Greene"
+  },
+  {
+    "id": "opp012",
+    "name": "Harris and Sons Deal",
+    "account_id": "005",
+    "amount": 985000,
+    "stage": "Proposal",
+    "close_date": "2026-07-25",
+    "owner": "Adam Burgess"
+  },
+  {
+    "id": "opp013",
+    "name": "Anderson PLC Deal",
+    "account_id": "008",
+    "amount": 650000,
+    "stage": "Closed Won",
+    "close_date": "2026-08-27",
+    "owner": "Scott Williams"
+  },
+  {
+    "id": "opp014",
+    "name": "Stevens Inc Deal",
+    "account_id": "011",
+    "amount": 745000,
+    "stage": "Negotiation",
+    "close_date": "2026-09-22",
+    "owner": "Jennifer Wilson"
+  },
+  {
+    "id": "opp015",
+    "name": "Burch and Sons Deal",
+    "account_id": "020",
+    "amount": 595000,
+    "stage": "Closed Lost",
+    "close_date": "2026-08-31",
+    "owner": "Ryan Sanchez"
+  },
+  {
+    "id": "opp016",
+    "name": "Morales, Miller and Harrell Deal",
+    "account_id": "011",
+    "amount": 290000,
+    "stage": "Proposal",
+    "close_date": "2026-05-24",
+    "owner": "Mark Schmidt"
+  },
+  {
+    "id": "opp017",
+    "name": "Bullock LLC Deal",
+    "account_id": "012",
+    "amount": 940000,
+    "stage": "Closed Lost",
+    "close_date": "2026-05-13",
+    "owner": "Charles Gonzalez"
+  },
+  {
+    "id": "opp018",
+    "name": "Hernandez, Malone and Jones Deal",
+    "account_id": "016",
+    "amount": 600000,
+    "stage": "Closed Won",
+    "close_date": "2026-10-14",
+    "owner": "Sonia Day"
+  },
+  {
+    "id": "opp019",
+    "name": "Morris, Maddox and Stewart Deal",
+    "account_id": "015",
+    "amount": 95000,
+    "stage": "Negotiation",
+    "close_date": "2026-10-11",
+    "owner": "Rebecca Vargas"
+  },
+  {
+    "id": "opp020",
+    "name": "Romero-Collins Deal",
+    "account_id": "015",
+    "amount": 55000,
+    "stage": "Prospecting",
+    "close_date": "2026-09-03",
+    "owner": "Angela Lin"
+  }
+]

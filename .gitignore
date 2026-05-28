@@ -1,3 +1,5 @@
 tmp/
 .venv/
 uv.lock
+__pycache__/
+data/dynamic/

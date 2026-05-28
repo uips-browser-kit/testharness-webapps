@@ -1,0 +1,222 @@
+[
+  {
+    "employee_id": "EMP0001",
+    "first_name": "Hannah",
+    "last_name": "Phillips",
+    "email": "hannah.phillips@company.com",
+    "department": "Marketing",
+    "job_title": "Scientist, audiological",
+    "manager": "Hannah Phillips",
+    "hire_date": "2022-10-26",
+    "location": "South Joshuaview, DC"
+  },
+  {
+    "employee_id": "EMP0002",
+    "first_name": "Karen",
+    "last_name": "Johnson",
+    "email": "karen.johnson@company.com",
+    "department": "Marketing",
+    "job_title": "Television/film/video producer",
+    "manager": "Lisa Garcia",
+    "hire_date": "2016-07-01",
+    "location": "Stevenberg, AZ"
+  },
+  {
+    "employee_id": "EMP0003",
+    "first_name": "Lisa",
+    "last_name": "Garcia",
+    "email": "lisa.garcia@company.com",
+    "department": "Marketing",
+    "job_title": "IT trainer",
+    "manager": "Hannah Phillips",
+    "hire_date": "2021-07-11",
+    "location": "Tylerside, MI"
+  },
+  {
+    "employee_id": "EMP0004",
+    "first_name": "Miranda",
+    "last_name": "Stevenson",
+    "email": "miranda.stevenson@company.com",
+    "department": "Sales",
+    "job_title": "Investment banker, corporate",
+    "manager": "Karen Johnson",
+    "hire_date": "2019-07-13",
+    "location": "Port Williamchester, ND"
+  },
+  {
+    "employee_id": "EMP0005",
+    "first_name": "Michelle",
+    "last_name": "Newton",
+    "email": "michelle.newton@company.com",
+    "department": "Operations",
+    "job_title": "Chief Executive Officer",
+    "manager": "Lisa Garcia",
+    "hire_date": "2020-03-01",
+    "location": "Lake Martin, MN"
+  },
+  {
+    "employee_id": "EMP0006",
+    "first_name": "Anna",
+    "last_name": "Young",
+    "email": "anna.young@company.com",
+    "department": "HR",
+    "job_title": "Engineering geologist",
+    "manager": "Miranda Stevenson",
+    "hire_date": "2025-12-14",
+    "location": "North Elizabethmouth, IA"
+  },
+  {
+    "employee_id": "EMP0007",
+    "first_name": "Kristen",
+    "last_name": "Lindsey",
+    "email": "kristen.lindsey@company.com",
+    "department": "Finance",
+    "job_title": "Archaeologist",
+    "manager": "Lisa Garcia",
+    "hire_date": "2022-11-21",
+    "location": "South Jonathanport, AK"
+  },
+  {
+    "employee_id": "EMP0008",
+    "first_name": "Keith",
+    "last_name": "Beck",
+    "email": "keith.beck@company.com",
+    "department": "Legal",
+    "job_title": "Scientist, audiological",
+    "manager": "Miranda Stevenson",
+    "hire_date": "2024-09-06",
+    "location": "West Rachelborough, MD"
+  },
+  {
+    "employee_id": "EMP0009",
+    "first_name": "Sara",
+    "last_name": "Hughes",
+    "email": "sara.hughes@company.com",
+    "department": "Sales",
+    "job_title": "Chief Operating Officer",
+    "manager": "Karen Johnson",
+    "hire_date": "2025-07-21",
+    "location": "Lake Cameronborough, VI"
+  },
+  {
+    "employee_id": "EMP0010",
+    "first_name": "Sue",
+    "last_name": "Daugherty",
+    "email": "sue.daugherty@company.com",
+    "department": "Operations",
+    "job_title": "Civil Service administrator",
+    "manager": "Karen Johnson",
+    "hire_date": "2025-07-20",
+    "location": "Lucasland, WA"
+  },
+  {
+    "employee_id": "EMP0011",
+    "first_name": "Larry",
+    "last_name": "Arnold",
+    "email": "larry.arnold@company.com",
+    "department": "Marketing",
+    "job_title": "Aeronautical engineer",
+    "manager": "Miranda Stevenson",
+    "hire_date": "2022-01-17",
+    "location": "North Charlesburgh, WY"
+  },
+  {
+    "employee_id": "EMP0012",
+    "first_name": "Alexander",
+    "last_name": "King",
+    "email": "alexander.king@company.com",
+    "department": "HR",
+    "job_title": "Surveyor, insurance",
+    "manager": "Hannah Phillips",
+    "hire_date": "2026-03-08",
+    "location": "West Rickey, NV"
+  },
+  {
+    "employee_id": "EMP0013",
+    "first_name": "Christine",
+    "last_name": "Norman",
+    "email": "christine.norman@company.com",
+    "department": "Operations",
+    "job_title": "Police officer",
+    "manager": "Lisa Garcia",
+    "hire_date": "2016-09-08",
+    "location": "Nunezside, AL"
+  },
+  {
+    "employee_id": "EMP0014",
+    "first_name": "Molly",
+    "last_name": "Greer",
+    "email": "molly.greer@company.com",
+    "department": "Sales",
+    "job_title": "Textile designer",
+    "manager": "Hannah Phillips",
+    "hire_date": "2017-08-21",
+    "location": "Sarahville, LA"
+  },
+  {
+    "employee_id": "EMP0015",
+    "first_name": "Rhonda",
+    "last_name": "Bush",
+    "email": "rhonda.bush@company.com",
+    "department": "HR",
+    "job_title": "Training and development officer",
+    "manager": "Hannah Phillips",
+    "hire_date": "2021-03-11",
+    "location": "Jamestown, NJ"
+  },
+  {
+    "employee_id": "EMP0016",
+    "first_name": "Deborah",
+    "last_name": "Fischer",
+    "email": "deborah.fischer@company.com",
+    "department": "Marketing",
+    "job_title": "Social research officer, government",
+    "manager": "Karen Johnson",
+    "hire_date": "2018-09-21",
+    "location": "Roblesside, LA"
+  },
+  {
+    "employee_id": "EMP0017",
+    "first_name": "Amy",
+    "last_name": "Morrison",
+    "email": "amy.morrison@company.com",
+    "department": "Marketing",
+    "job_title": "Hydrogeologist",
+    "manager": "Lisa Garcia",
+    "hire_date": "2016-08-04",
+    "location": "North Bobby, OK"
+  },
+  {
+    "employee_id": "EMP0018",
+    "first_name": "Kimberly",
+    "last_name": "Brandt",
+    "email": "kimberly.brandt@company.com",
+    "department": "Operations",
+    "job_title": "Soil scientist",
+    "manager": "Hannah Phillips",
+    "hire_date": "2021-08-02",
+    "location": "Lake Judith, VA"
+  },
+  {
+    "employee_id": "EMP0019",
+    "first_name": "Kelly",
+    "last_name": "Thompson",
+    "email": "kelly.thompson@company.com",
+    "department": "Legal",
+    "job_title": "Engineer, mining",
+    "manager": "Miranda Stevenson",
+    "hire_date": "2025-02-13",
+    "location": "East Jack, RI"
+  },
+  {
+    "employee_id": "EMP0020",
+    "first_name": "Felicia",
+    "last_name": "Lopez",
+    "email": "felicia.lopez@company.com",
+    "department": "HR",
+    "job_title": "Engineer, biomedical",
+    "manager": "Hannah Phillips",
+    "hire_date": "2019-06-27",
+    "location": "Port Karenside, NH"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "opp001",
+    "name": "Mueller-Boyd Deal",
+    "account_id": "012",
+    "amount": 615000,
+    "stage": "Prospecting",
+    "close_date": "2026-10-09",
+    "owner": "Jodi Jones"
+  },
+  {
+    "id": "opp002",
+    "name": "Patrick Inc Deal",
+    "account_id": "001",
+    "amount": 445000,
+    "stage": "Closed Lost",
+    "close_date": "2026-04-23",
+    "owner": "Carly Riggs"
+  },
+  {
+    "id": "opp003",
+    "name": "Black PLC Deal",
+    "account_id": "006",
+    "amount": 430000,
+    "stage": "Closed Won",
+    "close_date": "2026-10-03",
+    "owner": "Crystal Sullivan"
+  },
+  {
+    "id": "opp004",
+    "name": "Lopez Ltd Deal",
+    "account_id": "014",
+    "amount": 515000,
+    "stage": "Prospecting",
+    "close_date": "2026-06-08",
+    "owner": "Jeffrey Smith"
+  },
+  {
+    "id": "opp005",
+    "name": "Harris Ltd Deal",
+    "account_id": "003",
+    "amount": 745000,
+    "stage": "Prospecting",
+    "close_date": "2026-06-02",
+    "owner": "Craig Wilson"
+  },
+  {
+    "id": "opp006",
+    "name": "Huffman, Rose and Fowler Deal",
+    "account_id": "020",
+    "amount": 505000,
+    "stage": "Closed Won",
+    "close_date": "2026-09-15",
+    "owner": "Hannah Bruce"
+  },
+  {
+    "id": "opp007",
+    "name": "Thompson, Nunez and Mcbride Deal",
+    "account_id": "020",
+    "amount": 765000,
+    "stage": "Prospecting",
+    "close_date": "2026-05-06",
+    "owner": "David Wilson"
+  },
+  {
+    "id": "opp008",
+    "name": "Steele-Dixon Deal",
+    "account_id": "014",
+    "amount": 770000,
+    "stage": "Qualification",
+    "close_date": "2026-09-11",
+    "owner": "John Medina"
+  },
+  {
+    "id": "opp009",
+    "name": "Arias, Thompson and Jackson Deal",
+    "account_id": "010",
+    "amount": 185000,
+    "stage": "Qualification",
+    "close_date": "2026-08-07",
+    "owner": "Lisa Glenn"
+  },
+  {
+    "id": "opp010",
+    "name": "Washington and Sons Deal",
+    "account_id": "013",
+    "amount": 725000,
+    "stage": "Closed Won",
+    "close_date": "2026-11-07",
+    "owner": "John Mckinney"
+  },
+  {
+    "id": "opp011",
+    "name": "Burns-Miller Deal",
+    "account_id": "001",
+    "amount": 980000,
+    "stage": "Qualification",
+    "close_date": "2026-07-26",
+    "owner": "Danny Roberts"
+  },
+  {
+    "id": "opp012",
+    "name": "Cunningham-Barton Deal",
+    "account_id": "016",
+    "amount": 710000,
+    "stage": "Closed Won",
+    "close_date": "2026-04-25",
+    "owner": "Debra Daniels"
+  },
+  {
+    "id": "opp013",
+    "name": "Weaver-Sherman Deal",
+    "account_id": "015",
+    "amount": 705000,
+    "stage": "Qualification",
+    "close_date": "2026-10-02",
+    "owner": "Ronald Potter"
+  },
+  {
+    "id": "opp014",
+    "name": "Golden-Johnson Deal",
+    "account_id": "009",
+    "amount": 455000,
+    "stage": "Prospecting",
+    "close_date": "2026-10-09",
+    "owner": "Autumn Cain"
+  },
+  {
+    "id": "opp015",
+    "name": "Cochran PLC Deal",
+    "account_id": "012",
+    "amount": 915000,
+    "stage": "Closed Won",
+    "close_date": "2026-10-04",
+    "owner": "Charles Clark"
+  },
+  {
+    "id": "opp016",
+    "name": "Trujillo PLC Deal",
+    "account_id": "012",
+    "amount": 690000,
+    "stage": "Proposal",
+    "close_date": "2026-05-24",
+    "owner": "Michael Roberts"
+  },
+  {
+    "id": "opp017",
+    "name": "Farley-Robertson Deal",
+    "account_id": "004",
+    "amount": 180000,
+    "stage": "Negotiation",
+    "close_date": "2026-03-29",
+    "owner": "Sharon Martinez DVM"
+  },
+  {
+    "id": "opp018",
+    "name": "Thomas LLC Deal",
+    "account_id": "008",
+    "amount": 980000,
+    "stage": "Closed Lost",
+    "close_date": "2026-09-16",
+    "owner": "Kenneth Adams MD"
+  },
+  {
+    "id": "opp019",
+    "name": "Jones-Norton Deal",
+    "account_id": "003",
+    "amount": 525000,
+    "stage": "Closed Won",
+    "close_date": "2026-07-19",
+    "owner": "Sherry Gibson"
+  },
+  {
+    "id": "opp020",
+    "name": "Murphy-Smith Deal",
+    "account_id": "003",
+    "amount": 945000,
+    "stage": "Negotiation",
+    "close_date": "2026-08-29",
+    "owner": "Rebecca Sanders"
+  }
+]

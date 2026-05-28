@@ -1,0 +1,322 @@
+[
+  {
+    "id": "001",
+    "name": "Gilbert PLC",
+    "industry": "Retail",
+    "phone": "298.907.9359x782",
+    "billing_address": {
+      "street": "1820 Jasmine Mill",
+      "city": "West Nathan",
+      "state": "LA",
+      "zip": "51280",
+      "country": "US"
+    },
+    "website": "https://schroeder-shelton.com",
+    "annual_revenue": 40500000,
+    "owner": "Felicia Rivera"
+  },
+  {
+    "id": "002",
+    "name": "Gregory, Mitchell and Cummings",
+    "industry": "Energy",
+    "phone": "+1-625-819-2546x291",
+    "billing_address": {
+      "street": "81685 Michael Falls Apt. 573",
+      "city": "East Eric",
+      "state": "LA",
+      "zip": "13757",
+      "country": "US"
+    },
+    "website": "https://wise.com",
+    "annual_revenue": 33900000,
+    "owner": "Ralph Anderson"
+  },
+  {
+    "id": "003",
+    "name": "Moore-White",
+    "industry": "Energy",
+    "phone": "001-592-670-6537x94738",
+    "billing_address": {
+      "street": "59774 Shaw Manor Apt. 392",
+      "city": "Brettfort",
+      "state": "VI",
+      "zip": "49156",
+      "country": "US"
+    },
+    "website": "https://villa.com",
+    "annual_revenue": 14600000,
+    "owner": "Christopher Cole"
+  },
+  {
+    "id": "004",
+    "name": "Hernandez, Kim and Potts",
+    "industry": "Finance",
+    "phone": "550.260.6853x615",
+    "billing_address": {
+      "street": "52204 Horton Dam Suite 790",
+      "city": "North Jonathanberg",
+      "state": "OH",
+      "zip": "95821",
+      "country": "US"
+    },
+    "website": "https://rose.com",
+    "annual_revenue": 6300000,
+    "owner": "Jason Bauer"
+  },
+  {
+    "id": "005",
+    "name": "Brown-Copeland",
+    "industry": "Retail",
+    "phone": "+1-580-889-3246x095",
+    "billing_address": {
+      "street": "185 Stephanie Plains",
+      "city": "South Morganton",
+      "state": "SC",
+      "zip": "51210",
+      "country": "US"
+    },
+    "website": "https://king-smith.com",
+    "annual_revenue": 17700000,
+    "owner": "Matthew Garcia"
+  },
+  {
+    "id": "006",
+    "name": "Moss, Cook and Williams",
+    "industry": "Manufacturing",
+    "phone": "727-672-2170x43030",
+    "billing_address": {
+      "street": "740 Justin Wall Apt. 541",
+      "city": "Samuelfurt",
+      "state": "WA",
+      "zip": "58138",
+      "country": "US"
+    },
+    "website": "https://morgan-lopez.info",
+    "annual_revenue": 18900000,
+    "owner": "Kelly Owen"
+  },
+  {
+    "id": "007",
+    "name": "Coleman, Jordan and Carney",
+    "industry": "Finance",
+    "phone": "+1-845-411-5447",
+    "billing_address": {
+      "street": "7059 Hill Turnpike Apt. 165",
+      "city": "North Douglas",
+      "state": "PA",
+      "zip": "89379",
+      "country": "US"
+    },
+    "website": "https://johnson-jones.com",
+    "annual_revenue": 18600000,
+    "owner": "Keith Jacobs"
+  },
+  {
+    "id": "008",
+    "name": "Cole, Watson and Wallace",
+    "industry": "Technology",
+    "phone": "001-228-456-5431",
+    "billing_address": {
+      "street": "681 Hampton Squares Suite 394",
+      "city": "Gonzalezberg",
+      "state": "PR",
+      "zip": "10207",
+      "country": "US"
+    },
+    "website": "https://thompson-reeves.com",
+    "annual_revenue": 41500000,
+    "owner": "Sarah Flores"
+  },
+  {
+    "id": "009",
+    "name": "Mckinney-Pierce",
+    "industry": "Healthcare",
+    "phone": "722-958-3132x3705",
+    "billing_address": {
+      "street": "114 Key Stravenue",
+      "city": "Foxchester",
+      "state": "GU",
+      "zip": "75854",
+      "country": "US"
+    },
+    "website": "https://martinez.com",
+    "annual_revenue": 23100000,
+    "owner": "Joseph Anderson"
+  },
+  {
+    "id": "010",
+    "name": "Bowman, White and Burch",
+    "industry": "Retail",
+    "phone": "601.582.4225x35841",
+    "billing_address": {
+      "street": "49818 Brittany Prairie Apt. 299",
+      "city": "Meganshire",
+      "state": "AZ",
+      "zip": "04219",
+      "country": "US"
+    },
+    "website": "https://williams.org",
+    "annual_revenue": 13600000,
+    "owner": "Pamela Butler"
+  },
+  {
+    "id": "011",
+    "name": "Johnson, Small and Gardner",
+    "industry": "Energy",
+    "phone": "573-764-7102x7677",
+    "billing_address": {
+      "street": "5562 Robertson Coves",
+      "city": "Johnville",
+      "state": "KY",
+      "zip": "59430",
+      "country": "US"
+    },
+    "website": "https://thomas.com",
+    "annual_revenue": 48500000,
+    "owner": "Luis Wright"
+  },
+  {
+    "id": "012",
+    "name": "Li PLC",
+    "industry": "Energy",
+    "phone": "532-578-7747x01687",
+    "billing_address": {
+      "street": "04797 Herrera Vista Apt. 624",
+      "city": "Kathrynstad",
+      "state": "AZ",
+      "zip": "53006",
+      "country": "US"
+    },
+    "website": "https://hudson.com",
+    "annual_revenue": 28400000,
+    "owner": "James Cole"
+  },
+  {
+    "id": "013",
+    "name": "Ramirez, Hays and Becker",
+    "industry": "Technology",
+    "phone": "(816)255-8523",
+    "billing_address": {
+      "street": "25787 Catherine Passage",
+      "city": "West Sarah",
+      "state": "MD",
+      "zip": "21800",
+      "country": "US"
+    },
+    "website": "https://ewing-stevenson.com",
+    "annual_revenue": 30400000,
+    "owner": "Ronald Patel"
+  },
+  {
+    "id": "014",
+    "name": "Hart, Wells and Smith",
+    "industry": "Healthcare",
+    "phone": "+1-916-494-0974x99309",
+    "billing_address": {
+      "street": "30913 Scott Manor Apt. 636",
+      "city": "Salaston",
+      "state": "VT",
+      "zip": "18599",
+      "country": "US"
+    },
+    "website": "https://clark.net",
+    "annual_revenue": 19300000,
+    "owner": "Christopher Barr"
+  },
+  {
+    "id": "015",
+    "name": "Payne-Lowe",
+    "industry": "Education",
+    "phone": "001-949-773-3484x3443",
+    "billing_address": {
+      "street": "8441 Huang Locks Suite 240",
+      "city": "Stephanieland",
+      "state": "MI",
+      "zip": "58484",
+      "country": "US"
+    },
+    "website": "https://scott.net",
+    "annual_revenue": 13900000,
+    "owner": "Melissa Taylor"
+  },
+  {
+    "id": "016",
+    "name": "Yang, Allen and Williams",
+    "industry": "Manufacturing",
+    "phone": "230.416.5712",
+    "billing_address": {
+      "street": "773 Morris Rue Apt. 193",
+      "city": "East Robertburgh",
+      "state": "PW",
+      "zip": "05264",
+      "country": "US"
+    },
+    "website": "https://french-lopez.com",
+    "annual_revenue": 44900000,
+    "owner": "Edwin Morrison"
+  },
+  {
+    "id": "017",
+    "name": "Mitchell-Hays",
+    "industry": "Manufacturing",
+    "phone": "772.687.4315x27420",
+    "billing_address": {
+      "street": "96685 Richard Court",
+      "city": "East Thomas",
+      "state": "IA",
+      "zip": "01396",
+      "country": "US"
+    },
+    "website": "https://reyes-griffin.com",
+    "annual_revenue": 48900000,
+    "owner": "Kevin Berry"
+  },
+  {
+    "id": "018",
+    "name": "Valdez-Schwartz",
+    "industry": "Technology",
+    "phone": "+1-417-942-6841x45933",
+    "billing_address": {
+      "street": "9568 Todd Unions",
+      "city": "Port John",
+      "state": "WV",
+      "zip": "78595",
+      "country": "US"
+    },
+    "website": "https://fox.com",
+    "annual_revenue": 4000000,
+    "owner": "Ashley Poole"
+  },
+  {
+    "id": "019",
+    "name": "Harris, Herrera and Martin",
+    "industry": "Education",
+    "phone": "971.239.7187x07286",
+    "billing_address": {
+      "street": "406 Velasquez Summit Apt. 910",
+      "city": "Cooperland",
+      "state": "ND",
+      "zip": "08398",
+      "country": "US"
+    },
+    "website": "https://andersen.com",
+    "annual_revenue": 14700000,
+    "owner": "Randy Cannon"
+  },
+  {
+    "id": "020",
+    "name": "Brewer, Fisher and Haney",
+    "industry": "Retail",
+    "phone": "466.518.2512x868",
+    "billing_address": {
+      "street": "47868 Morrow Gateway",
+      "city": "Reedview",
+      "state": "ID",
+      "zip": "95531",
+      "country": "US"
+    },
+    "website": "https://johnson.biz",
+    "annual_revenue": 31500000,
+    "owner": "Stacey Smith"
+  }
+]

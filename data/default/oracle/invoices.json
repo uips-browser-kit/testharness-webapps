@@ -1,0 +1,202 @@
+[
+  {
+    "invoice_number": "INV-0001",
+    "supplier_name": "Watts, Montgomery and Reynolds",
+    "amount": 381474.31,
+    "currency": "EUR",
+    "invoice_date": "2026-03-23",
+    "due_date": "2026-04-22",
+    "gl_account": "6664-779",
+    "status": "Cancelled"
+  },
+  {
+    "invoice_number": "INV-0002",
+    "supplier_name": "Hernandez-Serrano",
+    "amount": 468197.78,
+    "currency": "USD",
+    "invoice_date": "2026-03-07",
+    "due_date": "2026-04-06",
+    "gl_account": "1190-758",
+    "status": "Submitted"
+  },
+  {
+    "invoice_number": "INV-0003",
+    "supplier_name": "Christian-Booth",
+    "amount": 39750.96,
+    "currency": "EUR",
+    "invoice_date": "2026-03-25",
+    "due_date": "2026-04-24",
+    "gl_account": "6253-346",
+    "status": "Approved"
+  },
+  {
+    "invoice_number": "INV-0004",
+    "supplier_name": "Hunter PLC",
+    "amount": 337783.48,
+    "currency": "EUR",
+    "invoice_date": "2026-04-23",
+    "due_date": "2026-05-23",
+    "gl_account": "4850-180",
+    "status": "Paid"
+  },
+  {
+    "invoice_number": "INV-0005",
+    "supplier_name": "West, Gates and West",
+    "amount": 62736.63,
+    "currency": "GBP",
+    "invoice_date": "2026-04-02",
+    "due_date": "2026-05-02",
+    "gl_account": "1291-205",
+    "status": "Paid"
+  },
+  {
+    "invoice_number": "INV-0006",
+    "supplier_name": "Hawkins Inc",
+    "amount": 433514.11,
+    "currency": "GBP",
+    "invoice_date": "2026-04-06",
+    "due_date": "2026-05-06",
+    "gl_account": "5990-620",
+    "status": "Overdue"
+  },
+  {
+    "invoice_number": "INV-0007",
+    "supplier_name": "Powers, Clements and Cox",
+    "amount": 28955.28,
+    "currency": "EUR",
+    "invoice_date": "2026-05-02",
+    "due_date": "2026-06-01",
+    "gl_account": "6439-673",
+    "status": "Overdue"
+  },
+  {
+    "invoice_number": "INV-0008",
+    "supplier_name": "Moran-Cox",
+    "amount": 237757.14,
+    "currency": "USD",
+    "invoice_date": "2026-03-13",
+    "due_date": "2026-04-12",
+    "gl_account": "4633-102",
+    "status": "Approved"
+  },
+  {
+    "invoice_number": "INV-0009",
+    "supplier_name": "Brandt, Carter and Boyd",
+    "amount": 368600.13,
+    "currency": "USD",
+    "invoice_date": "2026-04-13",
+    "due_date": "2026-05-13",
+    "gl_account": "3689-604",
+    "status": "Submitted"
+  },
+  {
+    "invoice_number": "INV-0010",
+    "supplier_name": "Newton, Ortiz and King",
+    "amount": 103219.24,
+    "currency": "USD",
+    "invoice_date": "2026-02-12",
+    "due_date": "2026-03-14",
+    "gl_account": "7437-320",
+    "status": "Paid"
+  },
+  {
+    "invoice_number": "INV-0011",
+    "supplier_name": "Love Inc",
+    "amount": 397464.53,
+    "currency": "USD",
+    "invoice_date": "2026-02-12",
+    "due_date": "2026-03-14",
+    "gl_account": "3018-890",
+    "status": "Paid"
+  },
+  {
+    "invoice_number": "INV-0012",
+    "supplier_name": "Lawrence, Gordon and Maynard",
+    "amount": 2774.67,
+    "currency": "GBP",
+    "invoice_date": "2026-03-31",
+    "due_date": "2026-04-30",
+    "gl_account": "1795-666",
+    "status": "Paid"
+  },
+  {
+    "invoice_number": "INV-0013",
+    "supplier_name": "Webb, Romero and Morse",
+    "amount": 93405.88,
+    "currency": "GBP",
+    "invoice_date": "2026-02-10",
+    "due_date": "2026-03-12",
+    "gl_account": "3845-848",
+    "status": "Submitted"
+  },
+  {
+    "invoice_number": "INV-0014",
+    "supplier_name": "Sandoval-Obrien",
+    "amount": 169238.64,
+    "currency": "EUR",
+    "invoice_date": "2026-05-15",
+    "due_date": "2026-06-14",
+    "gl_account": "7859-723",
+    "status": "Cancelled"
+  },
+  {
+    "invoice_number": "INV-0015",
+    "supplier_name": "Hill LLC",
+    "amount": 154731.57,
+    "currency": "USD",
+    "invoice_date": "2026-02-20",
+    "due_date": "2026-03-22",
+    "gl_account": "3263-522",
+    "status": "Overdue"
+  },
+  {
+    "invoice_number": "INV-0016",
+    "supplier_name": "Hunt, Cameron and Kelley",
+    "amount": 165079.91,
+    "currency": "GBP",
+    "invoice_date": "2026-02-28",
+    "due_date": "2026-03-30",
+    "gl_account": "4560-305",
+    "status": "Submitted"
+  },
+  {
+    "invoice_number": "INV-0017",
+    "supplier_name": "Roberts, Reed and Chambers",
+    "amount": 372952.83,
+    "currency": "USD",
+    "invoice_date": "2026-03-10",
+    "due_date": "2026-04-09",
+    "gl_account": "9255-655",
+    "status": "Cancelled"
+  },
+  {
+    "invoice_number": "INV-0018",
+    "supplier_name": "Page-Hodges",
+    "amount": 295296.61,
+    "currency": "GBP",
+    "invoice_date": "2026-03-08",
+    "due_date": "2026-04-07",
+    "gl_account": "7839-790",
+    "status": "Cancelled"
+  },
+  {
+    "invoice_number": "INV-0019",
+    "supplier_name": "Mitchell, Boone and Stokes",
+    "amount": 274561.13,
+    "currency": "USD",
+    "invoice_date": "2026-02-03",
+    "due_date": "2026-03-05",
+    "gl_account": "7240-248",
+    "status": "Draft"
+  },
+  {
+    "invoice_number": "INV-0020",
+    "supplier_name": "Gonzalez and Sons",
+    "amount": 150769.87,
+    "currency": "EUR",
+    "invoice_date": "2026-03-04",
+    "due_date": "2026-04-03",
+    "gl_account": "3399-959",
+    "status": "Draft"
+  }
+]

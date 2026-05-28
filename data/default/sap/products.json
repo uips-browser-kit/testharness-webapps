@@ -1,0 +1,162 @@
+[
+  {
+    "material_number": "MAT0001",
+    "description": "Fully-configurable 5thgeneration knowledgebase",
+    "unit": "EA",
+    "price": 5909.9,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0002",
+    "description": "Grass-roots holistic Local Area Network",
+    "unit": "BOX",
+    "price": 6508.81,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0003",
+    "description": "Synergized 4thgeneration encoding",
+    "unit": "LT",
+    "price": 8013.76,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0004",
+    "description": "Enhanced methodical parallelism",
+    "unit": "BOX",
+    "price": 5735.44,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0005",
+    "description": "Fundamental value-added solution",
+    "unit": "EA",
+    "price": 4675.3,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0006",
+    "description": "Business-focused cohesive orchestration",
+    "unit": "KG",
+    "price": 3631.82,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0007",
+    "description": "Synergistic demand-driven flexibility",
+    "unit": "M",
+    "price": 8414.2,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0008",
+    "description": "Phased clear-thinking project",
+    "unit": "KG",
+    "price": 9854.1,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0009",
+    "description": "Function-based real-time workforce",
+    "unit": "LT",
+    "price": 4516.54,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0010",
+    "description": "Monitored logistical extranet",
+    "unit": "KG",
+    "price": 7651.38,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0011",
+    "description": "Secured hybrid paradigm",
+    "unit": "EA",
+    "price": 125.65,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0012",
+    "description": "Realigned secondary policy",
+    "unit": "BOX",
+    "price": 4636.38,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0013",
+    "description": "Polarized asymmetric Graphical User Interface",
+    "unit": "LT",
+    "price": 5332.35,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0014",
+    "description": "Streamlined transitional projection",
+    "unit": "LT",
+    "price": 3091.19,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0015",
+    "description": "Virtual disintermediate approach",
+    "unit": "BOX",
+    "price": 6625.84,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0016",
+    "description": "Synergized client-driven success",
+    "unit": "EA",
+    "price": 8153.37,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0017",
+    "description": "Operative impactful info-mediaries",
+    "unit": "EA",
+    "price": 9557.9,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0018",
+    "description": "Ergonomic global success",
+    "unit": "KG",
+    "price": 8764.81,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0019",
+    "description": "Synchronized heuristic middleware",
+    "unit": "LT",
+    "price": 2790.84,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0020",
+    "description": "Enterprise-wide explicit attitude",
+    "unit": "M",
+    "price": 2101.94,
+    "currency": "USD",
+    "category": "Services"
+  }
+]
