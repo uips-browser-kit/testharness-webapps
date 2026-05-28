@@ -32,6 +32,10 @@ from catalog_urls import (  # noqa: E402
     Route,
 )
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from src.core.config import load_config  # noqa: E402
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -193,7 +197,9 @@ def multi_app_config() -> dict:
 
 
 def full_config() -> dict:
-    return {"apps": [profile_yaml(app) for app in CATALOG_APPS]}
+    harness_yaml = Path(__file__).parent.parent / "harness.yaml"
+    apps = load_config(harness_yaml)
+    return {"apps": [profile_yaml(app) for app in apps]}
 
 
 def invalid_config_cases() -> dict[str, dict]:
