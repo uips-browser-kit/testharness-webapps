@@ -167,16 +167,8 @@ _MINIMAL_APP = {
     ],
 }
 
-_HOSTS_MINIMAL = [
-    {"host": "sf-dev.local", "service": "harness-api", "app": "salesforce", "environment": "dev"}
-]
-
-
 def minimal_config() -> dict:
-    return {
-        "apps": [_MINIMAL_APP],
-        "hosts": _HOSTS_MINIMAL,
-    }
+    return {"apps": [_MINIMAL_APP]}
 
 
 def multi_app_config() -> dict:
@@ -185,7 +177,7 @@ def multi_app_config() -> dict:
         "vendor": "Atlassian",
         "product": "Jira",
         "environments": {
-            "cloud": {"host": "company.atlassian.net", "base_path": "/"},
+            "cloud": {"host": "jira.company.atlassian.net", "base_path": "/"},
         },
         "routes": [
             {
@@ -197,28 +189,11 @@ def multi_app_config() -> dict:
             }
         ],
     }
-    return {
-        "apps": [_MINIMAL_APP, jira_app],
-        "hosts": _HOSTS_MINIMAL + [
-            {"host": "company.atlassian.net", "service": "harness-api", "app": "jira", "environment": "cloud"}
-        ],
-    }
+    return {"apps": [_MINIMAL_APP, jira_app]}
 
 
 def full_config() -> dict:
-    apps = [profile_yaml(app) for app in CATALOG_APPS]
-    hosts = []
-    for app in CATALOG_APPS:
-        for env_id, env in app.environments.items():
-            hosts.append(
-                {
-                    "host": env.host,
-                    "service": "harness-api",
-                    "app": app.id,
-                    "environment": env_id,
-                }
-            )
-    return {"apps": apps, "hosts": hosts}
+    return {"apps": [profile_yaml(app) for app in CATALOG_APPS]}
 
 
 def invalid_config_cases() -> dict[str, dict]:

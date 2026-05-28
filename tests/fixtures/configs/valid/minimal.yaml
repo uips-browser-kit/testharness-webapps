@@ -12,8 +12,3 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
-hosts:
-- host: sf-dev.local
-  service: harness-api
-  app: salesforce
-  environment: dev

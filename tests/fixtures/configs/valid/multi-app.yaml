@@ -17,7 +17,7 @@ apps:
   product: Jira
   environments:
     cloud:
-      host: company.atlassian.net
+      host: jira.company.atlassian.net
       base_path: /
   routes:
   - id: issue
@@ -25,12 +25,3 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
-hosts:
-- host: sf-dev.local
-  service: harness-api
-  app: salesforce
-  environment: dev
-- host: company.atlassian.net
-  service: harness-api
-  app: jira
-  environment: cloud
