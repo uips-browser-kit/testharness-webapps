@@ -1,0 +1,21 @@
+{
+	admin off
+}
+
+http://harness.local {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	reverse_proxy harness:8000
+}
+
+http://idp.local {
+	reverse_proxy idp:8080
+}
+
+http://login.salesforce.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "salesforce"
+	request_header X-Harness-Env "production"
+	reverse_proxy harness:8000
+}

@@ -6,6 +6,8 @@ requires-python = ">=3.12"
 dependencies = [
     "faker>=40.19.1",
     "pyyaml>=6.0.3",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
 ]
 
 [tool.uv]
