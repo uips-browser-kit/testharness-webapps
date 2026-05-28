@@ -110,6 +110,7 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         template=raw.get("template", ""),
         data_entity=raw.get("data_entity", ""),
         data_key_field=raw.get("data_key_field", ""),
+        data_key_param=raw.get("data_key_param", ""),
     )
 
 

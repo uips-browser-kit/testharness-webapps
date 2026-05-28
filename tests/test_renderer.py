@@ -99,16 +99,24 @@ def test_nonexistent_account_still_renders(client):
     assert "text/html" in r.headers["content-type"]
 
 
-# --- Routes without a template return JSON (transitional — all apps will get templates) ---
+# --- Additional app HTML rendering sanity checks ---
 
 
-def test_no_template_returns_json(client):
-    # dynamics/record has no template yet — JSON fallback path
+def test_sap_shell_renders_html(client):
     r = client.get(
-        "/main.aspx?appid=app-001&pagetype=entityrecord&id=001",
-        headers={"host": "org.crm.dynamics.com"},
+        "/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345",
+        headers={"host": "erp-dev.company.com"},
     )
     assert r.status_code == 200
-    body = r.json()
-    assert body["route"] == "record"
-    assert body["app"] == "dynamics"
+    assert "text/html" in r.headers["content-type"]
+    assert "Fiori" in r.text
+
+
+def test_jira_issue_renders_html(client):
+    r = client.get(
+        "/browse/ABC-123",
+        headers={"host": "jira.company.atlassian.net"},
+    )
+    assert r.status_code == 200
+    assert "text/html" in r.headers["content-type"]
+    assert "Jira" in r.text

@@ -1,0 +1,24 @@
+{% extends layout %}
+{% block title %}{% if record %}{{ record.first_name }} {{ record.last_name }}{% else %}Employee{% endif %} — {{ app_name }}{% endblock %}
+{% block content %}
+{% if record %}
+<div style="margin-bottom:1rem;">
+  <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">{{ record.first_name }} {{ record.last_name }}</h1>
+  <span class="badge">{{ record.department }}</span>
+</div>
+<table style="max-width:640px;">
+  <thead><tr><th colspan="2">Employee Profile</th></tr></thead>
+  <tbody>
+    <tr><td>Employee ID</td><td style="font-family:monospace;">{{ record.employee_id }}</td></tr>
+    <tr><td>Job Title</td><td>{{ record.job_title }}</td></tr>
+    <tr><td>Department</td><td>{{ record.department }}</td></tr>
+    <tr><td>Email</td><td>{{ record.email }}</td></tr>
+    <tr><td>Manager</td><td>{{ record.manager }}</td></tr>
+    <tr><td>Location</td><td>{{ record.location }}</td></tr>
+    <tr><td>Hire Date</td><td>{{ record.hire_date }}</td></tr>
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-red);">Employee not found.</p>
+{% endif %}
+{% endblock %}

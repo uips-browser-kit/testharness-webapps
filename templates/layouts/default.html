@@ -44,6 +44,16 @@
     </main>
   </div>
 
+  <footer style="flex-shrink:0;height:32px;display:flex;align-items:center;padding:0 1.25rem;background:var(--app-topbar-bg);border-top:1px solid var(--sol-base01);font-size:11px;color:var(--sol-base01);gap:1rem;">
+    <a href="https://github.com/uips-browser-kit/testharness-webapps" style="color:var(--sol-base01);">testharness-webapps</a>
+    <span>·</span>
+    <span>{{ app_name }}</span>
+    <span>·</span>
+    <span>{{ env_name }}</span>
+    <span style="flex:1;"></span>
+    {% block footer_extra %}{% endblock %}
+  </footer>
+
 </div>
 </body>
 </html>

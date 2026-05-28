@@ -38,10 +38,8 @@ def test_query_route_returns_match(client):
         headers={"host": "org.crm.dynamics.com"},
     )
     assert r.status_code == 200
-    body = r.json()
-    assert body["app"] == "dynamics"
-    assert body["env"] == "dev"
-    assert body["route"] == "record"
+    assert "text/html" in r.headers["content-type"]
+    assert "Dynamics" in r.text
 
 
 def test_unknown_host_returns_404(client):

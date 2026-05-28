@@ -1,0 +1,21 @@
+{% extends layout %}
+{% block title %}Home — {{ app_name }}{% endblock %}
+{% block content %}
+<h1 style="font-size:18px;font-weight:700;color:var(--app-primary);margin-bottom:1.5rem;">Home</h1>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:720px;">
+  <div style="background:var(--sol-base02);border-radius:4px;padding:1rem;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--sol-base1);margin-bottom:.5rem;">Employees</div>
+    <div style="font-size:16px;font-weight:600;color:var(--app-content-text);">
+      <a href="/home.htmld" style="color:var(--app-primary);">View All</a>
+    </div>
+  </div>
+  <div style="background:var(--sol-base02);border-radius:4px;padding:1rem;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--sol-base1);margin-bottom:.5rem;">Environment</div>
+    <div style="font-size:16px;font-weight:600;color:var(--app-content-text);">{{ env_name }}</div>
+  </div>
+  <div style="background:var(--sol-base02);border-radius:4px;padding:1rem;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--sol-base1);margin-bottom:.5rem;">App</div>
+    <div style="font-size:16px;font-weight:600;color:var(--app-content-text);">{{ app_name }}</div>
+  </div>
+</div>
+{% endblock %}

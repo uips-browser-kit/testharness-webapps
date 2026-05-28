@@ -1,0 +1,38 @@
+{% extends layout %}
+{% block title %}{% if record %}{{ record.order_number }}{% else %}Sales Order{% endif %} — {{ app_name }}{% endblock %}
+{% block content %}
+{% if record %}
+<div style="margin-bottom:1rem;">
+  <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">Sales Order {{ record.order_number }}</h1>
+  <span class="badge">{{ record.status }}</span>
+</div>
+<table style="max-width:640px;">
+  <thead><tr><th colspan="2">Order Header</th></tr></thead>
+  <tbody>
+    <tr><td>Customer</td><td>{{ record.customer_name }}</td></tr>
+    <tr><td>Order Date</td><td>{{ record.order_date }}</td></tr>
+    <tr><td>Delivery Date</td><td>{{ record.delivery_date }}</td></tr>
+    <tr><td>Status</td><td>{{ record.status }}</td></tr>
+    <tr><td>Total</td><td>{{ record.currency }} {{ "{:,.2f}".format(record.total) }}</td></tr>
+  </tbody>
+</table>
+<table style="max-width:720px;margin-top:1rem;">
+  <thead>
+    <tr><th>Material</th><th>Description</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr>
+  </thead>
+  <tbody>
+    {% for item in record.line_items %}
+    <tr>
+      <td style="font-family:monospace;">{{ item.material_number }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ "{:,.2f}".format(item.unit_price) }}</td>
+      <td>{{ "{:,.2f}".format(item.total) }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-red);">Sales order not found.</p>
+{% endif %}
+{% endblock %}
