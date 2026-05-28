@@ -1,0 +1,33 @@
+{% extends layout %}
+
+{% block title %}Accounts — {{ app_name }}{% endblock %}
+
+{% block content %}
+<div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem;">
+  <h1 style="font-size:18px; font-weight:700; color:var(--app-primary);">Accounts</h1>
+  <span class="badge">{{ records | length }} records</span>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Industry</th>
+      <th>Phone</th>
+      <th>Owner</th>
+      <th>Annual Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in records %}
+    <tr>
+      <td><a href="/lightning/r/Account/{{ r.id }}/view">{{ r.name }}</a></td>
+      <td>{{ r.industry }}</td>
+      <td>{{ r.phone }}</td>
+      <td>{{ r.owner }}</td>
+      <td>${{ "{:,.0f}".format(r.annual_revenue) }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

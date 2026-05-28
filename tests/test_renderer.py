@@ -99,14 +99,16 @@ def test_nonexistent_account_still_renders(client):
     assert "text/html" in r.headers["content-type"]
 
 
-# --- Routes without a template return JSON ---
+# --- Routes without a template return JSON (transitional — all apps will get templates) ---
 
 
 def test_no_template_returns_json(client):
+    # dynamics/record has no template yet — JSON fallback path
     r = client.get(
-        "/lightning/page/home",
-        headers={"host": "sf-dev.local"},
+        "/main.aspx?appid=app-001&pagetype=entityrecord&id=001",
+        headers={"host": "org.crm.dynamics.com"},
     )
     assert r.status_code == 200
     body = r.json()
-    assert body["route"] == "dashboard"
+    assert body["route"] == "record"
+    assert body["app"] == "dynamics"

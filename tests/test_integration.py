@@ -45,6 +45,10 @@ def _route_cases():
 def test_route_responds(app_id, route_id, env_id, url):
     r = httpx.get(url, timeout=TIMEOUT)
     assert r.status_code == 200
-    body = r.json()
-    assert body["app"] == app_id, f"expected app={app_id!r}, got {body['app']!r} ({url})"
-    assert body["env"] == env_id, f"expected env={env_id!r}, got {body['env']!r} ({url})"
+    ct = r.headers.get("content-type", "")
+    if "text/html" in ct:
+        assert len(r.text) > 0, f"empty HTML body for {url}"
+    else:
+        body = r.json()
+        assert body["app"] == app_id, f"expected app={app_id!r}, got {body['app']!r} ({url})"
+        assert body["env"] == env_id, f"expected env={env_id!r}, got {body['env']!r} ({url})"

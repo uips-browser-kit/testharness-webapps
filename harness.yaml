@@ -24,6 +24,13 @@ apps:
       route_id: account-detail
       href: /lightning/r/Account/{id}/view
   routes:
+  - id: account-list
+    path: /lightning/r/Account/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: account_list
+    data_entity: accounts
   - id: account-detail
     path: /lightning/r/Account/{id}/view
     pattern_type: path
@@ -37,6 +44,7 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
+    template: dashboard
 
 - id: dynamics
   vendor: Microsoft

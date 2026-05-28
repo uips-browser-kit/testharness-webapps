@@ -93,6 +93,10 @@ async def catch_all(request: Request, path: str):
         extra["record"] = request.app.state.data_loader.get_record(
             ctx.app_id, route.data_entity, route.data_key_field, key_value
         )
+    elif route.data_entity:
+        extra["records"] = request.app.state.data_loader.get_all(
+            ctx.app_id, route.data_entity
+        )
 
     html = render(matched_app, route.template, ctx, extra)
     return HTMLResponse(content=html)
