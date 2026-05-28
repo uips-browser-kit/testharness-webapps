@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from urllib.parse import unquote
 
 from src.core.models import App, PatternType
 
@@ -15,6 +16,7 @@ class MatchResult:
 
 
 def match(host: str, path: str, query: dict[str, str], apps: list[App]) -> MatchResult | None:
+    path = unquote(path)
     for app in apps:
         for env_id, env in app.environments.items():
             if env.host != host:
@@ -70,7 +72,7 @@ def _path_to_regex(path: str) -> tuple[re.Pattern, list[str]]:
     pattern = ""
     for i, part in enumerate(parts):
         if i % 2 == 0:
-            pattern += re.escape(part)
+            pattern += re.escape(unquote(part))
         else:
             names.append(part)
             pattern += "([^/]+)"

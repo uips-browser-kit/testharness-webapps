@@ -33,3 +33,29 @@ def test_match(case):
     assert result.route_id == case["expected_route"]
     assert result.env_id == case["expected_env"]
     assert result.params == case["expected_params"]
+
+
+def test_percent_encoded_static_segment_matches_decoded_path():
+    from src.core.models import App, Environment, PatternType, Route
+    app = App(
+        id="sharepoint",
+        vendor="Microsoft",
+        product="SharePoint",
+        environments={"cloud": Environment(host="tenant.sharepoint.com")},
+        routes=[
+            Route(
+                id="documents",
+                path="/sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx",
+                pattern_type=PatternType.PATH,
+            )
+        ],
+    )
+    result = match(
+        host="tenant.sharepoint.com",
+        path="/sites/HR/Shared Documents/Forms/AllItems.aspx",
+        query={},
+        apps=[app],
+    )
+    assert result is not None
+    assert result.route_id == "documents"
+    assert result.params["site_name"] == "HR"
