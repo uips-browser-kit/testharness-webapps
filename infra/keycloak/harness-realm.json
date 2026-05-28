@@ -1,0 +1,71 @@
+{
+  "realm": "harness",
+  "displayName": "Harness Test Platform",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": false,
+  "roles": {
+    "realm": [
+      {
+        "name": "harness-user",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "harness"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "browser-client",
+      "name": "Harness Browser Client",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://harness.local/*"
+      ],
+      "webOrigins": [
+        "http://harness.local"
+      ],
+      "protocol": "openid-connect"
+    },
+    {
+      "clientId": "service-client",
+      "name": "Harness Service Client",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "service-secret",
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "protocol": "openid-connect"
+    }
+  ],
+  "users": [
+    {
+      "username": "testuser",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "testuser@harness.local",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "testpass",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "harness-user"
+      ]
+    }
+  ]
+}
