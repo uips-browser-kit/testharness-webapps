@@ -1,0 +1,13 @@
+/* Tableau — Tableau Orange */
+:root {
+    --app-primary:             #e8762d;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #3c2110;
+    --app-topbar-text:         #f0ccb0;
+    --app-sidebar-bg:          #2b180c;
+    --app-sidebar-text:        #f0ccb0;
+    --app-sidebar-active:      #e8762d;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f9f9f9;
+    --app-content-text:        #1a1a1a;
+}

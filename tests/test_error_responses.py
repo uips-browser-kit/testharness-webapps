@@ -24,9 +24,8 @@ def test_200_route_matched(client):
         headers={"host": "sf-dev.local"},
     )
     assert r.status_code == 200
-    body = r.json()
-    assert body["app"] == "salesforce"
-    assert body["route"] == "account-detail"
+    assert "text/html" in r.headers["content-type"]
+    assert "salesforce" in r.text.lower()
 
 
 # --- 404 -----------------------------------------------------------------------

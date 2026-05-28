@@ -28,11 +28,8 @@ def test_path_route_returns_match(client):
         headers={"host": "sf-dev.local"},
     )
     assert r.status_code == 200
-    body = r.json()
-    assert body["app"] == "salesforce"
-    assert body["env"] == "dev"
-    assert body["route"] == "account-detail"
-    assert body["params"]["id"] == "001"
+    assert "text/html" in r.headers["content-type"]
+    assert "Lightning" in r.text
 
 
 def test_query_route_returns_match(client):

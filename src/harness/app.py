@@ -4,15 +4,18 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import Response
+from fastapi.responses import HTMLResponse, Response
+from fastapi.staticfiles import StaticFiles
 
 from src.core.config import load_config, parse_data_set
 from src.harness.data_loader import DataLoader
 from src.harness.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
+from src.harness.renderer import render
 from src.harness.router import MatchRequest, ResolveRequest, match_request, resolve_route, resolve_url
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
 _DATA_DIR = Path(__file__).parent.parent.parent / "data"
+_STATIC_DIR = Path(__file__).parent.parent.parent / "static"
 
 
 @asynccontextmanager
@@ -24,6 +27,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+app.mount("/static", StaticFiles(directory=str(_STATIC_DIR)), name="static")
 
 
 @app.get("/health")
@@ -72,9 +76,23 @@ async def catch_all(request: Request, path: str):
             status_code=status,
             duration=time.perf_counter() - start,
         )
-    return {
-        "app": ctx.app_id,
-        "env": ctx.env_id,
-        "route": ctx.route_id,
-        "params": ctx.params,
-    }
+    matched_app = next(a for a in request.app.state.apps if a.id == ctx.app_id)
+    route = matched_app.route(ctx.route_id)
+
+    if not route.template:
+        return {
+            "app": ctx.app_id,
+            "env": ctx.env_id,
+            "route": ctx.route_id,
+            "params": ctx.params,
+        }
+
+    extra: dict = {}
+    if route.data_entity and route.data_key_field:
+        key_value = ctx.params.get(route.data_key_field, "")
+        extra["record"] = request.app.state.data_loader.get_record(
+            ctx.app_id, route.data_entity, route.data_key_field, key_value
+        )
+
+    html = render(matched_app, route.template, ctx, extra)
+    return HTMLResponse(content=html)

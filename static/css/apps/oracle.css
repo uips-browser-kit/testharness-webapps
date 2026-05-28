@@ -1,0 +1,13 @@
+/* Oracle Fusion — Oracle Red */
+:root {
+    --app-primary:             #c74634;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #3a0c08;
+    --app-topbar-text:         #e8c5c0;
+    --app-sidebar-bg:          #2d0a07;
+    --app-sidebar-text:        #e8c5c0;
+    --app-sidebar-active:      #c74634;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #fafafa;
+    --app-content-text:        #1a1a1a;
+}

@@ -1,0 +1,13 @@
+/* SAP Fiori — SAP Blue */
+:root {
+    --app-primary:             #0070f2;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #354a5e;
+    --app-topbar-text:         #d1dce6;
+    --app-sidebar-bg:          #23303e;
+    --app-sidebar-text:        #d1dce6;
+    --app-sidebar-active:      #0070f2;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f7f7f7;
+    --app-content-text:        #1a1f2b;
+}

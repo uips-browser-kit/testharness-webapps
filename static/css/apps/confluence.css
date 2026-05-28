@@ -1,0 +1,13 @@
+/* Atlassian Confluence — Atlassian Blue (lighter tint vs Jira) */
+:root {
+    --app-primary:             #0052cc;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #253858;
+    --app-topbar-text:         #c1cfe0;
+    --app-sidebar-bg:          #1a2e45;
+    --app-sidebar-text:        #c1cfe0;
+    --app-sidebar-active:      #0052cc;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #ffffff;
+    --app-content-text:        #172b4d;
+}

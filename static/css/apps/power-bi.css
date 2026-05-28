@@ -1,0 +1,13 @@
+/* Microsoft Power BI — Power BI Yellow */
+:root {
+    --app-primary:             #f2c811;
+    --app-primary-text:        #1a1a1a;
+    --app-topbar-bg:           #1c1c1c;
+    --app-topbar-text:         #e8d89a;
+    --app-sidebar-bg:          #111111;
+    --app-sidebar-text:        #e8d89a;
+    --app-sidebar-active:      #f2c811;
+    --app-sidebar-active-text: #1a1a1a;
+    --app-content-bg:          #f0f0f0;
+    --app-content-text:        #1a1a1a;
+}

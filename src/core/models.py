@@ -30,6 +30,21 @@ class Route:
     query_params: list[str] = field(default_factory=list)
     server_visible: bool = True
     note: str = ""
+    template: str = ""
+    data_entity: str = ""
+    data_key_field: str = ""
+
+
+@dataclass
+class NavItem:
+    label: str
+    route_id: str
+    href: str
+    children: list[NavItem] = field(default_factory=list)
+
+    @property
+    def child_route_ids(self) -> set[str]:
+        return {c.route_id for c in self.children}
 
 
 @dataclass
@@ -39,6 +54,8 @@ class App:
     product: str
     environments: dict[str, Environment]
     routes: list[Route]
+    nav: list[NavItem] = field(default_factory=list)
+    layout: str = "layouts/default.html"
 
     def route(self, route_id: str) -> Route:
         for r in self.routes:

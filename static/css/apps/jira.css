@@ -1,0 +1,13 @@
+/* Atlassian Jira — Atlassian Blue */
+:root {
+    --app-primary:             #0052cc;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #0747a6;
+    --app-topbar-text:         #b3c7e6;
+    --app-sidebar-bg:          #0a1929;
+    --app-sidebar-text:        #b3c7e6;
+    --app-sidebar-active:      #0052cc;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f4f5f7;
+    --app-content-text:        #172b4d;
+}

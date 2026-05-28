@@ -1,0 +1,13 @@
+/* Workday — Workday Orange */
+:root {
+    --app-primary:             #f68b1f;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #1f2c3a;
+    --app-topbar-text:         #f0d8b8;
+    --app-sidebar-bg:          #172230;
+    --app-sidebar-text:        #f0d8b8;
+    --app-sidebar-active:      #f68b1f;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f5f5f5;
+    --app-content-text:        #1a1a1a;
+}

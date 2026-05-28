@@ -1,0 +1,13 @@
+/* Salesforce Lightning — Lightning Blue */
+:root {
+    --app-primary:             #0176d3;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #032d60;
+    --app-topbar-text:         #c9d9e8;
+    --app-sidebar-bg:          #16325c;
+    --app-sidebar-text:        #c9d9e8;
+    --app-sidebar-active:      #0176d3;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f3f3f3;
+    --app-content-text:        #181818;
+}

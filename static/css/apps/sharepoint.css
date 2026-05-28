@@ -1,0 +1,13 @@
+/* Microsoft SharePoint — Fluent Blue (SharePoint green accent) */
+:root {
+    --app-primary:             #0078d4;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #1b3a5c;
+    --app-topbar-text:         #c2d6ec;
+    --app-sidebar-bg:          #0f2233;
+    --app-sidebar-text:        #c2d6ec;
+    --app-sidebar-active:      #0078d4;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f8f8f8;
+    --app-content-text:        #1f1f1f;
+}
