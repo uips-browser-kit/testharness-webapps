@@ -1,187 +1,181 @@
 # Developer Setup
 
-## Purpose
-
-Define how to run the test platform locally.
-
 ## Prerequisites
 
-Required:
+| Tool | Minimum version | Install |
+|------|----------------|---------|
+| Python | 3.12 | [python.org](https://python.org) |
+| uv | latest | `pip install uv` |
+| just | latest | `winget install Casey.Just` |
+| Docker Desktop | latest | [docker.com](https://docker.com) |
 
-- Python 3.11+
-- Docker
-- Docker Compose
-- editable hosts file access
+## Clone and install
 
-## Repository shape
+Clone the parent workspace (not the sub-repo directly):
+
+```powershell
+git clone https://github.com/uips-browser-kit/uips-browser-kit
+cd uips-browser-kit
+uv sync
+```
+
+This installs all dependencies (faker, pyyaml, fastapi, uvicorn) into the shared workspace venv.
+
+## Repository layout
 
 ```text
-test-platform/
-  packages/
-    core/
-    cli/
-
-  services/
-    harness-api/
-
-  infra/
-    caddy/
-    keycloak/
-        harness-realm.json
-    prometheus/
-        prometheus.yml
-    docker-compose.yml
-
-  config/
-    harness.yaml
+uips-browser-kit/
+  pyproject.toml              ← workspace root
+  testharness-webapps/
+    harness.yaml              ← platform configuration (single source of truth)
+    Dockerfile
+    pyproject.toml
+    justfile
+    infra/
+      docker-compose.yml
+      caddy/Caddyfile
+      keycloak/harness-realm.json
+      prometheus/prometheus.yml
+    src/
+      harness/
+        app.py
+    scripts/
+      catalog_urls.py
+      generate_fixtures.py
+      generate_data.py
+    data/
+      default/                ← committed seed data (seed=42, count=20)
+      large/                  ← generated on demand
+      dynamic/                ← gitignored, random seed
+    tests/
+      fixtures/
+        apps/                 ← 12 app profile/resolve/match fixtures
+        configs/              ← valid and invalid harness.yaml examples
+    docs/
 ```
 
-## Local hosts
+## Hosts file
 
-The platform uses local hostnames to mimic enterprise environments.
+Add all entries to `C:\Windows\System32\drivers\etc\hosts` (requires admin).
 
-Example:
+Run once in an elevated PowerShell:
 
-```text
-127.0.0.1 sf-dev.local
-127.0.0.1 crm-dev.local
-127.0.0.1 idp.local
-127.0.0.1 metrics.local
+```powershell
+Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value @"
+
+# testharness-webapps
+127.0.0.1  harness.local
+127.0.0.1  idp.local
+127.0.0.1  analytics.company.com
+127.0.0.1  app.powerbi.com
+127.0.0.1  apps.company.com
+127.0.0.1  apps.powerapps.com
+127.0.0.1  confluence.company.atlassian.net
+127.0.0.1  dynamics.company.com
+127.0.0.1  erp-dev.company.com
+127.0.0.1  erp.company.com
+127.0.0.1  finance.company.com
+127.0.0.1  hr.company.com
+127.0.0.1  instance.service-now.com
+127.0.0.1  intranet.company.com
+127.0.0.1  jira.company.atlassian.net
+127.0.0.1  jira.company.com
+127.0.0.1  oracle-dev.company.com
+127.0.0.1  org.crm.dynamics.com
+127.0.0.1  salesforce.company.com
+127.0.0.1  server.tableau.com
+127.0.0.1  servicedesk.company.com
+127.0.0.1  sf-dev.local
+127.0.0.1  tableau.company.com
+127.0.0.1  tenant.sharepoint.com
+127.0.0.1  tenant.workday.com
+127.0.0.1  wiki.company.com
+"@
 ```
 
-## Services
+## Start the platform
 
-```text
-harness-api   → enterprise app mimics + /metrics endpoint
-keycloak      → OAuth/OIDC simulation
-prometheus    → metrics scraping and storage
-caddy         → local routing fabric
+```powershell
+docker compose -f testharness-webapps/infra/docker-compose.yml up --build -d
 ```
 
-## Ports
+Stop:
 
-```text
-harness-api   8000
-keycloak      8080
-prometheus    9090
-caddy         80 / 443
+```powershell
+docker compose -f testharness-webapps/infra/docker-compose.yml down
 ```
 
-## Docker startup
+## Services and ports
 
-Start the platform:
+| Service | Internal port | Host-exposed | Purpose |
+|---------|--------------|-------------|---------|
+| caddy | 80, 443 | 80, 443 | Reverse proxy, host routing, header injection |
+| harness | 8000 | no | App mimics, /health, /metrics |
+| idp (Keycloak) | 8080, 9000 | no | OAuth 2.0 / OIDC |
+| metrics (Prometheus) | 9090 | no | Metric scraping and storage |
 
-```bash
-docker compose -f infra/docker-compose.yml up --build
-```
-
-Stop the platform:
-
-```bash
-docker compose -f infra/docker-compose.yml down
-```
-
-## Python setup
-
-Create virtual environment:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-Install packages:
-
-```bash
-pip install -e packages/core
-pip install -e packages/cli
-```
-
-## CLI checks
-
-Validate config:
-
-```bash
-harness validate
-```
-
-Generate Caddy config:
-
-```bash
-harness generate-caddy
-```
-
-Generate Prometheus config:
-
-```bash
-harness generate-prometheus
-```
-
-Export Keycloak realm:
-
-```bash
-harness idp export
-```
-
-Import Keycloak realm:
-
-```bash
-harness idp import
-```
-
-Seed data:
-
-```bash
-harness seed
-```
-
-Run local platform:
-
-```bash
-harness run
-```
+All inter-service traffic stays on the `harness-net` Docker network. Only Caddy is reachable from the host.
 
 ## Expected URLs
 
-```text
-http://sf-dev.local          → Salesforce mimic (dev)
-http://crm-dev.local         → Dynamics mimic (dev)
-http://idp.local             → Keycloak login
-http://idp.local/admin       → Keycloak admin console
-http://metrics.local         → Prometheus UI
+### Platform
+
+| URL | Service |
+|-----|---------|
+| `http://harness.local/health` | Harness health check |
+| `http://idp.local/realms/harness/.well-known/openid-configuration` | Keycloak OIDC discovery |
+| `http://idp.local/admin` | Keycloak admin console (admin / admin) |
+
+### Enterprise app mimics
+
+| App | Environment | URL |
+|-----|-------------|-----|
+| Salesforce | dev | `http://sf-dev.local` |
+| Salesforce | prod | `http://salesforce.company.com` |
+| Dynamics 365 | dev | `http://org.crm.dynamics.com` |
+| Dynamics 365 | prod | `http://dynamics.company.com` |
+| ServiceNow | dev | `http://instance.service-now.com` |
+| ServiceNow | prod | `http://servicedesk.company.com` |
+| SAP Fiori | dev | `http://erp-dev.company.com` |
+| SAP Fiori | prod | `http://erp.company.com` |
+| Oracle Fusion | dev | `http://oracle-dev.company.com` |
+| Oracle Fusion | prod | `http://finance.company.com` |
+| Workday | dev | `http://tenant.workday.com` |
+| Workday | prod | `http://hr.company.com` |
+| Jira | cloud | `http://jira.company.atlassian.net` |
+| Jira | self-hosted | `http://jira.company.com` |
+| Confluence | cloud | `http://confluence.company.atlassian.net` |
+| Confluence | self-hosted | `http://wiki.company.com` |
+| SharePoint | cloud | `http://tenant.sharepoint.com` |
+| SharePoint | self-hosted | `http://intranet.company.com` |
+| Power BI | cloud | `http://app.powerbi.com` |
+| Power BI | self-hosted | `http://analytics.company.com` |
+| Tableau | cloud | `http://server.tableau.com` |
+| Tableau | self-hosted | `http://tableau.company.com` |
+| Power Apps | cloud | `http://apps.powerapps.com` |
+| Power Apps | self-hosted | `http://apps.company.com` |
+
+## Regenerate fixtures and data
+
+```powershell
+# Regenerate YAML test fixtures from catalog_urls.py
+uv run python testharness-webapps/scripts/generate_fixtures.py
+
+# Regenerate default seed data (seed=42, count=20)
+uv run python testharness-webapps/scripts/generate_data.py
+
+# Large data set
+uv run python testharness-webapps/scripts/generate_data.py --set large --count 200
+
+# Dynamic (random seed)
+uv run python testharness-webapps/scripts/generate_data.py --set dynamic --seed 0
 ```
 
-## Startup flow
+## Keycloak test credentials
 
-```text
-1. Edit hosts file
-2. Install Python packages
-3. Validate config (harness validate)
-4. Generate Caddy config (harness generate-caddy)
-5. Generate Prometheus config (harness generate-prometheus)
-6. Export realm (harness idp export)
-7. Start Docker Compose
-8. Open enterprise mimic URL
-```
-
-## Validation
-
-A local setup is valid when:
-
-* Docker services start successfully
-* Caddy routes hostnames correctly
-* harness-api renders enterprise pages
-* Keycloak serves OIDC discovery at `http://idp.local/realms/harness/.well-known/openid-configuration`
-* Keycloak admin console is reachable at `http://idp.local/admin`
-* Prometheus targets page shows harness-api as UP at `http://metrics.local/targets`
-* CLI validates configuration successfully
-
-## Non-goals
-
-This document does not define:
-
-* enterprise app behavior
-* URL contract rules
-* variant behavior
-* Keycloak realm configuration details
-* Prometheus metric definitions
+| Field | Value |
+|-------|-------|
+| Realm | `harness` |
+| Test user | `testuser` / `testpass` |
+| Service client | `service-client` / `service-secret` |
+| Admin console | `admin` / `admin` |

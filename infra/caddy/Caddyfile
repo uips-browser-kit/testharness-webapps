@@ -2,20 +2,230 @@
 	admin off
 }
 
+# Platform management
 http://harness.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	reverse_proxy harness:8000
 }
 
+# Identity provider
 http://idp.local {
 	reverse_proxy idp:8080
 }
 
-http://login.salesforce.com {
+# Salesforce — dev
+http://sf-dev.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "salesforce"
-	request_header X-Harness-Env "production"
+	request_header X-Harness-Env "dev"
+	reverse_proxy harness:8000
+}
+
+# Salesforce — prod
+http://salesforce.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "salesforce"
+	request_header X-Harness-Env "prod"
+	reverse_proxy harness:8000
+}
+
+# Dynamics 365 — dev
+http://org.crm.dynamics.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "dynamics"
+	request_header X-Harness-Env "dev"
+	reverse_proxy harness:8000
+}
+
+# Dynamics 365 — prod
+http://dynamics.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "dynamics"
+	request_header X-Harness-Env "prod"
+	reverse_proxy harness:8000
+}
+
+# ServiceNow — dev
+http://instance.service-now.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "servicenow"
+	request_header X-Harness-Env "dev"
+	reverse_proxy harness:8000
+}
+
+# ServiceNow — prod
+http://servicedesk.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "servicenow"
+	request_header X-Harness-Env "prod"
+	reverse_proxy harness:8000
+}
+
+# SAP Fiori — dev
+http://erp-dev.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "sap"
+	request_header X-Harness-Env "dev"
+	reverse_proxy harness:8000
+}
+
+# SAP Fiori — prod
+http://erp.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "sap"
+	request_header X-Harness-Env "prod"
+	reverse_proxy harness:8000
+}
+
+# Oracle Fusion — dev
+http://oracle-dev.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "oracle"
+	request_header X-Harness-Env "dev"
+	reverse_proxy harness:8000
+}
+
+# Oracle Fusion — prod
+http://finance.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "oracle"
+	request_header X-Harness-Env "prod"
+	reverse_proxy harness:8000
+}
+
+# Workday — dev
+http://tenant.workday.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "workday"
+	request_header X-Harness-Env "dev"
+	reverse_proxy harness:8000
+}
+
+# Workday — prod
+http://hr.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "workday"
+	request_header X-Harness-Env "prod"
+	reverse_proxy harness:8000
+}
+
+# Jira — cloud
+http://jira.company.atlassian.net {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "jira"
+	request_header X-Harness-Env "cloud"
+	reverse_proxy harness:8000
+}
+
+# Jira — self-hosted
+http://jira.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "jira"
+	request_header X-Harness-Env "self-hosted"
+	reverse_proxy harness:8000
+}
+
+# Confluence — cloud
+http://confluence.company.atlassian.net {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "confluence"
+	request_header X-Harness-Env "cloud"
+	reverse_proxy harness:8000
+}
+
+# Confluence — self-hosted
+http://wiki.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "confluence"
+	request_header X-Harness-Env "self-hosted"
+	reverse_proxy harness:8000
+}
+
+# SharePoint — cloud
+http://tenant.sharepoint.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "sharepoint"
+	request_header X-Harness-Env "cloud"
+	reverse_proxy harness:8000
+}
+
+# SharePoint — self-hosted
+http://intranet.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "sharepoint"
+	request_header X-Harness-Env "self-hosted"
+	reverse_proxy harness:8000
+}
+
+# Power BI — cloud
+http://app.powerbi.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "power-bi"
+	request_header X-Harness-Env "cloud"
+	reverse_proxy harness:8000
+}
+
+# Power BI — self-hosted
+http://analytics.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "power-bi"
+	request_header X-Harness-Env "self-hosted"
+	reverse_proxy harness:8000
+}
+
+# Tableau — cloud
+http://server.tableau.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "tableau"
+	request_header X-Harness-Env "cloud"
+	reverse_proxy harness:8000
+}
+
+# Tableau — self-hosted
+http://tableau.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "tableau"
+	request_header X-Harness-Env "self-hosted"
+	reverse_proxy harness:8000
+}
+
+# Power Apps — cloud
+http://apps.powerapps.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "power-apps"
+	request_header X-Harness-Env "cloud"
+	reverse_proxy harness:8000
+}
+
+# Power Apps — self-hosted
+http://apps.company.com {
+	request_header -X-Harness-App
+	request_header -X-Harness-Env
+	request_header X-Harness-App "power-apps"
+	request_header X-Harness-Env "self-hosted"
 	reverse_proxy harness:8000
 }
