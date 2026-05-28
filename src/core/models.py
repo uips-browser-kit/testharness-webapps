@@ -91,7 +91,16 @@ class ListViewData:
     detail_key_field: str = ""
 
 
-ViewData = DetailViewData | ListViewData
+@dataclass
+class TemplateOnlyViewData:
+    kind: Literal["template-only"] = "template-only"
+    app_id: str = ""
+    env_id: str = ""
+    route_id: str = ""
+    params: dict[str, str] = field(default_factory=dict)
+
+
+ViewData = DetailViewData | ListViewData | TemplateOnlyViewData
 
 
 @dataclass

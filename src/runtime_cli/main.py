@@ -14,7 +14,7 @@ from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore
 from src.core.config import load_config, parse_data_set
 from src.core.matcher import match
-from src.core.models import Challenge, DetailViewData, Fault, RouteContext
+from src.core.models import Challenge, DetailViewData, Fault, RouteContext, TemplateOnlyViewData
 from src.runtime_cli.formatters import print_json, print_view_table, view_to_dict
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
@@ -149,9 +149,8 @@ def view_data(
     view = service.prepare_view(app_obj, route_obj, ctx)
 
     if view is None:
-        data: dict = {"kind": "template-only", "message": "No data entity for this route"}
-    else:
-        data = view_to_dict(view)
+        view = TemplateOnlyViewData(app_id=app_id, env_id=env, route_id=route, params=params)
+    data = view_to_dict(view)
 
     if dump_context:
         data = {"context": asdict(ctx), "view": data}

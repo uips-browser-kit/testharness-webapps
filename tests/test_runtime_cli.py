@@ -133,6 +133,9 @@ def test_view_data_template_only_route():
     assert result.exit_code == 0
     data = json.loads(result.output)
     assert data["kind"] == "template-only"
+    assert data["app_id"] == "salesforce"
+    assert data["route_id"] == "dashboard"
+    assert "message" not in data
 
 
 def test_view_data_unknown_app_exits_2():

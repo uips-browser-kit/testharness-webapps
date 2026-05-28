@@ -15,7 +15,7 @@ from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore
 from src.core.config import load_config, parse_data_set
-from src.core.models import Challenge, Fault
+from src.core.models import Challenge, Fault, TemplateOnlyViewData
 from src.frontend.renderer import render
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
@@ -30,6 +30,50 @@ _FAULT_TO_STATUS: dict[str, int] = {
 }
 
 _sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep
+
+
+def _negotiate(request: Request) -> str | None:
+    """Return 'html', 'json', or None (→ 406 Not Acceptable)."""
+    fmt = request.query_params.get("format", "")
+    if fmt == "json":
+        return "json"
+    if fmt == "html":
+        return "html"
+
+    accept = request.headers.get("accept", "")
+    if not accept:
+        return "html"
+
+    best_html = -1.0
+    best_json = -1.0
+    has_any_supported = False
+
+    for item in accept.split(","):
+        parts = item.strip().split(";")
+        media_type = parts[0].strip().lower()
+        q = 1.0
+        for p in parts[1:]:
+            p = p.strip()
+            if p.startswith("q="):
+                try:
+                    q = float(p[2:])
+                except ValueError:
+                    pass
+        if media_type in ("text/html", "text/*"):
+            best_html = max(best_html, q)
+            has_any_supported = True
+        elif media_type in ("application/json", "application/*"):
+            best_json = max(best_json, q)
+            has_any_supported = True
+        elif media_type == "*/*":
+            best_html = max(best_html, q)
+            best_json = max(best_json, q)
+            has_any_supported = True
+
+    if not has_any_supported:
+        return None  # 406
+
+    return "json" if best_json > best_html else "html"
 
 
 def _harness_index(apps: list) -> HTMLResponse:
@@ -170,6 +214,21 @@ async def catch_all(request: Request, path: str):
             http_status = _FAULT_TO_STATUS.get(challenge.fault.kind, 500)
             raise HTTPException(status_code=http_status, detail=challenge.fault.detail)
 
+    representation = _negotiate(request)
+    if representation is None:
+        raise HTTPException(status_code=406, detail="Not Acceptable")
+
+    view = service.prepare_view(matched_app, route, ctx)
+
+    if representation == "json":
+        if view is not None:
+            return asdict(view)
+        return asdict(TemplateOnlyViewData(
+            app_id=ctx.app_id, env_id=ctx.env_id,
+            route_id=ctx.route_id, params=ctx.params,
+        ))
+
+    # HTML path — unchanged behaviour
     if not route.template:
         return {
             "app": ctx.app_id,
@@ -178,8 +237,6 @@ async def catch_all(request: Request, path: str):
             "params": ctx.params,
         }
 
-    view = service.prepare_view(matched_app, route, ctx)
     extra = {k: v for k, v in asdict(view).items() if k != "kind"} if view else {}
-
     html = render(matched_app, route.template, ctx, extra)
     return HTMLResponse(content=html)
