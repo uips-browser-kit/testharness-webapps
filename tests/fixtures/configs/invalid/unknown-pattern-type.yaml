@@ -9,6 +9,6 @@ apps:
   routes:
   - id: account-detail
     path: /lightning/r/Account/{id}/view
-    pattern_type: path
+    pattern_type: nonsense
     query_params: []
     server_visible: true

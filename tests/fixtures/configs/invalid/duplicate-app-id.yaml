@@ -12,16 +12,16 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
-- id: jira
-  vendor: Atlassian
-  product: Jira
+- id: salesforce
+  vendor: Salesforce
+  product: Lightning Duplicate
   environments:
-    cloud:
-      host: jira.company.atlassian.net
+    dev:
+      host: sf-dev2.local
       base_path: /
   routes:
-  - id: issue
-    path: /browse/{issue_key}
+  - id: account-detail
+    path: /lightning/r/Account/{id}/view
     pattern_type: path
     query_params: []
     server_visible: true

@@ -28,11 +28,35 @@ from catalog_urls import SAMPLE_PARAMS  # noqa: E402
 # Helpers
 # ---------------------------------------------------------------------------
 
-_INDUSTRIES = ["Technology", "Finance", "Healthcare", "Retail", "Manufacturing", "Energy", "Education"]
-_OPP_STAGES = ["Prospecting", "Qualification", "Proposal", "Negotiation", "Closed Won", "Closed Lost"]
+_INDUSTRIES = [
+    "Technology",
+    "Finance",
+    "Healthcare",
+    "Retail",
+    "Manufacturing",
+    "Energy",
+    "Education",
+]
+_OPP_STAGES = [
+    "Prospecting",
+    "Qualification",
+    "Proposal",
+    "Negotiation",
+    "Closed Won",
+    "Closed Lost",
+]
 _INC_CATEGORIES = ["Software", "Hardware", "Network", "Security", "Database", "Other"]
 _INC_STATES = ["New", "In Progress", "On Hold", "Resolved", "Closed"]
-_DEPARTMENTS = ["Engineering", "Sales", "Marketing", "Finance", "HR", "Legal", "Operations", "Product"]
+_DEPARTMENTS = [
+    "Engineering",
+    "Sales",
+    "Marketing",
+    "Finance",
+    "HR",
+    "Legal",
+    "Operations",
+    "Product",
+]
 _ISSUE_TYPES = ["Bug", "Story", "Task", "Epic", "Sub-task"]
 _ISSUE_STATUSES = ["To Do", "In Progress", "In Review", "Done"]
 _ISSUE_PRIORITIES = ["Highest", "High", "Medium", "Low", "Lowest"]
@@ -59,6 +83,7 @@ def _write(path: Path, data: list | dict) -> None:
 # ---------------------------------------------------------------------------
 # CRM — Salesforce + Dynamics 365
 # ---------------------------------------------------------------------------
+
 
 def gen_accounts(fake: Faker, count: int, anchor_id: str | None = None) -> list[dict]:
     def _record(uid: str) -> dict:
@@ -89,15 +114,17 @@ def gen_contacts(fake: Faker, count: int, account_ids: list[str]) -> list[dict]:
     records = []
     for i in range(count):
         first, last = fake.first_name(), fake.last_name()
-        records.append({
-            "id": f"c{i + 1:03d}",
-            "first_name": first,
-            "last_name": last,
-            "email": f"{first.lower()}.{last.lower()}@{fake.domain_name()}",
-            "phone": fake.phone_number(),
-            "title": fake.job(),
-            "account_id": fake.random_element(account_ids),
-        })
+        records.append(
+            {
+                "id": f"c{i + 1:03d}",
+                "first_name": first,
+                "last_name": last,
+                "email": f"{first.lower()}.{last.lower()}@{fake.domain_name()}",
+                "phone": fake.phone_number(),
+                "title": fake.job(),
+                "account_id": fake.random_element(account_ids),
+            }
+        )
     return records
 
 
@@ -105,21 +132,24 @@ def gen_opportunities(fake: Faker, count: int, account_ids: list[str]) -> list[d
     today = date.today()
     records = []
     for i in range(count):
-        records.append({
-            "id": f"opp{i + 1:03d}",
-            "name": f"{fake.company()} Deal",
-            "account_id": fake.random_element(account_ids),
-            "amount": fake.random_int(min=2, max=200) * 5_000,
-            "stage": fake.random_element(_OPP_STAGES),
-            "close_date": today + timedelta(days=fake.random_int(min=-90, max=180)),
-            "owner": fake.name(),
-        })
+        records.append(
+            {
+                "id": f"opp{i + 1:03d}",
+                "name": f"{fake.company()} Deal",
+                "account_id": fake.random_element(account_ids),
+                "amount": fake.random_int(min=2, max=200) * 5_000,
+                "stage": fake.random_element(_OPP_STAGES),
+                "close_date": today + timedelta(days=fake.random_int(min=-90, max=180)),
+                "owner": fake.name(),
+            }
+        )
     return records
 
 
 # ---------------------------------------------------------------------------
 # ITSM — ServiceNow
 # ---------------------------------------------------------------------------
+
 
 def gen_incidents(fake: Faker, count: int, anchor_sys_id: str | None = None) -> list[dict]:
     def _record(sys_id: str, n: int) -> dict:
@@ -147,6 +177,7 @@ def gen_incidents(fake: Faker, count: int, anchor_sys_id: str | None = None) -> 
 # ERP / Sales — SAP Fiori
 # ---------------------------------------------------------------------------
 
+
 def gen_products(fake: Faker, count: int) -> list[dict]:
     return [
         {
@@ -173,13 +204,15 @@ def gen_sales_orders(
         for _ in range(fake.random_int(min=1, max=5)):
             p = fake.random_element(products)
             qty = fake.random_int(min=1, max=50)
-            items.append({
-                "material_number": p["material_number"],
-                "description": p["description"],
-                "quantity": qty,
-                "unit_price": p["price"],
-                "total": round(p["price"] * qty, 2),
-            })
+            items.append(
+                {
+                    "material_number": p["material_number"],
+                    "description": p["description"],
+                    "quantity": qty,
+                    "unit_price": p["price"],
+                    "total": round(p["price"] * qty, 2),
+                }
+            )
         return {
             "order_number": order_number,
             "customer_name": fake.company(),
@@ -201,20 +234,23 @@ def gen_sales_orders(
 # Finance — Oracle Fusion
 # ---------------------------------------------------------------------------
 
+
 def gen_invoices(fake: Faker, count: int) -> list[dict]:
     records = []
     for i in range(count):
         invoice_date = date.today() - timedelta(days=fake.random_int(min=0, max=120))
-        records.append({
-            "invoice_number": f"INV-{i + 1:04d}",
-            "supplier_name": fake.company(),
-            "amount": fake.pyfloat(min_value=500.0, max_value=500_000.0, right_digits=2),
-            "currency": fake.random_element(["USD", "EUR", "GBP"]),
-            "invoice_date": invoice_date,
-            "due_date": invoice_date + timedelta(days=30),
-            "gl_account": f"{fake.random_int(min=1000, max=9999)}-{fake.random_int(min=100, max=999)}",
-            "status": fake.random_element(_INVOICE_STATUSES),
-        })
+        records.append(
+            {
+                "invoice_number": f"INV-{i + 1:04d}",
+                "supplier_name": fake.company(),
+                "amount": fake.pyfloat(min_value=500.0, max_value=500_000.0, right_digits=2),
+                "currency": fake.random_element(["USD", "EUR", "GBP"]),
+                "invoice_date": invoice_date,
+                "due_date": invoice_date + timedelta(days=30),
+                "gl_account": f"{fake.random_int(min=1000, max=9999)}-{fake.random_int(min=100, max=999)}",
+                "status": fake.random_element(_INVOICE_STATUSES),
+            }
+        )
     return records
 
 
@@ -222,9 +258,10 @@ def gen_invoices(fake: Faker, count: int) -> list[dict]:
 # HR — Workday
 # ---------------------------------------------------------------------------
 
+
 def gen_employees(fake: Faker, count: int) -> list[dict]:
     names = [(fake.first_name(), fake.last_name()) for _ in range(count)]
-    manager_pool = [f"{f} {l}" for f, l in names[: max(1, count // 5)]]
+    manager_pool = [f"{first} {last}" for first, last in names[: max(1, count // 5)]]
     return [
         {
             "employee_id": f"EMP{i + 1:04d}",
@@ -275,6 +312,7 @@ def gen_issues(fake: Faker, count: int, anchor_key: str | None = None) -> list[d
 # Knowledge — Confluence
 # ---------------------------------------------------------------------------
 
+
 def gen_pages(
     fake: Faker,
     count: int,
@@ -304,28 +342,32 @@ def gen_pages(
 # Documents — SharePoint
 # ---------------------------------------------------------------------------
 
+
 def gen_documents(fake: Faker, count: int, anchor_site_name: str | None = None) -> list[dict]:
     site = anchor_site_name or "HR"
     records = []
     for i in range(count):
         ct = fake.random_element(list(_CONTENT_TYPES))
         ext = _CONTENT_TYPES[ct]
-        records.append({
-            "id": f"doc{i + 1:04d}",
-            "filename": f"{fake.word().capitalize()}-{fake.random_int(min=2020, max=2026)}{ext}",
-            "content_type": ct,
-            "author": fake.name(),
-            "modified_date": fake.date_between(start_date="-2y", end_date="today"),
-            "size_bytes": fake.random_int(min=1024, max=10_485_760),
-            "site_name": site,
-            "library": "Shared Documents",
-        })
+        records.append(
+            {
+                "id": f"doc{i + 1:04d}",
+                "filename": f"{fake.word().capitalize()}-{fake.random_int(min=2020, max=2026)}{ext}",
+                "content_type": ct,
+                "author": fake.name(),
+                "modified_date": fake.date_between(start_date="-2y", end_date="today"),
+                "size_bytes": fake.random_int(min=1024, max=10_485_760),
+                "site_name": site,
+                "library": "Shared Documents",
+            }
+        )
     return records
 
 
 # ---------------------------------------------------------------------------
 # Analytics — Power BI + Tableau (shared)
 # ---------------------------------------------------------------------------
+
 
 def gen_sales_metrics(fake: Faker, count: int) -> list[dict]:
     years = [2024, 2025, 2026]
@@ -346,14 +388,18 @@ def gen_sales_metrics(fake: Faker, count: int) -> list[dict]:
 # Main
 # ---------------------------------------------------------------------------
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate JSON test data for catalog apps.")
-    parser.add_argument("--set", default="default", dest="set_name", metavar="NAME",
-                        help="Output set name (default: default)")
-    parser.add_argument("--seed", type=int, default=42,
-                        help="Faker seed; 0 = random (default: 42)")
-    parser.add_argument("--count", type=int, default=20,
-                        help="Records per entity (default: 20)")
+    parser.add_argument(
+        "--set",
+        default="default",
+        dest="set_name",
+        metavar="NAME",
+        help="Output set name (default: default)",
+    )
+    parser.add_argument("--seed", type=int, default=42, help="Faker seed; 0 = random (default: 42)")
+    parser.add_argument("--count", type=int, default=20, help="Records per entity (default: 20)")
     args = parser.parse_args()
 
     seed = random.randint(1, 999_999) if args.seed == 0 else args.seed
@@ -367,26 +413,30 @@ def main() -> None:
     # CRM — Salesforce
     sf_accounts = gen_accounts(fake, args.count, anchor_id=anchors.get("id"))
     sf_ids = [a["id"] for a in sf_accounts]
-    _write(root / "salesforce" / "accounts.json",     sf_accounts)
-    _write(root / "salesforce" / "contacts.json",     gen_contacts(fake, args.count, sf_ids))
+    _write(root / "salesforce" / "accounts.json", sf_accounts)
+    _write(root / "salesforce" / "contacts.json", gen_contacts(fake, args.count, sf_ids))
     _write(root / "salesforce" / "opportunities.json", gen_opportunities(fake, args.count, sf_ids))
 
     # CRM — Dynamics 365 (same domain, independent records)
     dyn_accounts = gen_accounts(fake, args.count, anchor_id=anchors.get("id"))
     dyn_ids = [a["id"] for a in dyn_accounts]
-    _write(root / "dynamics" / "accounts.json",      dyn_accounts)
-    _write(root / "dynamics" / "contacts.json",      gen_contacts(fake, args.count, dyn_ids))
+    _write(root / "dynamics" / "accounts.json", dyn_accounts)
+    _write(root / "dynamics" / "contacts.json", gen_contacts(fake, args.count, dyn_ids))
     _write(root / "dynamics" / "opportunities.json", gen_opportunities(fake, args.count, dyn_ids))
 
     # ITSM — ServiceNow
-    _write(root / "servicenow" / "incidents.json",
-           gen_incidents(fake, args.count, anchor_sys_id=anchors.get("sys_id")))
+    _write(
+        root / "servicenow" / "incidents.json",
+        gen_incidents(fake, args.count, anchor_sys_id=anchors.get("sys_id")),
+    )
 
     # ERP / Sales — SAP
     products = gen_products(fake, args.count)
-    _write(root / "sap" / "products.json",     products)
-    _write(root / "sap" / "sales_orders.json",
-           gen_sales_orders(fake, args.count, products, anchor_order_number=anchors.get("so")))
+    _write(root / "sap" / "products.json", products)
+    _write(
+        root / "sap" / "sales_orders.json",
+        gen_sales_orders(fake, args.count, products, anchor_order_number=anchors.get("so")),
+    )
 
     # Finance — Oracle
     _write(root / "oracle" / "invoices.json", gen_invoices(fake, args.count))
@@ -395,28 +445,39 @@ def main() -> None:
     _write(root / "workday" / "employees.json", gen_employees(fake, args.count))
 
     # Issue tracking — Jira
-    _write(root / "jira" / "issues.json",
-           gen_issues(fake, args.count, anchor_key=anchors.get("issue_key")))
+    _write(
+        root / "jira" / "issues.json",
+        gen_issues(fake, args.count, anchor_key=anchors.get("issue_key")),
+    )
 
     # Knowledge — Confluence
-    _write(root / "confluence" / "pages.json",
-           gen_pages(fake, args.count,
-                     anchor_page_id=anchors.get("page_id"),
-                     anchor_space_key=anchors.get("space_key")))
+    _write(
+        root / "confluence" / "pages.json",
+        gen_pages(
+            fake,
+            args.count,
+            anchor_page_id=anchors.get("page_id"),
+            anchor_space_key=anchors.get("space_key"),
+        ),
+    )
 
     # Documents — SharePoint
-    _write(root / "sharepoint" / "documents.json",
-           gen_documents(fake, args.count, anchor_site_name=anchors.get("site_name")))
+    _write(
+        root / "sharepoint" / "documents.json",
+        gen_documents(fake, args.count, anchor_site_name=anchors.get("site_name")),
+    )
 
     # Analytics — Power BI + Tableau (shared metrics, 4× count for BI row volume)
     metrics = gen_sales_metrics(fake, args.count * 4)
-    _write(root / "power-bi" / "sales_metrics.json",  metrics)
-    _write(root / "tableau"  / "sales_metrics.json",  metrics)
+    _write(root / "power-bi" / "sales_metrics.json", metrics)
+    _write(root / "tableau" / "sales_metrics.json", metrics)
 
     # LOB orders — Power Apps (reuses sales order model)
     pa_products = gen_products(fake, args.count)
-    _write(root / "power-apps" / "sales_orders.json",
-           gen_sales_orders(fake, args.count, pa_products, anchor_order_number=anchors.get("so")))
+    _write(
+        root / "power-apps" / "sales_orders.json",
+        gen_sales_orders(fake, args.count, pa_products, anchor_order_number=anchors.get("so")),
+    )
 
 
 if __name__ == "__main__":
