@@ -9,3 +9,19 @@ cases:
   params:
     sys_id: abc123def456
   expected_url: http://servicenow-prod.local/now/workspace/agent/record/incident/abc123def456
+- route_id: incident-list
+  env_id: dev
+  params: {}
+  expected_url: http://servicenow-dev.local/now/workspace/agent/list/incident
+- route_id: incident-list
+  env_id: prod
+  params: {}
+  expected_url: http://servicenow-prod.local/now/workspace/agent/list/incident
+- route_id: home
+  env_id: dev
+  params: {}
+  expected_url: http://servicenow-dev.local/now/workspace
+- route_id: home
+  env_id: prod
+  params: {}
+  expected_url: http://servicenow-prod.local/now/workspace

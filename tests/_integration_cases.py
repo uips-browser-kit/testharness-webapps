@@ -19,10 +19,14 @@ _SAMPLE = {
 # app_id -> list of (route_id, data_file, field_map, fixed_params)
 # field_map: {route_param: data_record_field}
 _DATA_MAP: dict[str, list[tuple[str, str, dict[str, str], dict[str, str]]]] = {
-    "salesforce": [("account-detail", "accounts.json", {"id": "id"}, {})],
+    "salesforce": [
+        ("account-detail", "accounts.json", {"id": "id"}, {}),
+        ("contact-detail", "contacts.json", {"id": "id"}, {}),
+        ("opportunity-detail", "opportunities.json", {"id": "id"}, {}),
+    ],
     "dynamics": [
         (
-            "record",
+            "account-detail",
             "accounts.json",
             {"id": "id"},
             {"appid": "app-001", "pagetype": "entityrecord"},
@@ -30,12 +34,20 @@ _DATA_MAP: dict[str, list[tuple[str, str, dict[str, str], dict[str, str]]]] = {
     ],
     "servicenow": [("incident", "incidents.json", {"sys_id": "sys_id"}, {})],
     "sap": [("shell", "sales_orders.json", {"so": "order_number"}, {"sap-client": "100"})],
+    "oracle": [
+        (
+            "invoice-detail",
+            "invoices.json",
+            {"invoice_number": "invoice_number"},
+            {"_adf.ctrl-state": "state-xyz"},
+        )
+    ],
     "workday": [("task", "employees.json", {"id": "employee_id"}, {"redirect": "n"})],
     "jira": [("issue", "issues.json", {"issue_key": "key"}, {})],
     "confluence": [
         ("page", "pages.json", {"space_key": "space_key", "page_id": "page_id"}, {})
     ],
-    "sharepoint": [("documents", "documents.json", {"site_name": "site_name"}, {})],
+    "sharepoint": [("document-list", "documents.json", {"site_name": "site_name"}, {})],
     "power-bi": [
         (
             "report",

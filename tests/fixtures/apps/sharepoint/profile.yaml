@@ -10,9 +10,20 @@ app:
       host: sharepoint-onprem.local
       base_path: /
   routes:
-  - id: documents
+  - id: document-detail
+    path: /sites/{site_name}/Shared%20Documents/Forms/DispForm.aspx
+    pattern_type: path
+    query_params:
+    - doc_id
+    server_visible: true
+  - id: document-list
     path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
     pattern_type: path
     query_params: []
     server_visible: true
     note: URL-encoded space is a static segment — preserved as-is
+  - id: home
+    path: /sites/{site_name}
+    pattern_type: path
+    query_params: []
+    server_visible: true

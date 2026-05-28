@@ -16,3 +16,13 @@ app:
     query_params:
     - filter
     server_visible: true
+  - id: report-list
+    path: /groups/{workspace}/reports
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /groups
+    pattern_type: path
+    query_params: []
+    server_visible: true

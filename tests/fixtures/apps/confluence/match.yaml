@@ -13,3 +13,25 @@ cases:
   expected_params:
     space_key: ENG
     page_id: '98765'
+- url: http://confluence-cloud.local/wiki/spaces/ENG
+  expected_app: confluence
+  expected_route: space
+  expected_env: cloud
+  expected_params:
+    space_key: ENG
+- url: http://confluence-onprem.local/spaces/ENG
+  expected_app: confluence
+  expected_route: space
+  expected_env: self-hosted
+  expected_params:
+    space_key: ENG
+- url: http://confluence-cloud.local/wiki/
+  expected_app: confluence
+  expected_route: home
+  expected_env: cloud
+  expected_params: {}
+- url: http://confluence-onprem.local/
+  expected_app: confluence
+  expected_route: home
+  expected_env: self-hosted
+  expected_params: {}

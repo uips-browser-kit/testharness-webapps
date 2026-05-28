@@ -11,3 +11,23 @@ cases:
   expected_env: self-hosted
   expected_params:
     issue_key: ABC-123
+- url: http://jira-cloud.local/issues
+  expected_app: jira
+  expected_route: issue-list
+  expected_env: cloud
+  expected_params: {}
+- url: http://jira-onprem.local/issues
+  expected_app: jira
+  expected_route: issue-list
+  expected_env: self-hosted
+  expected_params: {}
+- url: http://jira-cloud.local/jira
+  expected_app: jira
+  expected_route: home
+  expected_env: cloud
+  expected_params: {}
+- url: http://jira-onprem.local/jira
+  expected_app: jira
+  expected_route: home
+  expected_env: self-hosted
+  expected_params: {}

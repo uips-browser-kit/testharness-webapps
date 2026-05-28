@@ -1,0 +1,81 @@
+{% extends layout %}
+{% block title %}
+{% if record %}
+{% if record.name %}{{ record.name }}
+{% elif record.first_name %}{{ record.first_name }} {{ record.last_name }}
+{% elif record.summary %}{{ record.summary }}
+{% elif record.title %}{{ record.title }}
+{% elif record.filename %}{{ record.filename }}
+{% elif record.invoice_number %}{{ record.invoice_number }}
+{% elif record.order_number %}{{ record.order_number }}
+{% elif record.key %}{{ record.key }}
+{% elif record.number %}{{ record.number }}
+{% else %}{{ entity_title or "Detail" }}
+{% endif %}
+{% else %}Not Found
+{% endif %} — {{ app_name }}
+{% endblock %}
+{% block content %}
+{% if record %}
+<div style="margin-bottom:1rem;">
+  <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">
+    {% if record.name %}{{ record.name }}
+    {% elif record.first_name %}{{ record.first_name }} {{ record.last_name }}
+    {% elif record.summary %}{{ record.summary }}
+    {% elif record.title %}{{ record.title }}
+    {% elif record.filename %}{{ record.filename }}
+    {% elif record.invoice_number %}{{ record.invoice_number }}
+    {% elif record.order_number %}{{ record.order_number }}
+    {% elif record.key %}{{ record.key }}
+    {% elif record.number %}{{ record.number }}
+    {% else %}{{ entity_title or "Record" }}
+    {% endif %}
+  </h1>
+</div>
+<table style="max-width:720px;">
+  <tbody>
+    {% for key, value in record.items() %}
+    <tr>
+      <th style="text-align:left;width:180px;color:var(--sol-base1);font-weight:500;">{{ key | replace("_", " ") | title }}</th>
+      <td>
+        {% if value is mapping %}
+        <table style="margin:0;border:none;">
+          {% for k, v in value.items() %}
+          <tr style="background:transparent;">
+            <td style="color:var(--sol-base1);padding:.1rem .75rem .1rem 0;border:none;font-size:12px;">{{ k | replace("_", " ") | title }}</td>
+            <td style="border:none;padding:.1rem 0;">{{ v }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% elif value is sequence and value is not string %}
+        {% if value %}
+        {% set first_item = value[0] %}
+        {% if first_item is mapping %}
+        <table style="margin:0;">
+          <thead><tr>{% for k in first_item.keys() %}<th style="font-size:11px;">{{ k | replace("_"," ") | title }}</th>{% endfor %}</tr></thead>
+          <tbody>
+            {% for item in value %}
+            <tr>{% for v in item.values() %}<td>{{ v }}</td>{% endfor %}</tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        {{ value | join(", ") }}
+        {% endif %}
+        {% else %}
+        <span style="color:var(--sol-base01);">—</span>
+        {% endif %}
+        {% elif value is none or value == "" %}
+        <span style="color:var(--sol-base01);">—</span>
+        {% else %}
+        {{ value }}
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-red);">Record not found.</p>
+{% endif %}
+{% endblock %}

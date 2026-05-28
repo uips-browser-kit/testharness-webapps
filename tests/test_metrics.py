@@ -1,7 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from src.harness.app import app
+from src.api.app import app
 
 
 @pytest.fixture(scope="module")

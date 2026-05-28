@@ -20,6 +20,26 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
+  - id: contact-list
+    path: /lightning/r/Contact/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: contact-detail
+    path: /lightning/r/Contact/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: opportunity-list
+    path: /lightning/r/Opportunity/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: opportunity-detail
+    path: /lightning/r/Opportunity/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
   - id: dashboard
     path: /lightning/page/home
     pattern_type: path
@@ -36,13 +56,25 @@ apps:
       host: dynamics-prod.local
       base_path: /
   routes:
-  - id: record
+  - id: account-detail
     path: /main.aspx
     pattern_type: query
     query_params:
     - appid
     - pagetype
     - id
+    server_visible: true
+  - id: account-list
+    path: /main.aspx
+    pattern_type: query
+    query_params:
+    - appid
+    - pagetype
+    server_visible: true
+  - id: home
+    path: /home.aspx
+    pattern_type: path
+    query_params: []
     server_visible: true
 - id: servicenow
   vendor: ServiceNow
@@ -57,6 +89,16 @@ apps:
   routes:
   - id: incident
     path: /now/workspace/agent/record/incident/{sys_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: incident-list
+    path: /now/workspace/agent/list/incident
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /now/workspace
     pattern_type: path
     query_params: []
     server_visible: true
@@ -80,6 +122,17 @@ apps:
     server_visible: true
     note: Hash fragment (#SalesOrder-display?SO=...) is not server-visible; 'so' is
       the harness server-side representation
+  - id: order-list
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: query
+    query_params:
+    - sap-client
+    server_visible: true
+  - id: home
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: path
+    query_params: []
+    server_visible: true
 - id: oracle
   vendor: Oracle
   product: Fusion / EBS
@@ -91,11 +144,23 @@ apps:
       host: oracle-prod.local
       base_path: /
   routes:
+  - id: invoice-detail
+    path: /fscmUI/faces/FuseWelcome
+    pattern_type: query
+    query_params:
+    - _adf.ctrl-state
+    - invoice_number
+    server_visible: true
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
     query_params:
     - _adf.ctrl-state
+    server_visible: true
+  - id: home
+    path: /fscmUI/faces/FuseOverview
+    pattern_type: path
+    query_params: []
     server_visible: true
 - id: workday
   vendor: Workday
@@ -108,17 +173,23 @@ apps:
       host: workday-prod.local
       base_path: /
   routes:
-  - id: home
-    path: /home
-    pattern_type: path
-    query_params: []
-    server_visible: true
   - id: task
     path: /home.htmld
     pattern_type: query
     query_params:
     - redirect
     - id
+    server_visible: true
+  - id: employee-list
+    path: /home.htmld
+    pattern_type: query
+    query_params:
+    - redirect
+    server_visible: true
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
     server_visible: true
 - id: jira
   vendor: Atlassian
@@ -133,6 +204,16 @@ apps:
   routes:
   - id: issue
     path: /browse/{issue_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: issue-list
+    path: /issues
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /jira
     pattern_type: path
     query_params: []
     server_visible: true
@@ -152,6 +233,16 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
+  - id: space
+    path: /spaces/{space_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /
+    pattern_type: path
+    query_params: []
+    server_visible: true
 - id: sharepoint
   vendor: Microsoft
   product: SharePoint
@@ -163,12 +254,23 @@ apps:
       host: sharepoint-onprem.local
       base_path: /
   routes:
-  - id: documents
+  - id: document-detail
+    path: /sites/{site_name}/Shared%20Documents/Forms/DispForm.aspx
+    pattern_type: path
+    query_params:
+    - doc_id
+    server_visible: true
+  - id: document-list
     path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
     pattern_type: path
     query_params: []
     server_visible: true
     note: URL-encoded space is a static segment — preserved as-is
+  - id: home
+    path: /sites/{site_name}
+    pattern_type: path
+    query_params: []
+    server_visible: true
 - id: power-bi
   vendor: Microsoft
   product: Power BI
@@ -185,6 +287,16 @@ apps:
     pattern_type: path
     query_params:
     - filter
+    server_visible: true
+  - id: report-list
+    path: /groups/{workspace}/reports
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /groups
+    pattern_type: path
+    query_params: []
     server_visible: true
 - id: tableau
   vendor: Tableau Server
@@ -205,6 +317,16 @@ apps:
     server_visible: true
     note: Tableau colon-prefixed params are treated as regular query params; urlencode
       will percent-encode the colon
+  - id: workbook
+    path: /views/{workbook}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /views
+    pattern_type: path
+    query_params: []
+    server_visible: true
 - id: power-apps
   vendor: Microsoft
   product: Power Apps
@@ -222,4 +344,14 @@ apps:
     query_params:
     - tenantId
     - screen
+    server_visible: true
+  - id: app-list
+    path: /play/e/{env_id}/a
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
     server_visible: true

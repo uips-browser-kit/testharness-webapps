@@ -1,7 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from src.harness.app import app
+from src.api.app import app
 
 
 @pytest.fixture(scope="module")
@@ -118,7 +118,7 @@ def test_post_resolve_query_route(client):
         json={
             "app": "dynamics",
             "environment": "dev",
-            "route": "record",
+            "route": "account-detail",
             "parameters": {"appid": "app-001", "pagetype": "entityrecord", "id": "001"},
         },
     )

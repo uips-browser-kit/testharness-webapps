@@ -15,3 +15,13 @@ app:
     pattern_type: path
     query_params: []
     server_visible: true
+  - id: incident-list
+    path: /now/workspace/agent/list/incident
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /now/workspace
+    pattern_type: path
+    query_params: []
+    server_visible: true

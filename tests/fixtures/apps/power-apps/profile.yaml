@@ -17,3 +17,13 @@ app:
     - tenantId
     - screen
     server_visible: true
+  - id: app-list
+    path: /play/e/{env_id}/a
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
+    server_visible: true

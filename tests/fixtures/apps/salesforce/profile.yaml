@@ -20,6 +20,26 @@ app:
     pattern_type: path
     query_params: []
     server_visible: true
+  - id: contact-list
+    path: /lightning/r/Contact/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: contact-detail
+    path: /lightning/r/Contact/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: opportunity-list
+    path: /lightning/r/Opportunity/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: opportunity-detail
+    path: /lightning/r/Opportunity/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
   - id: dashboard
     path: /lightning/page/home
     pattern_type: path

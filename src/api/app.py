@@ -1,27 +1,42 @@
+import asyncio
 import os
 import time
 from contextlib import asynccontextmanager
+from dataclasses import asdict
 from pathlib import Path
+from typing import Awaitable, Callable
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 
+from src.api.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
+from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_route, resolve_url
+from src.backend.data_loader import DataLoader
+from src.backend.service import HarnessService, InMemoryChallengeStore
 from src.core.config import load_config, parse_data_set
-from src.harness.data_loader import DataLoader
-from src.harness.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
-from src.harness.renderer import render
-from src.harness.router import MatchRequest, ResolveRequest, match_request, resolve_route, resolve_url
+from src.core.models import Challenge, Fault
+from src.frontend.renderer import render
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
 _DATA_DIR = Path(__file__).parent.parent.parent / "data"
 _STATIC_DIR = Path(__file__).parent.parent.parent / "static"
 
+_FAULT_TO_STATUS: dict[str, int] = {
+    "server_error": 500,
+    "unavailable": 503,
+    "business_error": 409,
+    "not_found": 404,
+}
+
+_sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     dataset = os.environ.get("HARNESS_DATA_SET") or parse_data_set(_HARNESS_YAML)
-    app.state.data_loader = DataLoader(_DATA_DIR, dataset)
+    loader = DataLoader(_DATA_DIR, dataset)
+    app.state.service = HarnessService(loader, InMemoryChallengeStore())
     app.state.apps = load_config(_HARNESS_YAML)
     yield
 
@@ -49,6 +64,31 @@ def resolve_endpoint(body: ResolveRequest, request: Request):
 @app.post("/match")
 def match_endpoint(body: MatchRequest, request: Request):
     return match_request(body, request.app.state.apps)
+
+
+@app.post("/challenges/{app_id}/{env_id}/{route_id}")
+def set_challenge(app_id: str, env_id: str, route_id: str, body: dict, request: Request):
+    fault = None
+    if fault_data := body.get("fault"):
+        fault = Fault(kind=fault_data["kind"], detail=fault_data.get("detail", "Simulated fault"))
+    challenge = Challenge(delay_ms=body.get("delay_ms", 0), fault=fault)
+    request.app.state.service.set_challenge((app_id, env_id, route_id), challenge)
+    return {"status": "set", "app": app_id, "env": env_id, "route": route_id}
+
+
+@app.delete("/challenges/{app_id}/{env_id}/{route_id}")
+def clear_challenge(app_id: str, env_id: str, route_id: str, request: Request):
+    request.app.state.service.clear_challenge((app_id, env_id, route_id))
+    return {"status": "cleared", "app": app_id, "env": env_id, "route": route_id}
+
+
+@app.get("/challenges")
+def list_challenges(request: Request):
+    challenges = request.app.state.service.get_challenges()
+    return {
+        f"{k[0]}/{k[1]}/{k[2]}": {"delay_ms": v.delay_ms, "fault": asdict(v.fault) if v.fault else None}
+        for k, v in challenges.items()
+    }
 
 
 @app.api_route(
@@ -79,6 +119,15 @@ async def catch_all(request: Request, path: str):
     matched_app = next(a for a in request.app.state.apps if a.id == ctx.app_id)
     route = matched_app.route(ctx.route_id)
 
+    service: HarnessService = request.app.state.service
+    challenge = service.get_challenge((ctx.app_id, ctx.env_id, ctx.route_id))
+    if challenge:
+        if challenge.delay_ms > 0:
+            await _sleeper(challenge.delay_ms / 1000)
+        if challenge.fault:
+            http_status = _FAULT_TO_STATUS.get(challenge.fault.kind, 500)
+            raise HTTPException(status_code=http_status, detail=challenge.fault.detail)
+
     if not route.template:
         return {
             "app": ctx.app_id,
@@ -87,17 +136,8 @@ async def catch_all(request: Request, path: str):
             "params": ctx.params,
         }
 
-    extra: dict = {}
-    if route.data_entity and route.data_key_field:
-        param_name = route.data_key_param or route.data_key_field
-        key_value = ctx.params.get(param_name, "")
-        extra["record"] = request.app.state.data_loader.get_record(
-            ctx.app_id, route.data_entity, route.data_key_field, key_value
-        )
-    elif route.data_entity:
-        extra["records"] = request.app.state.data_loader.get_all(
-            ctx.app_id, route.data_entity
-        )
+    view = service.prepare_view(matched_app, route, ctx)
+    extra = {k: v for k, v in asdict(view).items() if k != "kind"} if view else {}
 
     html = render(matched_app, route.template, ctx, extra)
     return HTMLResponse(content=html)

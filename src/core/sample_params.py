@@ -22,4 +22,6 @@ SAMPLE_PARAMS: dict[str, str] = {
     "tenantId": "tenant-001",
     "screen": "Orders",
     "page": "1",
+    "invoice_number": "INV-0001",
+    "doc_id": "doc0001",
 }

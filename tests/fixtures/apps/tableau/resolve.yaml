@@ -13,3 +13,21 @@ cases:
     view: Overview
     :showVizHome: 'no'
   expected_url: http://tableau-onprem.local/views/Sales/Overview?%3AshowVizHome=no
+- route_id: workbook
+  env_id: cloud
+  params:
+    workbook: Sales
+  expected_url: http://tableau-cloud.local/views/Sales
+- route_id: workbook
+  env_id: self-hosted
+  params:
+    workbook: Sales
+  expected_url: http://tableau-onprem.local/views/Sales
+- route_id: home
+  env_id: cloud
+  params: {}
+  expected_url: http://tableau-cloud.local/views
+- route_id: home
+  env_id: self-hosted
+  params: {}
+  expected_url: http://tableau-onprem.local/views

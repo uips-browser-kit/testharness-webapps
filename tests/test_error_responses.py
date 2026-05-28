@@ -6,7 +6,7 @@ from fastapi import HTTPException
 from fastapi.testclient import TestClient
 from unittest.mock import patch
 
-from src.harness.app import app
+from src.api.app import app
 
 
 @pytest.fixture(scope="module")
@@ -46,7 +46,7 @@ def test_404_no_path_match(client):
 
 def test_422_not_server_visible():
     from src.core.models import App, Environment, PatternType, Route
-    from src.harness.router import ResolveRequest, resolve_url
+    from src.api.router import ResolveRequest, resolve_url
 
     hash_app = App(
         id="test-hash",
@@ -74,7 +74,7 @@ def test_422_not_server_visible():
 
 
 def test_500_unhandled_exception(client):
-    with patch("src.harness.app.resolve_route", side_effect=RuntimeError("boom")):
+    with patch("src.api.app.resolve_route", side_effect=RuntimeError("boom")):
         r = client.get(
             "/lightning/r/Account/001/view",
             headers={"host": "salesforce-dev.local"},

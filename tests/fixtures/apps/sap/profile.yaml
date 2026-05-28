@@ -19,3 +19,14 @@ app:
     server_visible: true
     note: Hash fragment (#SalesOrder-display?SO=...) is not server-visible; 'so' is
       the harness server-side representation
+  - id: order-list
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: query
+    query_params:
+    - sap-client
+    server_visible: true
+  - id: home
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: path
+    query_params: []
+    server_visible: true

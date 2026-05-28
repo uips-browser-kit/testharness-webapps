@@ -18,3 +18,13 @@ app:
     server_visible: true
     note: Tableau colon-prefixed params are treated as regular query params; urlencode
       will percent-encode the colon
+  - id: workbook
+    path: /views/{workbook}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /views
+    pattern_type: path
+    query_params: []
+    server_visible: true

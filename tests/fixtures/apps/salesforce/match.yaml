@@ -21,6 +21,50 @@ cases:
   expected_env: prod
   expected_params:
     id: '001'
+- url: http://salesforce-dev.local/lightning/r/Contact/list/view
+  expected_app: salesforce
+  expected_route: contact-list
+  expected_env: dev
+  expected_params: {}
+- url: http://salesforce-prod.local/lightning/r/Contact/list/view
+  expected_app: salesforce
+  expected_route: contact-list
+  expected_env: prod
+  expected_params: {}
+- url: http://salesforce-dev.local/lightning/r/Contact/001/view
+  expected_app: salesforce
+  expected_route: contact-detail
+  expected_env: dev
+  expected_params:
+    id: '001'
+- url: http://salesforce-prod.local/lightning/r/Contact/001/view
+  expected_app: salesforce
+  expected_route: contact-detail
+  expected_env: prod
+  expected_params:
+    id: '001'
+- url: http://salesforce-dev.local/lightning/r/Opportunity/list/view
+  expected_app: salesforce
+  expected_route: opportunity-list
+  expected_env: dev
+  expected_params: {}
+- url: http://salesforce-prod.local/lightning/r/Opportunity/list/view
+  expected_app: salesforce
+  expected_route: opportunity-list
+  expected_env: prod
+  expected_params: {}
+- url: http://salesforce-dev.local/lightning/r/Opportunity/001/view
+  expected_app: salesforce
+  expected_route: opportunity-detail
+  expected_env: dev
+  expected_params:
+    id: '001'
+- url: http://salesforce-prod.local/lightning/r/Opportunity/001/view
+  expected_app: salesforce
+  expected_route: opportunity-detail
+  expected_env: prod
+  expected_params:
+    id: '001'
 - url: http://salesforce-dev.local/lightning/page/home
   expected_app: salesforce
   expected_route: dashboard

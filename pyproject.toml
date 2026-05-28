@@ -15,17 +15,23 @@ dependencies = [
     "uvicorn[standard]>=0.34",
     "prometheus-client>=0.21",
     "jinja2>=3.1",
+    "typer>=0.15",
+    "httpx>=0.28",
 ]
 
 [tool.hatch.version]
-path = "src/harness/__init__.py"
+path = "src/api/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
 
+[project.scripts]
+harness-cli = "src.runtime_cli.main:cli"
+
 [dependency-groups]
 dev = [
     "httpx>=0.28",
+    "import-linter>=2.1",
     "pytest>=8.3",
     "pytest-xdist>=3.6",
     "ruff>=0.9",
@@ -47,4 +53,35 @@ ignore = ["E501"]
 
 [tool.ruff.format]
 quote-style = "double"
+
+[tool.importlinter]
+root_packages = ["src"]
+
+[[tool.importlinter.contracts]]
+name = "core has no internal imports"
+type = "independence"
+modules = ["src.core"]
+
+[[tool.importlinter.contracts]]
+name = "backend imports only core"
+type = "layers"
+layers = ["src.backend", "src.core"]
+
+[[tool.importlinter.contracts]]
+name = "frontend does not import api or backend"
+type = "forbidden"
+source_modules = ["src.frontend"]
+forbidden_modules = ["src.api", "src.backend"]
+
+[[tool.importlinter.contracts]]
+name = "runtime_cli does not import api or frontend"
+type = "forbidden"
+source_modules = ["src.runtime_cli"]
+forbidden_modules = ["src.api", "src.frontend"]
+
+[[tool.importlinter.contracts]]
+name = "platform_cli does not import backend api or frontend"
+type = "forbidden"
+source_modules = ["src.platform_cli"]
+forbidden_modules = ["src.backend", "src.api", "src.frontend"]
 

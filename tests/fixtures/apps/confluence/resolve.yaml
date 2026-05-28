@@ -11,3 +11,21 @@ cases:
     space_key: ENG
     page_id: '98765'
   expected_url: http://confluence-onprem.local/spaces/ENG/pages/98765
+- route_id: space
+  env_id: cloud
+  params:
+    space_key: ENG
+  expected_url: http://confluence-cloud.local/wiki/spaces/ENG
+- route_id: space
+  env_id: self-hosted
+  params:
+    space_key: ENG
+  expected_url: http://confluence-onprem.local/spaces/ENG
+- route_id: home
+  env_id: cloud
+  params: {}
+  expected_url: http://confluence-cloud.local/wiki/
+- route_id: home
+  env_id: self-hosted
+  params: {}
+  expected_url: http://confluence-onprem.local/

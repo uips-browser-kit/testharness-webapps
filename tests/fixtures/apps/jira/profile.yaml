@@ -15,3 +15,13 @@ app:
     pattern_type: path
     query_params: []
     server_visible: true
+  - id: issue-list
+    path: /issues
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /jira
+    pattern_type: path
+    query_params: []
+    server_visible: true

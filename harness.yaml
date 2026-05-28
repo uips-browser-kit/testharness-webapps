@@ -23,6 +23,20 @@ apps:
     - label: Account Detail
       route_id: account-detail
       href: /lightning/r/Account/{id}/view
+  - label: Contacts
+    route_id: contact-list
+    href: /lightning/r/Contact/list/view
+    children:
+    - label: Contact Detail
+      route_id: contact-detail
+      href: /lightning/r/Contact/{id}/view
+  - label: Opportunities
+    route_id: opportunity-list
+    href: /lightning/r/Opportunity/list/view
+    children:
+    - label: Opportunity Detail
+      route_id: opportunity-detail
+      href: /lightning/r/Opportunity/{id}/view
   routes:
   - id: account-list
     path: /lightning/r/Account/list/view
@@ -38,6 +52,36 @@ apps:
     server_visible: true
     template: account_detail
     data_entity: accounts
+    data_key_field: id
+  - id: contact-list
+    path: /lightning/r/Contact/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: contacts
+  - id: contact-detail
+    path: /lightning/r/Contact/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/detail
+    data_entity: contacts
+    data_key_field: id
+  - id: opportunity-list
+    path: /lightning/r/Opportunity/list/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: opportunities
+  - id: opportunity-detail
+    path: /lightning/r/Opportunity/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/detail
+    data_entity: opportunities
     data_key_field: id
   - id: dashboard
     path: /lightning/page/home
@@ -60,11 +104,18 @@ apps:
       base_path: /
       scheme: http
   nav:
+  - label: Home
+    route_id: home
+    href: /home.aspx
   - label: Accounts
-    route_id: record
+    route_id: account-list
     href: /main.aspx
+    children:
+    - label: Account Detail
+      route_id: account-detail
+      href: /main.aspx
   routes:
-  - id: record
+  - id: account-detail
     path: /main.aspx
     pattern_type: query
     query_params:
@@ -72,9 +123,24 @@ apps:
     - pagetype
     - id
     server_visible: true
-    template: record
+    template: shared/detail
     data_entity: accounts
     data_key_field: id
+  - id: account-list
+    path: /main.aspx
+    pattern_type: query
+    query_params:
+    - appid
+    - pagetype
+    server_visible: true
+    template: shared/list
+    data_entity: accounts
+  - id: home
+    path: /home.aspx
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: servicenow
   vendor: ServiceNow
@@ -90,9 +156,16 @@ apps:
       base_path: /
       scheme: http
   nav:
+  - label: Home
+    route_id: home
+    href: /now/workspace
   - label: Incidents
-    route_id: incident
-    href: /now/workspace/agent/record/incident
+    route_id: incident-list
+    href: /now/workspace/agent/list/incident
+    children:
+    - label: Incident Detail
+      route_id: incident
+      href: /now/workspace/agent/record/incident
   routes:
   - id: incident
     path: /now/workspace/agent/record/incident/{sys_id}
@@ -102,6 +175,19 @@ apps:
     template: incident
     data_entity: incidents
     data_key_field: sys_id
+  - id: incident-list
+    path: /now/workspace/agent/list/incident
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: incidents
+  - id: home
+    path: /now/workspace
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: sap
   vendor: SAP
@@ -117,9 +203,16 @@ apps:
       base_path: /
       scheme: http
   nav:
-  - label: Sales Orders
-    route_id: shell
+  - label: Home
+    route_id: home
     href: /sap/bc/ui5_ui5/ui2/ushell
+  - label: Sales Orders
+    route_id: order-list
+    href: /sap/bc/ui5_ui5/ui2/ushell
+    children:
+    - label: Order Detail
+      route_id: shell
+      href: /sap/bc/ui5_ui5/ui2/ushell
   routes:
   - id: shell
     path: /sap/bc/ui5_ui5/ui2/ushell
@@ -134,6 +227,20 @@ apps:
     data_entity: sales_orders
     data_key_field: order_number
     data_key_param: so
+  - id: order-list
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: query
+    query_params:
+    - sap-client
+    server_visible: true
+    template: shared/list
+    data_entity: sales_orders
+  - id: home
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: oracle
   vendor: Oracle
@@ -149,18 +256,41 @@ apps:
       base_path: /
       scheme: http
   nav:
+  - label: Home
+    route_id: home
+    href: /fscmUI/faces/FuseOverview
   - label: Invoices
     route_id: welcome
     href: /fscmUI/faces/FuseWelcome
+    children:
+    - label: Invoice Detail
+      route_id: invoice-detail
+      href: /fscmUI/faces/FuseWelcome
   routes:
+  - id: invoice-detail
+    path: /fscmUI/faces/FuseWelcome
+    pattern_type: query
+    query_params:
+    - _adf.ctrl-state
+    - invoice_number
+    server_visible: true
+    template: shared/detail
+    data_entity: invoices
+    data_key_field: invoice_number
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
     query_params:
     - _adf.ctrl-state
     server_visible: true
-    template: welcome
+    template: shared/list
     data_entity: invoices
+  - id: home
+    path: /fscmUI/faces/FuseOverview
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: workday
   vendor: Workday
@@ -180,15 +310,13 @@ apps:
     route_id: home
     href: /home
   - label: Employees
-    route_id: task
+    route_id: employee-list
     href: /home.htmld
+    children:
+    - label: Employee Detail
+      route_id: task
+      href: /home.htmld
   routes:
-  - id: home
-    path: /home
-    pattern_type: path
-    query_params: []
-    server_visible: true
-    template: home
   - id: task
     path: /home.htmld
     pattern_type: query
@@ -200,6 +328,20 @@ apps:
     data_entity: employees
     data_key_field: employee_id
     data_key_param: id
+  - id: employee-list
+    path: /home.htmld
+    pattern_type: query
+    query_params:
+    - redirect
+    server_visible: true
+    template: shared/list
+    data_entity: employees
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: jira
   vendor: Atlassian
@@ -215,9 +357,16 @@ apps:
       base_path: /
       scheme: http
   nav:
+  - label: Home
+    route_id: home
+    href: /jira
   - label: Issues
-    route_id: issue
-    href: /browse
+    route_id: issue-list
+    href: /issues
+    children:
+    - label: Issue Detail
+      route_id: issue
+      href: /browse
   routes:
   - id: issue
     path: /browse/{issue_key}
@@ -228,6 +377,19 @@ apps:
     data_entity: issues
     data_key_field: key
     data_key_param: issue_key
+  - id: issue-list
+    path: /issues
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: issues
+  - id: home
+    path: /jira
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: confluence
   vendor: Atlassian
@@ -243,9 +405,16 @@ apps:
       base_path: /
       scheme: http
   nav:
-  - label: Pages
-    route_id: page
+  - label: Home
+    route_id: home
+    href: /
+  - label: Spaces
+    route_id: space
     href: /spaces
+    children:
+    - label: Page Detail
+      route_id: page
+      href: /spaces
   routes:
   - id: page
     path: /spaces/{space_key}/pages/{page_id}
@@ -255,6 +424,19 @@ apps:
     template: page
     data_entity: pages
     data_key_field: page_id
+  - id: space
+    path: /spaces/{space_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: pages
+  - id: home
+    path: /
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: sharepoint
   vendor: Microsoft
@@ -270,18 +452,41 @@ apps:
       base_path: /
       scheme: http
   nav:
+  - label: Home
+    route_id: home
+    href: /sites/{site_name}
   - label: Documents
-    route_id: documents
+    route_id: document-list
     href: /sites
+    children:
+    - label: Document Detail
+      route_id: document-detail
+      href: /sites/{site_name}/Shared%20Documents/Forms/DispForm.aspx
   routes:
-  - id: documents
+  - id: document-detail
+    path: /sites/{site_name}/Shared%20Documents/Forms/DispForm.aspx
+    pattern_type: path
+    query_params:
+    - doc_id
+    server_visible: true
+    template: shared/detail
+    data_entity: documents
+    data_key_field: id
+    data_key_param: doc_id
+  - id: document-list
     path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
     pattern_type: path
     query_params: []
     server_visible: true
     note: URL-encoded space is a static segment — preserved as-is
-    template: documents
+    template: shared/list
     data_entity: documents
+  - id: home
+    path: /sites/{site_name}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: power-bi
   vendor: Microsoft
@@ -297,9 +502,16 @@ apps:
       base_path: /
       scheme: http
   nav:
-  - label: Reports
-    route_id: report
+  - label: Home
+    route_id: home
     href: /groups
+  - label: Reports
+    route_id: report-list
+    href: /groups/{workspace}/reports
+    children:
+    - label: Report Detail
+      route_id: report
+      href: /groups/{workspace}/reports/{report_id}
   routes:
   - id: report
     path: /groups/{workspace}/reports/{report_id}
@@ -309,6 +521,19 @@ apps:
     server_visible: true
     template: report
     data_entity: sales_metrics
+  - id: report-list
+    path: /groups/{workspace}/reports
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: sales_metrics
+  - id: home
+    path: /groups
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: tableau
   vendor: Tableau Server
@@ -324,9 +549,16 @@ apps:
       base_path: /
       scheme: http
   nav:
-  - label: Views
-    route_id: view
+  - label: Home
+    route_id: home
     href: /views
+  - label: Workbooks
+    route_id: workbook
+    href: /views/{workbook}
+    children:
+    - label: View Detail
+      route_id: view
+      href: /views/{workbook}/{view}
   routes:
   - id: view
     path: /views/{workbook}/{view}
@@ -338,6 +570,19 @@ apps:
       will percent-encode the colon
     template: view
     data_entity: sales_metrics
+  - id: workbook
+    path: /views/{workbook}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: sales_metrics
+  - id: home
+    path: /views
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 - id: power-apps
   vendor: Microsoft
@@ -353,9 +598,16 @@ apps:
       base_path: /
       scheme: http
   nav:
+  - label: Home
+    route_id: home
+    href: /home
   - label: Apps
-    route_id: app
-    href: /play
+    route_id: app-list
+    href: /play/e/{env_id}/a
+    children:
+    - label: App Detail
+      route_id: app
+      href: /play/e/{env_id}/a/{app_id}
   routes:
   - id: app
     path: /play/e/{env_id}/a/{app_id}
@@ -366,6 +618,19 @@ apps:
     server_visible: true
     template: app
     data_entity: sales_orders
+  - id: app-list
+    path: /play/e/{env_id}/a
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: shared/list
+    data_entity: sales_orders
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    template: home
 
 data:
   set: default

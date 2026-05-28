@@ -10,11 +10,23 @@ app:
       host: dynamics-prod.local
       base_path: /
   routes:
-  - id: record
+  - id: account-detail
     path: /main.aspx
     pattern_type: query
     query_params:
     - appid
     - pagetype
     - id
+    server_visible: true
+  - id: account-list
+    path: /main.aspx
+    pattern_type: query
+    query_params:
+    - appid
+    - pagetype
+    server_visible: true
+  - id: home
+    path: /home.aspx
+    pattern_type: path
+    query_params: []
     server_visible: true

@@ -1,11 +1,33 @@
 cases:
-- route_id: documents
+- route_id: document-detail
+  env_id: cloud
+  params:
+    site_name: HR
+    doc_id: doc0001
+  expected_url: http://sharepoint-cloud.local/sites/HR/Shared%20Documents/Forms/DispForm.aspx?doc_id=doc0001
+- route_id: document-detail
+  env_id: self-hosted
+  params:
+    site_name: HR
+    doc_id: doc0001
+  expected_url: http://sharepoint-onprem.local/sites/HR/Shared%20Documents/Forms/DispForm.aspx?doc_id=doc0001
+- route_id: document-list
   env_id: cloud
   params:
     site_name: HR
   expected_url: http://sharepoint-cloud.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
-- route_id: documents
+- route_id: document-list
   env_id: self-hosted
   params:
     site_name: HR
   expected_url: http://sharepoint-onprem.local/sites/HR/Shared%20Documents/Forms/AllItems.aspx
+- route_id: home
+  env_id: cloud
+  params:
+    site_name: HR
+  expected_url: http://sharepoint-cloud.local/sites/HR
+- route_id: home
+  env_id: self-hosted
+  params:
+    site_name: HR
+  expected_url: http://sharepoint-onprem.local/sites/HR

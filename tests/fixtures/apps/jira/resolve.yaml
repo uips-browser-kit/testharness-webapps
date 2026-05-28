@@ -9,3 +9,19 @@ cases:
   params:
     issue_key: ABC-123
   expected_url: http://jira-onprem.local/browse/ABC-123
+- route_id: issue-list
+  env_id: cloud
+  params: {}
+  expected_url: http://jira-cloud.local/issues
+- route_id: issue-list
+  env_id: self-hosted
+  params: {}
+  expected_url: http://jira-onprem.local/issues
+- route_id: home
+  env_id: cloud
+  params: {}
+  expected_url: http://jira-cloud.local/jira
+- route_id: home
+  env_id: self-hosted
+  params: {}
+  expected_url: http://jira-onprem.local/jira

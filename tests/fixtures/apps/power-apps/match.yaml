@@ -17,3 +17,25 @@ cases:
     app_id: app-001
     tenantId: tenant-001
     screen: Orders
+- url: http://power-apps-cloud.local/play/e/env-001/a
+  expected_app: power-apps
+  expected_route: app-list
+  expected_env: cloud
+  expected_params:
+    env_id: env-001
+- url: http://power-apps-onprem.local/play/e/env-001/a
+  expected_app: power-apps
+  expected_route: app-list
+  expected_env: self-hosted
+  expected_params:
+    env_id: env-001
+- url: http://power-apps-cloud.local/home
+  expected_app: power-apps
+  expected_route: home
+  expected_env: cloud
+  expected_params: {}
+- url: http://power-apps-onprem.local/home
+  expected_app: power-apps
+  expected_route: home
+  expected_env: self-hosted
+  expected_params: {}

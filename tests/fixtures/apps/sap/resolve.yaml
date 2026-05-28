@@ -11,3 +11,21 @@ cases:
     sap-client: '100'
     so: '12345'
   expected_url: http://sap-prod.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345
+- route_id: order-list
+  env_id: dev
+  params:
+    sap-client: '100'
+  expected_url: http://sap-dev.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100
+- route_id: order-list
+  env_id: prod
+  params:
+    sap-client: '100'
+  expected_url: http://sap-prod.local/sap/bc/ui5_ui5/ui2/ushell?sap-client=100
+- route_id: home
+  env_id: dev
+  params: {}
+  expected_url: http://sap-dev.local/sap/bc/ui5_ui5/ui2/ushell
+- route_id: home
+  env_id: prod
+  params: {}
+  expected_url: http://sap-prod.local/sap/bc/ui5_ui5/ui2/ushell

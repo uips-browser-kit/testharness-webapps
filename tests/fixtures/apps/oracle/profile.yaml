@@ -10,9 +10,21 @@ app:
       host: oracle-prod.local
       base_path: /
   routes:
+  - id: invoice-detail
+    path: /fscmUI/faces/FuseWelcome
+    pattern_type: query
+    query_params:
+    - _adf.ctrl-state
+    - invoice_number
+    server_visible: true
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
     query_params:
     - _adf.ctrl-state
+    server_visible: true
+  - id: home
+    path: /fscmUI/faces/FuseOverview
+    pattern_type: path
+    query_params: []
     server_visible: true

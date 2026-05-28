@@ -15,3 +15,13 @@ app:
     pattern_type: path
     query_params: []
     server_visible: true
+  - id: space
+    path: /spaces/{space_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: home
+    path: /
+    pattern_type: path
+    query_params: []
+    server_visible: true

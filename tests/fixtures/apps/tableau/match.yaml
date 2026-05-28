@@ -15,3 +15,25 @@ cases:
     workbook: Sales
     view: Overview
     :showVizHome: 'no'
+- url: http://tableau-cloud.local/views/Sales
+  expected_app: tableau
+  expected_route: workbook
+  expected_env: cloud
+  expected_params:
+    workbook: Sales
+- url: http://tableau-onprem.local/views/Sales
+  expected_app: tableau
+  expected_route: workbook
+  expected_env: self-hosted
+  expected_params:
+    workbook: Sales
+- url: http://tableau-cloud.local/views
+  expected_app: tableau
+  expected_route: home
+  expected_env: cloud
+  expected_params: {}
+- url: http://tableau-onprem.local/views
+  expected_app: tableau
+  expected_route: home
+  expected_env: self-hosted
+  expected_params: {}

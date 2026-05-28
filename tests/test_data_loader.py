@@ -1,7 +1,7 @@
 import pytest
 from pathlib import Path
 
-from src.harness.data_loader import DataLoader, DataLoaderError
+from src.backend.data_loader import DataLoader, DataLoaderError
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 

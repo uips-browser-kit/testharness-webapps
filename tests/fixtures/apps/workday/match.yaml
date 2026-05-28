@@ -1,14 +1,4 @@
 cases:
-- url: http://workday-dev.local/home
-  expected_app: workday
-  expected_route: home
-  expected_env: dev
-  expected_params: {}
-- url: http://workday-prod.local/home
-  expected_app: workday
-  expected_route: home
-  expected_env: prod
-  expected_params: {}
 - url: http://workday-dev.local/home.htmld?redirect=n&id=001
   expected_app: workday
   expected_route: task
@@ -23,3 +13,25 @@ cases:
   expected_params:
     redirect: n
     id: '001'
+- url: http://workday-dev.local/home.htmld?redirect=n
+  expected_app: workday
+  expected_route: employee-list
+  expected_env: dev
+  expected_params:
+    redirect: n
+- url: http://workday-prod.local/home.htmld?redirect=n
+  expected_app: workday
+  expected_route: employee-list
+  expected_env: prod
+  expected_params:
+    redirect: n
+- url: http://workday-dev.local/home
+  expected_app: workday
+  expected_route: home
+  expected_env: dev
+  expected_params: {}
+- url: http://workday-prod.local/home
+  expected_app: workday
+  expected_route: home
+  expected_env: prod
+  expected_params: {}

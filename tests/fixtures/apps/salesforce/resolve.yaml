@@ -17,6 +17,42 @@ cases:
   params:
     id: '001'
   expected_url: http://salesforce-prod.local/lightning/r/Account/001/view
+- route_id: contact-list
+  env_id: dev
+  params: {}
+  expected_url: http://salesforce-dev.local/lightning/r/Contact/list/view
+- route_id: contact-list
+  env_id: prod
+  params: {}
+  expected_url: http://salesforce-prod.local/lightning/r/Contact/list/view
+- route_id: contact-detail
+  env_id: dev
+  params:
+    id: '001'
+  expected_url: http://salesforce-dev.local/lightning/r/Contact/001/view
+- route_id: contact-detail
+  env_id: prod
+  params:
+    id: '001'
+  expected_url: http://salesforce-prod.local/lightning/r/Contact/001/view
+- route_id: opportunity-list
+  env_id: dev
+  params: {}
+  expected_url: http://salesforce-dev.local/lightning/r/Opportunity/list/view
+- route_id: opportunity-list
+  env_id: prod
+  params: {}
+  expected_url: http://salesforce-prod.local/lightning/r/Opportunity/list/view
+- route_id: opportunity-detail
+  env_id: dev
+  params:
+    id: '001'
+  expected_url: http://salesforce-dev.local/lightning/r/Opportunity/001/view
+- route_id: opportunity-detail
+  env_id: prod
+  params:
+    id: '001'
+  expected_url: http://salesforce-prod.local/lightning/r/Opportunity/001/view
 - route_id: dashboard
   env_id: dev
   params: {}

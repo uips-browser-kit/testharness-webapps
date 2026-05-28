@@ -1,15 +1,35 @@
 cases:
-- route_id: record
+- route_id: account-detail
   env_id: dev
   params:
     appid: app-001
     pagetype: entityrecord
     id: '001'
   expected_url: http://dynamics-dev.local/main.aspx?appid=app-001&pagetype=entityrecord&id=001
-- route_id: record
+- route_id: account-detail
   env_id: prod
   params:
     appid: app-001
     pagetype: entityrecord
     id: '001'
   expected_url: http://dynamics-prod.local/main.aspx?appid=app-001&pagetype=entityrecord&id=001
+- route_id: account-list
+  env_id: dev
+  params:
+    appid: app-001
+    pagetype: entityrecord
+  expected_url: http://dynamics-dev.local/main.aspx?appid=app-001&pagetype=entityrecord
+- route_id: account-list
+  env_id: prod
+  params:
+    appid: app-001
+    pagetype: entityrecord
+  expected_url: http://dynamics-prod.local/main.aspx?appid=app-001&pagetype=entityrecord
+- route_id: home
+  env_id: dev
+  params: {}
+  expected_url: http://dynamics-dev.local/home.aspx
+- route_id: home
+  env_id: prod
+  params: {}
+  expected_url: http://dynamics-prod.local/home.aspx

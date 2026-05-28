@@ -1,12 +1,4 @@
 cases:
-- route_id: home
-  env_id: dev
-  params: {}
-  expected_url: http://workday-dev.local/home
-- route_id: home
-  env_id: prod
-  params: {}
-  expected_url: http://workday-prod.local/home
 - route_id: task
   env_id: dev
   params:
@@ -19,3 +11,21 @@ cases:
     redirect: n
     id: '001'
   expected_url: http://workday-prod.local/home.htmld?redirect=n&id=001
+- route_id: employee-list
+  env_id: dev
+  params:
+    redirect: n
+  expected_url: http://workday-dev.local/home.htmld?redirect=n
+- route_id: employee-list
+  env_id: prod
+  params:
+    redirect: n
+  expected_url: http://workday-prod.local/home.htmld?redirect=n
+- route_id: home
+  env_id: dev
+  params: {}
+  expected_url: http://workday-dev.local/home
+- route_id: home
+  env_id: prod
+  params: {}
+  expected_url: http://workday-prod.local/home

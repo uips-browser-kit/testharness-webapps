@@ -1,0 +1,48 @@
+{% extends layout %}
+{% block title %}{{ entity_title or "Records" }} — {{ app_name }}{% endblock %}
+{% block content %}
+{% if records %}
+{% set first = records[0] %}
+{% set scalar_cols = [] %}
+{% for col in first.keys() %}
+{% if first[col] is not mapping and not (first[col] is sequence and first[col] is not string) %}
+{% if scalar_cols.append(col) %}{% endif %}
+{% endif %}
+{% endfor %}
+<div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem;">
+  <h1 style="font-size:18px;font-weight:700;color:var(--app-primary);">{{ entity_title or "Records" }}</h1>
+  <span class="badge">{{ records | length }} records</span>
+</div>
+<table>
+  <thead>
+    <tr>
+      {% for col in scalar_cols %}
+      <th>{{ col | replace("_", " ") | title }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in records %}
+    {% set row_key = r[detail_key_field] | string if detail_key_field else "" %}
+    {% set href = detail_urls[row_key] if (detail_urls and row_key and row_key in detail_urls) else "" %}
+    {% set ns = namespace(first_cell=true) %}
+    <tr>
+      {% for col in scalar_cols %}
+      {% if ns.first_cell and href %}
+      <td><a href="{{ href }}">{{ r[col] }}</a></td>
+      {% set ns.first_cell = false %}
+      {% elif ns.first_cell %}
+      <td>{{ r[col] }}</td>
+      {% set ns.first_cell = false %}
+      {% else %}
+      <td>{{ r[col] }}</td>
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-base1);">No records found.</p>
+{% endif %}
+{% endblock %}

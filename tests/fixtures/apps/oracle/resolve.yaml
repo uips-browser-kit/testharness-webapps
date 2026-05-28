@@ -1,4 +1,16 @@
 cases:
+- route_id: invoice-detail
+  env_id: dev
+  params:
+    _adf.ctrl-state: state-xyz
+    invoice_number: INV-0001
+  expected_url: http://oracle-dev.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz&invoice_number=INV-0001
+- route_id: invoice-detail
+  env_id: prod
+  params:
+    _adf.ctrl-state: state-xyz
+    invoice_number: INV-0001
+  expected_url: http://oracle-prod.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz&invoice_number=INV-0001
 - route_id: welcome
   env_id: dev
   params:
@@ -9,3 +21,11 @@ cases:
   params:
     _adf.ctrl-state: state-xyz
   expected_url: http://oracle-prod.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
+- route_id: home
+  env_id: dev
+  params: {}
+  expected_url: http://oracle-dev.local/fscmUI/faces/FuseOverview
+- route_id: home
+  env_id: prod
+  params: {}
+  expected_url: http://oracle-prod.local/fscmUI/faces/FuseOverview

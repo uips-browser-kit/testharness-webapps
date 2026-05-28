@@ -1,21 +1,11 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 from fastapi import HTTPException, Request
 from pydantic import BaseModel
 
 from src.core.matcher import match
-from src.core.models import App, NotServerVisible
+from src.core.models import App, NotServerVisible, RouteContext
 from src.core.resolver import resolve
-
-
-@dataclass
-class RouteContext:
-    app_id: str
-    route_id: str
-    env_id: str
-    params: dict[str, str]
 
 
 class ResolveRequest(BaseModel):

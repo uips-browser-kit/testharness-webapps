@@ -11,3 +11,23 @@ cases:
   expected_env: prod
   expected_params:
     sys_id: abc123def456
+- url: http://servicenow-dev.local/now/workspace/agent/list/incident
+  expected_app: servicenow
+  expected_route: incident-list
+  expected_env: dev
+  expected_params: {}
+- url: http://servicenow-prod.local/now/workspace/agent/list/incident
+  expected_app: servicenow
+  expected_route: incident-list
+  expected_env: prod
+  expected_params: {}
+- url: http://servicenow-dev.local/now/workspace
+  expected_app: servicenow
+  expected_route: home
+  expected_env: dev
+  expected_params: {}
+- url: http://servicenow-prod.local/now/workspace
+  expected_app: servicenow
+  expected_route: home
+  expected_env: prod
+  expected_params: {}

@@ -15,3 +15,25 @@ cases:
     workspace: my-workspace
     report_id: rpt-001
     filter: Region eq 'EMEA'
+- url: http://power-bi-cloud.local/groups/my-workspace/reports
+  expected_app: power-bi
+  expected_route: report-list
+  expected_env: cloud
+  expected_params:
+    workspace: my-workspace
+- url: http://power-bi-onprem.local/groups/my-workspace/reports
+  expected_app: power-bi
+  expected_route: report-list
+  expected_env: self-hosted
+  expected_params:
+    workspace: my-workspace
+- url: http://power-bi-cloud.local/groups
+  expected_app: power-bi
+  expected_route: home
+  expected_env: cloud
+  expected_params: {}
+- url: http://power-bi-onprem.local/groups
+  expected_app: power-bi
+  expected_route: home
+  expected_env: self-hosted
+  expected_params: {}

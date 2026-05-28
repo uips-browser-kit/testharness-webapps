@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import StrEnum
+from typing import Literal
 
 
 class PatternType(StrEnum):
@@ -63,3 +64,45 @@ class App:
             if r.id == route_id:
                 return r
         raise KeyError(f"Route {route_id!r} not found in app {self.id!r}")
+
+
+@dataclass
+class RouteContext:
+    app_id: str
+    route_id: str
+    env_id: str
+    params: dict[str, str]
+
+
+@dataclass
+class DetailViewData:
+    kind: Literal["detail"] = "detail"
+    entity_title: str = ""
+    record: dict | None = None
+
+
+@dataclass
+class ListViewData:
+    kind: Literal["list"] = "list"
+    entity_title: str = ""
+    records: list[dict] = field(default_factory=list)
+    detail_urls: dict[str, str] = field(default_factory=dict)
+    detail_key_field: str = ""
+
+
+ViewData = DetailViewData | ListViewData
+
+
+@dataclass
+class Fault:
+    kind: str  # "server_error" | "unavailable" | "business_error" | "not_found"
+    detail: str = "Simulated fault"
+
+
+@dataclass
+class Challenge:
+    delay_ms: int = 0
+    fault: Fault | None = None
+
+
+ChallengeMap = dict[tuple[str, str, str], Challenge]  # (app_id, env_id, route_id)
