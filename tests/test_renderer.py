@@ -105,7 +105,7 @@ def test_nonexistent_account_still_renders(client):
 def test_sap_shell_renders_html(client):
     r = client.get(
         "/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345",
-        headers={"host": "erp-dev.company.com"},
+        headers={"host": "erp-dev.company.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]

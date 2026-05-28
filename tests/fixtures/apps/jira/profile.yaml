@@ -7,7 +7,7 @@ app:
       host: jira.company.atlassian.local
       base_path: /
     self-hosted:
-      host: jira.company.com
+      host: jira.company.local
       base_path: /
   routes:
   - id: issue

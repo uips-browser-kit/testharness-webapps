@@ -7,7 +7,7 @@ app:
       host: server.tableau.local
       base_path: /
     self-hosted:
-      host: tableau.company.com
+      host: tableau.company.local
       base_path: /
   routes:
   - id: view

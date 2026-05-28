@@ -7,7 +7,7 @@ cases:
     workbook: Sales
     view: Overview
     :showVizHome: 'no'
-- url: http://tableau.company.com/views/Sales/Overview?%3AshowVizHome=no
+- url: http://tableau.company.local/views/Sales/Overview?%3AshowVizHome=no
   expected_app: tableau
   expected_route: view
   expected_env: self-hosted

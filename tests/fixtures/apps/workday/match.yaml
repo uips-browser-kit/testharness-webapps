@@ -4,7 +4,7 @@ cases:
   expected_route: home
   expected_env: dev
   expected_params: {}
-- url: http://hr.company.com/home
+- url: http://hr.company.local/home
   expected_app: workday
   expected_route: home
   expected_env: prod
@@ -16,7 +16,7 @@ cases:
   expected_params:
     redirect: n
     id: '001'
-- url: http://hr.company.com/home.htmld?redirect=n&id=001
+- url: http://hr.company.local/home.htmld?redirect=n&id=001
   expected_app: workday
   expected_route: task
   expected_env: prod

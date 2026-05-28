@@ -9,7 +9,7 @@ apps:
       base_path: /
       scheme: http
     prod:
-      host: salesforce.company.com
+      host: salesforce.company.local
       base_path: /
       scheme: http
   nav:
@@ -56,7 +56,7 @@ apps:
       base_path: /
       scheme: http
     prod:
-      host: dynamics.company.com
+      host: dynamics.company.local
       base_path: /
       scheme: http
   nav:
@@ -86,7 +86,7 @@ apps:
       base_path: /
       scheme: http
     prod:
-      host: servicedesk.company.com
+      host: servicedesk.company.local
       base_path: /
       scheme: http
   nav:
@@ -109,11 +109,11 @@ apps:
   layout: layouts/default.html
   environments:
     dev:
-      host: erp-dev.company.com
+      host: erp-dev.company.local
       base_path: /
       scheme: http
     prod:
-      host: erp.company.com
+      host: erp.company.local
       base_path: /
       scheme: http
   nav:
@@ -141,11 +141,11 @@ apps:
   layout: layouts/default.html
   environments:
     dev:
-      host: oracle-dev.company.com
+      host: oracle-dev.company.local
       base_path: /
       scheme: http
     prod:
-      host: finance.company.com
+      host: finance.company.local
       base_path: /
       scheme: http
   nav:
@@ -172,7 +172,7 @@ apps:
       base_path: /
       scheme: http
     prod:
-      host: hr.company.com
+      host: hr.company.local
       base_path: /
       scheme: http
   nav:
@@ -211,7 +211,7 @@ apps:
       base_path: /
       scheme: http
     self-hosted:
-      host: jira.company.com
+      host: jira.company.local
       base_path: /
       scheme: http
   nav:
@@ -239,7 +239,7 @@ apps:
       base_path: /wiki
       scheme: http
     self-hosted:
-      host: wiki.company.com
+      host: wiki.company.local
       base_path: /
       scheme: http
   nav:
@@ -266,7 +266,7 @@ apps:
       base_path: /
       scheme: http
     self-hosted:
-      host: intranet.company.com
+      host: intranet.company.local
       base_path: /
       scheme: http
   nav:
@@ -293,7 +293,7 @@ apps:
       base_path: /
       scheme: http
     self-hosted:
-      host: analytics.company.com
+      host: analytics.company.local
       base_path: /
       scheme: http
   nav:
@@ -320,7 +320,7 @@ apps:
       base_path: /
       scheme: http
     self-hosted:
-      host: tableau.company.com
+      host: tableau.company.local
       base_path: /
       scheme: http
   nav:
@@ -349,7 +349,7 @@ apps:
       base_path: /
       scheme: http
     self-hosted:
-      host: apps.company.com
+      host: apps.company.local
       base_path: /
       scheme: http
   nav:

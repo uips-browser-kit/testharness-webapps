@@ -12,4 +12,4 @@ cases:
     workbook: Sales
     view: Overview
     :showVizHome: 'no'
-  expected_url: http://tableau.company.com/views/Sales/Overview?%3AshowVizHome=no
+  expected_url: http://tableau.company.local/views/Sales/Overview?%3AshowVizHome=no

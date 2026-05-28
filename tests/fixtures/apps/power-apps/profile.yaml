@@ -7,7 +7,7 @@ app:
       host: apps.powerapps.local
       base_path: /
     self-hosted:
-      host: apps.company.com
+      host: apps.company.local
       base_path: /
   routes:
   - id: app

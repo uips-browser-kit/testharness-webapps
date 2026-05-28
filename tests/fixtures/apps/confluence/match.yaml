@@ -6,7 +6,7 @@ cases:
   expected_params:
     space_key: ENG
     page_id: '98765'
-- url: http://wiki.company.com/spaces/ENG/pages/98765
+- url: http://wiki.company.local/spaces/ENG/pages/98765
   expected_app: confluence
   expected_route: page
   expected_env: self-hosted

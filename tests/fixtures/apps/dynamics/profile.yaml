@@ -7,7 +7,7 @@ app:
       host: org.crm.dynamics.local
       base_path: /
     prod:
-      host: dynamics.company.com
+      host: dynamics.company.local
       base_path: /
   routes:
   - id: record

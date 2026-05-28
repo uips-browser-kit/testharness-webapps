@@ -4,10 +4,10 @@ app:
   product: Fusion / EBS
   environments:
     dev:
-      host: oracle-dev.company.com
+      host: oracle-dev.company.local
       base_path: /
     prod:
-      host: finance.company.com
+      host: finance.company.local
       base_path: /
   routes:
   - id: welcome

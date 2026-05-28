@@ -14,4 +14,4 @@ cases:
     app_id: app-001
     tenantId: tenant-001
     screen: Orders
-  expected_url: http://apps.company.com/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders
+  expected_url: http://apps.company.local/play/e/env-001/a/app-001?tenantId=tenant-001&screen=Orders

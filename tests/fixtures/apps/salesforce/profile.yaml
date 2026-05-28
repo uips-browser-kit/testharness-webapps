@@ -7,7 +7,7 @@ app:
       host: sf-dev.local
       base_path: /
     prod:
-      host: salesforce.company.com
+      host: salesforce.company.local
       base_path: /
   routes:
   - id: account-list

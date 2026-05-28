@@ -8,4 +8,4 @@ cases:
   env_id: prod
   params:
     sys_id: abc123def456
-  expected_url: http://servicedesk.company.com/now/workspace/agent/record/incident/abc123def456
+  expected_url: http://servicedesk.company.local/now/workspace/agent/record/incident/abc123def456

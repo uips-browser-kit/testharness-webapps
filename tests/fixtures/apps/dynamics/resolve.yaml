@@ -12,4 +12,4 @@ cases:
     appid: app-001
     pagetype: entityrecord
     id: '001'
-  expected_url: http://dynamics.company.com/main.aspx?appid=app-001&pagetype=entityrecord&id=001
+  expected_url: http://dynamics.company.local/main.aspx?appid=app-001&pagetype=entityrecord&id=001

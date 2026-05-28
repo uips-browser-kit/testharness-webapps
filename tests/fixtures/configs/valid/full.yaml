@@ -7,7 +7,7 @@ apps:
       host: sf-dev.local
       base_path: /
     prod:
-      host: salesforce.company.com
+      host: salesforce.company.local
       base_path: /
   routes:
   - id: account-list
@@ -33,7 +33,7 @@ apps:
       host: org.crm.dynamics.local
       base_path: /
     prod:
-      host: dynamics.company.com
+      host: dynamics.company.local
       base_path: /
   routes:
   - id: record
@@ -52,7 +52,7 @@ apps:
       host: instance.service-now.local
       base_path: /
     prod:
-      host: servicedesk.company.com
+      host: servicedesk.company.local
       base_path: /
   routes:
   - id: incident
@@ -65,10 +65,10 @@ apps:
   product: Fiori
   environments:
     dev:
-      host: erp-dev.company.com
+      host: erp-dev.company.local
       base_path: /
     prod:
-      host: erp.company.com
+      host: erp.company.local
       base_path: /
   routes:
   - id: shell
@@ -85,10 +85,10 @@ apps:
   product: Fusion / EBS
   environments:
     dev:
-      host: oracle-dev.company.com
+      host: oracle-dev.company.local
       base_path: /
     prod:
-      host: finance.company.com
+      host: finance.company.local
       base_path: /
   routes:
   - id: welcome
@@ -105,7 +105,7 @@ apps:
       host: tenant.workday.local
       base_path: /
     prod:
-      host: hr.company.com
+      host: hr.company.local
       base_path: /
   routes:
   - id: home
@@ -128,7 +128,7 @@ apps:
       host: jira.company.atlassian.local
       base_path: /
     self-hosted:
-      host: jira.company.com
+      host: jira.company.local
       base_path: /
   routes:
   - id: issue
@@ -144,7 +144,7 @@ apps:
       host: confluence.company.atlassian.local
       base_path: /wiki
     self-hosted:
-      host: wiki.company.com
+      host: wiki.company.local
       base_path: /
   routes:
   - id: page
@@ -160,7 +160,7 @@ apps:
       host: tenant.sharepoint.local
       base_path: /
     self-hosted:
-      host: intranet.company.com
+      host: intranet.company.local
       base_path: /
   routes:
   - id: documents
@@ -177,7 +177,7 @@ apps:
       host: app.powerbi.local
       base_path: /
     self-hosted:
-      host: analytics.company.com
+      host: analytics.company.local
       base_path: /
   routes:
   - id: report
@@ -194,7 +194,7 @@ apps:
       host: server.tableau.local
       base_path: /
     self-hosted:
-      host: tableau.company.com
+      host: tableau.company.local
       base_path: /
   routes:
   - id: view
@@ -213,7 +213,7 @@ apps:
       host: apps.powerapps.local
       base_path: /
     self-hosted:
-      host: apps.company.com
+      host: apps.company.local
       base_path: /
   routes:
   - id: app

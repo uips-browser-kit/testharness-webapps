@@ -7,7 +7,7 @@ app:
       host: confluence.company.atlassian.local
       base_path: /wiki
     self-hosted:
-      host: wiki.company.com
+      host: wiki.company.local
       base_path: /
   routes:
   - id: page

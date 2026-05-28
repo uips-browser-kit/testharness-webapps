@@ -7,7 +7,7 @@ app:
       host: tenant.workday.local
       base_path: /
     prod:
-      host: hr.company.com
+      host: hr.company.local
       base_path: /
   routes:
   - id: home

@@ -7,7 +7,7 @@ app:
       host: instance.service-now.local
       base_path: /
     prod:
-      host: servicedesk.company.com
+      host: servicedesk.company.local
       base_path: /
   routes:
   - id: incident

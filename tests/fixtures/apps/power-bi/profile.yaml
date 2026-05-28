@@ -7,7 +7,7 @@ app:
       host: app.powerbi.local
       base_path: /
     self-hosted:
-      host: analytics.company.com
+      host: analytics.company.local
       base_path: /
   routes:
   - id: report

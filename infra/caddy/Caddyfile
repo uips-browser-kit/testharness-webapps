@@ -29,7 +29,7 @@ http://sf-dev.local {
 }
 
 # Salesforce — prod
-http://salesforce.company.com {
+http://salesforce.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "salesforce"
@@ -47,7 +47,7 @@ http://org.crm.dynamics.local {
 }
 
 # Dynamics 365 — prod
-http://dynamics.company.com {
+http://dynamics.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "dynamics"
@@ -65,7 +65,7 @@ http://instance.service-now.local {
 }
 
 # ServiceNow — prod
-http://servicedesk.company.com {
+http://servicedesk.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "servicenow"
@@ -74,7 +74,7 @@ http://servicedesk.company.com {
 }
 
 # SAP Fiori — dev
-http://erp-dev.company.com {
+http://erp-dev.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "sap"
@@ -83,7 +83,7 @@ http://erp-dev.company.com {
 }
 
 # SAP Fiori — prod
-http://erp.company.com {
+http://erp.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "sap"
@@ -92,7 +92,7 @@ http://erp.company.com {
 }
 
 # Oracle Fusion — dev
-http://oracle-dev.company.com {
+http://oracle-dev.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "oracle"
@@ -101,7 +101,7 @@ http://oracle-dev.company.com {
 }
 
 # Oracle Fusion — prod
-http://finance.company.com {
+http://finance.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "oracle"
@@ -119,7 +119,7 @@ http://tenant.workday.local {
 }
 
 # Workday — prod
-http://hr.company.com {
+http://hr.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "workday"
@@ -137,7 +137,7 @@ http://jira.company.atlassian.local {
 }
 
 # Jira — self-hosted
-http://jira.company.com {
+http://jira.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "jira"
@@ -155,7 +155,7 @@ http://confluence.company.atlassian.local {
 }
 
 # Confluence — self-hosted
-http://wiki.company.com {
+http://wiki.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "confluence"
@@ -173,7 +173,7 @@ http://tenant.sharepoint.local {
 }
 
 # SharePoint — self-hosted
-http://intranet.company.com {
+http://intranet.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "sharepoint"
@@ -191,7 +191,7 @@ http://app.powerbi.local {
 }
 
 # Power BI — self-hosted
-http://analytics.company.com {
+http://analytics.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "power-bi"
@@ -209,7 +209,7 @@ http://server.tableau.local {
 }
 
 # Tableau — self-hosted
-http://tableau.company.com {
+http://tableau.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "tableau"
@@ -227,7 +227,7 @@ http://apps.powerapps.local {
 }
 
 # Power Apps — self-hosted
-http://apps.company.com {
+http://apps.company.local {
 	request_header -X-Harness-App
 	request_header -X-Harness-Env
 	request_header X-Harness-App "power-apps"

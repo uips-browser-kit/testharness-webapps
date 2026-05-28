@@ -6,7 +6,7 @@ cases:
 - route_id: account-list
   env_id: prod
   params: {}
-  expected_url: http://salesforce.company.com/lightning/r/Account/list/view
+  expected_url: http://salesforce.company.local/lightning/r/Account/list/view
 - route_id: account-detail
   env_id: dev
   params:
@@ -16,7 +16,7 @@ cases:
   env_id: prod
   params:
     id: '001'
-  expected_url: http://salesforce.company.com/lightning/r/Account/001/view
+  expected_url: http://salesforce.company.local/lightning/r/Account/001/view
 - route_id: dashboard
   env_id: dev
   params: {}
@@ -24,4 +24,4 @@ cases:
 - route_id: dashboard
   env_id: prod
   params: {}
-  expected_url: http://salesforce.company.com/lightning/page/home
+  expected_url: http://salesforce.company.local/lightning/page/home

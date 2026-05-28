@@ -1,11 +1,11 @@
 cases:
-- url: http://oracle-dev.company.com/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
+- url: http://oracle-dev.company.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
   expected_app: oracle
   expected_route: welcome
   expected_env: dev
   expected_params:
     _adf.ctrl-state: state-xyz
-- url: http://finance.company.com/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
+- url: http://finance.company.local/fscmUI/faces/FuseWelcome?_adf.ctrl-state=state-xyz
   expected_app: oracle
   expected_route: welcome
   expected_env: prod

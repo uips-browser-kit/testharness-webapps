@@ -6,7 +6,7 @@ cases:
 - route_id: home
   env_id: prod
   params: {}
-  expected_url: http://hr.company.com/home
+  expected_url: http://hr.company.local/home
 - route_id: task
   env_id: dev
   params:
@@ -18,4 +18,4 @@ cases:
   params:
     redirect: n
     id: '001'
-  expected_url: http://hr.company.com/home.htmld?redirect=n&id=001
+  expected_url: http://hr.company.local/home.htmld?redirect=n&id=001

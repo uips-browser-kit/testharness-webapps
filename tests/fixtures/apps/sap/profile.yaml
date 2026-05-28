@@ -4,10 +4,10 @@ app:
   product: Fiori
   environments:
     dev:
-      host: erp-dev.company.com
+      host: erp-dev.company.local
       base_path: /
     prod:
-      host: erp.company.com
+      host: erp.company.local
       base_path: /
   routes:
   - id: shell
