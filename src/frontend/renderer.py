@@ -29,6 +29,8 @@ def render(app: App, template_name: str, ctx: RouteContext, extra: dict | None =
     except TemplateNotFound:
         raise HTTPException(status_code=500, detail=f"Template not found: {path}")
 
+    env = app.environments[ctx.env_id]
+    base_path = env.base_path.rstrip("/")
     context = {
         "app_id": app.id,
         "app_name": app.product,
@@ -37,6 +39,7 @@ def render(app: App, template_name: str, ctx: RouteContext, extra: dict | None =
         "nav_items": app.nav,
         "current_route_id": ctx.route_id,
         "params": ctx.params,
+        "base_path": base_path,
         **(extra or {}),
     }
     return template.render(**context)

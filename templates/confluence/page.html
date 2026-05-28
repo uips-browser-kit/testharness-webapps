@@ -1,6 +1,7 @@
 {% extends layout %}
 {% block title %}{% if record %}{{ record.title }}{% else %}Page{% endif %} — {{ app_name }}{% endblock %}
 {% block content %}
+{% if list_url %}<div style="margin-bottom:0.75rem;"><a href="{{ list_url }}" style="font-size:13px;color:var(--app-primary);">&#8592; {{ entity_title or "Pages" }}</a></div>{% endif %}
 {% if record %}
 <div style="margin-bottom:1rem;">
   <h1 style="font-size:20px;font-weight:700;color:var(--app-primary);">{{ record.title }}</h1>

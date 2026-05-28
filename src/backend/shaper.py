@@ -14,9 +14,23 @@ from src.core.resolver import resolve
 def shape_detail(
     app: App, route: Route, ctx: RouteContext, raw: dict | None
 ) -> DetailViewData:
+    entity_title = route.data_entity.replace("_", " ").title()
+    list_url = ""
+    list_route = next(
+        (r for r in app.routes if r.data_entity == route.data_entity and not r.data_key_field and r.id != route.id),
+        None,
+    )
+    if list_route:
+        key_param_name = route.data_key_param or route.data_key_field
+        list_params = {k: v for k, v in ctx.params.items() if k != key_param_name}
+        try:
+            list_url = resolve(app, list_route.id, ctx.env_id, list_params)
+        except (NotServerVisible, KeyError, ValueError):
+            pass
     return DetailViewData(
-        entity_title=route.data_entity.replace("_", " ").title(),
+        entity_title=entity_title,
         record=raw,
+        list_url=list_url,
     )
 
 

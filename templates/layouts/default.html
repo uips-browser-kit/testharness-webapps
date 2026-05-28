@@ -23,12 +23,12 @@
         <ul>
           {% for item in nav_items %}
           <li{% if item.route_id == current_route_id %} class="active" aria-current="page"{% endif %}>
-            <a href="{{ item.href }}">{{ item.label }}</a>
+            <a href="{{ base_path }}{{ item.href }}">{{ item.label }}</a>
             {% if item.children %}
             <ul{% if current_route_id in item.child_route_ids %} aria-expanded="true"{% else %} aria-expanded="false"{% endif %}>
               {% for child in item.children %}
               <li{% if child.route_id == current_route_id %} class="active" aria-current="page"{% endif %}>
-                <a href="{{ child.href }}">{{ child.label }}</a>
+                <a href="{{ base_path }}{{ child.href }}">{{ child.label }}</a>
               </li>
               {% endfor %}
             </ul>

@@ -410,11 +410,11 @@ apps:
     href: /
   - label: Spaces
     route_id: space
-    href: /spaces
+    href: /spaces/ENG
     children:
     - label: Page Detail
       route_id: page
-      href: /spaces
+      href: /spaces/ENG
   routes:
   - id: page
     path: /spaces/{space_key}/pages/{page_id}
@@ -454,14 +454,14 @@ apps:
   nav:
   - label: Home
     route_id: home
-    href: /sites/{site_name}
+    href: /sites/HR
   - label: Documents
     route_id: document-list
-    href: /sites
+    href: /sites/HR/Shared%20Documents/Forms/AllItems.aspx
     children:
     - label: Document Detail
       route_id: document-detail
-      href: /sites/{site_name}/Shared%20Documents/Forms/DispForm.aspx
+      href: /sites/HR/Shared%20Documents/Forms/DispForm.aspx
   routes:
   - id: document-detail
     path: /sites/{site_name}/Shared%20Documents/Forms/DispForm.aspx
@@ -507,11 +507,11 @@ apps:
     href: /groups
   - label: Reports
     route_id: report-list
-    href: /groups/{workspace}/reports
+    href: /groups/harness/reports
     children:
     - label: Report Detail
       route_id: report
-      href: /groups/{workspace}/reports/{report_id}
+      href: /groups/harness/reports/1
   routes:
   - id: report
     path: /groups/{workspace}/reports/{report_id}
@@ -554,11 +554,11 @@ apps:
     href: /views
   - label: Workbooks
     route_id: workbook
-    href: /views/{workbook}
+    href: /views/harness
     children:
     - label: View Detail
       route_id: view
-      href: /views/{workbook}/{view}
+      href: /views/harness/harness
   routes:
   - id: view
     path: /views/{workbook}/{view}
@@ -603,11 +603,11 @@ apps:
     href: /home
   - label: Apps
     route_id: app-list
-    href: /play/e/{env_id}/a
+    href: /play/e/harness/a
     children:
     - label: App Detail
       route_id: app
-      href: /play/e/{env_id}/a/{app_id}
+      href: /play/e/harness/a/harness
   routes:
   - id: app
     path: /play/e/{env_id}/a/{app_id}

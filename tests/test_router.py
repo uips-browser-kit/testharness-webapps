@@ -42,9 +42,10 @@ def test_query_route_returns_match(client):
     assert "Dynamics" in r.text
 
 
-def test_unknown_host_returns_404(client):
+def test_unknown_host_returns_harness_index(client):
     r = client.get("/some/path", headers={"host": "unknown.host.local"})
-    assert r.status_code == 404
+    assert r.status_code == 200
+    assert "testharness-webapps" in r.text
 
 
 def test_unknown_path_returns_404(client):

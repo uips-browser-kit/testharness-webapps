@@ -63,6 +63,32 @@ def test_shape_detail_record_none_when_not_found(salesforce):
     assert view.record is None
 
 
+def test_shape_detail_list_url_populated(salesforce, loader):
+    """shape_detail computes a back-to-list URL pointing at the sibling list route."""
+    route = salesforce.route("account-detail")
+    ctx = RouteContext(app_id="salesforce", route_id="account-detail", env_id="dev", params={"id": "001"})
+    raw = loader.get_record("salesforce", "accounts", "id", "001")
+    view = shape_detail(salesforce, route, ctx, raw)
+    assert view.list_url != ""
+    assert "salesforce-dev.local" in view.list_url
+    assert "Account/list/view" in view.list_url
+
+
+def test_shape_detail_list_url_query_based(apps, loader):
+    """For query-based routes the list URL includes the shared query params."""
+    oracle = next(a for a in apps if a.id == "oracle")
+    route = oracle.route("invoice-detail")
+    ctx = RouteContext(
+        app_id="oracle", route_id="invoice-detail", env_id="dev",
+        params={"_adf.ctrl-state": "abc123", "invoice_number": "INV001"},
+    )
+    raw = loader.get_record("oracle", "invoices", "invoice_number", "INV001")
+    view = shape_detail(oracle, route, ctx, raw)
+    assert view.list_url != ""
+    assert "_adf.ctrl-state=abc123" in view.list_url
+    assert "invoice_number" not in view.list_url
+
+
 def test_shape_detail_entity_title_underscores(salesforce, loader):
     """data_entity with underscores becomes title-cased with spaces."""
     route = salesforce.route("opportunity-detail")

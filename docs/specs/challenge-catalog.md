@@ -72,6 +72,15 @@ effects:
     extra_step_rate: 0.0-1.0
     conditional_required_fields: [string]
     transient_validation_error_rate: 0.0-1.0
+  rate_limit:
+    enabled: boolean
+    algorithm: token_bucket | fixed_window
+    capacity: integer               # max tokens / window capacity
+    refill_per_sec: number          # token_bucket only
+    window_sec: integer             # fixed_window only
+    cost_per_request: integer       # default 1
+    key_by: app | env | route | client
+    retry_after_sec: integer
 limits:
   max_delay_ms: integer
   max_fault_rate: 0.0-1.0
@@ -158,6 +167,18 @@ Examples:
 
 Note: backend emits transport-neutral markers; API decides HTTP mapping.
 
+### 7. Rate limiting
+
+Intent: emulate platform throttling and quota protections.
+
+Examples:
+- burst traffic exceeds route quota
+- tenant/app-level throughput cap reached
+- temporary throttling with retry hint
+
+Guideline: challenge outcome should include a transport-neutral throttle marker;
+API maps this to HTTP `429` and `Retry-After` when applicable.
+
 ## Randomness and reproducibility
 
 Rules:
@@ -181,6 +202,7 @@ Required guards:
 - hard cap on active fault rate per route (default 0.5)
 - optional scenario TTL
 - emergency disable switch per app/env/route
+- hard cap on `retry_after_sec` (default 300)
 
 ## Metrics and logs
 
@@ -188,6 +210,7 @@ Minimum metrics:
 - `harness_challenge_applied_total{app,env,route,scenario,effect}`
 - `harness_challenge_delay_ms_bucket{app,env,route,scenario}`
 - `harness_challenge_fault_total{app,env,route,scenario,fault_kind}`
+- `harness_challenge_rate_limited_total{app,env,route,scenario,key}`
 
 Log fields:
 - request id
@@ -195,6 +218,7 @@ Log fields:
 - scenario id
 - seed / stream / draw index
 - applied effects
+- rate-limit key and remaining budget (if rate_limit applied)
 
 ## API and CLI contract notes
 
@@ -207,6 +231,9 @@ Runtime Debug CLI commands (example):
 - `harness-debug challenge set ...`
 - `harness-debug challenge clear ...`
 - `harness-debug challenge list`
+
+Rate-limit config can be set via the same challenge payload using
+`effects.rate_limit`.
 
 ## Default scenario catalog (v1)
 
@@ -222,6 +249,8 @@ Runtime Debug CLI commands (example):
   - intermittent extra step + transient validation errors
 - `conflict-heavy`
   - business_error conflicts on update-like routes
+- `throttle-burst`
+  - token bucket limit with short retry-after hints
 
 ## Versioning
 

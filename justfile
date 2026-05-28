@@ -37,6 +37,10 @@ logs *args:
 restart service:
     docker compose -f infra/docker-compose.yml restart {{service}}
 
+# Run harness-cli inspection tool (route-match, view-data, challenge …)
+cli *args:
+    uv run harness-cli {{if args != "" {args} else {"--help"}}}
+
 # Run integration tests against the live stack (requires: just up)
 integration:
     uv run pytest -m integration -v

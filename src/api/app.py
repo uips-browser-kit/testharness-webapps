@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Awaitable, Callable
 
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse, Response
+from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from src.api.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
@@ -30,6 +30,30 @@ _FAULT_TO_STATUS: dict[str, int] = {
 }
 
 _sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep
+
+
+def _harness_index(apps: list) -> HTMLResponse:
+    rows = []
+    for app_obj in apps:
+        home_nav = next((n for n in app_obj.nav if n.route_id in ("home", "dashboard")), None)
+        for env_id, env in app_obj.environments.items():
+            href = f"http://{env.host}{env.base_path.rstrip('/')}{home_nav.href if home_nav else '/'}"
+            rows.append(
+                f'<tr><td>{app_obj.vendor}</td><td>{app_obj.product}</td>'
+                f'<td>{env_id}</td><td><a href="{href}">{env.host}</a></td></tr>'
+            )
+    table = "\n".join(rows)
+    html = (
+        "<!DOCTYPE html><html><head><meta charset=utf-8>"
+        "<title>testharness-webapps</title>"
+        '<link rel="stylesheet" href="/static/css/base.css"></head>'
+        '<body><div class="shell" style="padding:2rem;">'
+        "<h1 style='font-size:20px;font-weight:700;margin-bottom:1.5rem;'>testharness-webapps</h1>"
+        "<table><thead><tr><th>Vendor</th><th>Product</th><th>Env</th><th>Host</th></tr></thead>"
+        f"<tbody>{table}</tbody></table>"
+        "</div></body></html>"
+    )
+    return HTMLResponse(content=html)
 
 
 @asynccontextmanager
@@ -96,14 +120,32 @@ def list_challenges(request: Request):
     methods=["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
 )
 async def catch_all(request: Request, path: str):
+    host = request.headers.get("host", "").split(":")[0]
+    apps: list = request.app.state.apps
+
+    # Redirect bare / to base_path/ for apps whose base_path is not /
+    if request.url.path == "/":
+        for app_obj in apps:
+            for env_id, env in app_obj.environments.items():
+                if env.host == host:
+                    base = env.base_path.rstrip("/")
+                    if base:
+                        return RedirectResponse(url=base + "/", status_code=302)
+
     start = time.perf_counter()
     ctx = None
     status = 500
     try:
-        ctx = resolve_route(request, request.app.state.apps)
+        ctx = resolve_route(request, apps)
         status = 200
     except HTTPException as exc:
         status = exc.status_code
+        if exc.status_code == 404 and not any(
+            env.host == host
+            for app_obj in apps
+            for env in app_obj.environments.values()
+        ):
+            return _harness_index(apps)
         raise
     except Exception as exc:
         status = 500
@@ -116,7 +158,7 @@ async def catch_all(request: Request, path: str):
             status_code=status,
             duration=time.perf_counter() - start,
         )
-    matched_app = next(a for a in request.app.state.apps if a.id == ctx.app_id)
+    matched_app = next(a for a in apps if a.id == ctx.app_id)
     route = matched_app.route(ctx.route_id)
 
     service: HarnessService = request.app.state.service

@@ -79,6 +79,7 @@ class DetailViewData:
     kind: Literal["detail"] = "detail"
     entity_title: str = ""
     record: dict | None = None
+    list_url: str = ""
 
 
 @dataclass

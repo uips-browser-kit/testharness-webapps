@@ -3,6 +3,7 @@
 {% block title %}{{ record.name }} — Account — {{ app_name }}{% endblock %}
 
 {% block content %}
+{% if list_url %}<div style="margin-bottom:0.75rem;"><a href="{{ list_url }}" style="font-size:13px;color:var(--app-primary);">&#8592; {{ entity_title or "Accounts" }}</a></div>{% endif %}
 {% if record %}
 <div class="record-header">
   <h1 style="font-size:20px; font-weight:700; color:var(--app-primary); margin-bottom:0.25rem;">

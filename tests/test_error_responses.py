@@ -31,9 +31,10 @@ def test_200_route_matched(client):
 # --- 404 -----------------------------------------------------------------------
 
 
-def test_404_no_host_match(client):
+def test_unknown_host_returns_harness_index(client):
     r = client.get("/any/path", headers={"host": "no-such-host.local"})
-    assert r.status_code == 404
+    assert r.status_code == 200
+    assert "testharness-webapps" in r.text
 
 
 def test_404_no_path_match(client):
