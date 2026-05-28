@@ -177,7 +177,7 @@ access denied page
 role restricted content
 ```
 
-OAuth/OIDC remains owned by Fake IdP.
+OAuth/OIDC remains owned by Keycloak.
 
 ## Data model
 

@@ -25,8 +25,8 @@ apps:
     vendor: Salesforce
     product: Lightning
     enabled: true
-    templates: templates/enterprise/salesforce
-    data: data/enterprise/salesforce
+    templates: templates/salesforce
+    data: data/default/salesforce
 
     environments:
 
