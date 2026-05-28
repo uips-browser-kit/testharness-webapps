@@ -1,2 +1,258 @@
+apps:
+- id: salesforce
+  vendor: Salesforce
+  product: Lightning
+  environments:
+    dev:
+      host: sf-dev.local
+      base_path: /
+      scheme: http
+    prod:
+      host: salesforce.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: account-detail
+    path: /lightning/r/Account/{id}/view
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: dashboard
+    path: /lightning/page/home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+
+- id: dynamics
+  vendor: Microsoft
+  product: Dynamics 365
+  environments:
+    dev:
+      host: org.crm.dynamics.com
+      base_path: /
+      scheme: http
+    prod:
+      host: dynamics.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: record
+    path: /main.aspx
+    pattern_type: query
+    query_params:
+    - appid
+    - pagetype
+    - id
+    server_visible: true
+
+- id: servicenow
+  vendor: ServiceNow
+  product: Workspace
+  environments:
+    dev:
+      host: instance.service-now.com
+      base_path: /
+      scheme: http
+    prod:
+      host: servicedesk.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: incident
+    path: /now/workspace/agent/record/incident/{sys_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+
+- id: sap
+  vendor: SAP
+  product: Fiori
+  environments:
+    dev:
+      host: erp-dev.company.com
+      base_path: /
+      scheme: http
+    prod:
+      host: erp.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: shell
+    path: /sap/bc/ui5_ui5/ui2/ushell
+    pattern_type: query
+    query_params:
+    - sap-client
+    - so
+    server_visible: true
+    note: Hash fragment (#SalesOrder-display?SO=...) is not server-visible; 'so' is
+      the harness server-side representation
+
+- id: oracle
+  vendor: Oracle
+  product: Fusion / EBS
+  environments:
+    dev:
+      host: oracle-dev.company.com
+      base_path: /
+      scheme: http
+    prod:
+      host: finance.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: welcome
+    path: /fscmUI/faces/FuseWelcome
+    pattern_type: query
+    query_params:
+    - _adf.ctrl-state
+    server_visible: true
+
+- id: workday
+  vendor: Workday
+  product: Workday
+  environments:
+    dev:
+      host: tenant.workday.com
+      base_path: /
+      scheme: http
+    prod:
+      host: hr.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: home
+    path: /home
+    pattern_type: path
+    query_params: []
+    server_visible: true
+  - id: task
+    path: /home.htmld
+    pattern_type: query
+    query_params:
+    - redirect
+    - id
+    server_visible: true
+
+- id: jira
+  vendor: Atlassian
+  product: Jira
+  environments:
+    cloud:
+      host: jira.company.atlassian.net
+      base_path: /
+      scheme: http
+    self-hosted:
+      host: jira.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: issue
+    path: /browse/{issue_key}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+
+- id: confluence
+  vendor: Atlassian
+  product: Confluence
+  environments:
+    cloud:
+      host: confluence.company.atlassian.net
+      base_path: /wiki
+      scheme: http
+    self-hosted:
+      host: wiki.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: page
+    path: /spaces/{space_key}/pages/{page_id}
+    pattern_type: path
+    query_params: []
+    server_visible: true
+
+- id: sharepoint
+  vendor: Microsoft
+  product: SharePoint
+  environments:
+    cloud:
+      host: tenant.sharepoint.com
+      base_path: /
+      scheme: http
+    self-hosted:
+      host: intranet.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: documents
+    path: /sites/{site_name}/Shared%20Documents/Forms/AllItems.aspx
+    pattern_type: path
+    query_params: []
+    server_visible: true
+    note: URL-encoded space is a static segment — preserved as-is
+
+- id: power-bi
+  vendor: Microsoft
+  product: Power BI
+  environments:
+    cloud:
+      host: app.powerbi.com
+      base_path: /
+      scheme: http
+    self-hosted:
+      host: analytics.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: report
+    path: /groups/{workspace}/reports/{report_id}
+    pattern_type: path
+    query_params:
+    - filter
+    server_visible: true
+
+- id: tableau
+  vendor: Tableau
+  product: Tableau Server
+  environments:
+    cloud:
+      host: server.tableau.com
+      base_path: /
+      scheme: http
+    self-hosted:
+      host: tableau.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: view
+    path: /views/{workbook}/{view}
+    pattern_type: path
+    query_params:
+    - :showVizHome
+    server_visible: true
+    note: Tableau colon-prefixed params are treated as regular query params; urlencode
+      will percent-encode the colon
+
+- id: power-apps
+  vendor: Microsoft
+  product: Power Apps
+  environments:
+    cloud:
+      host: apps.powerapps.com
+      base_path: /
+      scheme: http
+    self-hosted:
+      host: apps.company.com
+      base_path: /
+      scheme: http
+  routes:
+  - id: app
+    path: /play/e/{env_id}/a/{app_id}
+    pattern_type: path
+    query_params:
+    - tenantId
+    - screen
+    server_visible: true
+
 prometheus:
   scrape_interval: 15s
