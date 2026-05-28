@@ -7,7 +7,7 @@ apps:
       host: sf-dev.local
       base_path: /
     prod:
-      host: crm.company.com
+      host: salesforce.company.com
       base_path: /
   routes:
   - id: account-detail
@@ -28,7 +28,7 @@ apps:
       host: org.crm.dynamics.com
       base_path: /
     prod:
-      host: crm.company.com
+      host: dynamics.company.com
       base_path: /
   routes:
   - id: record
@@ -120,7 +120,7 @@ apps:
   product: Jira
   environments:
     cloud:
-      host: company.atlassian.net
+      host: jira.company.atlassian.net
       base_path: /
     self-hosted:
       host: jira.company.com
@@ -136,7 +136,7 @@ apps:
   product: Confluence
   environments:
     cloud:
-      host: company.atlassian.net
+      host: confluence.company.atlassian.net
       base_path: /wiki
     self-hosted:
       host: wiki.company.com
@@ -223,7 +223,7 @@ hosts:
   service: harness-api
   app: salesforce
   environment: dev
-- host: crm.company.com
+- host: salesforce.company.com
   service: harness-api
   app: salesforce
   environment: prod
@@ -231,7 +231,7 @@ hosts:
   service: harness-api
   app: dynamics
   environment: dev
-- host: crm.company.com
+- host: dynamics.company.com
   service: harness-api
   app: dynamics
   environment: prod
@@ -267,7 +267,7 @@ hosts:
   service: harness-api
   app: workday
   environment: prod
-- host: company.atlassian.net
+- host: jira.company.atlassian.net
   service: harness-api
   app: jira
   environment: cloud
@@ -275,7 +275,7 @@ hosts:
   service: harness-api
   app: jira
   environment: self-hosted
-- host: company.atlassian.net
+- host: confluence.company.atlassian.net
   service: harness-api
   app: confluence
   environment: cloud

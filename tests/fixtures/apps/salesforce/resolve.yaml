@@ -8,7 +8,7 @@ cases:
   env_id: prod
   params:
     id: '001'
-  expected_url: http://crm.company.com/lightning/r/Account/001/view
+  expected_url: http://salesforce.company.com/lightning/r/Account/001/view
 - route_id: dashboard
   env_id: dev
   params: {}
@@ -16,4 +16,4 @@ cases:
 - route_id: dashboard
   env_id: prod
   params: {}
-  expected_url: http://crm.company.com/lightning/page/home
+  expected_url: http://salesforce.company.com/lightning/page/home

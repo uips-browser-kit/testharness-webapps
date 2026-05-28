@@ -175,7 +175,7 @@ SALESFORCE = App(
     product="Lightning",
     environments={
         "dev":  Environment("sf-dev.local"),
-        "prod": Environment("crm.company.com"),
+        "prod": Environment("salesforce.company.com"),
     },
     routes=[
         Route("account-detail", "/lightning/r/Account/{id}/view", PatternType.PATH),
@@ -189,7 +189,7 @@ DYNAMICS = App(
     product="Dynamics 365",
     environments={
         "dev":  Environment("org.crm.dynamics.com"),
-        "prod": Environment("crm.company.com"),
+        "prod": Environment("dynamics.company.com"),
     },
     routes=[
         Route(
@@ -275,7 +275,7 @@ JIRA = App(
     vendor="Atlassian",
     product="Jira",
     environments={
-        "cloud":       Environment("company.atlassian.net"),
+        "cloud":       Environment("jira.company.atlassian.net"),
         "self-hosted": Environment("jira.company.com"),
     },
     routes=[
@@ -288,7 +288,7 @@ CONFLUENCE = App(
     vendor="Atlassian",
     product="Confluence",
     environments={
-        "cloud":       Environment("company.atlassian.net", base_path="/wiki"),
+        "cloud":       Environment("confluence.company.atlassian.net", base_path="/wiki"),
         "self-hosted": Environment("wiki.company.com"),
     },
     routes=[

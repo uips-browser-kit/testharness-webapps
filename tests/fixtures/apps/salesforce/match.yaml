@@ -5,7 +5,7 @@ cases:
   expected_env: dev
   expected_params:
     id: '001'
-- url: http://crm.company.com/lightning/r/Account/001/view
+- url: http://salesforce.company.com/lightning/r/Account/001/view
   expected_app: salesforce
   expected_route: account-detail
   expected_env: prod
@@ -16,7 +16,7 @@ cases:
   expected_route: dashboard
   expected_env: dev
   expected_params: {}
-- url: http://crm.company.com/lightning/page/home
+- url: http://salesforce.company.com/lightning/page/home
   expected_app: salesforce
   expected_route: dashboard
   expected_env: prod

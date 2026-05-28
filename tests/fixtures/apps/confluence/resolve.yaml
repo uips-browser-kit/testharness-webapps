@@ -4,7 +4,7 @@ cases:
   params:
     space_key: ENG
     page_id: '98765'
-  expected_url: http://company.atlassian.net/wiki/spaces/ENG/pages/98765
+  expected_url: http://confluence.company.atlassian.net/wiki/spaces/ENG/pages/98765
 - route_id: page
   env_id: self-hosted
   params:
