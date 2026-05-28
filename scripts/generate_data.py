@@ -21,8 +21,8 @@ from pathlib import Path
 
 from faker import Faker
 
-sys.path.insert(0, str(Path(__file__).parent))
-from catalog_urls import SAMPLE_PARAMS  # noqa: E402
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from src.core.sample_params import SAMPLE_PARAMS  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Helpers
