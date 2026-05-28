@@ -2,6 +2,7 @@ apps:
 - id: salesforce
   vendor: Salesforce
   product: Lightning
+  layout: layouts/default.html
   environments:
     dev:
       host: sf-dev.local
@@ -11,12 +12,26 @@ apps:
       host: salesforce.company.com
       base_path: /
       scheme: http
+  nav:
+  - label: Home
+    route_id: dashboard
+    href: /lightning/page/home
+  - label: Accounts
+    route_id: account-list
+    href: /lightning/r/Account/list/view
+    children:
+    - label: Account Detail
+      route_id: account-detail
+      href: /lightning/r/Account/{id}/view
   routes:
   - id: account-detail
     path: /lightning/r/Account/{id}/view
     pattern_type: path
     query_params: []
     server_visible: true
+    template: account_detail
+    data_entity: accounts
+    data_key_field: id
   - id: dashboard
     path: /lightning/page/home
     pattern_type: path

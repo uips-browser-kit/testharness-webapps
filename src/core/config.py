@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from src.core.models import App, Environment, PatternType, Route
+from src.core.models import App, Environment, NavItem, PatternType, Route
 
 _ALLOWED_TOP_LEVEL = {"apps", "data", "keycloak", "prometheus", "caddy"}
 
@@ -78,12 +78,16 @@ def _parse_app(path: Path, raw: dict, index: int) -> App:
 
     routes = [_parse_route(path, r, index, j) for j, r in enumerate(routes_raw)]
 
+    nav = [_parse_nav_item(item) for item in raw.get("nav", [])]
+
     return App(
         id=raw["id"],
         vendor=raw["vendor"],
         product=raw["product"],
         environments=environments,
         routes=routes,
+        nav=nav,
+        layout=raw.get("layout", "layouts/default.html"),
     )
 
 
@@ -103,6 +107,19 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         query_params=raw.get("query_params", []),
         server_visible=raw.get("server_visible", True),
         note=raw.get("note", ""),
+        template=raw.get("template", ""),
+        data_entity=raw.get("data_entity", ""),
+        data_key_field=raw.get("data_key_field", ""),
+    )
+
+
+def _parse_nav_item(raw: dict) -> NavItem:
+    children = [_parse_nav_item(c) for c in raw.get("children", [])]
+    return NavItem(
+        label=raw["label"],
+        route_id=raw["route_id"],
+        href=raw["href"],
+        children=children,
     )
 
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ app_name }} — {{ env_name }}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/apps/{{ app_id }}.css">
+</head>
+<body>
+<div class="shell">
+
+  <header class="topbar">
+    <span class="topbar__app-name">{{ app_name }}</span>
+    <span class="topbar__env-badge">{{ env_name }}</span>
+    <span class="topbar__spacer"></span>
+    {% block topbar_extra %}{% endblock %}
+  </header>
+
+  <div class="body">
+    <aside class="sidebar">
+      <nav aria-label="Application navigation">
+        <ul>
+          {% for item in nav_items %}
+          <li{% if item.route_id == current_route_id %} class="active" aria-current="page"{% endif %}>
+            <a href="{{ item.href }}">{{ item.label }}</a>
+            {% if item.children %}
+            <ul{% if current_route_id in item.child_route_ids %} aria-expanded="true"{% else %} aria-expanded="false"{% endif %}>
+              {% for child in item.children %}
+              <li{% if child.route_id == current_route_id %} class="active" aria-current="page"{% endif %}>
+                <a href="{{ child.href }}">{{ child.label }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

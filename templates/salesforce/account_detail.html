@@ -1,0 +1,44 @@
+{% extends layout %}
+
+{% block title %}{{ record.name }} — Account — {{ app_name }}{% endblock %}
+
+{% block content %}
+{% if record %}
+<div class="record-header">
+  <h1 style="font-size:20px; font-weight:700; color:var(--app-primary); margin-bottom:0.25rem;">
+    {{ record.name }}
+  </h1>
+  <span class="badge">Account</span>
+  <span class="badge" style="margin-left:0.5rem;">{{ record.industry }}</span>
+</div>
+
+<table style="margin-top:1.5rem; max-width:640px;">
+  <thead>
+    <tr><th colspan="2">Details</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Account ID</td><td>{{ record.id }}</td></tr>
+    <tr><td>Industry</td><td>{{ record.industry }}</td></tr>
+    <tr><td>Phone</td><td>{{ record.phone }}</td></tr>
+    <tr><td>Website</td><td><a href="{{ record.website }}">{{ record.website }}</a></td></tr>
+    <tr><td>Annual Revenue</td><td>${{ "{:,.0f}".format(record.annual_revenue) }}</td></tr>
+    <tr><td>Account Owner</td><td>{{ record.owner }}</td></tr>
+  </tbody>
+</table>
+
+<table style="margin-top:1.5rem; max-width:640px;">
+  <thead>
+    <tr><th colspan="2">Billing Address</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Street</td><td>{{ record.billing_address.street }}</td></tr>
+    <tr><td>City</td><td>{{ record.billing_address.city }}</td></tr>
+    <tr><td>State</td><td>{{ record.billing_address.state }}</td></tr>
+    <tr><td>ZIP</td><td>{{ record.billing_address.zip }}</td></tr>
+    <tr><td>Country</td><td>{{ record.billing_address.country }}</td></tr>
+  </tbody>
+</table>
+{% else %}
+<p style="color:var(--sol-red);">Record not found.</p>
+{% endif %}
+{% endblock %}

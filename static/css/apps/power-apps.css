@@ -1,0 +1,13 @@
+/* Microsoft Power Apps — Power Apps Purple */
+:root {
+    --app-primary:             #742774;
+    --app-primary-text:        #ffffff;
+    --app-topbar-bg:           #2d0f2d;
+    --app-topbar-text:         #d9b8d9;
+    --app-sidebar-bg:          #200b20;
+    --app-sidebar-text:        #d9b8d9;
+    --app-sidebar-active:      #742774;
+    --app-sidebar-active-text: #ffffff;
+    --app-content-bg:          #f8f4f8;
+    --app-content-text:        #1a1a1a;
+}

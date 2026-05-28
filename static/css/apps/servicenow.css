@@ -1,0 +1,13 @@
+/* ServiceNow Workspace — ServiceNow Teal */
+:root {
+    --app-primary:             #81b5a1;
+    --app-primary-text:        #0e2626;
+    --app-topbar-bg:           #0e2626;
+    --app-topbar-text:         #a8c8bc;
+    --app-sidebar-bg:          #122d2d;
+    --app-sidebar-text:        #a8c8bc;
+    --app-sidebar-active:      #81b5a1;
+    --app-sidebar-active-text: #0e2626;
+    --app-content-bg:          #f0f4f3;
+    --app-content-text:        #1a1a1a;
+}
