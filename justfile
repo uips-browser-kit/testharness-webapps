@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh", "-NoLogo", "-Command"]
+
 # Add a package to the workspace venv (records in parent pyproject.toml)
 add *args:
     uv --directory .. add {{args}}
