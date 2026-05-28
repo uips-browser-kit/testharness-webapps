@@ -1,4 +1,9 @@
-set windows-shell := ["pwsh", "-NoLogo", "-Command"]
+set shell := ["pwsh", "-NoProfile", "-Command"]
+
+default: help
+
+help:
+    @just --list
 
 # Add a package to the workspace venv (records in parent pyproject.toml)
 add *args:
@@ -7,6 +12,10 @@ add *args:
 # Run a script using the workspace venv
 run *args:
     uv run {{args}}
+
+# Run tests
+test:
+    uv run pytest
 
 # Start all platform services (build images if needed)
 up *args:
