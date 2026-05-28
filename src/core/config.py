@@ -13,6 +13,15 @@ class ConfigError(Exception):
     pass
 
 
+def parse_data_set(path: Path) -> str:
+    """Return the configured dataset name from harness.yaml, defaulting to 'default'."""
+    raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    data_raw = raw.get("data") if isinstance(raw, dict) else None
+    if isinstance(data_raw, dict):
+        return str(data_raw.get("set", "default"))
+    return "default"
+
+
 def load_config(path: Path) -> list[App]:
     try:
         raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))

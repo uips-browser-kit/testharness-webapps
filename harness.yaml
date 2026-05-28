@@ -254,5 +254,8 @@ apps:
     - screen
     server_visible: true
 
+data:
+  set: default
+
 prometheus:
   scrape_interval: 15s
