@@ -5,6 +5,8 @@ services:
     volumes:
       - ../harness.yaml:/app/harness.yaml:ro
       - ../data:/app/data:ro
+      - ../templates:/app/templates:ro
+      - ../static:/app/static:ro
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 5s
