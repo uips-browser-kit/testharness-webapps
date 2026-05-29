@@ -69,8 +69,8 @@ if ($Phase -eq "1" -or $Phase -eq "both") {
 # ---------------------------------------------------------------------------
 
 if ($Phase -eq "2" -or $Phase -eq "both") {
-    # idp.local has no /health endpoint
-    $healthHosts = $hostnames | Where-Object { $_ -ne "idp.local" }
+    # idp.local (Keycloak) and metrics.local (Prometheus) have no /health endpoint
+    $healthHosts = $hostnames | Where-Object { $_ -notin @("idp.local", "metrics.local") }
 
     Write-Host "Phase 2: HTTP /health reachability"
     foreach ($h in $healthHosts) {
