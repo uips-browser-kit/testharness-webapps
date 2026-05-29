@@ -295,9 +295,9 @@ def test_detail_route_entity(manifest):
     assert r["entity"] == "accounts"
 
 
-def test_detail_route_record_count(manifest):
+def test_detail_route_record_count(manifest, real_records):
     r = _sf_dev_route(manifest, "account-detail")
-    assert r["record_count"] == 20
+    assert r["record_count"] == len(real_records[("salesforce", "accounts")])
 
 
 def test_detail_route_candidates_is_list_of_strings(manifest):

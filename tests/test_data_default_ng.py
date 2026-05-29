@@ -17,16 +17,21 @@ from faker import Faker
 _DATA_DIR = Path(__file__).parent.parent / "data" / "default-ng"
 _CANONICAL = _DATA_DIR / "_canonical"
 
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).parent.parent))
+from scripts.generate_data import _NG_OPP_STAGES, generate_default_ng  # noqa: E402
+
+_COUNT = 20
+_CONTRACTS_COUNT = 6  # gen_contracts is called with a fixed count of 6 in generate_default_ng
+_CLOSED_WON_COUNT = sum(1 for s in _NG_OPP_STAGES if s == "Closed Won")
+
 
 @pytest.fixture(scope="module", autouse=True)
 def generated_dataset():
     """Generate default-ng dataset once for the module."""
-    import sys
-    sys.path.insert(0, str(Path(__file__).parent.parent))
-    from scripts.generate_data import generate_default_ng
     fake = Faker()
     Faker.seed(42)
-    generate_default_ng(fake, 20, _DATA_DIR)
+    generate_default_ng(fake, _COUNT, _DATA_DIR)
 
 
 def _load(path: Path) -> list[dict]:
@@ -88,23 +93,23 @@ def invoices(generated_dataset):
 # ---------------------------------------------------------------------------
 
 def test_accounts_count(accounts):
-    assert len(accounts) == 20
+    assert len(accounts) == _COUNT
 
 
 def test_contacts_count(contacts):
-    assert len(contacts) == 20
+    assert len(contacts) == _COUNT
 
 
 def test_opportunities_count(opportunities):
-    assert len(opportunities) == 20
+    assert len(opportunities) == _COUNT
 
 
 def test_products_count(products):
-    assert len(products) == 20
+    assert len(products) == _COUNT
 
 
 def test_cases_count(cases):
-    assert len(cases) == 20
+    assert len(cases) == _COUNT
 
 
 def test_leads_nonempty(leads):
@@ -112,7 +117,7 @@ def test_leads_nonempty(leads):
 
 
 def test_contracts_count(contracts):
-    assert len(contracts) == 6
+    assert len(contracts) == _CONTRACTS_COUNT
 
 
 def test_orders_nonempty(orders):
@@ -179,7 +184,7 @@ def test_opportunities_account_fk(opportunities, accounts):
 
 def test_opportunities_have_closed_won(opportunities):
     closed_won = [o for o in opportunities if o["stage"] == "Closed Won"]
-    assert len(closed_won) == 8
+    assert len(closed_won) == _CLOSED_WON_COUNT
 
 
 def test_opportunities_stage_variety(opportunities):
