@@ -15,7 +15,7 @@ def prepare_view(
         param_name = route.data_key_param or route.data_key_field
         key_value = ctx.params.get(param_name, "")
         raw = loader.get_record(ctx.app_id, route.data_entity, route.data_key_field, key_value)
-        return shape_detail(app, route, ctx, raw)
+        return shape_detail(app, route, ctx, raw, loader)
     else:
         raw_list = loader.get_all(ctx.app_id, route.data_entity)
         return shape_list(app, route, ctx, raw_list)

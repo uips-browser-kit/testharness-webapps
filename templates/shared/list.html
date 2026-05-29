@@ -23,8 +23,7 @@
   </thead>
   <tbody>
     {% for r in records %}
-    {% set row_key = r[detail_key_field] | string if detail_key_field else "" %}
-    {% set href = detail_urls[row_key] if (detail_urls and row_key and row_key in detail_urls) else "" %}
+    {% set href = row_urls[loop.index0] if (row_urls and loop.index0 < row_urls | length and row_urls[loop.index0]) else "" %}
     {% set ns = namespace(first_cell=true) %}
     <tr>
       {% for col in scalar_cols %}

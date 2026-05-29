@@ -38,3 +38,17 @@ def test_get_all_unknown_entity_returns_empty(loader):
 def test_missing_dataset_raises():
     with pytest.raises(DataLoaderError, match="Dataset directory not found"):
         DataLoader(DATA_DIR, "no-such-dataset")
+
+
+def test_filter_by_returns_matching_records(loader):
+    results = loader.filter_by("salesforce", "contacts", "account_id", "001")
+    assert isinstance(results, list)
+    assert all(r["account_id"] == "001" for r in results)
+
+
+def test_filter_by_empty_when_no_match(loader):
+    assert loader.filter_by("salesforce", "contacts", "account_id", "NOSUCHID") == []
+
+
+def test_filter_by_unknown_entity_returns_empty(loader):
+    assert loader.filter_by("salesforce", "no_such_entity", "field", "value") == []

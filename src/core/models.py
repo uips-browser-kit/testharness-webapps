@@ -48,6 +48,21 @@ class LatencyConfig:
 
 
 @dataclass
+class RelatedConfig:
+    entity: str
+    via: str = ""          # FK field in related entity == current record PK (children)
+    from_field: str = ""   # FK field in current record → related entity id (parent)
+    fields: list[str] = field(default_factory=list)
+
+
+@dataclass
+class RelatedPanel:
+    entity_title: str
+    records: list[dict]
+    fields: list[str]
+
+
+@dataclass
 class Route:
     id: str
     path: str
@@ -61,6 +76,8 @@ class Route:
     data_key_param: str = ""
     url_template: str = ""
     methods: list[str] = field(default_factory=lambda: ["GET"])
+    list_fields: list[str] = field(default_factory=list)
+    related: list[RelatedConfig] = field(default_factory=list)
 
 
 @dataclass
@@ -111,6 +128,7 @@ class DetailViewData:
     entity_title: str = ""
     record: dict | None = None
     list_url: str = ""
+    related_panels: list[RelatedPanel] = field(default_factory=list)
 
 
 @dataclass
@@ -120,6 +138,7 @@ class ListViewData:
     records: list[dict] = field(default_factory=list)
     detail_urls: dict[str, str] = field(default_factory=dict)
     detail_key_field: str = ""
+    row_urls: list[str] = field(default_factory=list)  # per-record detail URLs, parallel to records
 
 
 @dataclass

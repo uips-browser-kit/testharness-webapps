@@ -29,3 +29,6 @@ class DataLoader:
 
     def get_all(self, app_id: str, entity: str) -> list[dict]:
         return self._data.get(app_id, {}).get(entity, [])
+
+    def filter_by(self, app_id: str, entity: str, field: str, value: str) -> list[dict]:
+        return [r for r in self.get_all(app_id, entity) if str(r.get(field)) == value]

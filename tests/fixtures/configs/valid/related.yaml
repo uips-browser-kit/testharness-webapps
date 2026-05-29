@@ -1,0 +1,25 @@
+apps:
+  - id: related-app
+    vendor: Test
+    product: Related
+    environments:
+      dev:
+        host: related-app-dev.local
+    routes:
+      - id: item-detail
+        path: /items/{id}
+        pattern_type: path
+        data_entity: items
+        data_key_field: id
+        related:
+          - entity: comments
+            via: item_id
+            fields: [author, body]
+          - entity: categories
+            from_field: category_id
+            fields: [name]
+      - id: item-list
+        path: /items
+        pattern_type: path
+        data_entity: items
+        list_fields: [name, status]

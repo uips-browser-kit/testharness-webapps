@@ -78,6 +78,16 @@ apps:
     template: account_detail
     data_entity: accounts
     data_key_field: id
+    related:
+    - entity: contacts
+      via: account_id
+      fields: [first_name, last_name, title, email]
+    - entity: opportunities
+      via: account_id
+      fields: [name, stage, amount, close_date]
+    - entity: cases
+      via: account_id
+      fields: [id, subject, status, priority]
   - id: contact-list
     path: /lightning/r/Contact/list/view
     pattern_type: path
@@ -85,6 +95,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: contacts
+    list_fields: [first_name, last_name, title, email]
   - id: contact-detail
     path: /lightning/r/Contact/{id}/view
     pattern_type: path
@@ -93,6 +104,13 @@ apps:
     template: contact_detail
     data_entity: contacts
     data_key_field: id
+    related:
+    - entity: accounts
+      from_field: account_id
+      fields: [name, industry]
+    - entity: cases
+      via: contact_id
+      fields: [id, subject, status]
   - id: opportunity-list
     path: /lightning/r/Opportunity/list/view
     pattern_type: path
@@ -100,6 +118,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: opportunities
+    list_fields: [name, stage, amount, close_date]
   - id: opportunity-detail
     path: /lightning/r/Opportunity/{id}/view
     pattern_type: path
@@ -108,6 +127,10 @@ apps:
     template: opportunity_detail
     data_entity: opportunities
     data_key_field: id
+    related:
+    - entity: accounts
+      from_field: account_id
+      fields: [name, industry]
   - id: dashboard
     path: /lightning/page/home
     pattern_type: path
@@ -137,11 +160,11 @@ apps:
     href: /home.aspx
   - label: Accounts
     route_id: account-list
-    href: /main.aspx
+    href: /main.aspx?appid=00000000-0000-0000-0000-000000000000&pagetype=entitylist
     children:
     - label: Account Detail
       route_id: account-detail
-      href: /main.aspx
+      href: /main.aspx?appid=00000000-0000-0000-0000-000000000000&pagetype=entityrecord&id=001
   routes:
   - id: account-detail
     path: /main.aspx
@@ -155,6 +178,13 @@ apps:
     data_entity: accounts
     data_key_field: id
     url_template: /main.aspx?appid=00000000-0000-0000-0000-000000000000&pagetype=entityrecord&id={id}
+    related:
+    - entity: contacts
+      via: account_id
+      fields: [first_name, last_name, title, email]
+    - entity: opportunities
+      via: account_id
+      fields: [name, stage, amount, close_date]
   - id: account-list
     path: /main.aspx
     pattern_type: query
@@ -164,6 +194,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: accounts
+    list_fields: [name, industry, phone, annual_revenue]
   - id: home
     path: /home.aspx
     pattern_type: path
@@ -214,6 +245,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: incidents
+    list_fields: [number, short_description, state, priority, category]
   - id: home
     path: /now/workspace
     pattern_type: path
@@ -243,11 +275,11 @@ apps:
     href: /sap/bc/ui5_ui5/ui2/ushell
   - label: Sales Orders
     route_id: order-list
-    href: /sap/bc/ui5_ui5/ui2/ushell
+    href: /sap/bc/ui5_ui5/ui2/ushell?sap-client=100
     children:
     - label: Order Detail
       route_id: shell
-      href: /sap/bc/ui5_ui5/ui2/ushell
+      href: /sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=ORD-0001
   routes:
   - id: shell
     path: /sap/bc/ui5_ui5/ui2/ushell
@@ -271,6 +303,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: sales_orders
+    list_fields: [order_number, account_id, status, total, effective_date]
   - id: home
     path: /sap/bc/ui5_ui5/ui2/ushell
     pattern_type: path
@@ -300,11 +333,11 @@ apps:
     href: /fscmUI/faces/FuseOverview
   - label: Invoices
     route_id: welcome
-    href: /fscmUI/faces/FuseWelcome
+    href: /fscmUI/faces/FuseWelcome?_adf.ctrl-state=oracle-harness
     children:
     - label: Invoice Detail
       route_id: invoice-detail
-      href: /fscmUI/faces/FuseWelcome
+      href: /fscmUI/faces/FuseWelcome?_adf.ctrl-state=oracle-harness&invoice_number=INV-0001
   routes:
   - id: invoice-detail
     path: /fscmUI/faces/FuseWelcome
@@ -317,6 +350,10 @@ apps:
     data_entity: invoices
     data_key_field: invoice_number
     url_template: /fscmUI/faces/FuseWelcome?_adf.ctrl-state=oracle-harness&invoice_number={invoice_number}
+    related:
+    - entity: accounts
+      from_field: account_id
+      fields: [name, industry]
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
@@ -325,6 +362,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: invoices
+    list_fields: [invoice_number, account_id, amount, status, due_date]
   - id: home
     path: /fscmUI/faces/FuseOverview
     pattern_type: path
@@ -354,11 +392,11 @@ apps:
     href: /home
   - label: Employees
     route_id: employee-list
-    href: /home.htmld
+    href: /home.htmld?redirect=list
     children:
     - label: Employee Detail
       route_id: task
-      href: /home.htmld
+      href: /home.htmld?redirect=task&id=emp001
   routes:
   - id: task
     path: /home.htmld
@@ -380,6 +418,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: employees
+    list_fields: [employee_id, first_name, last_name, job_title, department]
   - id: home
     path: /home
     pattern_type: path
@@ -431,6 +470,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: issues
+    list_fields: [key, summary, issue_type, status, priority]
   - id: home
     path: /jira
     pattern_type: path
@@ -481,6 +521,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: pages
+    list_fields: [title, space_key, author, last_modified]
   - id: home
     path: /
     pattern_type: path
@@ -534,6 +575,7 @@ apps:
     note: URL-encoded space is a static segment — preserved as-is
     template: shared/list
     data_entity: documents
+    list_fields: [filename, library, author, modified_date]
   - id: home
     path: /sites/{site_name}
     pattern_type: path
@@ -576,14 +618,15 @@ apps:
     - filter
     server_visible: true
     template: report
-    data_entity: sales_metrics
+    data_entity: pipeline_by_stage
   - id: report-list
     path: /groups/{workspace}/reports
     pattern_type: path
     query_params: []
     server_visible: true
     template: shared/list
-    data_entity: sales_metrics
+    data_entity: pipeline_by_stage
+    list_fields: [stage, count, total_amount]
   - id: home
     path: /groups
     pattern_type: path
@@ -628,14 +671,15 @@ apps:
     note: Tableau colon-prefixed params are treated as regular query params; urlencode
       will percent-encode the colon
     template: view
-    data_entity: sales_metrics
+    data_entity: pipeline_by_stage
   - id: workbook
     path: /views/{workbook}
     pattern_type: path
     query_params: []
     server_visible: true
     template: shared/list
-    data_entity: sales_metrics
+    data_entity: pipeline_by_stage
+    list_fields: [stage, count, total_amount]
   - id: home
     path: /views
     pattern_type: path
@@ -687,6 +731,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: sales_orders
+    list_fields: [order_number, customer_name, status, total, order_date]
   - id: home
     path: /home
     pattern_type: path

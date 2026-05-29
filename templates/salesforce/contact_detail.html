@@ -35,6 +35,27 @@
   </tbody>
 </table>
 
+{% if related_panels %}
+{% for panel in related_panels %}
+<table style="margin-top:1.5rem; max-width:640px;">
+  <thead>
+    <tr><th colspan="{{ panel.fields | length or 1 }}">{{ panel.entity_title }}</th></tr>
+    {% if panel.fields %}
+    <tr>{% for f in panel.fields %}<th>{{ f | replace("_"," ") | title }}</th>{% endfor %}</tr>
+    {% endif %}
+  </thead>
+  <tbody>
+    {% if panel.records %}
+    {% for r in panel.records %}
+    <tr>{% for f in panel.fields %}<td>{{ r[f] if r[f] is not none else "—" }}</td>{% endfor %}</tr>
+    {% endfor %}
+    {% else %}
+    <tr><td colspan="{{ panel.fields | length or 1 }}" style="color:var(--sol-base01);">None</td></tr>
+    {% endif %}
+  </tbody>
+</table>
+{% endfor %}
+{% endif %}
 {% else %}
 <p style="color:var(--sol-red);">Record not found.</p>
 {% endif %}

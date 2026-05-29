@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from src.core.models import App, Environment, Fault, LatencyConfig, NavItem, PatternType, Route, ScenarioDefinition
+from src.core.models import App, Environment, Fault, LatencyConfig, NavItem, PatternType, RelatedConfig, Route, ScenarioDefinition
 
 _ALLOWED_TOP_LEVEL = {"apps", "data", "keycloak", "prometheus", "caddy", "cli"}
 
@@ -159,6 +159,19 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         data_key_param=raw.get("data_key_param", ""),
         url_template=raw.get("url_template", ""),
         methods=raw.get("methods", ["GET"]),
+        list_fields=raw.get("list_fields", []),
+        related=[_parse_related_config(r) for r in raw.get("related", [])],
+    )
+
+
+def _parse_related_config(raw: dict) -> RelatedConfig:
+    if "entity" not in raw:
+        raise ConfigError("related entry missing required field 'entity'")
+    return RelatedConfig(
+        entity=raw["entity"],
+        via=raw.get("via", ""),
+        from_field=raw.get("from_field", ""),
+        fields=raw.get("fields", []),
     )
 
 

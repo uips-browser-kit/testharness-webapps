@@ -1,13 +1,14 @@
 """
 Tests for src/backend/shaper.py — pure view shaping, no I/O.
 """
+import dataclasses
 import pytest
 from pathlib import Path
 
 from src.backend.data_loader import DataLoader
 from src.backend.shaper import shape_detail, shape_list
 from src.core.config import load_config
-from src.core.models import DetailViewData, ListViewData, RouteContext
+from src.core.models import DetailViewData, ListViewData, RelatedConfig, RouteContext
 
 _HARNESS_YAML = Path(__file__).parent.parent / "harness.yaml"
 _DATA_DIR = Path(__file__).parent.parent / "data"
@@ -187,3 +188,110 @@ def test_shape_list_no_filter_when_param_not_in_entity(salesforce, loader):
     raw = loader.get_all("salesforce", "accounts")
     view = shape_list(salesforce, route, ctx, raw)
     assert len(view.records) == len(raw)
+
+
+# --- list_fields projection -------------------------------------------------------
+
+
+def test_shape_list_projects_to_list_fields(salesforce, loader):
+    """When list_fields is set, records contain only those keys."""
+    route = dataclasses.replace(salesforce.route("account-list"), list_fields=["name", "industry"])
+    ctx = RouteContext(app_id="salesforce", route_id="account-list", env_id="dev", params={})
+    raw = loader.get_all("salesforce", "accounts")
+    view = shape_list(salesforce, route, ctx, raw)
+    assert len(view.records) == len(raw)
+    for rec in view.records:
+        assert set(rec.keys()) == {"name", "industry"}
+
+
+def test_shape_list_no_list_fields_returns_full_records(salesforce, loader):
+    """Without list_fields, records retain all original keys."""
+    route = dataclasses.replace(salesforce.route("account-list"), list_fields=[])
+    ctx = RouteContext(app_id="salesforce", route_id="account-list", env_id="dev", params={})
+    raw = loader.get_all("salesforce", "accounts")
+    view = shape_list(salesforce, route, ctx, raw)
+    assert "id" in view.records[0]
+    assert "billing_address" in view.records[0]
+
+
+def test_shape_list_row_urls_parallel_to_records(salesforce, loader):
+    """row_urls has the same length as records and each entry is a non-empty URL."""
+    route = salesforce.route("account-list")
+    ctx = RouteContext(app_id="salesforce", route_id="account-list", env_id="dev", params={})
+    raw = loader.get_all("salesforce", "accounts")
+    view = shape_list(salesforce, route, ctx, raw)
+    assert len(view.row_urls) == len(view.records)
+    assert all(url for url in view.row_urls)
+
+
+def test_shape_list_row_urls_present_after_projection(salesforce, loader):
+    """row_urls are still populated correctly when list_fields drops the key field."""
+    route = dataclasses.replace(salesforce.route("account-list"), list_fields=["name", "industry"])
+    ctx = RouteContext(app_id="salesforce", route_id="account-list", env_id="dev", params={})
+    raw = loader.get_all("salesforce", "accounts")
+    view = shape_list(salesforce, route, ctx, raw)
+    assert len(view.row_urls) == len(view.records)
+    assert all(url for url in view.row_urls)
+    # projected records do NOT have the key field
+    assert "id" not in view.records[0]
+
+
+# --- related panels ---------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def loader_ng():
+    return DataLoader(_DATA_DIR, "default-ng")
+
+
+def test_shape_detail_related_children(salesforce, loader_ng):
+    """Children panel: contacts filtered by account_id == current account PK."""
+    # Pick an account that actually has contacts in the dataset
+    contacts = loader_ng.get_all("salesforce", "contacts")
+    account_id = contacts[0]["account_id"]
+    raw = loader_ng.get_record("salesforce", "accounts", "id", account_id)
+    route = dataclasses.replace(salesforce.route("account-detail"), related=[
+        RelatedConfig(entity="contacts", via="account_id", fields=["first_name", "email"]),
+    ])
+    ctx = RouteContext(app_id="salesforce", route_id="account-detail", env_id="dev", params={"id": account_id})
+    view = shape_detail(salesforce, route, ctx, raw, loader_ng)
+    assert len(view.related_panels) == 1
+    panel = view.related_panels[0]
+    assert panel.entity_title == "Contacts"
+    assert panel.fields == ["first_name", "email"]
+    assert len(panel.records) > 0
+    for rec in panel.records:
+        assert set(rec.keys()) == {"first_name", "email"}
+
+
+def test_shape_detail_related_parent(salesforce, loader_ng):
+    """Parent panel: single account loaded via contact.account_id FK."""
+    contacts = loader_ng.get_all("salesforce", "contacts")
+    contact = next(c for c in contacts if c.get("account_id"))
+    route = dataclasses.replace(salesforce.route("contact-detail"), related=[
+        RelatedConfig(entity="accounts", from_field="account_id", fields=["name", "industry"]),
+    ])
+    ctx = RouteContext(app_id="salesforce", route_id="contact-detail", env_id="dev", params={"id": contact["id"]})
+    view = shape_detail(salesforce, route, ctx, contact, loader_ng)
+    assert len(view.related_panels) == 1
+    panel = view.related_panels[0]
+    assert panel.entity_title == "Accounts"
+    assert len(panel.records) == 1
+    assert "name" in panel.records[0]
+
+
+def test_shape_detail_no_related_config_empty_panels(salesforce, loader_ng):
+    """Route with no related config produces empty related_panels."""
+    route = dataclasses.replace(salesforce.route("account-detail"), related=[])
+    raw = loader_ng.get_record("salesforce", "accounts", "id", "001")
+    ctx = RouteContext(app_id="salesforce", route_id="account-detail", env_id="dev", params={"id": "001"})
+    view = shape_detail(salesforce, route, ctx, raw, loader_ng)
+    assert view.related_panels == []
+
+
+def test_shape_detail_no_loader_empty_panels(salesforce):
+    """Without a loader, related_panels is always empty regardless of route config."""
+    route = salesforce.route("account-detail")  # has related config from harness.yaml
+    ctx = RouteContext(app_id="salesforce", route_id="account-detail", env_id="dev", params={"id": "001"})
+    view = shape_detail(salesforce, route, ctx, {"id": "001"}, loader=None)
+    assert view.related_panels == []
