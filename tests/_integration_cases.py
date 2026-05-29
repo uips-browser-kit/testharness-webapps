@@ -51,7 +51,7 @@ _DATA_MAP: dict[str, list[tuple[str, str, dict[str, str], dict[str, str]]]] = {
     "power-bi": [
         (
             "report",
-            "sales_metrics.json",
+            "pipeline_by_stage.json",
             {},
             {"workspace": "my-workspace", "report_id": "rpt-001"},
         )

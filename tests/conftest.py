@@ -3,10 +3,12 @@ from pathlib import Path
 
 import yaml
 
+from src.core.config import parse_data_set
 from src.core.models import App, Environment, PatternType, Route
 
+_HARNESS_YAML = Path(__file__).parent.parent / "harness.yaml"
 APPS_DIR = Path(__file__).parent / "fixtures" / "apps"
-DATA_DIR = Path(__file__).parent.parent / "data" / "default"
+DATA_DIR = Path(__file__).parent.parent / "data" / parse_data_set(_HARNESS_YAML)
 
 
 def load_app(app_id: str) -> App:
