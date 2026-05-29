@@ -125,9 +125,10 @@ from the host directly. All external traffic enters through Caddy on port `80`.
 
 | Condition | HTTP status | Behaviour |
 |-----------|-------------|-----------|
-| No route matches host + path | `404` | Router returns a plain 404 page;<br/>no template render attempted |
-| Route matched, record not found in data | `200` | Template renders with<br/>"Record not found." message |
+| No route matches host + path | `404` | Error page rendered; no template render attempted |
+| Route matched, record not found in data | `404` | `RecordNotFound` raised in backend; error page rendered with `support_code` |
 | Template render error | `500` | Harness returns an error page |
+| Fault injected via challenge pipeline | varies | `_FAULT_TO_STATUS` maps fault kind to HTTP status; error page rendered |
 
 All responses increment `harness_request_total` with the appropriate `status_code` label.
 
