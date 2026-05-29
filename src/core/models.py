@@ -55,6 +55,7 @@ class Route:
     data_key_param: str = ""
     url_template: str = ""
     methods: list[str] = field(default_factory=lambda: ["GET"])
+    relationships: dict[str, dict] = field(default_factory=dict)
 
 
 @dataclass

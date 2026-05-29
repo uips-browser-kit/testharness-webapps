@@ -96,6 +96,7 @@ def test_parse_hosts_file_missing_file():
 def test_manifest_has_required_top_level_keys(manifest):
     assert "version" in manifest
     assert "dataset" in manifest
+    assert "shared_entities" in manifest
     assert "network" in manifest
     assert "apps" in manifest
     assert "users" in manifest
@@ -111,6 +112,60 @@ def test_manifest_version(manifest):
 def test_manifest_dataset_is_string(manifest):
     assert isinstance(manifest["dataset"], str)
     assert len(manifest["dataset"]) > 0
+
+
+# ---------------------------------------------------------------------------
+# build_manifest — shared_entities
+# ---------------------------------------------------------------------------
+
+def test_shared_entities_is_dict(manifest):
+    assert isinstance(manifest["shared_entities"], dict)
+
+
+def test_shared_entities_values_are_lists_of_strings(manifest):
+    for entity, apps in manifest["shared_entities"].items():
+        assert isinstance(apps, list), f"{entity}: expected list, got {type(apps)}"
+        assert all(isinstance(a, str) for a in apps), f"{entity}: app IDs must be strings"
+
+
+def test_shared_entities_default_dataset_is_empty():
+    from src.core.manifest import build_manifest
+    m = build_manifest([], {}, [], {})
+    assert m["shared_entities"] == {}
+
+
+def test_shared_entities_declared_explicitly(manifest):
+    # Fixture uses dataset="default" with no shared_entities declared
+    assert manifest["shared_entities"] == {}
+
+
+# ---------------------------------------------------------------------------
+# build_manifest — route relationships
+# ---------------------------------------------------------------------------
+
+def test_detail_route_has_relationships_key(manifest):
+    r = _sf_dev_route(manifest, "contact-detail")
+    assert "relationships" in r
+
+
+def test_detail_route_relationships_is_dict(manifest):
+    r = _sf_dev_route(manifest, "contact-detail")
+    assert isinstance(r["relationships"], dict)
+
+
+def test_detail_route_relationship_shape(manifest):
+    r = _sf_dev_route(manifest, "contact-detail")
+    for _field, rel in r["relationships"].items():
+        assert "entity" in rel
+        assert "key_param" in rel
+        assert "apps" in rel
+        assert isinstance(rel["apps"], list)
+
+
+def test_detail_route_no_relationships_is_empty_dict(manifest):
+    # account-detail has no outbound FK
+    r = _sf_dev_route(manifest, "account-detail")
+    assert r["relationships"] == {}
 
 
 def test_manifest_network_hosts(manifest):
@@ -461,6 +516,23 @@ def test_manifest_endpoint_has_dataset(client):
     assert "dataset" in data
     assert isinstance(data["dataset"], str)
     assert len(data["dataset"]) > 0
+
+
+def test_manifest_endpoint_has_shared_entities(client):
+    r = client.get("/manifest")
+    data = r.json()
+    assert "shared_entities" in data
+    assert isinstance(data["shared_entities"], dict)
+
+
+def test_manifest_endpoint_contact_detail_has_relationships(client):
+    r = client.get("/manifest")
+    data = r.json()
+    sf = next(a for a in data["apps"] if a["id"] == "salesforce")
+    dev = next(e for e in sf["environments"] if e["id"] == "dev")
+    cd = next(r for r in dev["routes"] if r["id"] == "contact-detail")
+    assert "relationships" in cd
+    assert "account_id" in cd["relationships"]
 
 
 def test_manifest_endpoint_has_apps(client):

@@ -90,6 +90,13 @@ apps:
     template: contact_detail
     data_entity: contacts
     data_key_field: id
+    relationships:
+      account_id:
+        entity: accounts
+        key_param: id
+        apps:
+        - salesforce
+        - dynamics
   - id: opportunity-list
     path: /lightning/r/Opportunity/list/view
     pattern_type: path
@@ -105,6 +112,13 @@ apps:
     template: opportunity_detail
     data_entity: opportunities
     data_key_field: id
+    relationships:
+      account_id:
+        entity: accounts
+        key_param: id
+        apps:
+        - salesforce
+        - dynamics
   - id: dashboard
     path: /lightning/page/home
     pattern_type: path
@@ -198,6 +212,13 @@ apps:
     template: incident
     data_entity: incidents
     data_key_field: sys_id
+    relationships:
+      account_id:
+        entity: accounts
+        key_param: id
+        apps:
+        - salesforce
+        - dynamics
   - id: incident-list
     path: /now/workspace/agent/list/incident
     pattern_type: path
@@ -251,6 +272,13 @@ apps:
     data_key_field: order_number
     data_key_param: so
     url_template: /sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so={so}
+    relationships:
+      account_id:
+        entity: accounts
+        key_param: id
+        apps:
+        - salesforce
+        - dynamics
   - id: order-list
     path: /sap/bc/ui5_ui5/ui2/ushell
     pattern_type: query
@@ -302,6 +330,18 @@ apps:
     data_entity: invoices
     data_key_field: invoice_number
     url_template: /fscmUI/faces/FuseWelcome?_adf.ctrl-state=oracle-harness&invoice_number={invoice_number}
+    relationships:
+      account_id:
+        entity: accounts
+        key_param: id
+        apps:
+        - salesforce
+        - dynamics
+      order_id:
+        entity: orders
+        key_param: order_number
+        apps:
+        - sap
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
@@ -661,7 +701,16 @@ apps:
 data:
   set: default-ng
   # set: default
-  # set: default-ng   # canonical cross-app data model (Salesforce-inspired)
+  shared_entities:
+    accounts:
+    - salesforce
+    - dynamics
+    contacts:
+    - salesforce
+    - dynamics
+    opportunities:
+    - salesforce
+    - dynamics
 
 prometheus:
   scrape_interval: 15s

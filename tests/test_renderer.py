@@ -1,6 +1,8 @@
 """
 Tests for src/harness/renderer.py — Jinja2 template rendering.
 """
+import os
+
 import pytest
 from fastapi import HTTPException
 from fastapi.testclient import TestClient
@@ -10,8 +12,18 @@ from src.api.app import app
 
 @pytest.fixture(scope="module")
 def client():
-    with TestClient(app) as c:
-        yield c
+    # Force the default dataset so hard-coded fixture IDs (12345, ABC-123) always resolve.
+    # This test module verifies template rendering, not data content.
+    old = os.environ.get("HARNESS_DATA_SET")
+    os.environ["HARNESS_DATA_SET"] = "default"
+    try:
+        with TestClient(app) as c:
+            yield c
+    finally:
+        if old is None:
+            os.environ.pop("HARNESS_DATA_SET", None)
+        else:
+            os.environ["HARNESS_DATA_SET"] = old
 
 
 # --- Static file serving ---

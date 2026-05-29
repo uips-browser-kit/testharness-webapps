@@ -12,11 +12,13 @@ def build_manifest(
     keycloak: dict,
     version: str = "",
     dataset: str = "",
+    shared_entities: dict[str, list[str]] | None = None,
 ) -> dict:
     """Build the harness manifest as a plain dict. Pure function — no I/O."""
     return {
         "version": version,
         "dataset": dataset,
+        "shared_entities": shared_entities or {},
         "network": {"hosts": hosts, "hosts_file": "infra/hosts.txt"},
         "apps": [_app_entry(app, entity_records) for app in apps],
         "users": _build_users(keycloak),
@@ -102,6 +104,7 @@ def _route_entry(
         entry["url_template"] = url_tpl
         entry["key_param"] = key_param
         entry["entity"] = route.data_entity
+        entry["relationships"] = route.relationships
         entry["record_count"] = len(records)
         entry["candidate_count"] = len(candidates)
         entry["candidates"] = candidates
