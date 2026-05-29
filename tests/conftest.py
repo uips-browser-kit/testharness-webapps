@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
+from unittest.mock import patch
 
+import pytest
 import yaml
 
 from src.core.config import parse_data_set
@@ -41,3 +43,12 @@ def load_all_apps() -> list[App]:
 
 def load_data(app_id: str, filename: str) -> list[dict]:
     return json.loads((DATA_DIR / app_id / filename).read_text())
+
+
+@pytest.fixture(autouse=True)
+def _no_base_latency():
+    async def _instant(_seconds: float) -> None:
+        pass
+
+    with patch("src.api.app._sleeper", _instant):
+        yield

@@ -1,5 +1,8 @@
 apps:
 - id: salesforce
+  latency_ms:
+    min: 150
+    max: 350
   vendor: Salesforce
   product: Lightning
   layout: layouts/default.html
@@ -113,6 +116,9 @@ apps:
     template: dashboard
 
 - id: dynamics
+  latency_ms:
+    min: 250
+    max: 550
   vendor: Microsoft
   product: Dynamics 365
   layout: layouts/default.html
@@ -166,6 +172,9 @@ apps:
     template: home
 
 - id: servicenow
+  latency_ms:
+    min: 350
+    max: 750
   vendor: ServiceNow
   product: Workspace
   layout: layouts/default.html
@@ -213,6 +222,9 @@ apps:
     template: home
 
 - id: sap
+  latency_ms:
+    min: 300
+    max: 650
   vendor: SAP
   product: Fiori
   layout: layouts/default.html
@@ -267,6 +279,9 @@ apps:
     template: home
 
 - id: oracle
+  latency_ms:
+    min: 500
+    max: 1100
   vendor: Oracle
   product: Fusion / EBS
   layout: layouts/default.html
@@ -318,6 +333,9 @@ apps:
     template: home
 
 - id: workday
+  latency_ms:
+    min: 350
+    max: 800
   vendor: Workday
   product: Workday
   layout: layouts/default.html
@@ -370,6 +388,9 @@ apps:
     template: home
 
 - id: jira
+  latency_ms:
+    min: 200
+    max: 450
   vendor: Atlassian
   product: Jira
   layout: layouts/default.html
@@ -418,6 +439,9 @@ apps:
     template: home
 
 - id: confluence
+  latency_ms:
+    min: 200
+    max: 450
   vendor: Atlassian
   product: Confluence
   layout: layouts/default.html
@@ -465,6 +489,9 @@ apps:
     template: home
 
 - id: sharepoint
+  latency_ms:
+    min: 250
+    max: 600
   vendor: Microsoft
   product: SharePoint
   layout: layouts/default.html
@@ -515,6 +542,9 @@ apps:
     template: home
 
 - id: power-bi
+  latency_ms:
+    min: 300
+    max: 700
   vendor: Microsoft
   product: Power BI
   layout: layouts/default.html
@@ -562,6 +592,9 @@ apps:
     template: home
 
 - id: tableau
+  latency_ms:
+    min: 350
+    max: 800
   vendor: Tableau Server
   product: Tableau Server
   layout: layouts/default.html
@@ -611,6 +644,9 @@ apps:
     template: home
 
 - id: power-apps
+  latency_ms:
+    min: 150
+    max: 400
   vendor: Microsoft
   product: Power Apps
   layout: layouts/default.html

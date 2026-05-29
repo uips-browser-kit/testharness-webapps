@@ -1,5 +1,6 @@
 import asyncio
 import os
+import random
 import time
 import uuid
 from contextlib import asynccontextmanager
@@ -375,6 +376,10 @@ async def catch_all(request: Request, path: str):
             scenario_def = service.get_active_scenario(matched_app, ctx.app_id, ctx.env_id)
         if scenario_def:
             challenge = Challenge(delay_ms=scenario_def.delay_ms, fault=scenario_def.fault)
+
+    if matched_app.latency.max_ms > 0:
+        base_delay = random.randint(matched_app.latency.min_ms, matched_app.latency.max_ms)
+        await _sleeper(base_delay / 1000)
 
     if challenge:
         if challenge.delay_ms > 0:

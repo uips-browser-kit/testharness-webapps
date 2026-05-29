@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from src.core.models import App, Environment, Fault, NavItem, PatternType, Route, ScenarioDefinition
+from src.core.models import App, Environment, Fault, LatencyConfig, NavItem, PatternType, Route, ScenarioDefinition
 
 _ALLOWED_TOP_LEVEL = {"apps", "data", "keycloak", "prometheus", "caddy", "cli"}
 
@@ -114,6 +114,16 @@ def _parse_app(path: Path, raw: dict, index: int) -> App:
     nav = [_parse_nav_item(item) for item in raw.get("nav", [])]
     scenarios = [_parse_scenario(s) for s in raw.get("scenarios", [])]
 
+    latency = LatencyConfig()
+    if lat_raw := raw.get("latency_ms"):
+        min_ms = int(lat_raw.get("min", 0))
+        max_ms = int(lat_raw.get("max", 0))
+        if min_ms > max_ms:
+            raise ConfigError(
+                f"{path}: apps[{index}].latency_ms min ({min_ms}) > max ({max_ms})"
+            )
+        latency = LatencyConfig(min_ms=min_ms, max_ms=max_ms)
+
     return App(
         id=raw["id"],
         vendor=raw["vendor"],
@@ -123,6 +133,7 @@ def _parse_app(path: Path, raw: dict, index: int) -> App:
         nav=nav,
         layout=raw.get("layout", "layouts/default.html"),
         scenarios=scenarios,
+        latency=latency,
     )
 
 

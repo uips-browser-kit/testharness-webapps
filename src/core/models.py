@@ -42,6 +42,12 @@ class Environment:
 
 
 @dataclass
+class LatencyConfig:
+    min_ms: int = 0
+    max_ms: int = 0
+
+
+@dataclass
 class Route:
     id: str
     path: str
@@ -79,6 +85,7 @@ class App:
     nav: list[NavItem] = field(default_factory=list)
     layout: str = "layouts/default.html"
     scenarios: list[ScenarioDefinition] = field(default_factory=list)
+    latency: LatencyConfig = field(default_factory=LatencyConfig)
 
     def route(self, route_id: str) -> Route:
         for r in self.routes:

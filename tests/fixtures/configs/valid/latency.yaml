@@ -1,0 +1,14 @@
+apps:
+  - id: latency-app
+    vendor: Test
+    product: Latency
+    latency_ms:
+      min: 100
+      max: 300
+    environments:
+      dev:
+        host: latency-app-dev.local
+    routes:
+      - id: home
+        path: /
+        pattern_type: path

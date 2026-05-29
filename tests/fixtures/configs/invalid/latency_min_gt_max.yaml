@@ -1,0 +1,14 @@
+apps:
+  - id: bad-latency-app
+    vendor: Test
+    product: BadLatency
+    latency_ms:
+      min: 400
+      max: 100
+    environments:
+      dev:
+        host: bad-latency-app-dev.local
+    routes:
+      - id: home
+        path: /
+        pattern_type: path

@@ -172,7 +172,7 @@ def test_challenge_with_fault_stored_correctly(client):
 
 
 def test_challenge_delay_uses_sleeper(client):
-    """_sleeper is called with the right duration and is mockable."""
+    """_sleeper is called twice: once for base latency, once for challenge delay."""
     calls: list[float] = []
 
     async def fake_sleeper(seconds: float) -> None:
@@ -185,8 +185,9 @@ def test_challenge_delay_uses_sleeper(client):
             headers={"host": "salesforce-dev.local"},
         )
     assert r.status_code == 200
-    assert len(calls) == 1
-    assert abs(calls[0] - 0.5) < 0.001
+    assert len(calls) == 2
+    assert 0.150 <= calls[0] <= 0.350   # base latency (salesforce: 150-350 ms)
+    assert abs(calls[1] - 0.5) < 0.001  # challenge delay
     client.delete("/challenges/salesforce/dev/account-detail")
 
 
@@ -217,9 +218,18 @@ def test_challenge_unavailable_returns_503(client):
 
 
 def test_no_challenge_does_not_call_sleeper(client):
-    """When no challenge is set, _sleeper is never called."""
+    """Without a challenge, no challenge delay fires (base latency is suppressed by autouse fixture)."""
     client.delete("/challenges/salesforce/dev/account-detail")  # ensure cleared
+    r = client.get(
+        "/lightning/r/Account/001/view",
+        headers={"host": "salesforce-dev.local"},
+    )
+    assert r.status_code == 200
 
+
+def test_base_latency_fires_without_challenge(client):
+    """Base latency fires on every response even without a challenge."""
+    client.delete("/challenges/salesforce/dev/account-detail")  # ensure cleared
     calls: list[float] = []
 
     async def fake_sleeper(seconds: float) -> None:
@@ -231,4 +241,50 @@ def test_no_challenge_does_not_call_sleeper(client):
             headers={"host": "salesforce-dev.local"},
         )
     assert r.status_code == 200
-    assert calls == []
+    assert len(calls) == 1
+    assert 0.150 <= calls[0] <= 0.350   # salesforce: min 150 ms, max 350 ms
+
+
+def test_base_latency_stacks_with_challenge_delay(client):
+    """Base latency and challenge delay both fire, base first."""
+    client.post("/challenges/salesforce/dev/account-detail", json={"delay_ms": 500})
+    calls: list[float] = []
+
+    async def fake_sleeper(seconds: float) -> None:
+        calls.append(seconds)
+
+    with patch("src.api.app._sleeper", fake_sleeper):
+        r = client.get(
+            "/lightning/r/Account/001/view",
+            headers={"host": "salesforce-dev.local"},
+        )
+    assert r.status_code == 200
+    assert len(calls) == 2
+    assert 0.150 <= calls[0] <= 0.350   # base latency first
+    assert abs(calls[1] - 0.5) < 0.001  # challenge delay second
+    client.delete("/challenges/salesforce/dev/account-detail")
+
+
+def test_zero_latency_app_does_not_call_sleeper(client):
+    """App with max_ms=0 never calls _sleeper for base latency."""
+    from src.core.models import LatencyConfig
+
+    calls: list[float] = []
+
+    async def fake_sleeper(seconds: float) -> None:
+        calls.append(seconds)
+
+    apps = client.app.state.apps
+    sf = next(a for a in apps if a.id == "salesforce")
+    original = sf.latency
+    sf.latency = LatencyConfig(0, 0)
+    try:
+        with patch("src.api.app._sleeper", fake_sleeper):
+            r = client.get(
+                "/lightning/r/Account/001/view",
+                headers={"host": "salesforce-dev.local"},
+            )
+        assert r.status_code == 200
+        assert calls == []
+    finally:
+        sf.latency = original
