@@ -6,7 +6,7 @@ import yaml
 
 from src.core.models import App, Environment, NavItem, PatternType, Route
 
-_ALLOWED_TOP_LEVEL = {"apps", "data", "keycloak", "prometheus", "caddy"}
+_ALLOWED_TOP_LEVEL = {"apps", "data", "keycloak", "prometheus", "caddy", "cli"}
 
 
 class ConfigError(Exception):

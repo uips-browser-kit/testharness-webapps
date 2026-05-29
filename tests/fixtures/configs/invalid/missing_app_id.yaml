@@ -1,10 +1,9 @@
 apps:
-  - id: minimal-app
-    vendor: Test
-    product: Minimal
+  - vendor: Test
+    product: NoId
     environments:
       dev:
-        host: minimal-app-dev.local
+        host: noid-dev.local
     routes:
       - id: home
         path: /

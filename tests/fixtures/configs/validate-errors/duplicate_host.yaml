@@ -1,0 +1,22 @@
+apps:
+  - id: app-one
+    vendor: Test
+    product: One
+    environments:
+      dev:
+        host: shared.local
+    routes:
+      - id: home
+        path: /
+        pattern_type: path
+
+  - id: app-two
+    vendor: Test
+    product: Two
+    environments:
+      dev:
+        host: shared.local
+    routes:
+      - id: home
+        path: /
+        pattern_type: path

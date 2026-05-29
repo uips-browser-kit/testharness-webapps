@@ -1,0 +1,14 @@
+apps:
+  - id: dup-routes-app
+    vendor: Test
+    product: DupRoutes
+    environments:
+      dev:
+        host: dup-routes-dev.local
+    routes:
+      - id: home
+        path: /
+        pattern_type: path
+      - id: home
+        path: /home
+        pattern_type: path

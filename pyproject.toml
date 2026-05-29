@@ -27,6 +27,7 @@ packages = ["src"]
 
 [project.scripts]
 harness-cli = "src.runtime_cli.main:cli"
+harness     = "src.platform_cli.main:cli"
 
 [dependency-groups]
 dev = [

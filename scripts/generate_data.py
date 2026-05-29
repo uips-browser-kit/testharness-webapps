@@ -389,6 +389,12 @@ def gen_sales_metrics(fake: Faker, count: int) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 
+_KNOWN_APPS = frozenset({
+    "salesforce", "dynamics", "servicenow", "sap", "oracle",
+    "workday", "jira", "confluence", "sharepoint", "power-bi", "tableau", "power-apps",
+})
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate JSON test data for catalog apps.")
     parser.add_argument(
@@ -400,7 +406,14 @@ def main() -> None:
     )
     parser.add_argument("--seed", type=int, default=42, help="Faker seed; 0 = random (default: 42)")
     parser.add_argument("--count", type=int, default=20, help="Records per entity (default: 20)")
+    parser.add_argument("--app", default=None, metavar="APP_ID", help="Seed only this app id (default: all)")
     args = parser.parse_args()
+
+    if args.app and args.app not in _KNOWN_APPS:
+        sys.exit(f"Unknown app: {args.app!r}")
+
+    def _gen(app_id: str) -> bool:
+        return args.app is None or args.app == app_id
 
     seed = random.randint(1, 999_999) if args.seed == 0 else args.seed
     anchors = SAMPLE_PARAMS if args.set_name == "default" else {}
@@ -411,73 +424,86 @@ def main() -> None:
     root = Path(__file__).parent.parent / "data" / args.set_name
 
     # CRM — Salesforce
-    sf_accounts = gen_accounts(fake, args.count, anchor_id=anchors.get("id"))
-    sf_ids = [a["id"] for a in sf_accounts]
-    _write(root / "salesforce" / "accounts.json", sf_accounts)
-    _write(root / "salesforce" / "contacts.json", gen_contacts(fake, args.count, sf_ids))
-    _write(root / "salesforce" / "opportunities.json", gen_opportunities(fake, args.count, sf_ids))
+    if _gen("salesforce"):
+        sf_accounts = gen_accounts(fake, args.count, anchor_id=anchors.get("id"))
+        sf_ids = [a["id"] for a in sf_accounts]
+        _write(root / "salesforce" / "accounts.json", sf_accounts)
+        _write(root / "salesforce" / "contacts.json", gen_contacts(fake, args.count, sf_ids))
+        _write(root / "salesforce" / "opportunities.json", gen_opportunities(fake, args.count, sf_ids))
 
     # CRM — Dynamics 365 (same domain, independent records)
-    dyn_accounts = gen_accounts(fake, args.count, anchor_id=anchors.get("id"))
-    dyn_ids = [a["id"] for a in dyn_accounts]
-    _write(root / "dynamics" / "accounts.json", dyn_accounts)
-    _write(root / "dynamics" / "contacts.json", gen_contacts(fake, args.count, dyn_ids))
-    _write(root / "dynamics" / "opportunities.json", gen_opportunities(fake, args.count, dyn_ids))
+    if _gen("dynamics"):
+        dyn_accounts = gen_accounts(fake, args.count, anchor_id=anchors.get("id"))
+        dyn_ids = [a["id"] for a in dyn_accounts]
+        _write(root / "dynamics" / "accounts.json", dyn_accounts)
+        _write(root / "dynamics" / "contacts.json", gen_contacts(fake, args.count, dyn_ids))
+        _write(root / "dynamics" / "opportunities.json", gen_opportunities(fake, args.count, dyn_ids))
 
     # ITSM — ServiceNow
-    _write(
-        root / "servicenow" / "incidents.json",
-        gen_incidents(fake, args.count, anchor_sys_id=anchors.get("sys_id")),
-    )
+    if _gen("servicenow"):
+        _write(
+            root / "servicenow" / "incidents.json",
+            gen_incidents(fake, args.count, anchor_sys_id=anchors.get("sys_id")),
+        )
 
     # ERP / Sales — SAP
-    products = gen_products(fake, args.count)
-    _write(root / "sap" / "products.json", products)
-    _write(
-        root / "sap" / "sales_orders.json",
-        gen_sales_orders(fake, args.count, products, anchor_order_number=anchors.get("so")),
-    )
+    if _gen("sap"):
+        products = gen_products(fake, args.count)
+        _write(root / "sap" / "products.json", products)
+        _write(
+            root / "sap" / "sales_orders.json",
+            gen_sales_orders(fake, args.count, products, anchor_order_number=anchors.get("so")),
+        )
 
     # Finance — Oracle
-    _write(root / "oracle" / "invoices.json", gen_invoices(fake, args.count))
+    if _gen("oracle"):
+        _write(root / "oracle" / "invoices.json", gen_invoices(fake, args.count))
 
     # HR — Workday
-    _write(root / "workday" / "employees.json", gen_employees(fake, args.count))
+    if _gen("workday"):
+        _write(root / "workday" / "employees.json", gen_employees(fake, args.count))
 
     # Issue tracking — Jira
-    _write(
-        root / "jira" / "issues.json",
-        gen_issues(fake, args.count, anchor_key=anchors.get("issue_key")),
-    )
+    if _gen("jira"):
+        _write(
+            root / "jira" / "issues.json",
+            gen_issues(fake, args.count, anchor_key=anchors.get("issue_key")),
+        )
 
     # Knowledge — Confluence
-    _write(
-        root / "confluence" / "pages.json",
-        gen_pages(
-            fake,
-            args.count,
-            anchor_page_id=anchors.get("page_id"),
-            anchor_space_key=anchors.get("space_key"),
-        ),
-    )
+    if _gen("confluence"):
+        _write(
+            root / "confluence" / "pages.json",
+            gen_pages(
+                fake,
+                args.count,
+                anchor_page_id=anchors.get("page_id"),
+                anchor_space_key=anchors.get("space_key"),
+            ),
+        )
 
     # Documents — SharePoint
-    _write(
-        root / "sharepoint" / "documents.json",
-        gen_documents(fake, args.count, anchor_site_name=anchors.get("site_name")),
-    )
+    if _gen("sharepoint"):
+        _write(
+            root / "sharepoint" / "documents.json",
+            gen_documents(fake, args.count, anchor_site_name=anchors.get("site_name")),
+        )
 
     # Analytics — Power BI + Tableau (shared metrics, 4× count for BI row volume)
-    metrics = gen_sales_metrics(fake, args.count * 4)
-    _write(root / "power-bi" / "sales_metrics.json", metrics)
-    _write(root / "tableau" / "sales_metrics.json", metrics)
+    if _gen("power-bi") or _gen("tableau"):
+        metrics = gen_sales_metrics(fake, args.count * 4)
+        if _gen("power-bi"):
+            _write(root / "power-bi" / "sales_metrics.json", metrics)
+        if _gen("tableau"):
+            _write(root / "tableau" / "sales_metrics.json", metrics)
 
     # LOB orders — Power Apps (reuses sales order model)
-    pa_products = gen_products(fake, args.count)
-    _write(
-        root / "power-apps" / "sales_orders.json",
-        gen_sales_orders(fake, args.count, pa_products, anchor_order_number=anchors.get("so")),
-    )
+    if _gen("power-apps"):
+        pa_products = gen_products(fake, args.count)
+        _write(
+            root / "power-apps" / "sales_orders.json",
+            gen_sales_orders(fake, args.count, pa_products, anchor_order_number=anchors.get("so")),
+        )
 
 
 if __name__ == "__main__":
