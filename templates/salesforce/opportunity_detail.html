@@ -1,0 +1,49 @@
+{% extends layout %}
+
+{% block title %}{{ record.name }} — Opportunity — {{ app_name }}{% endblock %}
+
+{% block content %}
+{% if list_url %}<div style="margin-bottom:0.75rem;"><a href="{{ list_url }}" style="font-size:13px;color:var(--app-primary);">&#8592; {{ entity_title or "Opportunities" }}</a></div>{% endif %}
+{% if record %}
+
+{% set stage_colors = {
+  "Prospecting":   "#586e75",
+  "Qualification": "#268bd2",
+  "Proposal":      "#b58900",
+  "Negotiation":   "#cb4b16",
+  "Closed Won":    "#859900",
+  "Closed Lost":   "#dc322f"
+} %}
+{% set stage_color = stage_colors.get(record.stage, "#586e75") %}
+
+<div class="record-header" style="display:flex; align-items:flex-start; gap:1.5rem; flex-wrap:wrap;">
+  <div style="flex:1; min-width:0;">
+    <h1 style="font-size:20px; font-weight:700; color:var(--app-primary); margin-bottom:0.25rem;">
+      {{ record.name }}
+    </h1>
+    <span class="badge">Opportunity</span>
+    <span class="badge" style="margin-left:0.5rem; background:{{ stage_color }}; color:#fdf6e3;">{{ record.stage }}</span>
+  </div>
+  <div style="text-align:right; flex-shrink:0;">
+    <div style="font-size:11px; color:var(--sol-base01); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;">Amount</div>
+    <div style="font-size:2rem; font-weight:700; color:var(--sol-green, #859900); line-height:1;">${{ "{:,.0f}".format(record.amount) }}</div>
+  </div>
+</div>
+
+<table style="margin-top:1.5rem; max-width:640px;">
+  <thead>
+    <tr><th colspan="2">Deal Details</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Opportunity ID</td><td>{{ record.id }}</td></tr>
+    <tr><td>Stage</td><td><span style="font-weight:600; color:{{ stage_color }};">{{ record.stage }}</span></td></tr>
+    <tr><td>Close Date</td><td>{{ record.close_date }}</td></tr>
+    <tr><td>Account</td><td>{{ record.account_id }}</td></tr>
+    <tr><td>Owner</td><td>{{ record.owner }}</td></tr>
+  </tbody>
+</table>
+
+{% else %}
+<p style="color:var(--sol-red);">Record not found.</p>
+{% endif %}
+{% endblock %}

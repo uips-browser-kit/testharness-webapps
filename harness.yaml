@@ -65,7 +65,7 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
-    template: shared/detail
+    template: contact_detail
     data_entity: contacts
     data_key_field: id
   - id: opportunity-list
@@ -80,7 +80,7 @@ apps:
     pattern_type: path
     query_params: []
     server_visible: true
-    template: shared/detail
+    template: opportunity_detail
     data_entity: opportunities
     data_key_field: id
   - id: dashboard
