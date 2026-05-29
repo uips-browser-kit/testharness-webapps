@@ -767,7 +767,7 @@ def generate_default_ng(fake: Faker, count: int, root: Path) -> None:
     _write(root / "jira" / "issues.json", gen_issues(fake, count))
     _write(root / "confluence" / "pages.json", gen_pages(fake, count))
     _write(root / "sharepoint" / "documents.json", gen_documents(fake, count))
-    _write(root / "power-apps" / "sales_orders.json", gen_sales_metrics(fake, count))
+    _write(root / "power-apps" / "sales_orders.json", gen_sales_orders(fake, count, products))
 
     # Pass 3: BI aggregations
     pipeline = agg_pipeline(opportunities)
