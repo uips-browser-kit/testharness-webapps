@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from src.core.models import App, Environment, NavItem, PatternType, Route
+from src.core.models import App, Environment, Fault, NavItem, PatternType, Route, ScenarioDefinition
 
 _ALLOWED_TOP_LEVEL = {"apps", "data", "keycloak", "prometheus", "caddy", "cli"}
 
@@ -79,6 +79,7 @@ def _parse_app(path: Path, raw: dict, index: int) -> App:
     routes = [_parse_route(path, r, index, j) for j, r in enumerate(routes_raw)]
 
     nav = [_parse_nav_item(item) for item in raw.get("nav", [])]
+    scenarios = [_parse_scenario(s) for s in raw.get("scenarios", [])]
 
     return App(
         id=raw["id"],
@@ -88,6 +89,7 @@ def _parse_app(path: Path, raw: dict, index: int) -> App:
         routes=routes,
         nav=nav,
         layout=raw.get("layout", "layouts/default.html"),
+        scenarios=scenarios,
     )
 
 
@@ -111,6 +113,24 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         data_entity=raw.get("data_entity", ""),
         data_key_field=raw.get("data_key_field", ""),
         data_key_param=raw.get("data_key_param", ""),
+    )
+
+
+def _parse_scenario(raw: dict) -> ScenarioDefinition:
+    if "name" not in raw:
+        raise ConfigError("scenario entry missing required field 'name'")
+    fault = None
+    if fault_data := raw.get("fault"):
+        fault = Fault(
+            kind=fault_data["kind"],
+            detail=fault_data.get("detail", "Simulated fault"),
+            retriable=fault_data.get("retriable", False),
+        )
+    return ScenarioDefinition(
+        name=raw["name"],
+        description=raw.get("description", ""),
+        delay_ms=raw.get("delay_ms", 0),
+        fault=fault,
     )
 
 

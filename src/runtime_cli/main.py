@@ -11,7 +11,7 @@ import httpx
 import typer
 
 from src.backend.data_loader import DataLoader
-from src.backend.service import HarnessService, InMemoryChallengeStore
+from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
 from src.core.config import load_config, parse_data_set
 from src.core.matcher import match
 from src.core.models import Challenge, DetailViewData, Fault, RouteContext, TemplateOnlyViewData
@@ -30,13 +30,15 @@ def _make_service() -> tuple[HarnessService, list]:
     dataset = parse_data_set(_HARNESS_YAML)
     loader = DataLoader(_DATA_DIR, dataset)
     apps = load_config(_HARNESS_YAML)
-    service = HarnessService(loader, InMemoryChallengeStore())
+    service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore())
     return service, apps
 
 
 cli = typer.Typer(name="harness-cli", no_args_is_help=True, help="Runtime inspection for harness-webapps")
 challenge_cli = typer.Typer(no_args_is_help=True, help="Inject or remove challenges on running API routes")
 cli.add_typer(challenge_cli, name="challenge")
+scenario_cli = typer.Typer(no_args_is_help=True, help="Set or inspect named scenarios on the running API")
+cli.add_typer(scenario_cli, name="scenario")
 
 
 # ---------------------------------------------------------------------------
@@ -261,3 +263,109 @@ def challenge_list(
         console.print(table)
     else:
         print_json(data)
+
+
+# ---------------------------------------------------------------------------
+# scenario set
+# ---------------------------------------------------------------------------
+
+
+@scenario_cli.command("set")
+def scenario_set(
+    app_id: Annotated[str, typer.Option("--app", help="App identifier")],
+    env: Annotated[str, typer.Option("--env", help="Environment identifier")],
+    scenario: Annotated[str, typer.Option("--scenario", help="Scenario name defined in harness.yaml")],
+    api_url: Annotated[str, typer.Option("--api-url", help="Running API base URL")] = "http://localhost:8000",
+) -> None:
+    """Set the active scenario for an app/env (all subsequent requests use it)."""
+    try:
+        r = httpx.put(f"{api_url}/scenario/{app_id}/{env}", json={"scenario": scenario}, timeout=5)
+        r.raise_for_status()
+    except httpx.HTTPError as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(1)
+    print_json(r.json())
+
+
+# ---------------------------------------------------------------------------
+# scenario clear
+# ---------------------------------------------------------------------------
+
+
+@scenario_cli.command("clear")
+def scenario_clear(
+    app_id: Annotated[str, typer.Option("--app", help="App identifier")],
+    env: Annotated[str, typer.Option("--env", help="Environment identifier")],
+    api_url: Annotated[str, typer.Option("--api-url", help="Running API base URL")] = "http://localhost:8000",
+) -> None:
+    """Clear the active scenario for an app/env, restoring normal behaviour."""
+    try:
+        r = httpx.delete(f"{api_url}/scenario/{app_id}/{env}", timeout=5)
+        r.raise_for_status()
+    except httpx.HTTPError as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(1)
+    print_json(r.json())
+
+
+# ---------------------------------------------------------------------------
+# scenario list
+# ---------------------------------------------------------------------------
+
+
+@scenario_cli.command("list")
+def scenario_list(
+    api_url: Annotated[str, typer.Option("--api-url", help="Running API base URL")] = "http://localhost:8000",
+    fmt: Annotated[Format, typer.Option("--format", help="Output format")] = Format.json,
+) -> None:
+    """List all active scenarios from the running API."""
+    try:
+        r = httpx.get(f"{api_url}/scenario", timeout=5)
+        r.raise_for_status()
+    except httpx.HTTPError as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(1)
+    data = r.json()
+    if fmt == Format.table:
+        from rich.console import Console  # noqa: PLC0415
+        from rich.table import Table  # noqa: PLC0415
+        console = Console()
+        table = Table(title="Active Scenarios", show_header=True)
+        table.add_column("app/env")
+        table.add_column("scenario")
+        for key, val in data.items():
+            table.add_row(key, str(val))
+        console.print(table)
+    else:
+        print_json(data)
+
+
+# ---------------------------------------------------------------------------
+# scenario show  (local — reads harness.yaml, no running API required)
+# ---------------------------------------------------------------------------
+
+
+@scenario_cli.command("show")
+def scenario_show(
+    app_id: Annotated[str, typer.Option("--app", help="App identifier")],
+) -> None:
+    """Show scenarios defined in harness.yaml for an app (no running API required)."""
+    _, apps = _make_service()
+    app_obj = next((a for a in apps if a.id == app_id), None)
+    if app_obj is None:
+        typer.echo(f"Error: app '{app_id}' not found", err=True)
+        raise typer.Exit(2)
+    if not app_obj.scenarios:
+        typer.echo(f"No scenarios defined for app '{app_id}'")
+        return
+    data = [
+        {
+            "name": s.name,
+            "description": s.description,
+            "delay_ms": s.delay_ms,
+            "fault": {"kind": s.fault.kind, "detail": s.fault.detail, "retriable": s.fault.retriable}
+            if s.fault else None,
+        }
+        for s in app_obj.scenarios
+    ]
+    print_json(data)

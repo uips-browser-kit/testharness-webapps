@@ -12,6 +12,28 @@ apps:
       host: salesforce-prod.local
       base_path: /
       scheme: http
+  scenarios:
+  - name: session-expired
+    description: Auth session has expired mid-flow
+    fault:
+      kind: auth_error
+      detail: "Session expired — re-authentication required"
+  - name: rate-limited
+    description: API quota exceeded
+    fault:
+      kind: rate_limit
+      detail: "Rate limit exceeded — retry after backoff"
+  - name: degraded
+    description: Backend intermittently unavailable
+    delay_ms: 1500
+    fault:
+      kind: unavailable
+      detail: "Service temporarily degraded"
+  - name: record-locked
+    description: Record locked by another user
+    fault:
+      kind: business_error
+      detail: "Record is locked by another user"
   nav:
   - label: Home
     route_id: dashboard

@@ -141,13 +141,61 @@ harness-cli challenge list --api-url http://localhost:8000
 
 Lists all active challenges from the running API via HTTP GET.
 
-## API endpoints (backing challenge commands)
+### scenario set
+
+```bash
+harness-cli scenario set --app salesforce --env dev --scenario session-expired
+```
+
+Sets the active scenario for the specified app/env on the running API. All
+subsequent requests to that app/env receive the scenario's configured
+delay and fault until cleared. Requires a running server.
+
+### scenario clear
+
+```bash
+harness-cli scenario clear --app salesforce --env dev
+```
+
+Removes the active scenario for the specified app/env. Subsequent requests
+return to normal behaviour (unless a per-route challenge is active).
+
+### scenario list
+
+```bash
+harness-cli scenario list
+harness-cli scenario list --format table
+```
+
+Lists all active scenarios from the running API as a `{app/env: name}` map.
+
+### scenario show
+
+```bash
+harness-cli scenario show --app salesforce
+```
+
+Reads `harness.yaml` and prints all scenarios defined for the specified app
+as structured JSON. Fully local — no running server required.
+
+## API endpoints (backing commands)
+
+### Challenge endpoints
 
 | Command | Method | Path |
 |---------|--------|------|
 | challenge set | POST | `/challenges/{app_id}/{env_id}/{route_id}` |
 | challenge clear | DELETE | `/challenges/{app_id}/{env_id}/{route_id}` |
 | challenge list | GET | `/challenges` |
+
+### Scenario endpoints
+
+| Command | Method | Path |
+|---------|--------|------|
+| scenario set | PUT | `/scenario/{app_id}/{env_id}` |
+| scenario clear | DELETE | `/scenario/{app_id}/{env_id}` |
+| scenario list | GET | `/scenario` |
+| scenario show | — | local only (no HTTP call) |
 
 ## Dependency contract
 

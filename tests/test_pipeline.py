@@ -14,7 +14,7 @@ from fastapi.testclient import TestClient
 from src.api.app import app
 from src.backend.data_loader import DataLoader
 from src.backend.pipeline import prepare_view
-from src.backend.service import HarnessService, InMemoryChallengeStore
+from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
 from src.core.config import load_config
 from src.core.models import Challenge, DetailViewData, Fault, ListViewData, RouteContext
 
@@ -108,7 +108,7 @@ def test_challenge_store_all():
 
 
 def test_harness_service_prepare_view(salesforce, loader):
-    service = HarnessService(loader, InMemoryChallengeStore())
+    service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore())
     route = salesforce.route("account-detail")
     ctx = RouteContext("salesforce", "account-detail", "dev", {"id": "001"})
     view = service.prepare_view(salesforce, route, ctx)
@@ -117,7 +117,7 @@ def test_harness_service_prepare_view(salesforce, loader):
 
 def test_harness_service_challenge_roundtrip(loader):
     store = InMemoryChallengeStore()
-    service = HarnessService(loader, store)
+    service = HarnessService(loader, store, InMemoryScenarioStore())
     key = ("salesforce", "dev", "account-detail")
     challenge = Challenge(delay_ms=250, fault=Fault(kind="server_error"))
     service.set_challenge(key, challenge)

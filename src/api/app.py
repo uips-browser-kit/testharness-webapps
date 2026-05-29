@@ -14,7 +14,7 @@ from fastapi.staticfiles import StaticFiles
 from src.api.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
 from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_route, resolve_url
 from src.backend.data_loader import DataLoader
-from src.backend.service import HarnessService, InMemoryChallengeStore
+from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
 from src.core.config import load_config, parse_data_set
 from src.core.models import Challenge, ErrorViewData, Fault, RecordNotFound, RouteContext, TemplateOnlyViewData
 from src.frontend.renderer import render
@@ -46,7 +46,7 @@ _STATUS_TITLES: dict[int, str] = {
     503: "Service Unavailable",
 }
 
-_API_PREFIXES = ("/challenges", "/match", "/resolve", "/health", "/metrics", "/static")
+_API_PREFIXES = ("/challenges", "/match", "/resolve", "/health", "/metrics", "/static", "/scenario")
 
 _sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep
 
@@ -145,7 +145,7 @@ def _harness_index(apps: list) -> HTMLResponse:
 async def lifespan(app: FastAPI):
     dataset = os.environ.get("HARNESS_DATA_SET") or parse_data_set(_HARNESS_YAML)
     loader = DataLoader(_DATA_DIR, dataset)
-    app.state.service = HarnessService(loader, InMemoryChallengeStore())
+    app.state.service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore())
     app.state.apps = load_config(_HARNESS_YAML)
     yield
 
@@ -258,6 +258,41 @@ def list_challenges(request: Request):
     }
 
 
+@app.put("/scenario/{app_id}/{env_id}")
+def set_scenario(app_id: str, env_id: str, body: dict, request: Request):
+    name = body.get("scenario")
+    if not name:
+        raise HTTPException(status_code=422, detail="'scenario' field required")
+    matched = next((a for a in request.app.state.apps if a.id == app_id), None)
+    if not matched:
+        raise HTTPException(status_code=404, detail=f"App {app_id!r} not found")
+    if not matched.scenario(name):
+        valid = [s.name for s in matched.scenarios]
+        raise HTTPException(
+            status_code=404,
+            detail=f"Scenario {name!r} not defined for {app_id!r}. Valid: {valid}",
+        )
+    request.app.state.service.set_scenario((app_id, env_id), name)
+    return {"status": "set", "app": app_id, "env": env_id, "scenario": name}
+
+
+@app.delete("/scenario/{app_id}/{env_id}")
+def clear_scenario(app_id: str, env_id: str, request: Request):
+    request.app.state.service.clear_scenario((app_id, env_id))
+    return {"status": "cleared", "app": app_id, "env": env_id}
+
+
+@app.get("/scenario/{app_id}/{env_id}")
+def get_scenario(app_id: str, env_id: str, request: Request):
+    name = request.app.state.service.get_scenarios().get((app_id, env_id))
+    return {"app": app_id, "env": env_id, "scenario": name}
+
+
+@app.get("/scenario")
+def list_scenarios(request: Request):
+    return {f"{k[0]}/{k[1]}": v for k, v in request.app.state.service.get_scenarios().items()}
+
+
 @app.api_route(
     "/{path:path}",
     methods=["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
@@ -307,6 +342,16 @@ async def catch_all(request: Request, path: str):
 
     service: HarnessService = request.app.state.service
     challenge = service.get_challenge((ctx.app_id, ctx.env_id, ctx.route_id))
+
+    if challenge is None:
+        scenario_name = request.headers.get("x-harness-scenario")
+        if scenario_name:
+            scenario_def = matched_app.scenario(scenario_name)
+        else:
+            scenario_def = service.get_active_scenario(matched_app, ctx.app_id, ctx.env_id)
+        if scenario_def:
+            challenge = Challenge(delay_ms=scenario_def.delay_ms, fault=scenario_def.fault)
+
     if challenge:
         if challenge.delay_ms > 0:
             await _sleeper(challenge.delay_ms / 1000)

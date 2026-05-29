@@ -11,6 +11,8 @@ from src.core.models import (
     RecordNotFound,
     Route,
     RouteContext,
+    ScenarioDefinition,
+    ScenarioMap,
     ViewData,
 )
 
@@ -41,10 +43,35 @@ class InMemoryChallengeStore:
         return dict(self._store)
 
 
+class ScenarioStore(Protocol):
+    def get(self, key: tuple[str, str]) -> str | None: ...
+    def set(self, key: tuple[str, str], name: str) -> None: ...
+    def clear(self, key: tuple[str, str]) -> None: ...
+    def all(self) -> ScenarioMap: ...
+
+
+class InMemoryScenarioStore:
+    def __init__(self) -> None:
+        self._store: ScenarioMap = {}
+
+    def get(self, key: tuple[str, str]) -> str | None:
+        return self._store.get(key)
+
+    def set(self, key: tuple[str, str], name: str) -> None:
+        self._store[key] = name
+
+    def clear(self, key: tuple[str, str]) -> None:
+        self._store.pop(key, None)
+
+    def all(self) -> ScenarioMap:
+        return dict(self._store)
+
+
 class HarnessService:
-    def __init__(self, loader: DataLoader, challenges: ChallengeStore) -> None:
+    def __init__(self, loader: DataLoader, challenges: ChallengeStore, scenarios: ScenarioStore) -> None:
         self._loader = loader
         self._challenges = challenges
+        self._scenarios = scenarios
 
     def prepare_view(self, app: App, route: Route, ctx: RouteContext) -> ViewData | None:
         """Load and shape view data. Returns None for template-only routes."""
@@ -72,3 +99,16 @@ class HarnessService:
 
     def get_challenges(self) -> ChallengeMap:
         return self._challenges.all()
+
+    def get_active_scenario(self, app: App, app_id: str, env_id: str) -> ScenarioDefinition | None:
+        name = self._scenarios.get((app_id, env_id))
+        return app.scenario(name) if name else None
+
+    def set_scenario(self, key: tuple[str, str], name: str) -> None:
+        self._scenarios.set(key, name)
+
+    def clear_scenario(self, key: tuple[str, str]) -> None:
+        self._scenarios.clear(key)
+
+    def get_scenarios(self) -> ScenarioMap:
+        return self._scenarios.all()

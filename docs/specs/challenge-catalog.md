@@ -2,108 +2,72 @@
 
 ## Purpose
 
-Define a standard catalog of runtime challenges that make harness apps behave like
-real corporate systems for RPA business-process automation testing.
+Define named scenarios that make harness apps behave like real corporate systems
+for UiPath library development and RPA automation testing.
 
-This catalog is used by backend challenge policies and consumed through API and
-Runtime Debug CLI controls.
+A developer puts an app into a named condition (e.g. `session-expired`) and runs
+their UiPath workflow against it. The harness responds to every matching request
+with the scenario's configured delay and/or fault until the scenario is cleared.
 
 ## Scope
 
 In scope:
-- deterministic and randomized challenge injection
-- route/app/env-scoped challenge selection
-- transport-neutral challenge outcomes in backend
-- reproducible test behavior with seed and replay
+- Named scenario definitions pre-declared per app in `harness.yaml`
+- Per-app/env persistent activation via API
+- Per-request header-based activation for parallel test runners
+- Existing per-route challenge injection (kept alongside)
 
 Out of scope:
-- frontend rendering implementation details
+- Frontend rendering implementation details
 - HTTP status mapping rules (owned by API layer)
-- vendor-specific business logic beyond declared scenario configs
+- Probabilistic/seeded random activation (not implemented)
 
 ## Terms
 
-- Challenge: a configured behavior modifier applied to request handling.
-- Scenario: named collection of challenges with activation rules.
-- Outcome: actual sampled effect for a request (delay, fault, mutation, etc.).
-- Replay: re-running with the same seed and draw index sequence.
+- **Scenario**: a named condition pre-declared in `harness.yaml` for an app.
+- **Challenge**: a configured delay and/or fault applied to a specific route.
+  Kept as the lower-level primitive; scenarios build on it.
+- **Persistent activation**: `PUT /scenario/{app}/{env}` sets the active scenario
+  for all subsequent requests to that app/env until cleared.
+- **Per-request activation**: `X-Harness-Scenario: <name>` header applies the
+  scenario to that request only; no server state stored.
 
 ## Architecture constraints
 
-- Challenge decision logic lives in backend (`HarnessService` / policy layer).
-- API maps backend outcomes to HTTP; API does not decide challenge policy.
-- Runtime Debug CLI can set/list/clear scenarios but must not import API/frontend.
+- `ScenarioDefinition` and `ScenarioMap` live in `src.core.models`.
+- `ScenarioStore` protocol and `InMemoryScenarioStore` live in `src.backend.service`.
+- `HarnessService` resolves scenarios; API maps them to HTTP.
+- Runtime CLI uses HTTP to set/clear scenarios; it does not import `src.api`.
 
-## Challenge model
+## Scenario model (harness.yaml)
 
 ```yaml
-id: string                        # unique scenario id
-description: string
-enabled: boolean
-scope:
-  app_id: string
-  env_id: string
-  route_id: string
-activation:
-  mode: always | probability | schedule
-  probability: 0.0-1.0            # required if mode=probability
-  schedule: cron-or-window        # optional if mode=schedule
-randomness:
-  seed: integer | null            # null = runtime default seed
-  stream: string                  # stable stream id, e.g. "latency-main"
-effects:
-  latency:
-    min_ms: integer
-    max_ms: integer
-    distribution: uniform | normal | p95_spike
-    timeout_ms: integer | null
+scenarios:
+- name: session-expired           # unique per app; used in API and CLI
+  description: Auth session has expired mid-flow
+  delay_ms: 0                     # optional; default 0
   fault:
-    kind: none | server_error | unavailable | business_error | not_found
-    detail: string
-    retriable: boolean
-  data_quality:
-    null_rate: 0.0-1.0
-    field_drift:
-      - field: string
-        from: string
-        to: string
-    omit_fields: [string]
-  workflow:
-    extra_step_rate: 0.0-1.0
-    conditional_required_fields: [string]
-    transient_validation_error_rate: 0.0-1.0
-  rate_limit:
-    enabled: boolean
-    algorithm: token_bucket | fixed_window
-    capacity: integer               # max tokens / window capacity
-    refill_per_sec: number          # token_bucket only
-    window_sec: integer             # fixed_window only
-    cost_per_request: integer       # default 1
-    key_by: app | env | route | client
-    retry_after_sec: integer
-limits:
-  max_delay_ms: integer
-  max_fault_rate: 0.0-1.0
-observability:
-  emit_metrics: boolean
-  include_trace: boolean
+    kind: auth_error              # see Fault kinds below
+    detail: "Session expired — re-authentication required"
+    retriable: false              # optional; default false
 ```
 
-## Outcome model
+## Activation and precedence
 
-```yaml
-scenario_id: string
-scope_key: [app_id, env_id, route_id]
-request_id: string
-seed: integer
-stream: string
-draw_index: integer
-applied:
-  delay_ms: integer
-  fault_kind: string | null
-  mutations: [string]
-timestamp: iso-8601
-```
+Highest priority wins for each request:
+
+| Priority | Activation | Scope |
+|----------|-----------|-------|
+| 1 (highest) | `X-Harness-Scenario` request header | single request |
+| 2 | Per-route challenge (`POST /challenges/...`) | per-route, persistent |
+| 3 | Active scenario (`PUT /scenario/...`) | per-app/env, persistent |
+| 4 (lowest) | No effect | normal behaviour |
+
+The per-request header (`X-Harness-Scenario`) is intended for parallel test
+runners that cannot coordinate persistent state without interfering with each other.
+
+An unknown scenario name in the header is silently ignored — the request proceeds
+normally. This prevents accidental failures when a test runner sends a stale name.
 
 ## Challenge categories
 
@@ -121,12 +85,16 @@ Baseline presets:
 Intent: emulate intermittent outages and degraded dependencies.
 
 Fault kinds:
-- `server_error`
-- `unavailable`
-- `not_found`
+- `server_error` → HTTP 500
+- `unavailable` → HTTP 503 (retriable)
+- `not_found` → HTTP 404
+- `rate_limit` → HTTP 429 (retriable)
+- `auth_error` → HTTP 401
+- `forbidden` → HTTP 403
+- `business_error` → HTTP 409
 
-Guideline: default retriable behavior for `unavailable`; non-retriable for
-`business_error`.
+Guideline: `unavailable` and `rate_limit` are retriable; all others are not
+unless `retriable: true` is explicitly set on the fault.
 
 ### 3. Business-process faults
 
@@ -196,111 +164,61 @@ Examples:
 Guideline: challenge outcome should include a transport-neutral throttle marker;
 API maps this to HTTP `429` and `Retry-After` when applicable.
 
-## Randomness and reproducibility
+## API and CLI contract
 
-Rules:
-- Every scenario must support explicit seed override.
-- If seed omitted, service seed is used and logged in outcome.
-- RNG stream is stable per scenario id + scope key.
-- Draw index increments deterministically per decision point.
+### Scenario API endpoints
 
-Testing modes:
-- Deterministic mode: fixed seed, exact expected outcomes.
-- Soak mode: rotating seeds, assert invariants only.
+| Command | Method | Path |
+|---------|--------|------|
+| Set active scenario | PUT | `/scenario/{app_id}/{env_id}` body: `{"scenario": "<name>"}` |
+| Clear active scenario | DELETE | `/scenario/{app_id}/{env_id}` |
+| Show active scenario | GET | `/scenario/{app_id}/{env_id}` |
+| List all active scenarios | GET | `/scenario` |
 
-Replay:
-- Replay by `seed + stream + draw_index` sequence.
-- Replay artifacts should be exportable as JSON lines.
-- For auth tripwires, replay should reproduce the same trigger point
-  (for example, same `on_request_n` fire point or seeded probabilistic firing).
+Setting an unknown scenario name returns HTTP 404. Setting with a missing
+`scenario` field returns HTTP 422.
 
-## Safety limits
+### Challenge API endpoints (per-route, unchanged)
 
-Required guards:
-- hard cap on `delay_ms` (default 10_000)
-- hard cap on active fault rate per route (default 0.5)
-- optional scenario TTL
-- emergency disable switch per app/env/route
-- hard cap on `retry_after_sec` (default 300)
+| Command | Method | Path |
+|---------|--------|------|
+| Set challenge | POST | `/challenges/{app_id}/{env_id}/{route_id}` |
+| Clear challenge | DELETE | `/challenges/{app_id}/{env_id}/{route_id}` |
+| List challenges | GET | `/challenges` |
 
-## Metrics and logs
+### Runtime CLI commands
 
-Minimum metrics:
-- `harness_challenge_applied_total{app,env,route,scenario,effect}`
-- `harness_challenge_delay_ms_bucket{app,env,route,scenario}`
-- `harness_challenge_fault_total{app,env,route,scenario,fault_kind}`
-- `harness_challenge_rate_limited_total{app,env,route,scenario,key}`
+```bash
+harness-cli scenario set --app salesforce --env dev --scenario session-expired
+harness-cli scenario clear --app salesforce --env dev
+harness-cli scenario list
+harness-cli scenario show --app salesforce   # local only, reads harness.yaml
+```
 
-Log fields:
-- request id
-- scope key
-- scenario id
-- seed / stream / draw index
-- applied effects
-- rate-limit key and remaining budget (if rate_limit applied)
+## Salesforce scenario catalog
 
-## API and CLI contract notes
+Defined in `harness.yaml` under the `salesforce` app:
 
-API endpoints (example):
-- `POST /challenges/{app_id}/{env_id}/{route_id}`
-- `DELETE /challenges/{app_id}/{env_id}/{route_id}`
-- `GET /challenges`
-
-Runtime Debug CLI commands (example):
-- `harness-debug challenge set ...`
-- `harness-debug challenge clear ...`
-- `harness-debug challenge list`
-
-Rate-limit config can be set via the same challenge payload using
-`effects.rate_limit`.
-
-Auth tripwire config should be set through the same challenge payload and remain
-transport-neutral in backend storage and outcomes.
+| Name | Fault kind | HTTP | Description |
+|------|-----------|------|-------------|
+| `session-expired` | `auth_error` | 401 | Auth session has expired mid-flow |
+| `rate-limited` | `rate_limit` | 429 | API quota exceeded |
+| `degraded` | `unavailable` | 503 | Backend intermittently unavailable (1500 ms delay) |
+| `record-locked` | `business_error` | 409 | Record locked by another user |
 
 ## Testability guidance
 
-Test in parallel layers to keep failures local and diagnosable:
-
-- Core/backend unit tests:
-  - trigger evaluation logic
-  - deterministic seeded behavior
-  - `on_request_n` exact firing semantics
-- API integration tests:
-  - outcome-to-HTTP mapping for auth tripwires
-  - representation consistency (HTML/JSON)
-- Runtime Debug CLI tests:
-  - set/list/clear/replay flows
-  - replay metadata integrity
-- Browser/E2E tests:
-  - forced logout can occur at arbitrary points
-  - same seed reproduces same failure point
-
-## Default scenario catalog (v1)
-
-- `stable-baseline`
-  - no fault, low latency jitter
-- `intermittent-503`
-  - 10% unavailable faults, medium latency
-- `long-tail-latency`
-  - p95 spike profile, no faults
-- `data-drift-lite`
-  - low null rate + minor format drift
-- `workflow-friction`
-  - intermittent extra step + transient validation errors
-- `conflict-heavy`
-  - business_error conflicts on update-like routes
-- `throttle-burst`
-  - token bucket limit with short retry-after hints
-
-## Versioning
-
-- Catalog version field: `catalog_version` (semver).
-- Backward-compatible additions: new optional fields, new preset ids.
-- Breaking changes: field removals/renames require major version bump.
+- Use `PUT /scenario/{app}/{env}` for focused single-developer iteration.
+- Use `X-Harness-Scenario` header for parallel test runners — each runner
+  sends its own header; no shared server state needed.
+- Route challenges override scenarios — use them for route-specific pinning
+  while a scenario is active on the same app/env.
 
 ## Acceptance criteria
 
-- Backend can apply catalog scenarios deterministically with seed/replay.
-- API responses remain deterministic mappings from backend outcomes.
-- Runtime Debug CLI can set/list/clear scenarios by scope.
-- Tests include deterministic and soak profiles.
+- Scenarios defined in `harness.yaml` are loaded by config parser.
+- `PUT /scenario/...` activates a scenario for all routes in that app/env.
+- `X-Harness-Scenario` header activates a scenario for that request only.
+- Route challenges take priority over scenarios.
+- Unknown header scenario name is silently ignored (returns 200).
+- `harness-cli scenario show` lists defined scenarios without a running server.

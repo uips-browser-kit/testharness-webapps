@@ -58,12 +58,16 @@ class App:
     routes: list[Route]
     nav: list[NavItem] = field(default_factory=list)
     layout: str = "layouts/default.html"
+    scenarios: list[ScenarioDefinition] = field(default_factory=list)
 
     def route(self, route_id: str) -> Route:
         for r in self.routes:
             if r.id == route_id:
                 return r
         raise KeyError(f"Route {route_id!r} not found in app {self.id!r}")
+
+    def scenario(self, name: str) -> ScenarioDefinition | None:
+        return next((s for s in self.scenarios if s.name == name), None)
 
 
 @dataclass
@@ -136,3 +140,14 @@ class Challenge:
 
 
 ChallengeMap = dict[tuple[str, str, str], Challenge]  # (app_id, env_id, route_id)
+
+
+@dataclass
+class ScenarioDefinition:
+    name: str
+    description: str = ""
+    delay_ms: int = 0
+    fault: Fault | None = None
+
+
+ScenarioMap = dict[tuple[str, str], str]  # (app_id, env_id) -> active scenario name
