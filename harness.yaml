@@ -86,10 +86,6 @@ apps:
         apps:
         - salesforce
         - dynamics
-      cases:
-        via_field: account_id
-        apps:
-        - salesforce
   - id: contact-list
     path: /lightning/r/Contact/list/view
     pattern_type: path
