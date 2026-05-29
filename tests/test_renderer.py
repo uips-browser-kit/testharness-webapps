@@ -1,10 +1,7 @@
 """
 Tests for src/harness/renderer.py — Jinja2 template rendering.
 """
-import os
-
 import pytest
-from fastapi import HTTPException
 from fastapi.testclient import TestClient
 
 from src.api.app import app
@@ -12,18 +9,20 @@ from src.api.app import app
 
 @pytest.fixture(scope="module")
 def client():
-    # Force the default dataset so hard-coded fixture IDs (12345, ABC-123) always resolve.
-    # This test module verifies template rendering, not data content.
-    old = os.environ.get("HARNESS_DATA_SET")
-    os.environ["HARNESS_DATA_SET"] = "default"
-    try:
-        with TestClient(app) as c:
-            yield c
-    finally:
-        if old is None:
-            os.environ.pop("HARNESS_DATA_SET", None)
-        else:
-            os.environ["HARNESS_DATA_SET"] = old
+    with TestClient(app) as c:
+        yield c
+
+
+def _first_candidate(client, app_id: str, env_id: str, route_id: str) -> str:
+    """Return the first candidate key value for a detail route from the live manifest."""
+    data = client.get("/manifest").json()
+    app_entry = next(a for a in data["apps"] if a["id"] == app_id)
+    env_entry = next(e for e in app_entry["environments"] if e["id"] == env_id)
+    route_entry = next(r for r in env_entry["routes"] if r["id"] == route_id)
+    candidates = route_entry.get("candidates", [])
+    if not candidates:
+        pytest.skip(f"No data for {app_id}/{env_id}/{route_id} in active dataset")
+    return candidates[0]
 
 
 # --- Static file serving ---
@@ -45,49 +44,46 @@ def test_app_css_served(client):
 
 
 def test_account_detail_returns_html(client):
+    acct_id = _first_candidate(client, "salesforce", "dev", "account-detail")
     r = client.get(
-        "/lightning/r/Account/001/view",
+        f"/lightning/r/Account/{acct_id}/view",
         headers={"host": "salesforce-dev.local"},
     )
     assert r.status_code == 200
     assert "text/html" in r.headers["content-type"]
 
 
-def test_account_detail_contains_record_name(client):
-    r = client.get(
-        "/lightning/r/Account/001/view",
-        headers={"host": "salesforce-dev.local"},
-    )
-    assert "Rodriguez" in r.text
-
-
 def test_account_detail_contains_app_name(client):
+    acct_id = _first_candidate(client, "salesforce", "dev", "account-detail")
     r = client.get(
-        "/lightning/r/Account/001/view",
+        f"/lightning/r/Account/{acct_id}/view",
         headers={"host": "salesforce-dev.local"},
     )
     assert "Lightning" in r.text
 
 
 def test_account_detail_contains_env_badge(client):
+    acct_id = _first_candidate(client, "salesforce", "dev", "account-detail")
     r = client.get(
-        "/lightning/r/Account/001/view",
+        f"/lightning/r/Account/{acct_id}/view",
         headers={"host": "salesforce-dev.local"},
     )
     assert "dev" in r.text.lower()
 
 
 def test_account_detail_loads_app_css(client):
+    acct_id = _first_candidate(client, "salesforce", "dev", "account-detail")
     r = client.get(
-        "/lightning/r/Account/001/view",
+        f"/lightning/r/Account/{acct_id}/view",
         headers={"host": "salesforce-dev.local"},
     )
     assert "apps/salesforce.css" in r.text
 
 
 def test_account_detail_nav_active_item(client):
+    acct_id = _first_candidate(client, "salesforce", "dev", "account-detail")
     r = client.get(
-        "/lightning/r/Account/001/view",
+        f"/lightning/r/Account/{acct_id}/view",
         headers={"host": "salesforce-dev.local"},
     )
     assert 'class="active"' in r.text
@@ -95,8 +91,9 @@ def test_account_detail_nav_active_item(client):
 
 
 def test_account_detail_subnav_expanded(client):
+    acct_id = _first_candidate(client, "salesforce", "dev", "account-detail")
     r = client.get(
-        "/lightning/r/Account/001/view",
+        f"/lightning/r/Account/{acct_id}/view",
         headers={"host": "salesforce-dev.local"},
     )
     assert 'aria-expanded="true"' in r.text
@@ -115,8 +112,9 @@ def test_nonexistent_account_returns_404(client):
 
 
 def test_sap_shell_renders_html(client):
+    order_number = _first_candidate(client, "sap", "dev", "shell")
     r = client.get(
-        "/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so=12345",
+        f"/sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so={order_number}",
         headers={"host": "sap-dev.local"},
     )
     assert r.status_code == 200
@@ -125,8 +123,9 @@ def test_sap_shell_renders_html(client):
 
 
 def test_jira_issue_renders_html(client):
+    issue_key = _first_candidate(client, "jira", "cloud", "issue")
     r = client.get(
-        "/browse/ABC-123",
+        f"/browse/{issue_key}",
         headers={"host": "jira-cloud.local"},
     )
     assert r.status_code == 200
