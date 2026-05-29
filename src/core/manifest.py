@@ -105,6 +105,7 @@ def _route_entry(
         entry["key_param"] = key_param
         entry["entity"] = route.data_entity
         entry["relationships"] = route.relationships
+        entry["reverse_relationships"] = route.reverse_relationships
         entry["record_count"] = len(records)
         entry["candidate_count"] = len(candidates)
         entry["candidates"] = candidates

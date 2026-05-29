@@ -168,6 +168,25 @@ def test_detail_route_no_relationships_is_empty_dict(manifest):
     assert r["relationships"] == {}
 
 
+def test_detail_route_has_reverse_relationships_key(manifest):
+    r = _sf_dev_route(manifest, "account-detail")
+    assert "reverse_relationships" in r
+
+
+def test_detail_route_reverse_relationships_shape(manifest):
+    r = _sf_dev_route(manifest, "account-detail")
+    for entity, rev in r["reverse_relationships"].items():
+        assert "via_field" in rev, f"{entity}: missing via_field"
+        assert "apps" in rev, f"{entity}: missing apps"
+        assert isinstance(rev["apps"], list)
+
+
+def test_detail_route_no_reverse_relationships_is_empty_dict(manifest):
+    # contact-detail has no reverse FK (nothing points to contacts in the canonical model)
+    r = _sf_dev_route(manifest, "contact-detail")
+    assert r["reverse_relationships"] == {}
+
+
 def test_manifest_network_hosts(manifest):
     hosts = manifest["network"]["hosts"]
     assert isinstance(hosts, list)
@@ -533,6 +552,17 @@ def test_manifest_endpoint_contact_detail_has_relationships(client):
     cd = next(r for r in dev["routes"] if r["id"] == "contact-detail")
     assert "relationships" in cd
     assert "account_id" in cd["relationships"]
+
+
+def test_manifest_endpoint_account_detail_has_reverse_relationships(client):
+    r = client.get("/manifest")
+    data = r.json()
+    sf = next(a for a in data["apps"] if a["id"] == "salesforce")
+    dev = next(e for e in sf["environments"] if e["id"] == "dev")
+    ad = next(r for r in dev["routes"] if r["id"] == "account-detail")
+    assert "reverse_relationships" in ad
+    assert "contacts" in ad["reverse_relationships"]
+    assert "opportunities" in ad["reverse_relationships"]
 
 
 def test_manifest_endpoint_has_apps(client):

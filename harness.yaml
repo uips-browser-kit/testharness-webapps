@@ -75,6 +75,21 @@ apps:
     template: account_detail
     data_entity: accounts
     data_key_field: id
+    reverse_relationships:
+      contacts:
+        via_field: account_id
+        apps:
+        - salesforce
+        - dynamics
+      opportunities:
+        via_field: account_id
+        apps:
+        - salesforce
+        - dynamics
+      cases:
+        via_field: account_id
+        apps:
+        - salesforce
   - id: contact-list
     path: /lightning/r/Contact/list/view
     pattern_type: path
@@ -163,6 +178,17 @@ apps:
     data_entity: accounts
     data_key_field: id
     url_template: /main.aspx?appid=00000000-0000-0000-0000-000000000000&pagetype=entityrecord&id={id}
+    reverse_relationships:
+      contacts:
+        via_field: account_id
+        apps:
+        - salesforce
+        - dynamics
+      opportunities:
+        via_field: account_id
+        apps:
+        - salesforce
+        - dynamics
   - id: account-list
     path: /main.aspx
     pattern_type: query

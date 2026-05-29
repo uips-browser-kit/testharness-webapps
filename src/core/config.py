@@ -140,6 +140,7 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         url_template=raw.get("url_template", ""),
         methods=raw.get("methods", ["GET"]),
         relationships=raw.get("relationships", {}),
+        reverse_relationships=raw.get("reverse_relationships", {}),
     )
 
 
