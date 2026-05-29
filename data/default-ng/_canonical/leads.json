@@ -1,0 +1,112 @@
+[
+  {
+    "id": "L001",
+    "first_name": "Tracey",
+    "last_name": "Brown",
+    "company": "Turner and Sons",
+    "email": "tracey.brown@duran.com",
+    "phone": "707-362-2683",
+    "status": "Unqualified",
+    "is_converted": true,
+    "converted_opportunity_id": "opp001"
+  },
+  {
+    "id": "L002",
+    "first_name": "Michelle",
+    "last_name": "Williams",
+    "company": "Stevens Inc",
+    "email": "michelle.williams@johnston-berry.biz",
+    "phone": "816-805-2975x1613",
+    "status": "New",
+    "is_converted": true,
+    "converted_opportunity_id": "opp002"
+  },
+  {
+    "id": "L003",
+    "first_name": "Randy",
+    "last_name": "Collins",
+    "company": "Walker-Maxwell",
+    "email": "randy.collins@dixon.net",
+    "phone": "435.952.3124x32921",
+    "status": "Unqualified",
+    "is_converted": true,
+    "converted_opportunity_id": "opp003"
+  },
+  {
+    "id": "L004",
+    "first_name": "Karen",
+    "last_name": "Wolf",
+    "company": "Maldonado-Macias",
+    "email": "karen.wolf@reid.com",
+    "phone": "(771)377-4490",
+    "status": "Nurturing",
+    "is_converted": true,
+    "converted_opportunity_id": "opp004"
+  },
+  {
+    "id": "L005",
+    "first_name": "Steven",
+    "last_name": "Johnson",
+    "company": "Decker-Jones",
+    "email": "steven.johnson@gilbert.biz",
+    "phone": "298.907.9359x782",
+    "status": "New",
+    "is_converted": false,
+    "converted_opportunity_id": null
+  },
+  {
+    "id": "L006",
+    "first_name": "Lisa",
+    "last_name": "Monroe",
+    "company": "Miller, Lucas and Williams",
+    "email": "lisa.monroe@kim.com",
+    "phone": "(854)666-5905x151",
+    "status": "Nurturing",
+    "is_converted": false,
+    "converted_opportunity_id": null
+  },
+  {
+    "id": "L007",
+    "first_name": "Jennifer",
+    "last_name": "Douglas",
+    "company": "Marks, Cook and Aguilar",
+    "email": "jennifer.douglas@rangel.biz",
+    "phone": "(391)848-6528",
+    "status": "Nurturing",
+    "is_converted": false,
+    "converted_opportunity_id": null
+  },
+  {
+    "id": "L008",
+    "first_name": "Andrew",
+    "last_name": "Parker",
+    "company": "Peterson Group",
+    "email": "andrew.parker@perez.com",
+    "phone": "441-888-8059",
+    "status": "Working",
+    "is_converted": false,
+    "converted_opportunity_id": null
+  },
+  {
+    "id": "L009",
+    "first_name": "Francis",
+    "last_name": "Guerra",
+    "company": "Lamb, Martin and Kim",
+    "email": "francis.guerra@diaz-ball.info",
+    "phone": "+1-947-638-3473x597",
+    "status": "Unqualified",
+    "is_converted": false,
+    "converted_opportunity_id": null
+  },
+  {
+    "id": "L010",
+    "first_name": "Wesley",
+    "last_name": "Barnes",
+    "company": "Montoya PLC",
+    "email": "wesley.barnes@salas.info",
+    "phone": "(881)381-4124x782",
+    "status": "Working",
+    "is_converted": false,
+    "converted_opportunity_id": null
+  }
+]

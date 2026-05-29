@@ -1,0 +1,222 @@
+[
+  {
+    "sys_id": "case00001",
+    "number": "INC0000001",
+    "account_id": "010",
+    "contact_id": "c010",
+    "short_description": "Environment teach world quickly believe while size try yeah",
+    "state": "Escalated",
+    "priority": 3,
+    "category": "enhancement",
+    "origin": "email"
+  },
+  {
+    "sys_id": "case00002",
+    "number": "INC0000002",
+    "account_id": "005",
+    "contact_id": "c011",
+    "short_description": "Seven put majority officer environmental increase",
+    "state": "Closed",
+    "priority": 1,
+    "category": "inquiry",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00003",
+    "number": "INC0000003",
+    "account_id": "017",
+    "contact_id": "c009",
+    "short_description": "Lawyer maintain old than suggest behavior will",
+    "state": "Escalated",
+    "priority": 2,
+    "category": "inquiry",
+    "origin": "chat"
+  },
+  {
+    "sys_id": "case00004",
+    "number": "INC0000004",
+    "account_id": "014",
+    "contact_id": "c007",
+    "short_description": "Environmental stock front official not magazine gas radio",
+    "state": "Closed",
+    "priority": 4,
+    "category": "inquiry",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00005",
+    "number": "INC0000005",
+    "account_id": "015",
+    "contact_id": "c001",
+    "short_description": "Upon citizen lead yeah into",
+    "state": "Escalated",
+    "priority": 3,
+    "category": "enhancement",
+    "origin": "web"
+  },
+  {
+    "sys_id": "case00006",
+    "number": "INC0000006",
+    "account_id": "009",
+    "contact_id": "c003",
+    "short_description": "Economy head tough close how figure record",
+    "state": "Closed",
+    "priority": 3,
+    "category": "software",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00007",
+    "number": "INC0000007",
+    "account_id": "004",
+    "contact_id": "c001",
+    "short_description": "Live car difficult quite act receive",
+    "state": "New",
+    "priority": 1,
+    "category": "enhancement",
+    "origin": "email"
+  },
+  {
+    "sys_id": "case00008",
+    "number": "INC0000008",
+    "account_id": "003",
+    "contact_id": "c008",
+    "short_description": "Become south billion happen federal him spend",
+    "state": "New",
+    "priority": 3,
+    "category": "inquiry",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00009",
+    "number": "INC0000009",
+    "account_id": "006",
+    "contact_id": "c015",
+    "short_description": "Reveal physical character in rather team beautiful",
+    "state": "New",
+    "priority": 3,
+    "category": "inquiry",
+    "origin": "chat"
+  },
+  {
+    "sys_id": "case00010",
+    "number": "INC0000010",
+    "account_id": "014",
+    "contact_id": "c011",
+    "short_description": "Easy popular easy over return",
+    "state": "Working",
+    "priority": 4,
+    "category": "enhancement",
+    "origin": "web"
+  },
+  {
+    "sys_id": "case00011",
+    "number": "INC0000011",
+    "account_id": "017",
+    "contact_id": "c020",
+    "short_description": "Country hot position six soldier dream history drop",
+    "state": "Closed",
+    "priority": 4,
+    "category": "enhancement",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00012",
+    "number": "INC0000012",
+    "account_id": "011",
+    "contact_id": "c005",
+    "short_description": "Team nothing half raise several west side",
+    "state": "New",
+    "priority": 4,
+    "category": "inquiry",
+    "origin": "web"
+  },
+  {
+    "sys_id": "case00013",
+    "number": "INC0000013",
+    "account_id": "002",
+    "contact_id": "c002",
+    "short_description": "Media pick may indeed reduce bar Mr",
+    "state": "Closed",
+    "priority": 3,
+    "category": "software",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00014",
+    "number": "INC0000014",
+    "account_id": "003",
+    "contact_id": "c017",
+    "short_description": "Window choice force only shake power",
+    "state": "Escalated",
+    "priority": 4,
+    "category": "software",
+    "origin": "chat"
+  },
+  {
+    "sys_id": "case00015",
+    "number": "INC0000015",
+    "account_id": "008",
+    "contact_id": "c002",
+    "short_description": "Beat its law participant finally score",
+    "state": "Escalated",
+    "priority": 3,
+    "category": "inquiry",
+    "origin": "phone"
+  },
+  {
+    "sys_id": "case00016",
+    "number": "INC0000016",
+    "account_id": "005",
+    "contact_id": "c001",
+    "short_description": "Market get military state else",
+    "state": "Working",
+    "priority": 3,
+    "category": "enhancement",
+    "origin": "web"
+  },
+  {
+    "sys_id": "case00017",
+    "number": "INC0000017",
+    "account_id": "004",
+    "contact_id": "c001",
+    "short_description": "Southern evening ask Republican office baby lawyer",
+    "state": "Working",
+    "priority": 4,
+    "category": "software",
+    "origin": "email"
+  },
+  {
+    "sys_id": "case00018",
+    "number": "INC0000018",
+    "account_id": "006",
+    "contact_id": "c009",
+    "short_description": "Thus purpose boy scientist able",
+    "state": "New",
+    "priority": 3,
+    "category": "inquiry",
+    "origin": "chat"
+  },
+  {
+    "sys_id": "case00019",
+    "number": "INC0000019",
+    "account_id": "013",
+    "contact_id": "c005",
+    "short_description": "Use tax need trial scientist",
+    "state": "Working",
+    "priority": 3,
+    "category": "software",
+    "origin": "email"
+  },
+  {
+    "sys_id": "case00020",
+    "number": "INC0000020",
+    "account_id": "011",
+    "contact_id": "c009",
+    "short_description": "Number budget pull apply",
+    "state": "New",
+    "priority": 4,
+    "category": "software",
+    "origin": "phone"
+  }
+]

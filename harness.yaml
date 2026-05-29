@@ -659,7 +659,9 @@ apps:
     template: home
 
 data:
-  set: default
+  set: default-ng
+  # set: default
+  # set: default-ng   # canonical cross-app data model (Salesforce-inspired)
 
 prometheus:
   scrape_interval: 15s

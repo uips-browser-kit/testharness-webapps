@@ -1,0 +1,322 @@
+[
+  {
+    "id": "001",
+    "name": "Rodriguez, Figueroa and Sanchez",
+    "industry": "Finance",
+    "phone": "001-218-519-6001x3389",
+    "billing_address": {
+      "street": "79402 Peterson Drives Apt. 511",
+      "city": "Davisstad",
+      "state": "PA",
+      "zip": "35172",
+      "country": "US"
+    },
+    "website": "https://blair.com",
+    "annual_revenue": 49900000,
+    "owner": "Angela Carter"
+  },
+  {
+    "id": "002",
+    "name": "Montgomery, Hensley and Ray",
+    "industry": "Energy",
+    "phone": "903-741-3164",
+    "billing_address": {
+      "street": "5341 Amanda Gardens",
+      "city": "South Noah",
+      "state": "SC",
+      "zip": "90699",
+      "country": "US"
+    },
+    "website": "https://robinson.com",
+    "annual_revenue": 11800000,
+    "owner": "Renee Morales"
+  },
+  {
+    "id": "003",
+    "name": "Clark PLC",
+    "industry": "Energy",
+    "phone": "837-767-2423x88496",
+    "billing_address": {
+      "street": "87101 Courtney Turnpike",
+      "city": "Carlsonfurt",
+      "state": "MS",
+      "zip": "78605",
+      "country": "US"
+    },
+    "website": "https://rice-maddox.com",
+    "annual_revenue": 34900000,
+    "owner": "Melanie Herrera"
+  },
+  {
+    "id": "004",
+    "name": "Mack-Peterson",
+    "industry": "Healthcare",
+    "phone": "(727)404-8281x48932",
+    "billing_address": {
+      "street": "570 Sarah Wells",
+      "city": "Johnbury",
+      "state": "FM",
+      "zip": "74865",
+      "country": "US"
+    },
+    "website": "https://miller.com",
+    "annual_revenue": 39000000,
+    "owner": "Beth Keller"
+  },
+  {
+    "id": "005",
+    "name": "Martin, Rose and Obrien",
+    "industry": "Finance",
+    "phone": "+1-534-565-7871",
+    "billing_address": {
+      "street": "0983 Adrian Station",
+      "city": "East Carloston",
+      "state": "VI",
+      "zip": "43810",
+      "country": "US"
+    },
+    "website": "https://palmer.info",
+    "annual_revenue": 11000000,
+    "owner": "Miranda Khan"
+  },
+  {
+    "id": "006",
+    "name": "Kennedy, Mueller and Aguirre",
+    "industry": "Finance",
+    "phone": "216-856-6701",
+    "billing_address": {
+      "street": "33387 Robert Harbors Suite 317",
+      "city": "North Deniseside",
+      "state": "MP",
+      "zip": "02435",
+      "country": "US"
+    },
+    "website": "https://house.com",
+    "annual_revenue": 20900000,
+    "owner": "Mr. James Brown"
+  },
+  {
+    "id": "007",
+    "name": "Smith-Myers",
+    "industry": "Education",
+    "phone": "246.787.2343x098",
+    "billing_address": {
+      "street": "97882 Susan Common",
+      "city": "North Brooke",
+      "state": "TX",
+      "zip": "31329",
+      "country": "US"
+    },
+    "website": "https://wilson-zamora.com",
+    "annual_revenue": 29700000,
+    "owner": "Lisa Barnes"
+  },
+  {
+    "id": "008",
+    "name": "Cunningham, Stewart and Green",
+    "industry": "Energy",
+    "phone": "001-353-346-2475x107",
+    "billing_address": {
+      "street": "425 Natasha Land",
+      "city": "Ericside",
+      "state": "VT",
+      "zip": "40152",
+      "country": "US"
+    },
+    "website": "https://riggs.net",
+    "annual_revenue": 15400000,
+    "owner": "Ashley Humphrey"
+  },
+  {
+    "id": "009",
+    "name": "Wilson-Rodriguez",
+    "industry": "Manufacturing",
+    "phone": "(944)693-5348",
+    "billing_address": {
+      "street": "64005 Dana Greens",
+      "city": "Lake Scott",
+      "state": "VT",
+      "zip": "56558",
+      "country": "US"
+    },
+    "website": "https://smith.com",
+    "annual_revenue": 28000000,
+    "owner": "Jacob Tran"
+  },
+  {
+    "id": "010",
+    "name": "Anderson-Parker",
+    "industry": "Education",
+    "phone": "4535315869",
+    "billing_address": {
+      "street": "60256 Joseph Turnpike",
+      "city": "South Monicafort",
+      "state": "IN",
+      "zip": "26659",
+      "country": "US"
+    },
+    "website": "https://bailey-hoover.com",
+    "annual_revenue": 11500000,
+    "owner": "Corey Murphy"
+  },
+  {
+    "id": "011",
+    "name": "Rasmussen LLC",
+    "industry": "Healthcare",
+    "phone": "+1-886-785-0142x9401",
+    "billing_address": {
+      "street": "9816 Jonathan Station Suite 088",
+      "city": "West Ryan",
+      "state": "TN",
+      "zip": "43780",
+      "country": "US"
+    },
+    "website": "https://edwards.com",
+    "annual_revenue": 26000000,
+    "owner": "Jason Powell"
+  },
+  {
+    "id": "012",
+    "name": "Spencer-Lee",
+    "industry": "Energy",
+    "phone": "(729)994-6804x4369",
+    "billing_address": {
+      "street": "3872 Justin Shore Suite 134",
+      "city": "Port James",
+      "state": "AK",
+      "zip": "06558",
+      "country": "US"
+    },
+    "website": "https://riggs.com",
+    "annual_revenue": 23400000,
+    "owner": "Mark Lee"
+  },
+  {
+    "id": "013",
+    "name": "Cruz, Ross and Hernandez",
+    "industry": "Energy",
+    "phone": "5163328708",
+    "billing_address": {
+      "street": "78895 Salazar Stravenue Suite 872",
+      "city": "Colebury",
+      "state": "MP",
+      "zip": "84080",
+      "country": "US"
+    },
+    "website": "https://cannon-boyd.com",
+    "annual_revenue": 14100000,
+    "owner": "Micheal Young"
+  },
+  {
+    "id": "014",
+    "name": "Flores-Fernandez",
+    "industry": "Finance",
+    "phone": "(936)823-1665",
+    "billing_address": {
+      "street": "66909 Woods Knoll",
+      "city": "Karenchester",
+      "state": "ND",
+      "zip": "98479",
+      "country": "US"
+    },
+    "website": "https://payne.com",
+    "annual_revenue": 14000000,
+    "owner": "Allen Rogers"
+  },
+  {
+    "id": "015",
+    "name": "Yates, Ramsey and Pittman",
+    "industry": "Finance",
+    "phone": "+1-280-669-9016x272",
+    "billing_address": {
+      "street": "3755 Ramirez Village Suite 417",
+      "city": "Lake Amberstad",
+      "state": "IN",
+      "zip": "85716",
+      "country": "US"
+    },
+    "website": "https://harrington.com",
+    "annual_revenue": 38700000,
+    "owner": "David Combs"
+  },
+  {
+    "id": "016",
+    "name": "Hernandez, Martinez and Caldwell",
+    "industry": "Manufacturing",
+    "phone": "674.352.9912",
+    "billing_address": {
+      "street": "9663 Brittany Village",
+      "city": "North Heidi",
+      "state": "ME",
+      "zip": "90188",
+      "country": "US"
+    },
+    "website": "https://trujillo.com",
+    "annual_revenue": 17800000,
+    "owner": "Mary Jones"
+  },
+  {
+    "id": "017",
+    "name": "Peterson, Atkinson and Short",
+    "industry": "Technology",
+    "phone": "(657)726-2849x87769",
+    "billing_address": {
+      "street": "47379 Rogers Park",
+      "city": "Hunterborough",
+      "state": "MI",
+      "zip": "34363",
+      "country": "US"
+    },
+    "website": "https://ramirez-carlson.com",
+    "annual_revenue": 28500000,
+    "owner": "Travis Miller"
+  },
+  {
+    "id": "018",
+    "name": "Russell, Peters and Allen",
+    "industry": "Retail",
+    "phone": "+1-777-801-4363x4957",
+    "billing_address": {
+      "street": "7444 David Fields Suite 182",
+      "city": "East Joanna",
+      "state": "KY",
+      "zip": "95473",
+      "country": "US"
+    },
+    "website": "https://bray.com",
+    "annual_revenue": 42700000,
+    "owner": "Darren White"
+  },
+  {
+    "id": "019",
+    "name": "Erickson and Sons",
+    "industry": "Healthcare",
+    "phone": "6089427109",
+    "billing_address": {
+      "street": "5204 Wilson Circles Suite 719",
+      "city": "East Edwardshire",
+      "state": "ME",
+      "zip": "11665",
+      "country": "US"
+    },
+    "website": "https://wilson.org",
+    "annual_revenue": 30600000,
+    "owner": "Courtney Mills"
+  },
+  {
+    "id": "020",
+    "name": "Kerr-Evans",
+    "industry": "Manufacturing",
+    "phone": "(349)490-9133x41232",
+    "billing_address": {
+      "street": "7974 Jesse Squares",
+      "city": "Jacquelinemouth",
+      "state": "CA",
+      "zip": "90597",
+      "country": "US"
+    },
+    "website": "https://bradshaw.org",
+    "annual_revenue": 33900000,
+    "owner": "Christina Wilson"
+  }
+]

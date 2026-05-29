@@ -1,0 +1,56 @@
+[
+  {
+    "id": "CON-0001",
+    "account_id": "012",
+    "start_date": "2025-02-23",
+    "end_date": "2027-02-13",
+    "status": "Draft",
+    "contract_term_months": 24,
+    "total_amount": 234000.0
+  },
+  {
+    "id": "CON-0002",
+    "account_id": "007",
+    "start_date": "2026-01-29",
+    "end_date": "2027-01-24",
+    "status": "Expired",
+    "contract_term_months": 12,
+    "total_amount": 311000.0
+  },
+  {
+    "id": "CON-0003",
+    "account_id": "020",
+    "start_date": "2024-06-23",
+    "end_date": "2026-06-13",
+    "status": "Expired",
+    "contract_term_months": 24,
+    "total_amount": 229000.0
+  },
+  {
+    "id": "CON-0004",
+    "account_id": "005",
+    "start_date": "2025-12-11",
+    "end_date": "2028-11-25",
+    "status": "Draft",
+    "contract_term_months": 36,
+    "total_amount": 426000.0
+  },
+  {
+    "id": "CON-0005",
+    "account_id": "019",
+    "start_date": "2025-10-30",
+    "end_date": "2026-10-25",
+    "status": "Activated",
+    "contract_term_months": 12,
+    "total_amount": 282000.0
+  },
+  {
+    "id": "CON-0006",
+    "account_id": "018",
+    "start_date": "2025-08-15",
+    "end_date": "2028-07-30",
+    "status": "Draft",
+    "contract_term_months": 36,
+    "total_amount": 175000.0
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "quarter": "2025-Q2",
+    "order_count": 2,
+    "revenue": 83000.0
+  },
+  {
+    "quarter": "2025-Q3",
+    "order_count": 5,
+    "revenue": 332000.0
+  },
+  {
+    "quarter": "2025-Q4",
+    "order_count": 8,
+    "revenue": 1137125.21
+  },
+  {
+    "quarter": "2026-Q1",
+    "order_count": 11,
+    "revenue": 1695800.0
+  },
+  {
+    "quarter": "2026-Q2",
+    "order_count": 1,
+    "revenue": 97000.0
+  }
+]

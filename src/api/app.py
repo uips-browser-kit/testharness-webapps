@@ -142,6 +142,7 @@ async def lifespan(app: FastAPI):
     app.state.apps = load_config(_HARNESS_YAML)
     app.state.keycloak = load_keycloak_config(_HARNESS_YAML)
     app.state.hosts = parse_hosts_file(_HOSTS_FILE)
+    app.state.dataset = dataset
     yield
 
 
@@ -226,6 +227,7 @@ def manifest(request: Request):
         hosts=request.app.state.hosts,
         keycloak=request.app.state.keycloak,
         version=__version__,
+        dataset=request.app.state.dataset,
     )
 
 

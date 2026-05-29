@@ -1,0 +1,222 @@
+[
+  {
+    "employee_id": "EMP0001",
+    "first_name": "Anna",
+    "last_name": "Lopez",
+    "email": "anna.lopez@company.com",
+    "department": "Legal",
+    "job_title": "Environmental health practitioner",
+    "manager": "Vanessa Keith",
+    "hire_date": "2022-11-04",
+    "location": "Jessicaport, DC"
+  },
+  {
+    "employee_id": "EMP0002",
+    "first_name": "Vanessa",
+    "last_name": "Keith",
+    "email": "vanessa.keith@company.com",
+    "department": "Marketing",
+    "job_title": "Accommodation manager",
+    "manager": "Tracy Davis",
+    "hire_date": "2026-01-22",
+    "location": "East Carriebury, SC"
+  },
+  {
+    "employee_id": "EMP0003",
+    "first_name": "Travis",
+    "last_name": "Parker",
+    "email": "travis.parker@company.com",
+    "department": "Sales",
+    "job_title": "Research scientist (maths)",
+    "manager": "Vanessa Keith",
+    "hire_date": "2022-01-14",
+    "location": "East Michaelmouth, GA"
+  },
+  {
+    "employee_id": "EMP0004",
+    "first_name": "Tracy",
+    "last_name": "Davis",
+    "email": "tracy.davis@company.com",
+    "department": "Sales",
+    "job_title": "Legal executive",
+    "manager": "Tracy Davis",
+    "hire_date": "2016-08-06",
+    "location": "Jasonland, MI"
+  },
+  {
+    "employee_id": "EMP0005",
+    "first_name": "Jesse",
+    "last_name": "Robinson",
+    "email": "jesse.robinson@company.com",
+    "department": "HR",
+    "job_title": "Clinical cytogeneticist",
+    "manager": "Anna Lopez",
+    "hire_date": "2017-03-23",
+    "location": "Kimchester, GA"
+  },
+  {
+    "employee_id": "EMP0006",
+    "first_name": "Alisha",
+    "last_name": "Smith",
+    "email": "alisha.smith@company.com",
+    "department": "Operations",
+    "job_title": "Research officer, government",
+    "manager": "Tracy Davis",
+    "hire_date": "2022-05-19",
+    "location": "Garciafort, WY"
+  },
+  {
+    "employee_id": "EMP0007",
+    "first_name": "Samantha",
+    "last_name": "Harris",
+    "email": "samantha.harris@company.com",
+    "department": "Finance",
+    "job_title": "Designer, textile",
+    "manager": "Tracy Davis",
+    "hire_date": "2017-08-29",
+    "location": "West Andrewview, CT"
+  },
+  {
+    "employee_id": "EMP0008",
+    "first_name": "David",
+    "last_name": "Love",
+    "email": "david.love@company.com",
+    "department": "Sales",
+    "job_title": "Lighting technician, broadcasting/film/video",
+    "manager": "Vanessa Keith",
+    "hire_date": "2022-10-17",
+    "location": "Lake Charles, MH"
+  },
+  {
+    "employee_id": "EMP0009",
+    "first_name": "Samantha",
+    "last_name": "Richard",
+    "email": "samantha.richard@company.com",
+    "department": "Sales",
+    "job_title": "Lexicographer",
+    "manager": "Tracy Davis",
+    "hire_date": "2016-12-06",
+    "location": "Dunlapburgh, PA"
+  },
+  {
+    "employee_id": "EMP0010",
+    "first_name": "Marcus",
+    "last_name": "Johnson",
+    "email": "marcus.johnson@company.com",
+    "department": "Operations",
+    "job_title": "Designer, graphic",
+    "manager": "Anna Lopez",
+    "hire_date": "2018-02-16",
+    "location": "Jamieborough, MT"
+  },
+  {
+    "employee_id": "EMP0011",
+    "first_name": "Brenda",
+    "last_name": "Stark",
+    "email": "brenda.stark@company.com",
+    "department": "HR",
+    "job_title": "Herbalist",
+    "manager": "Travis Parker",
+    "hire_date": "2020-06-12",
+    "location": "North Philipside, MP"
+  },
+  {
+    "employee_id": "EMP0012",
+    "first_name": "Kim",
+    "last_name": "Mathis",
+    "email": "kim.mathis@company.com",
+    "department": "Product",
+    "job_title": "Designer, exhibition/display",
+    "manager": "Anna Lopez",
+    "hire_date": "2022-07-18",
+    "location": "South Christopherfort, ID"
+  },
+  {
+    "employee_id": "EMP0013",
+    "first_name": "Michelle",
+    "last_name": "Yu",
+    "email": "michelle.yu@company.com",
+    "department": "Sales",
+    "job_title": "Agricultural engineer",
+    "manager": "Vanessa Keith",
+    "hire_date": "2019-04-24",
+    "location": "Tiffanyfort, PR"
+  },
+  {
+    "employee_id": "EMP0014",
+    "first_name": "Nathaniel",
+    "last_name": "Mcmahon",
+    "email": "nathaniel.mcmahon@company.com",
+    "department": "Sales",
+    "job_title": "Insurance account manager",
+    "manager": "Tracy Davis",
+    "hire_date": "2024-06-01",
+    "location": "Jacobsonview, CO"
+  },
+  {
+    "employee_id": "EMP0015",
+    "first_name": "Randall",
+    "last_name": "Garcia",
+    "email": "randall.garcia@company.com",
+    "department": "Operations",
+    "job_title": "Electrical engineer",
+    "manager": "Travis Parker",
+    "hire_date": "2022-11-23",
+    "location": "Jacobton, KS"
+  },
+  {
+    "employee_id": "EMP0016",
+    "first_name": "Kevin",
+    "last_name": "Taylor",
+    "email": "kevin.taylor@company.com",
+    "department": "Product",
+    "job_title": "Psychologist, occupational",
+    "manager": "Travis Parker",
+    "hire_date": "2020-04-02",
+    "location": "Anneberg, WV"
+  },
+  {
+    "employee_id": "EMP0017",
+    "first_name": "Eric",
+    "last_name": "Fry",
+    "email": "eric.fry@company.com",
+    "department": "Sales",
+    "job_title": "Chartered certified accountant",
+    "manager": "Travis Parker",
+    "hire_date": "2025-08-13",
+    "location": "Arellanoshire, IN"
+  },
+  {
+    "employee_id": "EMP0018",
+    "first_name": "Latoya",
+    "last_name": "Yu",
+    "email": "latoya.yu@company.com",
+    "department": "Engineering",
+    "job_title": "Naval architect",
+    "manager": "Tracy Davis",
+    "hire_date": "2025-07-07",
+    "location": "Armstrongbury, NJ"
+  },
+  {
+    "employee_id": "EMP0019",
+    "first_name": "Debra",
+    "last_name": "Thompson",
+    "email": "debra.thompson@company.com",
+    "department": "HR",
+    "job_title": "Careers information officer",
+    "manager": "Tracy Davis",
+    "hire_date": "2016-12-29",
+    "location": "North Stacy, NV"
+  },
+  {
+    "employee_id": "EMP0020",
+    "first_name": "Tanya",
+    "last_name": "Steele",
+    "email": "tanya.steele@company.com",
+    "department": "Marketing",
+    "job_title": "Diplomatic Services operational officer",
+    "manager": "Vanessa Keith",
+    "hire_date": "2019-09-07",
+    "location": "North Rodney, TX"
+  }
+]

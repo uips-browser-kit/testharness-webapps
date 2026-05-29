@@ -11,10 +11,12 @@ def build_manifest(
     hosts: list[dict],
     keycloak: dict,
     version: str = "",
+    dataset: str = "",
 ) -> dict:
     """Build the harness manifest as a plain dict. Pure function — no I/O."""
     return {
         "version": version,
+        "dataset": dataset,
         "network": {"hosts": hosts, "hosts_file": "infra/hosts.txt"},
         "apps": [_app_entry(app, entity_records) for app in apps],
         "users": _build_users(keycloak),

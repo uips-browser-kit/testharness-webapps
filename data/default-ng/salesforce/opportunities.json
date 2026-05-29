@@ -1,0 +1,182 @@
+[
+  {
+    "id": "opp001",
+    "name": "Wilkerson-Arias Deal",
+    "account_id": "014",
+    "amount": 75000,
+    "stage": "Closed Won",
+    "close_date": "2026-11-12",
+    "owner": "James Miller"
+  },
+  {
+    "id": "opp002",
+    "name": "Johnson Inc Deal",
+    "account_id": "011",
+    "amount": 195000,
+    "stage": "Closed Won",
+    "close_date": "2026-03-19",
+    "owner": "Ronald Horton"
+  },
+  {
+    "id": "opp003",
+    "name": "Blake Group Deal",
+    "account_id": "015",
+    "amount": 795000,
+    "stage": "Closed Won",
+    "close_date": "2026-04-09",
+    "owner": "Daniel Hernandez"
+  },
+  {
+    "id": "opp004",
+    "name": "Lynch, Henderson and Parsons Deal",
+    "account_id": "008",
+    "amount": 395000,
+    "stage": "Closed Won",
+    "close_date": "2026-03-24",
+    "owner": "Mark Dean"
+  },
+  {
+    "id": "opp005",
+    "name": "Rodriguez Group Deal",
+    "account_id": "020",
+    "amount": 695000,
+    "stage": "Closed Won",
+    "close_date": "2026-11-18",
+    "owner": "Michelle Carter"
+  },
+  {
+    "id": "opp006",
+    "name": "Mendez and Sons Deal",
+    "account_id": "019",
+    "amount": 540000,
+    "stage": "Closed Won",
+    "close_date": "2026-04-12",
+    "owner": "Heather Ashley"
+  },
+  {
+    "id": "opp007",
+    "name": "Romero, Mcneil and Spencer Deal",
+    "account_id": "013",
+    "amount": 610000,
+    "stage": "Closed Won",
+    "close_date": "2026-09-14",
+    "owner": "Mrs. Alexis Kramer"
+  },
+  {
+    "id": "opp008",
+    "name": "Allen-Sandoval Deal",
+    "account_id": "004",
+    "amount": 995000,
+    "stage": "Closed Won",
+    "close_date": "2026-08-17",
+    "owner": "Harold Morgan"
+  },
+  {
+    "id": "opp009",
+    "name": "Thompson, Maxwell and Marshall Deal",
+    "account_id": "016",
+    "amount": 815000,
+    "stage": "Proposal/Price Quote",
+    "close_date": "2026-05-08",
+    "owner": "Ricardo Ellis"
+  },
+  {
+    "id": "opp010",
+    "name": "Harris-Moody Deal",
+    "account_id": "002",
+    "amount": 410000,
+    "stage": "Proposal/Price Quote",
+    "close_date": "2026-11-18",
+    "owner": "Robert Kennedy"
+  },
+  {
+    "id": "opp011",
+    "name": "Mullins and Sons Deal",
+    "account_id": "010",
+    "amount": 465000,
+    "stage": "Proposal/Price Quote",
+    "close_date": "2026-08-16",
+    "owner": "Robert Kim"
+  },
+  {
+    "id": "opp012",
+    "name": "Paul-Kline Deal",
+    "account_id": "013",
+    "amount": 440000,
+    "stage": "Proposal/Price Quote",
+    "close_date": "2026-11-09",
+    "owner": "Holly Salinas"
+  },
+  {
+    "id": "opp013",
+    "name": "Owen-Acosta Deal",
+    "account_id": "003",
+    "amount": 560000,
+    "stage": "Negotiation/Review",
+    "close_date": "2026-05-31",
+    "owner": "Erica Miller"
+  },
+  {
+    "id": "opp014",
+    "name": "Phillips, Griffin and Robbins Deal",
+    "account_id": "006",
+    "amount": 890000,
+    "stage": "Negotiation/Review",
+    "close_date": "2026-08-26",
+    "owner": "Nicholas Buck"
+  },
+  {
+    "id": "opp015",
+    "name": "Bolton, Hill and Whitney Deal",
+    "account_id": "002",
+    "amount": 105000,
+    "stage": "Negotiation/Review",
+    "close_date": "2026-09-23",
+    "owner": "Robert Shelton"
+  },
+  {
+    "id": "opp016",
+    "name": "Thomas PLC Deal",
+    "account_id": "015",
+    "amount": 50000,
+    "stage": "Qualification",
+    "close_date": "2026-04-03",
+    "owner": "Matthew Cox"
+  },
+  {
+    "id": "opp017",
+    "name": "Johnson, Hernandez and Cole Deal",
+    "account_id": "012",
+    "amount": 485000,
+    "stage": "Qualification",
+    "close_date": "2026-04-08",
+    "owner": "Kendra Sanders"
+  },
+  {
+    "id": "opp018",
+    "name": "Ramirez, Horne and Johnson Deal",
+    "account_id": "006",
+    "amount": 645000,
+    "stage": "Qualification",
+    "close_date": "2026-09-14",
+    "owner": "Autumn Hampton"
+  },
+  {
+    "id": "opp019",
+    "name": "Griffin, Davies and Mitchell Deal",
+    "account_id": "016",
+    "amount": 265000,
+    "stage": "Prospecting",
+    "close_date": "2026-05-08",
+    "owner": "Jodi Roach"
+  },
+  {
+    "id": "opp020",
+    "name": "Osborn-Cochran Deal",
+    "account_id": "011",
+    "amount": 860000,
+    "stage": "Prospecting",
+    "close_date": "2026-04-02",
+    "owner": "Donna Evans"
+  }
+]

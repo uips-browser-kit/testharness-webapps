@@ -16,13 +16,46 @@ import argparse
 import json
 import random
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from faker import Faker
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.core.sample_params import SAMPLE_PARAMS  # noqa: E402
+
+_GENERATOR = "testharness-webapps/scripts/generate_data.py"
+_GENERATOR_VERSION = "1.0.0"
+
+# FK relationships for the default-ng canonical model — used in _metadata.json
+_NG_RELATED_ENTITIES = {
+    "contacts": [{"field": "account_id", "references": "accounts.id"}],
+    "cases": [
+        {"field": "account_id", "references": "accounts.id"},
+        {"field": "contact_id", "references": "contacts.id"},
+    ],
+    "contracts": [{"field": "account_id", "references": "accounts.id"}],
+    "opportunities": [{"field": "account_id", "references": "accounts.id"}],
+    "orders": [
+        {"field": "account_id", "references": "accounts.id"},
+        {"field": "opportunity_id", "references": "opportunities.id", "nullable": True},
+    ],
+    "order_items": [
+        {"field": "order_id", "references": "orders.id"},
+        {"field": "product_id", "references": "products.material_number"},
+    ],
+    "invoices": [
+        {"field": "order_id", "references": "orders.id"},
+        {"field": "account_id", "references": "accounts.id"},
+    ],
+    "leads": [
+        {
+            "field": "converted_opportunity_id",
+            "references": "opportunities.id",
+            "nullable": True,
+        }
+    ],
+}
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -65,6 +98,23 @@ _PRODUCT_CATEGORIES = ["Hardware", "Software", "Services", "Consumables", "Equip
 _INVOICE_STATUSES = ["Draft", "Submitted", "Approved", "Paid", "Overdue", "Cancelled"]
 _REGIONS = ["EMEA", "APAC", "AMER", "LATAM"]
 _METRICS = ["Revenue", "Units Sold", "Gross Margin", "Customer Count", "Churn Rate"]
+
+# default-ng canonical constants
+_NG_OPP_STAGES = (
+    ["Closed Won"] * 8
+    + ["Proposal/Price Quote"] * 4
+    + ["Negotiation/Review"] * 3
+    + ["Qualification"] * 3
+    + ["Prospecting"] * 2
+)
+_NG_ORDER_STATUSES = ["Draft"] * 8 + ["Activated"] * 7 + ["Fulfilled"] * 5
+_LEAD_STATUSES = ["New", "Working", "Nurturing", "Unqualified"]
+_CASE_STATUSES = ["New", "Working", "Escalated", "Closed"]
+_CASE_PRIORITIES = ["Low", "Medium", "High", "Critical"]
+_CASE_TYPES = ["Question", "Problem", "Feature Request"]
+_CASE_ORIGINS = ["Phone", "Email", "Web", "Chat"]
+_CONTRACT_STATUSES = ["Draft", "Activated", "Expired"]
+_INVOICE_STATUSES_NG = ["Draft", "Sent", "Paid", "Overdue"]
 _CONTENT_TYPES = {
     "application/pdf": ".pdf",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
@@ -385,6 +435,355 @@ def gen_sales_metrics(fake: Faker, count: int) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# default-ng canonical generators
+# ---------------------------------------------------------------------------
+
+
+def gen_leads(fake: Faker, count: int) -> list[dict]:
+    records = []
+    for i in range(count):
+        first, last = fake.first_name(), fake.last_name()
+        records.append({
+            "id": f"L{i + 1:03d}",
+            "first_name": first,
+            "last_name": last,
+            "company": fake.company(),
+            "email": f"{first.lower()}.{last.lower()}@{fake.domain_name()}",
+            "phone": fake.phone_number(),
+            "status": fake.random_element(_LEAD_STATUSES),
+            "is_converted": False,
+            "converted_opportunity_id": None,
+        })
+    return records
+
+
+def gen_orders(
+    fake: Faker,
+    accounts: list[dict],
+    closed_won_opps: list[dict],
+) -> list[dict]:
+    """2–8 orders per account. Closed Won opportunities seed linked orders; rest are renewals."""
+    by_account: dict[str, list[dict]] = {}
+    for opp in closed_won_opps:
+        by_account.setdefault(opp["account_id"], []).append(opp)
+
+    records = []
+    counter = 1
+    today = date.today()
+    for account in accounts:
+        acc_id = account["id"]
+        n_orders = fake.random_int(min=2, max=8)
+        linked_opps = by_account.get(acc_id, [])
+        for j in range(n_orders):
+            opp = linked_opps[j] if j < len(linked_opps) else None
+            status = fake.random_element(_NG_ORDER_STATUSES)
+            effective = today - timedelta(days=fake.random_int(min=30, max=365))
+            if opp:
+                total_amount = round(opp["amount"] * fake.pyfloat(min_value=0.80, max_value=0.99, right_digits=2), 2)
+            else:
+                total_amount = round(fake.random_int(min=5, max=150) * 1_000.0, 2)
+            records.append({
+                "id": f"ORD-{counter:04d}",
+                "account_id": acc_id,
+                "opportunity_id": opp["id"] if opp else None,
+                "status": status,
+                "total_amount": total_amount,
+                "effective_date": effective,
+                "end_date": effective + timedelta(days=fake.random_int(min=90, max=730)),
+            })
+            counter += 1
+    return records
+
+
+def gen_order_items(
+    fake: Faker,
+    orders: list[dict],
+    products: list[dict],
+) -> list[dict]:
+    records = []
+    counter = 1
+    for order in orders:
+        n_items = fake.random_int(min=2, max=4)
+        for _ in range(n_items):
+            product = fake.random_element(products)
+            qty = fake.random_int(min=1, max=20)
+            unit_price = round(product["price"], 2)
+            records.append({
+                "id": f"OI-{counter:05d}",
+                "order_id": order["id"],
+                "product_id": product["material_number"],
+                "quantity": qty,
+                "unit_price": unit_price,
+                "total_price": round(unit_price * qty, 2),
+            })
+            counter += 1
+    return records
+
+
+def gen_contracts(fake: Faker, count: int, account_ids: list[str]) -> list[dict]:
+    records = []
+    today = date.today()
+    for i in range(count):
+        start = today - timedelta(days=fake.random_int(min=0, max=730))
+        term = fake.random_element([12, 24, 36])
+        records.append({
+            "id": f"CON-{i + 1:04d}",
+            "account_id": fake.random_element(account_ids),
+            "start_date": start,
+            "end_date": start + timedelta(days=term * 30),
+            "status": fake.random_element(_CONTRACT_STATUSES),
+            "contract_term_months": term,
+            "total_amount": round(fake.random_int(min=10, max=500) * 1_000.0, 2),
+        })
+    return records
+
+
+def gen_cases(
+    fake: Faker,
+    count: int,
+    account_ids: list[str],
+    contact_ids: list[str],
+) -> list[dict]:
+    records = []
+    for i in range(count):
+        is_closed = fake.random_element([True, False, False])
+        records.append({
+            "id": f"CASE-{i + 1:05d}",
+            "account_id": fake.random_element(account_ids),
+            "contact_id": fake.random_element(contact_ids),
+            "subject": fake.sentence(nb_words=7).rstrip("."),
+            "status": "Closed" if is_closed else fake.random_element(_CASE_STATUSES[:-1]),
+            "priority": fake.random_element(_CASE_PRIORITIES),
+            "type": fake.random_element(_CASE_TYPES),
+            "origin": fake.random_element(_CASE_ORIGINS),
+            "is_closed": is_closed,
+        })
+    return records
+
+
+def gen_invoices_canonical(fake: Faker, fulfilled_orders: list[dict]) -> list[dict]:
+    """1–2 invoices per fulfilled order. Each invoice amount < order total_amount."""
+    records = []
+    counter = 1
+    today = date.today()
+    for order in fulfilled_orders:
+        n_invoices = fake.random_int(min=1, max=2)
+        for k in range(n_invoices):
+            fraction = fake.pyfloat(min_value=0.35, max_value=0.55, right_digits=2)
+            amount = round(order["total_amount"] * fraction, 2)
+            issue_date = today - timedelta(days=fake.random_int(min=10, max=120))
+            status = fake.random_element(_INVOICE_STATUSES_NG)
+            records.append({
+                "id": f"INV-{counter:04d}",
+                "order_id": order["id"],
+                "account_id": order["account_id"],
+                "amount": amount,
+                "currency": "USD",
+                "status": status,
+                "issue_date": issue_date,
+                "due_date": issue_date + timedelta(days=30),
+                "paid_date": issue_date + timedelta(days=fake.random_int(min=1, max=25))
+                if status == "Paid" else None,
+            })
+            counter += 1
+    return records
+
+
+# ---------------------------------------------------------------------------
+# default-ng projection functions (canonical → app field names)
+# ---------------------------------------------------------------------------
+
+
+def project_sap_orders(orders: list[dict]) -> list[dict]:
+    return [
+        {
+            "order_number": o["id"],
+            "account_id": o["account_id"],
+            "opportunity_id": o["opportunity_id"],
+            "status": o["status"],
+            "total": o["total_amount"],
+            "effective_date": o["effective_date"],
+            "end_date": o["end_date"],
+        }
+        for o in orders
+    ]
+
+
+def project_sap_order_items(order_items: list[dict]) -> list[dict]:
+    return [
+        {
+            "id": oi["id"],
+            "order_number": oi["order_id"],
+            "material_number": oi["product_id"],
+            "quantity": oi["quantity"],
+            "price_per_unit": oi["unit_price"],
+            "total_price": oi["total_price"],
+        }
+        for oi in order_items
+    ]
+
+
+def project_servicenow_incidents(cases: list[dict]) -> list[dict]:
+    priority_map = {"Low": 4, "Medium": 3, "High": 2, "Critical": 1}
+    category_map = {"Question": "inquiry", "Problem": "software", "Feature Request": "enhancement"}
+    return [
+        {
+            "sys_id": c["id"].lower().replace("-", ""),
+            "number": f"INC{int(c['id'].split('-')[1]):07d}",
+            "account_id": c["account_id"],
+            "contact_id": c["contact_id"],
+            "short_description": c["subject"],
+            "state": "Closed" if c["is_closed"] else c["status"],
+            "priority": priority_map.get(c["priority"], 3),
+            "category": category_map.get(c["type"], "other"),
+            "origin": c["origin"].lower(),
+        }
+        for c in cases
+    ]
+
+
+def project_oracle_invoices(invoices: list[dict]) -> list[dict]:
+    return [
+        {
+            "invoice_number": inv["id"],
+            "order_id": inv["order_id"],
+            "account_id": inv["account_id"],
+            "amount": inv["amount"],
+            "currency": inv["currency"],
+            "invoice_date": inv["issue_date"],
+            "due_date": inv["due_date"],
+            "paid_date": inv["paid_date"],
+            "status": inv["status"],
+        }
+        for inv in invoices
+    ]
+
+
+# ---------------------------------------------------------------------------
+# default-ng BI aggregation functions
+# ---------------------------------------------------------------------------
+
+
+def agg_pipeline(opportunities: list[dict]) -> list[dict]:
+    from collections import defaultdict
+    by_stage: dict[str, dict] = defaultdict(lambda: {"count": 0, "total_amount": 0.0})
+    for opp in opportunities:
+        s = opp["stage"]
+        by_stage[s]["count"] += 1
+        by_stage[s]["total_amount"] += opp["amount"]
+    return [
+        {"stage": stage, "count": v["count"], "total_amount": round(v["total_amount"], 2)}
+        for stage, v in sorted(by_stage.items())
+    ]
+
+
+def agg_revenue(orders: list[dict]) -> list[dict]:
+    from collections import defaultdict
+    by_quarter: dict[str, dict] = defaultdict(lambda: {"order_count": 0, "revenue": 0.0})
+    for order in orders:
+        if order["status"] != "Fulfilled":
+            continue
+        d = order["effective_date"]
+        if isinstance(d, str):
+            d = date.fromisoformat(d)
+        q = f"{d.year}-Q{(d.month - 1) // 3 + 1}"
+        by_quarter[q]["order_count"] += 1
+        by_quarter[q]["revenue"] += order["total_amount"]
+    return [
+        {"quarter": q, "order_count": v["order_count"], "revenue": round(v["revenue"], 2)}
+        for q, v in sorted(by_quarter.items())
+    ]
+
+
+# ---------------------------------------------------------------------------
+# default-ng two-pass orchestrator
+# ---------------------------------------------------------------------------
+
+
+def generate_default_ng(fake: Faker, count: int, root: Path) -> None:
+    # Pass 1: canonical
+    accounts = gen_accounts(fake, count)
+    account_ids = [a["id"] for a in accounts]
+
+    contacts = gen_contacts(fake, count, account_ids)
+    contact_ids = [c["id"] for c in contacts]
+
+    products = gen_products(fake, count)
+
+    leads = gen_leads(fake, count // 2)
+
+    opportunities = [
+        {**opp, "stage": _NG_OPP_STAGES[i % len(_NG_OPP_STAGES)]}
+        for i, opp in enumerate(gen_opportunities(fake, count, account_ids))
+    ]
+    closed_won_opps = [o for o in opportunities if o["stage"] == "Closed Won"]
+
+    orders = gen_orders(fake, accounts, closed_won_opps)
+    order_items = gen_order_items(fake, orders, products)
+    contracts = gen_contracts(fake, 6, account_ids)
+    cases = gen_cases(fake, count, account_ids, contact_ids)
+    fulfilled_orders = [o for o in orders if o["status"] == "Fulfilled"]
+    invoices = gen_invoices_canonical(fake, fulfilled_orders)
+
+    # Link 4 leads to Closed Won opportunities
+    for i, lead in enumerate(leads[:4]):
+        if i < len(closed_won_opps):
+            lead["is_converted"] = True
+            lead["converted_opportunity_id"] = closed_won_opps[i]["id"]
+
+    canonical = root / "_canonical"
+    _write(canonical / "accounts.json", accounts)
+    _write(canonical / "contacts.json", contacts)
+    _write(canonical / "leads.json", leads)
+    _write(canonical / "products.json", products)
+    _write(canonical / "opportunities.json", opportunities)
+    _write(canonical / "orders.json", orders)
+    _write(canonical / "order_items.json", order_items)
+    _write(canonical / "contracts.json", contracts)
+    _write(canonical / "cases.json", cases)
+    _write(canonical / "invoices.json", invoices)
+
+    # Pass 2: app projections
+    _write(root / "salesforce" / "accounts.json", accounts)
+    _write(root / "salesforce" / "contacts.json", contacts)
+    _write(root / "salesforce" / "leads.json", leads)
+    _write(root / "salesforce" / "opportunities.json", opportunities)
+    _write(root / "salesforce" / "cases.json", cases)
+
+    _write(root / "dynamics" / "accounts.json", accounts)
+    _write(root / "dynamics" / "contacts.json", contacts)
+    _write(root / "dynamics" / "opportunities.json", opportunities)
+
+    _write(root / "sap" / "products.json", products)
+    _write(root / "sap" / "sales_orders.json", project_sap_orders(orders))
+    _write(root / "sap" / "order_items.json", project_sap_order_items(order_items))
+
+    _write(root / "oracle" / "invoices.json", project_oracle_invoices(invoices))
+
+    _write(root / "servicenow" / "incidents.json", project_servicenow_incidents(cases))
+
+    _write(root / "workday" / "employees.json", gen_employees(fake, count))
+
+    # Pass 3: BI aggregations
+    pipeline = agg_pipeline(opportunities)
+    revenue = agg_revenue(orders)
+    _write(root / "tableau" / "pipeline_by_stage.json", pipeline)
+    _write(root / "tableau" / "revenue_by_quarter.json", revenue)
+    _write(root / "power-bi" / "pipeline_by_stage.json", pipeline)
+    _write(root / "power-bi" / "revenue_by_quarter.json", revenue)
+
+    # Metadata
+    metadata = {
+        "generator": _GENERATOR,
+        "version": _GENERATOR_VERSION,
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "dataset": "default-ng",
+        "related_entities": _NG_RELATED_ENTITIES,
+    }
+    _write(root / "_canonical" / "_metadata.json", metadata)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -422,6 +821,10 @@ def main() -> None:
     Faker.seed(seed)
 
     root = Path(__file__).parent.parent / "data" / args.set_name
+
+    if args.set_name == "default-ng":
+        generate_default_ng(fake, args.count, root)
+        return
 
     # CRM — Salesforce
     if _gen("salesforce"):

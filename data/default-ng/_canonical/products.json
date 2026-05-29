@@ -1,0 +1,162 @@
+[
+  {
+    "material_number": "MAT0001",
+    "description": "Optional bandwidth-monitored utilization",
+    "unit": "EA",
+    "price": 9038.92,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0002",
+    "description": "Optional local emulation",
+    "unit": "M",
+    "price": 5558.58,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0003",
+    "description": "Operative upward-trending attitude",
+    "unit": "LT",
+    "price": 6997.4,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0004",
+    "description": "Multi-layered coherent software",
+    "unit": "M",
+    "price": 1104.11,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0005",
+    "description": "Cross-group intermediate attitude",
+    "unit": "LT",
+    "price": 2136.71,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0006",
+    "description": "Reverse-engineered next generation open architecture",
+    "unit": "LT",
+    "price": 2007.52,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0007",
+    "description": "Synchronized web-enabled interface",
+    "unit": "EA",
+    "price": 4717.76,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0008",
+    "description": "Multi-channeled bi-directional orchestration",
+    "unit": "BOX",
+    "price": 3490.19,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0009",
+    "description": "Face-to-face bi-directional hardware",
+    "unit": "BOX",
+    "price": 6027.14,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0010",
+    "description": "Re-engineered directional workforce",
+    "unit": "M",
+    "price": 9195.98,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0011",
+    "description": "Seamless systematic project",
+    "unit": "BOX",
+    "price": 435.77,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0012",
+    "description": "Assimilated contextually-based flexibility",
+    "unit": "LT",
+    "price": 5572.44,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0013",
+    "description": "Enterprise-wide client-server open system",
+    "unit": "M",
+    "price": 1145.18,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0014",
+    "description": "Cross-group value-added moderator",
+    "unit": "KG",
+    "price": 6168.53,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0015",
+    "description": "Mandatory cohesive hub",
+    "unit": "LT",
+    "price": 5319.99,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0016",
+    "description": "Right-sized attitude-oriented application",
+    "unit": "KG",
+    "price": 2584.96,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0017",
+    "description": "Business-focused systematic artificial intelligence",
+    "unit": "LT",
+    "price": 7264.84,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0018",
+    "description": "Pre-emptive real-time intranet",
+    "unit": "M",
+    "price": 4480.27,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0019",
+    "description": "Customizable grid-enabled Internet solution",
+    "unit": "EA",
+    "price": 4645.86,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0020",
+    "description": "Pre-emptive multi-tasking secured line",
+    "unit": "LT",
+    "price": 749.28,
+    "currency": "USD",
+    "category": "Consumables"
+  }
+]

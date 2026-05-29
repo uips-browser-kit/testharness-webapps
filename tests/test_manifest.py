@@ -50,7 +50,7 @@ def real_records(real_apps):
 
 @pytest.fixture(scope="module")
 def manifest(real_apps, real_records, real_hosts, real_keycloak):
-    return build_manifest(real_apps, real_records, real_hosts, real_keycloak, version="0.1.0")
+    return build_manifest(real_apps, real_records, real_hosts, real_keycloak, version="0.1.0", dataset="default")
 
 
 @pytest.fixture(scope="module")
@@ -95,6 +95,7 @@ def test_parse_hosts_file_missing_file():
 
 def test_manifest_has_required_top_level_keys(manifest):
     assert "version" in manifest
+    assert "dataset" in manifest
     assert "network" in manifest
     assert "apps" in manifest
     assert "users" in manifest
@@ -105,6 +106,11 @@ def test_manifest_has_required_top_level_keys(manifest):
 
 def test_manifest_version(manifest):
     assert manifest["version"] == "0.1.0"
+
+
+def test_manifest_dataset_is_string(manifest):
+    assert isinstance(manifest["dataset"], str)
+    assert len(manifest["dataset"]) > 0
 
 
 def test_manifest_network_hosts(manifest):
@@ -447,6 +453,14 @@ def test_manifest_endpoint_has_version(client):
     r = client.get("/manifest")
     data = r.json()
     assert "version" in data
+
+
+def test_manifest_endpoint_has_dataset(client):
+    r = client.get("/manifest")
+    data = r.json()
+    assert "dataset" in data
+    assert isinstance(data["dataset"], str)
+    assert len(data["dataset"]) > 0
 
 
 def test_manifest_endpoint_has_apps(client):

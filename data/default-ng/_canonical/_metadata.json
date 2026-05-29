@@ -1,0 +1,74 @@
+{
+  "generator": "testharness-webapps/scripts/generate_data.py",
+  "version": "1.0.0",
+  "generated_at": "2026-05-29T18:34:38Z",
+  "dataset": "default-ng",
+  "related_entities": {
+    "contacts": [
+      {
+        "field": "account_id",
+        "references": "accounts.id"
+      }
+    ],
+    "cases": [
+      {
+        "field": "account_id",
+        "references": "accounts.id"
+      },
+      {
+        "field": "contact_id",
+        "references": "contacts.id"
+      }
+    ],
+    "contracts": [
+      {
+        "field": "account_id",
+        "references": "accounts.id"
+      }
+    ],
+    "opportunities": [
+      {
+        "field": "account_id",
+        "references": "accounts.id"
+      }
+    ],
+    "orders": [
+      {
+        "field": "account_id",
+        "references": "accounts.id"
+      },
+      {
+        "field": "opportunity_id",
+        "references": "opportunities.id",
+        "nullable": true
+      }
+    ],
+    "order_items": [
+      {
+        "field": "order_id",
+        "references": "orders.id"
+      },
+      {
+        "field": "product_id",
+        "references": "products.material_number"
+      }
+    ],
+    "invoices": [
+      {
+        "field": "order_id",
+        "references": "orders.id"
+      },
+      {
+        "field": "account_id",
+        "references": "accounts.id"
+      }
+    ],
+    "leads": [
+      {
+        "field": "converted_opportunity_id",
+        "references": "opportunities.id",
+        "nullable": true
+      }
+    ]
+  }
+}

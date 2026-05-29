@@ -15,7 +15,7 @@ class DataLoader:
             raise DataLoaderError(f"Dataset directory not found: {dataset_dir}")
         self._data: dict[str, dict[str, list[dict]]] = {}
         for app_dir in dataset_dir.iterdir():
-            if app_dir.is_dir():
+            if app_dir.is_dir() and not app_dir.name.startswith("_"):
                 self._data[app_dir.name] = {
                     f.stem: json.loads(f.read_text(encoding="utf-8"))
                     for f in sorted(app_dir.glob("*.json"))

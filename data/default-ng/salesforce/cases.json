@@ -1,0 +1,222 @@
+[
+  {
+    "id": "CASE-00001",
+    "account_id": "010",
+    "contact_id": "c010",
+    "subject": "Environment teach world quickly believe while size try yeah",
+    "status": "Escalated",
+    "priority": "Medium",
+    "type": "Feature Request",
+    "origin": "Email",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00002",
+    "account_id": "005",
+    "contact_id": "c011",
+    "subject": "Seven put majority officer environmental increase",
+    "status": "Closed",
+    "priority": "Critical",
+    "type": "Question",
+    "origin": "Phone",
+    "is_closed": true
+  },
+  {
+    "id": "CASE-00003",
+    "account_id": "017",
+    "contact_id": "c009",
+    "subject": "Lawyer maintain old than suggest behavior will",
+    "status": "Escalated",
+    "priority": "High",
+    "type": "Question",
+    "origin": "Chat",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00004",
+    "account_id": "014",
+    "contact_id": "c007",
+    "subject": "Environmental stock front official not magazine gas radio",
+    "status": "Closed",
+    "priority": "Low",
+    "type": "Question",
+    "origin": "Phone",
+    "is_closed": true
+  },
+  {
+    "id": "CASE-00005",
+    "account_id": "015",
+    "contact_id": "c001",
+    "subject": "Upon citizen lead yeah into",
+    "status": "Escalated",
+    "priority": "Medium",
+    "type": "Feature Request",
+    "origin": "Web",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00006",
+    "account_id": "009",
+    "contact_id": "c003",
+    "subject": "Economy head tough close how figure record",
+    "status": "Closed",
+    "priority": "Medium",
+    "type": "Problem",
+    "origin": "Phone",
+    "is_closed": true
+  },
+  {
+    "id": "CASE-00007",
+    "account_id": "004",
+    "contact_id": "c001",
+    "subject": "Live car difficult quite act receive",
+    "status": "New",
+    "priority": "Critical",
+    "type": "Feature Request",
+    "origin": "Email",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00008",
+    "account_id": "003",
+    "contact_id": "c008",
+    "subject": "Become south billion happen federal him spend",
+    "status": "New",
+    "priority": "Medium",
+    "type": "Question",
+    "origin": "Phone",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00009",
+    "account_id": "006",
+    "contact_id": "c015",
+    "subject": "Reveal physical character in rather team beautiful",
+    "status": "New",
+    "priority": "Medium",
+    "type": "Question",
+    "origin": "Chat",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00010",
+    "account_id": "014",
+    "contact_id": "c011",
+    "subject": "Easy popular easy over return",
+    "status": "Working",
+    "priority": "Low",
+    "type": "Feature Request",
+    "origin": "Web",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00011",
+    "account_id": "017",
+    "contact_id": "c020",
+    "subject": "Country hot position six soldier dream history drop",
+    "status": "Closed",
+    "priority": "Low",
+    "type": "Feature Request",
+    "origin": "Phone",
+    "is_closed": true
+  },
+  {
+    "id": "CASE-00012",
+    "account_id": "011",
+    "contact_id": "c005",
+    "subject": "Team nothing half raise several west side",
+    "status": "New",
+    "priority": "Low",
+    "type": "Question",
+    "origin": "Web",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00013",
+    "account_id": "002",
+    "contact_id": "c002",
+    "subject": "Media pick may indeed reduce bar Mr",
+    "status": "Closed",
+    "priority": "Medium",
+    "type": "Problem",
+    "origin": "Phone",
+    "is_closed": true
+  },
+  {
+    "id": "CASE-00014",
+    "account_id": "003",
+    "contact_id": "c017",
+    "subject": "Window choice force only shake power",
+    "status": "Escalated",
+    "priority": "Low",
+    "type": "Problem",
+    "origin": "Chat",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00015",
+    "account_id": "008",
+    "contact_id": "c002",
+    "subject": "Beat its law participant finally score",
+    "status": "Escalated",
+    "priority": "Medium",
+    "type": "Question",
+    "origin": "Phone",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00016",
+    "account_id": "005",
+    "contact_id": "c001",
+    "subject": "Market get military state else",
+    "status": "Working",
+    "priority": "Medium",
+    "type": "Feature Request",
+    "origin": "Web",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00017",
+    "account_id": "004",
+    "contact_id": "c001",
+    "subject": "Southern evening ask Republican office baby lawyer",
+    "status": "Working",
+    "priority": "Low",
+    "type": "Problem",
+    "origin": "Email",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00018",
+    "account_id": "006",
+    "contact_id": "c009",
+    "subject": "Thus purpose boy scientist able",
+    "status": "New",
+    "priority": "Medium",
+    "type": "Question",
+    "origin": "Chat",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00019",
+    "account_id": "013",
+    "contact_id": "c005",
+    "subject": "Use tax need trial scientist",
+    "status": "Working",
+    "priority": "Medium",
+    "type": "Problem",
+    "origin": "Email",
+    "is_closed": false
+  },
+  {
+    "id": "CASE-00020",
+    "account_id": "011",
+    "contact_id": "c009",
+    "subject": "Number budget pull apply",
+    "status": "New",
+    "priority": "Low",
+    "type": "Problem",
+    "origin": "Phone",
+    "is_closed": false
+  }
+]
