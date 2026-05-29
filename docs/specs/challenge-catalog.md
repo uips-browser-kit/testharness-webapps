@@ -167,6 +167,23 @@ Examples:
 
 Note: backend emits transport-neutral markers; API decides HTTP mapping.
 
+Implementation hints:
+- Model explicit auth tripwires (not only timeout-driven behavior):
+  - `force_logout`
+  - `invalidate_session`
+  - `require_reauth`
+- Add trigger modes suitable for deterministic testing:
+  - `on_request_n` (fire exactly on the Nth matching request)
+  - `probability` (seeded RNG + stream + draw index)
+  - optional route/app/env match constraints
+- Keep challenge decisions in backend; do not place decision logic in API middleware.
+- Include replay metadata in every applied outcome:
+  - `seed`, `stream`, `draw_index`, and `trigger_reason`
+- API mapping should remain deterministic and explicit:
+  - map auth outcomes to HTTP (`401`/`403`) or auth-flow hints
+  - include request correlation id in error payload/page
+- Runtime Debug CLI should expose set/list/clear/replay for auth tripwires.
+
 ### 7. Rate limiting
 
 Intent: emulate platform throttling and quota protections.
@@ -194,6 +211,8 @@ Testing modes:
 Replay:
 - Replay by `seed + stream + draw_index` sequence.
 - Replay artifacts should be exportable as JSON lines.
+- For auth tripwires, replay should reproduce the same trigger point
+  (for example, same `on_request_n` fire point or seeded probabilistic firing).
 
 ## Safety limits
 
@@ -234,6 +253,27 @@ Runtime Debug CLI commands (example):
 
 Rate-limit config can be set via the same challenge payload using
 `effects.rate_limit`.
+
+Auth tripwire config should be set through the same challenge payload and remain
+transport-neutral in backend storage and outcomes.
+
+## Testability guidance
+
+Test in parallel layers to keep failures local and diagnosable:
+
+- Core/backend unit tests:
+  - trigger evaluation logic
+  - deterministic seeded behavior
+  - `on_request_n` exact firing semantics
+- API integration tests:
+  - outcome-to-HTTP mapping for auth tripwires
+  - representation consistency (HTML/JSON)
+- Runtime Debug CLI tests:
+  - set/list/clear/replay flows
+  - replay metadata integrity
+- Browser/E2E tests:
+  - forced logout can occur at arbitrary points
+  - same seed reproduces same failure point
 
 ## Default scenario catalog (v1)
 
