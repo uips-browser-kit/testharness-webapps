@@ -75,17 +75,6 @@ apps:
     template: account_detail
     data_entity: accounts
     data_key_field: id
-    reverse_relationships:
-      contacts:
-        via_field: account_id
-        apps:
-        - salesforce
-        - dynamics
-      opportunities:
-        via_field: account_id
-        apps:
-        - salesforce
-        - dynamics
   - id: contact-list
     path: /lightning/r/Contact/list/view
     pattern_type: path
@@ -101,13 +90,6 @@ apps:
     template: contact_detail
     data_entity: contacts
     data_key_field: id
-    relationships:
-      account_id:
-        entity: accounts
-        key_param: id
-        apps:
-        - salesforce
-        - dynamics
   - id: opportunity-list
     path: /lightning/r/Opportunity/list/view
     pattern_type: path
@@ -123,13 +105,6 @@ apps:
     template: opportunity_detail
     data_entity: opportunities
     data_key_field: id
-    relationships:
-      account_id:
-        entity: accounts
-        key_param: id
-        apps:
-        - salesforce
-        - dynamics
   - id: dashboard
     path: /lightning/page/home
     pattern_type: path
@@ -174,17 +149,6 @@ apps:
     data_entity: accounts
     data_key_field: id
     url_template: /main.aspx?appid=00000000-0000-0000-0000-000000000000&pagetype=entityrecord&id={id}
-    reverse_relationships:
-      contacts:
-        via_field: account_id
-        apps:
-        - salesforce
-        - dynamics
-      opportunities:
-        via_field: account_id
-        apps:
-        - salesforce
-        - dynamics
   - id: account-list
     path: /main.aspx
     pattern_type: query
@@ -234,13 +198,6 @@ apps:
     template: incident
     data_entity: incidents
     data_key_field: sys_id
-    relationships:
-      account_id:
-        entity: accounts
-        key_param: id
-        apps:
-        - salesforce
-        - dynamics
   - id: incident-list
     path: /now/workspace/agent/list/incident
     pattern_type: path
@@ -294,13 +251,6 @@ apps:
     data_key_field: order_number
     data_key_param: so
     url_template: /sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so={so}
-    relationships:
-      account_id:
-        entity: accounts
-        key_param: id
-        apps:
-        - salesforce
-        - dynamics
   - id: order-list
     path: /sap/bc/ui5_ui5/ui2/ushell
     pattern_type: query
@@ -352,18 +302,6 @@ apps:
     data_entity: invoices
     data_key_field: invoice_number
     url_template: /fscmUI/faces/FuseWelcome?_adf.ctrl-state=oracle-harness&invoice_number={invoice_number}
-    relationships:
-      account_id:
-        entity: accounts
-        key_param: id
-        apps:
-        - salesforce
-        - dynamics
-      order_id:
-        entity: orders
-        key_param: order_number
-        apps:
-        - sap
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
@@ -733,6 +671,35 @@ data:
     opportunities:
     - salesforce
     - dynamics
+  entities:
+    contacts:
+      fields:
+        account_id:
+          references: accounts
+          key_param: id
+    opportunities:
+      fields:
+        account_id:
+          references: accounts
+          key_param: id
+    sales_orders:
+      fields:
+        account_id:
+          references: accounts
+          key_param: id
+    invoices:
+      fields:
+        account_id:
+          references: accounts
+          key_param: id
+        order_id:
+          references: sales_orders
+          key_param: so
+    incidents:
+      fields:
+        account_id:
+          references: accounts
+          key_param: id
 
 prometheus:
   scrape_interval: 15s

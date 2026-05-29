@@ -13,14 +13,17 @@ def build_manifest(
     version: str = "",
     dataset: str = "",
     shared_entities: dict[str, list[str]] | None = None,
+    entities: dict | None = None,
 ) -> dict:
     """Build the harness manifest as a plain dict. Pure function — no I/O."""
+    _entities = entities or {}
     return {
         "version": version,
         "dataset": dataset,
         "shared_entities": shared_entities or {},
+        "entities": _entities,
         "network": {"hosts": hosts, "hosts_file": "infra/hosts.txt"},
-        "apps": [_app_entry(app, entity_records) for app in apps],
+        "apps": [_app_entry(app, entity_records, _entities, apps) for app in apps],
         "users": _build_users(keycloak),
         "idp": _build_idp(keycloak),
         "fault_injection": _build_fault_injection(apps),
@@ -33,13 +36,18 @@ def build_manifest(
 # ---------------------------------------------------------------------------
 
 
-def _app_entry(app: App, entity_records: dict[tuple[str, str], list[dict]]) -> dict:
+def _app_entry(
+    app: App,
+    entity_records: dict[tuple[str, str], list[dict]],
+    entities: dict,
+    all_apps: list[App],
+) -> dict:
     return {
         "id": app.id,
         "vendor": app.vendor,
         "product": app.product,
         "environments": [
-            _env_entry(app, env_id, entity_records)
+            _env_entry(app, env_id, entity_records, entities, all_apps)
             for env_id in app.environments
         ],
     }
@@ -49,6 +57,8 @@ def _env_entry(
     app: App,
     env_id: str,
     entity_records: dict[tuple[str, str], list[dict]],
+    entities: dict,
+    all_apps: list[App],
 ) -> dict:
     env = app.environments[env_id]
     base_url = f"{env.scheme}://{env.host}"
@@ -57,7 +67,10 @@ def _env_entry(
     return {
         "id": env_id,
         "base_url": base_url,
-        "routes": [_route_entry(route, base_url, app.id, entity_records) for route in app.routes],
+        "routes": [
+            _route_entry(route, base_url, app.id, entity_records, entities, all_apps)
+            for route in app.routes
+        ],
         "scenarios": [_scenario_entry(s, app.id, env_id) for s in app.scenarios],
     }
 
@@ -87,6 +100,8 @@ def _route_entry(
     base_url: str,
     app_id: str,
     entity_records: dict[tuple[str, str], list[dict]],
+    entities: dict,
+    all_apps: list[App],
 ) -> dict:
     kind = _route_kind(route)
     entry: dict = {
@@ -104,8 +119,8 @@ def _route_entry(
         entry["url_template"] = url_tpl
         entry["key_param"] = key_param
         entry["entity"] = route.data_entity
-        entry["relationships"] = route.relationships
-        entry["reverse_relationships"] = route.reverse_relationships
+        entry["relationships"] = _compute_relationships(route.data_entity, entities, all_apps)
+        entry["reverse_relationships"] = _compute_reverse_relationships(route.data_entity, entities, all_apps)
         entry["record_count"] = len(records)
         entry["candidate_count"] = len(candidates)
         entry["candidates"] = candidates
@@ -144,6 +159,52 @@ def _list_url(route, base_url: str) -> str:
         params = "&".join(f"{p}={{{p}}}" for p in fixed)
         return f"{base_url}{route.path}?{params}" if params else base_url + route.path
     return base_url + route.path
+
+
+# ---------------------------------------------------------------------------
+# relationship computation (entity-level, Doctrine/Prisma-style)
+# ---------------------------------------------------------------------------
+
+
+def _apps_with_detail_route(entity: str, all_apps: list[App]) -> list[str]:
+    found = []
+    for app in all_apps:
+        for route in app.routes:
+            if route.data_entity == entity and route.data_key_field:
+                found.append(app.id)
+                break
+    return found
+
+
+def _compute_relationships(entity: str, entities: dict, all_apps: list[App]) -> dict:
+    result = {}
+    for field_name, field_def in entities.get(entity, {}).get("fields", {}).items():
+        ref_entity = field_def.get("references", "")
+        key_param = field_def.get("key_param", "id")
+        navigable_apps = _apps_with_detail_route(ref_entity, all_apps)
+        if navigable_apps:
+            result[field_name] = {
+                "entity": ref_entity,
+                "key_param": key_param,
+                "apps": navigable_apps,
+            }
+    return result
+
+
+def _compute_reverse_relationships(entity: str, entities: dict, all_apps: list[App]) -> dict:
+    result = {}
+    for other_entity, other_def in entities.items():
+        if other_entity == entity:
+            continue
+        for field_name, field_def in other_def.get("fields", {}).items():
+            if field_def.get("references") == entity:
+                navigable_apps = _apps_with_detail_route(other_entity, all_apps)
+                if navigable_apps:
+                    result[other_entity] = {
+                        "via_field": field_name,
+                        "apps": navigable_apps,
+                    }
+    return result
 
 
 # ---------------------------------------------------------------------------

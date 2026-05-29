@@ -46,6 +46,15 @@ def parse_shared_entities(path: Path) -> dict[str, list[str]]:
     return {}
 
 
+def parse_entities(path: Path) -> dict[str, dict]:
+    """Return entity FK definitions from harness.yaml data.entities section."""
+    raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    data_raw = raw.get("data") if isinstance(raw, dict) else None
+    if isinstance(data_raw, dict):
+        return dict(data_raw.get("entities", {}))
+    return {}
+
+
 def load_config(path: Path) -> list[App]:
     try:
         raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
@@ -139,8 +148,6 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         data_key_param=raw.get("data_key_param", ""),
         url_template=raw.get("url_template", ""),
         methods=raw.get("methods", ["GET"]),
-        relationships=raw.get("relationships", {}),
-        reverse_relationships=raw.get("reverse_relationships", {}),
     )
 
 

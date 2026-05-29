@@ -9,7 +9,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from src.api.app import app
-from src.core.config import load_config, load_keycloak_config, parse_data_set
+from src.core.config import load_config, load_keycloak_config, parse_data_set, parse_entities
 from src.core.manifest import build_manifest, parse_hosts_file
 from src.core.models import FAULT_KINDS, App, Environment, Fault, PatternType, Route, ScenarioDefinition
 
@@ -50,7 +50,8 @@ def real_records(real_apps):
 
 @pytest.fixture(scope="module")
 def manifest(real_apps, real_records, real_hosts, real_keycloak):
-    return build_manifest(real_apps, real_records, real_hosts, real_keycloak, version="0.1.0", dataset="default")
+    entities = parse_entities(_HARNESS_YAML)
+    return build_manifest(real_apps, real_records, real_hosts, real_keycloak, version="0.1.0", dataset="default", entities=entities)
 
 
 @pytest.fixture(scope="module")
@@ -97,6 +98,7 @@ def test_manifest_has_required_top_level_keys(manifest):
     assert "version" in manifest
     assert "dataset" in manifest
     assert "shared_entities" in manifest
+    assert "entities" in manifest
     assert "network" in manifest
     assert "apps" in manifest
     assert "users" in manifest
@@ -137,6 +139,37 @@ def test_shared_entities_default_dataset_is_empty():
 def test_shared_entities_declared_explicitly(manifest):
     # Fixture uses dataset="default" with no shared_entities declared
     assert manifest["shared_entities"] == {}
+
+
+# ---------------------------------------------------------------------------
+# build_manifest — entities catalog
+# ---------------------------------------------------------------------------
+
+def test_entities_is_dict(manifest):
+    assert isinstance(manifest["entities"], dict)
+
+
+def test_entities_contains_contacts(manifest):
+    assert "contacts" in manifest["entities"]
+
+
+def test_entities_field_shape(manifest):
+    for entity_name, entity_def in manifest["entities"].items():
+        assert "fields" in entity_def, f"{entity_name}: missing fields"
+        for field_name, field_def in entity_def["fields"].items():
+            assert "references" in field_def, f"{entity_name}.{field_name}: missing references"
+            assert "key_param" in field_def, f"{entity_name}.{field_name}: missing key_param"
+
+
+def test_entities_contacts_has_account_id_fk(manifest):
+    contacts = manifest["entities"]["contacts"]
+    assert "account_id" in contacts["fields"]
+    assert contacts["fields"]["account_id"]["references"] == "accounts"
+
+
+def test_entities_default_is_empty_dict():
+    m = build_manifest([], {}, [], {})
+    assert m["entities"] == {}
 
 
 # ---------------------------------------------------------------------------
