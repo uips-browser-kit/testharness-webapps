@@ -271,6 +271,8 @@ def generate_caddy(
 
     lines.append(f"# Platform management\nhttp://{harness_host} {{\n"
                  f"\trequest_header -X-Harness-App\n\trequest_header -X-Harness-Env\n"
+                 f"\t@no_reqid not header X-Request-ID *\n"
+                 f"\trequest_header @no_reqid X-Request-ID {{uuid}}\n"
                  f"\treverse_proxy harness:8000\n}}\n")
 
     lines.append(f"# Identity provider\nhttp://{idp_host} {{\n"
@@ -288,6 +290,8 @@ def generate_caddy(
                 f"\trequest_header -X-Harness-Env\n"
                 f"\trequest_header X-Harness-App \"{app.id}\"\n"
                 f"\trequest_header X-Harness-Env \"{env_id}\"\n"
+                f"\t@no_reqid not header X-Request-ID *\n"
+                f"\trequest_header @no_reqid X-Request-ID {{uuid}}\n"
                 f"\treverse_proxy harness:8000\n"
                 f"}}\n"
             )

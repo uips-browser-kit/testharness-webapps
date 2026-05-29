@@ -170,12 +170,12 @@ def test_generate_caddy_static_blocks_present(tmp_path):
     assert "metrics.local" in content
 
 
-def test_generate_caddy_no_x_request_id(tmp_path):
+def test_generate_caddy_injects_x_request_id_conditionally(tmp_path):
     out = tmp_path / "Caddyfile"
     runner.invoke(cli, ["generate-caddy", "--config", _VALID_MINIMAL, "--out", str(out)])
     content = out.read_text()
-    assert "X-Request-Id" not in content
-    assert "X-Request-ID" not in content
+    assert "@no_reqid not header X-Request-ID *" in content
+    assert "request_header @no_reqid X-Request-ID {uuid}" in content
 
 
 def test_generate_caddy_harness_host_override(tmp_path):
