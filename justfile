@@ -45,16 +45,6 @@ cli *args:
 integration:
     uv run pytest -m integration -v
 
-# Smoke-test: verify all app hostnames reach the Harness /health endpoint
-smoke:
-    @$hosts = Get-Content infra/hosts.txt | Where-Object { $_ -match '^\d' } | ForEach-Object { ($_ -split '\s+')[1] } | Where-Object { $_ -ne 'idp.local' }; \
-    $pass = 0; $fail = 0; \
-    foreach ($h in $hosts) { \
-        try { \
-            $r = Invoke-WebRequest -Uri "http://$h/health" -TimeoutSec 3 -ErrorAction Stop; \
-            if ($r.StatusCode -eq 200) { Write-Host "OK    $h"; $pass++ } \
-            else { Write-Host "FAIL  $h  ($($r.StatusCode))"; $fail++ } \
-        } catch { Write-Host "FAIL  $h  ($_)"; $fail++ } \
-    }; \
-    Write-Host ""; Write-Host "$pass passed, $fail failed"; \
-    if ($fail -gt 0) { exit 1 }
+# Check host routing (phase 1) and HTTP reachability (phase 2)
+check-hosts *args:
+    pwsh -NoProfile -File scripts/check-hosts.ps1 {{args}}
