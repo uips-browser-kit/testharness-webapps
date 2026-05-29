@@ -9,10 +9,19 @@
   "resetPasswordAllowed": false,
   "editUsernameAllowed": false,
   "bruteForceProtected": false,
+  "accessTokenLifespan": 300,
+  "ssoSessionIdleTimeout": 600,
+  "ssoSessionMaxLifespan": 36000,
   "roles": {
     "realm": [
       {
-        "name": "harness-user",
+        "name": "analyst",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "harness"
+      },
+      {
+        "name": "admin",
         "composite": false,
         "clientRole": false,
         "containerId": "harness"
@@ -30,10 +39,10 @@
       "directAccessGrantsEnabled": false,
       "serviceAccountsEnabled": false,
       "redirectUris": [
-        "http://harness.local/*"
+        "http://*.local/*"
       ],
       "webOrigins": [
-        "http://harness.local"
+        "http://*.local"
       ],
       "protocol": "openid-connect"
     },
@@ -52,19 +61,36 @@
   ],
   "users": [
     {
-      "username": "testuser",
+      "username": "analyst",
       "enabled": true,
       "emailVerified": true,
-      "email": "testuser@harness.local",
+      "email": "analyst@harness.local",
       "credentials": [
         {
           "type": "password",
-          "value": "testpass",
+          "value": "analyst",
           "temporary": false
         }
       ],
       "realmRoles": [
-        "harness-user"
+        "analyst"
+      ]
+    },
+    {
+      "username": "admin",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "admin@harness.local",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "admin",
+        "analyst"
       ]
     }
   ]

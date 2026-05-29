@@ -5,6 +5,24 @@ from enum import StrEnum
 from typing import Literal
 
 
+FAULT_KINDS: dict[str, dict] = {
+    "server_error":       {"http_status": 500, "retriable": False},
+    "unavailable":        {"http_status": 503, "retriable": True},
+    "business_error":     {"http_status": 409, "retriable": False},
+    "not_found":          {"http_status": 404, "retriable": False},
+    "rate_limit":         {"http_status": 429, "retriable": True},
+    "auth_error":         {"http_status": 401, "retriable": False},
+    "force_logout":       {"http_status": 401, "retriable": False},
+    "require_reauth":     {"http_status": 401, "retriable": False},
+    "invalidate_session": {"http_status": 401, "retriable": False},
+    "forbidden":          {"http_status": 403, "retriable": False},
+}
+
+AUTH_FAULT_KINDS: frozenset[str] = frozenset({
+    "auth_error", "force_logout", "require_reauth", "invalidate_session"
+})
+
+
 class PatternType(StrEnum):
     PATH = "path"
     QUERY_ONLY = "query"
@@ -35,6 +53,8 @@ class Route:
     data_entity: str = ""
     data_key_field: str = ""
     data_key_param: str = ""
+    url_template: str = ""
+    methods: list[str] = field(default_factory=lambda: ["GET"])
 
 
 @dataclass
@@ -121,7 +141,7 @@ class ErrorViewData:
 
 @dataclass
 class Fault:
-    kind: str  # "server_error" | "unavailable" | "business_error" | "not_found" | "rate_limit"
+    kind: str  # "server_error" | "unavailable" | "business_error" | "not_found" | "rate_limit" | "auth_error" | "forbidden" | "force_logout" | "require_reauth" | "invalidate_session"
     detail: str = "Simulated fault"
     retriable: bool = False
 
@@ -137,6 +157,7 @@ class RecordNotFound(Exception):
 class Challenge:
     delay_ms: int = 0
     fault: Fault | None = None
+    on_request_n: int | None = None  # fire only on the Nth matching request, then auto-clear
 
 
 ChallengeMap = dict[tuple[str, str, str], Challenge]  # (app_id, env_id, route_id)

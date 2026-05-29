@@ -12,13 +12,15 @@ import typer
 
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
-from src.core.config import load_config, parse_data_set
+from src.core.config import load_config, load_keycloak_config, parse_data_set
+from src.core.manifest import build_manifest, parse_hosts_file
 from src.core.matcher import match
 from src.core.models import Challenge, DetailViewData, Fault, RouteContext, TemplateOnlyViewData
 from src.runtime_cli.formatters import print_json, print_view_table, view_to_dict
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
 _DATA_DIR = Path(__file__).parent.parent.parent / "data"
+_HOSTS_FILE = Path(__file__).parent.parent.parent / "infra" / "hosts.txt"
 
 
 class Format(str, Enum):
@@ -174,9 +176,10 @@ def challenge_set(
     env: Annotated[str, typer.Option("--env", help="Environment identifier")],
     route: Annotated[str, typer.Option("--route", help="Route identifier")],
     delay_ms: Annotated[int, typer.Option("--delay-ms", help="Delay in milliseconds")] = 0,
-    fault_kind: Annotated[Optional[str], typer.Option("--fault-kind", help="Fault kind: server_error | unavailable | business_error | not_found | rate_limit")] = None,
+    fault_kind: Annotated[Optional[str], typer.Option("--fault-kind", help="Fault kind: server_error | unavailable | business_error | not_found | rate_limit | auth_error | force_logout | require_reauth | invalidate_session")] = None,
     detail: Annotated[str, typer.Option("--detail", help="Fault detail message")] = "Simulated fault",
     retriable: Annotated[bool, typer.Option("--retriable/--no-retriable", help="Mark fault as retriable")] = False,
+    on_request_n: Annotated[Optional[int], typer.Option("--on-request-n", help="Fire fault only on the Nth matching request, then auto-clear")] = None,
     api_url: Annotated[str, typer.Option("--api-url", help="Running API base URL")] = "http://localhost:8000",
     duration_s: Annotated[Optional[int], typer.Option("--duration-s", help="Auto-remove challenge after N seconds")] = None,
 ) -> None:
@@ -184,6 +187,8 @@ def challenge_set(
     body: dict = {"delay_ms": delay_ms}
     if fault_kind:
         body["fault"] = {"kind": fault_kind, "detail": detail, "retriable": retriable}
+    if on_request_n is not None:
+        body["on_request_n"] = on_request_n
 
     try:
         r = httpx.post(f"{api_url}/challenges/{app_id}/{env}/{route}", json=body, timeout=5)
@@ -368,4 +373,55 @@ def scenario_show(
         }
         for s in app_obj.scenarios
     ]
+    print_json(data)
+
+
+# ---------------------------------------------------------------------------
+# manifest  (local — no running server required)
+# ---------------------------------------------------------------------------
+
+
+@cli.command("manifest")
+def manifest_cmd(
+    app_id: Annotated[Optional[str], typer.Option("--app", help="Filter to a single app ID")] = None,
+    env: Annotated[Optional[str], typer.Option("--env", help="Filter to a single environment ID")] = None,
+) -> None:
+    """Print the manifest locally (no running server required)."""
+    from importlib.metadata import PackageNotFoundError, version  # noqa: PLC0415
+
+    try:
+        ver = version("testharness-webapps")
+    except PackageNotFoundError:
+        ver = "0.0.0"
+
+    service, apps = _make_service()
+    keycloak = load_keycloak_config(_HARNESS_YAML)
+    hosts = parse_hosts_file(_HOSTS_FILE)
+    entity_records = service.get_all_entity_records(apps)
+
+    if app_id:
+        apps = [a for a in apps if a.id == app_id]
+        if not apps:
+            typer.echo(f"Error: app '{app_id}' not found", err=True)
+            raise typer.Exit(2)
+
+    if env:
+        filtered = []
+        for a in apps:
+            if env not in a.environments:
+                typer.echo(f"Error: environment '{env}' not found in app '{a.id}'", err=True)
+                raise typer.Exit(2)
+            from copy import copy  # noqa: PLC0415
+            a2 = copy(a)
+            a2.environments = {env: a.environments[env]}
+            filtered.append(a2)
+        apps = filtered
+
+    data = build_manifest(
+        apps=apps,
+        entity_records=entity_records,
+        hosts=hosts,
+        keycloak=keycloak,
+        version=ver,
+    )
     print_json(data)

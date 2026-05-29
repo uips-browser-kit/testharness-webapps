@@ -22,6 +22,8 @@ class ChallengeStore(Protocol):
     def set(self, key: tuple[str, str, str], challenge: Challenge) -> None: ...
     def clear(self, key: tuple[str, str, str]) -> None: ...
     def all(self) -> ChallengeMap: ...
+    def increment_and_get(self, key: tuple[str, str, str]) -> int: ...
+    def reset_counter(self, key: tuple[str, str, str]) -> None: ...
 
 
 class InMemoryChallengeStore:
@@ -29,18 +31,28 @@ class InMemoryChallengeStore:
 
     def __init__(self) -> None:
         self._store: ChallengeMap = {}
+        self._counters: dict[tuple[str, str, str], int] = {}
 
     def get(self, key: tuple[str, str, str]) -> Challenge | None:
         return self._store.get(key)
 
     def set(self, key: tuple[str, str, str], challenge: Challenge) -> None:
         self._store[key] = challenge
+        self._counters.pop(key, None)
 
     def clear(self, key: tuple[str, str, str]) -> None:
         self._store.pop(key, None)
+        self._counters.pop(key, None)
 
     def all(self) -> ChallengeMap:
         return dict(self._store)
+
+    def increment_and_get(self, key: tuple[str, str, str]) -> int:
+        self._counters[key] = self._counters.get(key, 0) + 1
+        return self._counters[key]
+
+    def reset_counter(self, key: tuple[str, str, str]) -> None:
+        self._counters.pop(key, None)
 
 
 class ScenarioStore(Protocol):
@@ -89,7 +101,17 @@ class HarnessService:
             return shape_list(app, route, ctx, raw_list)
 
     def get_challenge(self, key: tuple[str, str, str]) -> Challenge | None:
-        return self._challenges.get(key)
+        ch = self._challenges.get(key)
+        if ch is None:
+            return None
+        if ch.on_request_n is None:
+            return ch
+        count = self._challenges.increment_and_get(key)
+        if count == ch.on_request_n:
+            self._challenges.reset_counter(key)
+            self._challenges.clear(key)
+            return ch
+        return None
 
     def set_challenge(self, key: tuple[str, str, str], challenge: Challenge) -> None:
         self._challenges.set(key, challenge)
@@ -112,3 +134,18 @@ class HarnessService:
 
     def get_scenarios(self) -> ScenarioMap:
         return self._scenarios.all()
+
+    def get_all_entity_records(
+        self, apps: list[App]
+    ) -> dict[tuple[str, str], list[dict]]:
+        """Return all entity records keyed by (app_id, entity) for every detail/list route."""
+        result: dict[tuple[str, str], list[dict]] = {}
+        for app in apps:
+            seen: set[str] = set()
+            for route in app.routes:
+                if route.data_entity and route.data_entity not in seen:
+                    seen.add(route.data_entity)
+                    result[(app.id, route.data_entity)] = self._loader.get_all(
+                        app.id, route.data_entity
+                    )
+        return result

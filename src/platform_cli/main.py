@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+import sys
 import time
 from pathlib import Path
 from typing import Annotated, Optional
@@ -18,6 +19,10 @@ _INFRA_DIR = Path(__file__).parent.parent.parent / "infra"
 _SCRIPTS_DIR = Path(__file__).parent.parent.parent / "scripts"
 _TEMPLATES_DIR = Path(__file__).parent.parent.parent / "templates"
 _DATA_DIR = Path(__file__).parent.parent.parent / "data"
+
+_SUBPROCESS_KWARGS: dict = (
+    {"creationflags": subprocess.CREATE_NO_WINDOW} if sys.platform == "win32" else {}
+)
 
 cli = typer.Typer(name="harness", no_args_is_help=True, help="Platform control-plane CLI")
 idp_cli = typer.Typer(no_args_is_help=True, help="Keycloak IdP management")
@@ -389,7 +394,7 @@ def seed(
         typer.echo("Would run: " + " ".join(cmd))
         return
 
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(cmd, capture_output=True, text=True, **_SUBPROCESS_KWARGS)
     if verbose or result.returncode != 0:
         if result.stdout:
             typer.echo(result.stdout.rstrip())
@@ -397,6 +402,123 @@ def seed(
             typer.echo(result.stderr.rstrip(), err=True)
     if result.returncode != 0:
         raise typer.Exit(4)
+
+
+# ---------------------------------------------------------------------------
+# harness idp generate-realm
+# ---------------------------------------------------------------------------
+
+
+def _build_realm(kc_cfg: dict, realm_name: str) -> dict:
+    """Build a Keycloak realm import dict from the keycloak: section of harness.yaml."""
+    token_expiry = kc_cfg.get("token_expiry_sec", 300)
+    session_idle = kc_cfg.get("session_idle_sec", 600)
+    session_max = session_idle * 60  # default 10 h
+
+    roles: list[dict] = []
+    users: list[dict] = []
+    clients: list[dict] = []
+
+    # Collect unique roles from all users
+    seen_roles: set[str] = set()
+    for u in kc_cfg.get("users", []):
+        for r in u.get("roles", []):
+            seen_roles.add(r)
+    for role_name in sorted(seen_roles):
+        roles.append({"name": role_name, "composite": False, "clientRole": False, "containerId": realm_name})
+
+    # Build client entries
+    for c in kc_cfg.get("clients", []):
+        flow = c.get("flow", "authorization_code")
+        entry: dict = {
+            "clientId": c["id"],
+            "enabled": True,
+            "protocol": "openid-connect",
+        }
+        if flow == "authorization_code":
+            entry.update({
+                "publicClient": True,
+                "standardFlowEnabled": True,
+                "implicitFlowEnabled": False,
+                "directAccessGrantsEnabled": False,
+                "serviceAccountsEnabled": False,
+                "redirectUris": c.get("redirect_uris", []),
+                "webOrigins": [u.rstrip("/*") for u in c.get("redirect_uris", [])],
+            })
+        elif flow == "client_credentials":
+            secret_env = c.get("secret_env", "")
+            secret = os.environ.get(secret_env, "service-secret") if secret_env else "service-secret"
+            entry.update({
+                "publicClient": False,
+                "secret": secret,
+                "standardFlowEnabled": False,
+                "implicitFlowEnabled": False,
+                "directAccessGrantsEnabled": False,
+                "serviceAccountsEnabled": True,
+            })
+        clients.append(entry)
+
+    # Build user entries
+    for u in kc_cfg.get("users", []):
+        username = u["username"]
+        pass_env = u.get("password_env", "")
+        # Fall back to username as password for local dev
+        password = os.environ.get(pass_env, username) if pass_env else username
+        email_domain = kc_cfg.get("email_domain", f"{realm_name}.local")
+        users.append({
+            "username": username,
+            "enabled": True,
+            "emailVerified": True,
+            "email": f"{username}@{email_domain}",
+            "credentials": [{"type": "password", "value": password, "temporary": False}],
+            "realmRoles": u.get("roles", []),
+        })
+
+    return {
+        "realm": realm_name,
+        "displayName": kc_cfg.get("display_name", "Harness Test Platform"),
+        "enabled": True,
+        "sslRequired": "none",
+        "registrationAllowed": False,
+        "loginWithEmailAllowed": True,
+        "duplicateEmailsAllowed": False,
+        "resetPasswordAllowed": False,
+        "editUsernameAllowed": False,
+        "bruteForceProtected": False,
+        "accessTokenLifespan": token_expiry,
+        "ssoSessionIdleTimeout": session_idle,
+        "ssoSessionMaxLifespan": session_max,
+        "roles": {"realm": roles},
+        "clients": clients,
+        "users": users,
+    }
+
+
+@idp_cli.command("generate-realm")
+def idp_generate_realm(
+    out: Annotated[Optional[Path], typer.Option("--out", help="Output realm JSON path")] = None,
+    config: Annotated[Path, typer.Option("--config")] = _HARNESS_YAML,
+    realm: Annotated[str, typer.Option("--realm", help="Override realm name")] = "",
+) -> None:
+    """Generate Keycloak realm JSON from the keycloak: section of harness.yaml (no running server needed)."""
+    raw = _load_raw_yaml(config)
+    kc_cfg = raw.get("keycloak")
+    if not kc_cfg:
+        typer.echo("Error: 'keycloak:' section not found in harness.yaml", err=True)
+        raise typer.Exit(2)
+
+    realm_name = realm or kc_cfg.get("realm", "harness")
+    out = out or (_INFRA_DIR / "keycloak" / f"{realm_name}-realm.json")
+
+    realm_dict = _build_realm(kc_cfg, realm_name)
+
+    try:
+        _atomic_write(out, json.dumps(realm_dict, indent=2) + "\n")
+    except OSError as exc:
+        typer.echo(f"Error writing {out}: {exc}", err=True)
+        raise typer.Exit(4)
+
+    typer.echo(f"Written: {out}")
 
 
 # ---------------------------------------------------------------------------
@@ -445,6 +567,27 @@ def idp_export(
 # ---------------------------------------------------------------------------
 
 
+def _do_idp_import(src: Path, keycloak_url: str, realm: str, user: str, pass_: str) -> None:
+    """Idempotent realm import. Raises RuntimeError on HTTP failure."""
+    realm_json = json.loads(src.read_text(encoding="utf-8"))
+    token = _get_admin_token(keycloak_url, realm, user, pass_)
+    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+    r = httpx.post(f"{keycloak_url}/admin/realms", headers=headers, json=realm_json, timeout=30)
+    if r.status_code == 201:
+        return
+    if r.status_code == 409:
+        r2 = httpx.put(
+            f"{keycloak_url}/admin/realms/{realm}",
+            headers=headers,
+            json=realm_json,
+            timeout=30,
+        )
+        if r2.status_code == 204:
+            return
+        raise RuntimeError(f"PUT /admin/realms/{realm} returned {r2.status_code}")
+    raise RuntimeError(f"POST /admin/realms returned {r.status_code}: {r.text[:200]}")
+
+
 @idp_cli.command("import")
 def idp_import(
     src: Annotated[Optional[Path], typer.Option("--src")] = None,
@@ -464,33 +607,17 @@ def idp_import(
 
     user = os.environ.get(cfg.get("admin_user_env", "KEYCLOAK_ADMIN_USER"), "admin")
     pass_ = os.environ.get(cfg.get("admin_pass_env", "KEYCLOAK_ADMIN_PASS"), "admin")
-    realm_json = json.loads(src.read_text(encoding="utf-8"))
 
     try:
-        token = _get_admin_token(keycloak_url, realm, user, pass_)
-        headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
-
-        r = httpx.post(f"{keycloak_url}/admin/realms", headers=headers, json=realm_json, timeout=30)
-        if r.status_code == 201:
-            typer.echo(f"Realm {realm!r} created")
-            return
-        if r.status_code == 409:
-            r2 = httpx.put(
-                f"{keycloak_url}/admin/realms/{realm}",
-                headers=headers,
-                json=realm_json,
-                timeout=30,
-            )
-            if r2.status_code == 204:
-                typer.echo(f"Realm {realm!r} updated (idempotent)")
-                return
-            typer.echo(f"Error: PUT /admin/realms/{realm} returned {r2.status_code}", err=True)
-            raise typer.Exit(1)
-        typer.echo(f"Error: POST /admin/realms returned {r.status_code}: {r.text[:200]}", err=True)
+        _do_idp_import(src, keycloak_url, realm, user, pass_)
+    except RuntimeError as exc:
+        typer.echo(f"Error: {exc}", err=True)
         raise typer.Exit(1)
     except httpx.RequestError as exc:
         typer.echo(f"Error: {exc}", err=True)
         raise typer.Exit(1)
+
+    typer.echo(f"Realm {realm!r} imported")
 
 
 # ---------------------------------------------------------------------------
@@ -570,7 +697,7 @@ def run(
     cmd.append("-d")
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, **_SUBPROCESS_KWARGS)
     except FileNotFoundError:
         typer.echo("Error: docker not found on PATH", err=True)
         raise typer.Exit(3)
@@ -600,13 +727,22 @@ def run(
 
     # Phase 3 — IdP readiness
     if idp_verify_enabled:
-        typer.echo("Phase 3: verifying IdP")
         keycloak_url = idp_cfg.get("base_url", "http://idp.local")
         realm = idp_cfg.get("realm", "harness")
         clients = list(idp_client) or idp_cfg.get("clients", ["browser-client", "service-client"])
         retry_interval = idp_cfg.get("retry_interval", 1)
         user = os.environ.get(idp_cfg.get("admin_user_env", "KEYCLOAK_ADMIN_USER"), "admin")
         pass_ = os.environ.get(idp_cfg.get("admin_pass_env", "KEYCLOAK_ADMIN_PASS"), "admin")
+
+        src_path = Path(idp_cfg.get("export_out", str(_INFRA_DIR / "keycloak" / f"{realm}-realm.json")))
+        typer.echo("Phase 3: importing realm")
+        try:
+            _do_idp_import(src_path, keycloak_url, realm, user, pass_)
+        except (RuntimeError, httpx.RequestError) as exc:
+            typer.echo(f"Error: realm import failed: {exc}", err=True)
+            raise typer.Exit(3)
+
+        typer.echo("Phase 3: verifying IdP")
         try:
             _verify_idp(keycloak_url, realm, idp_timeout, retry_interval, clients, None, False, user, pass_)
         except _IdpVerifyFailed as exc:
@@ -650,7 +786,7 @@ def stop(
     cmd += ["-f", str(compose_file), "down"]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, **_SUBPROCESS_KWARGS)
     except FileNotFoundError:
         typer.echo("Error: docker not found on PATH", err=True)
         raise typer.Exit(3)

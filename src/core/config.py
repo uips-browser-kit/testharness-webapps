@@ -13,6 +13,17 @@ class ConfigError(Exception):
     pass
 
 
+def load_keycloak_config(path: Path) -> dict:
+    """Return the raw keycloak: section from harness.yaml, or {} if absent."""
+    try:
+        raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    except yaml.YAMLError:
+        return {}
+    if not isinstance(raw, dict):
+        return {}
+    return raw.get("keycloak") or {}
+
+
 def parse_data_set(path: Path) -> str:
     """Return the configured dataset name from harness.yaml, defaulting to 'default'."""
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
@@ -113,6 +124,8 @@ def _parse_route(path: Path, raw: dict, app_index: int, route_index: int) -> Rou
         data_entity=raw.get("data_entity", ""),
         data_key_field=raw.get("data_key_field", ""),
         data_key_param=raw.get("data_key_param", ""),
+        url_template=raw.get("url_template", ""),
+        methods=raw.get("methods", ["GET"]),
     )
 
 

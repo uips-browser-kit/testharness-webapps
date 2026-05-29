@@ -148,6 +148,7 @@ apps:
     template: shared/detail
     data_entity: accounts
     data_key_field: id
+    url_template: /main.aspx?appid=00000000-0000-0000-0000-000000000000&pagetype=entityrecord&id={id}
   - id: account-list
     path: /main.aspx
     pattern_type: query
@@ -249,6 +250,7 @@ apps:
     data_entity: sales_orders
     data_key_field: order_number
     data_key_param: so
+    url_template: /sap/bc/ui5_ui5/ui2/ushell?sap-client=100&so={so}
   - id: order-list
     path: /sap/bc/ui5_ui5/ui2/ushell
     pattern_type: query
@@ -299,6 +301,7 @@ apps:
     template: shared/detail
     data_entity: invoices
     data_key_field: invoice_number
+    url_template: /fscmUI/faces/FuseWelcome?_adf.ctrl-state=oracle-harness&invoice_number={invoice_number}
   - id: welcome
     path: /fscmUI/faces/FuseWelcome
     pattern_type: query
@@ -350,6 +353,7 @@ apps:
     data_entity: employees
     data_key_field: employee_id
     data_key_param: id
+    url_template: /home.htmld?redirect=task&id={id}
   - id: employee-list
     path: /home.htmld
     pattern_type: query
@@ -659,3 +663,23 @@ data:
 
 prometheus:
   scrape_interval: 15s
+
+keycloak:
+  realm: harness
+  token_expiry_sec: 300
+  session_idle_sec: 600
+  clients:
+  - id: browser-client
+    flow: authorization_code
+    redirect_uris:
+    - "http://*.local/*"
+  - id: service-client
+    flow: client_credentials
+    secret_env: KEYCLOAK_SERVICE_CLIENT_SECRET
+  users:
+  - username: analyst
+    password_env: KEYCLOAK_USER_ANALYST_PASS
+    roles: [analyst]
+  - username: admin
+    password_env: KEYCLOAK_USER_ADMIN_PASS
+    roles: [admin, analyst]

@@ -15,23 +15,16 @@ from src.api.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
 from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_route, resolve_url
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
-from src.core.config import load_config, parse_data_set
-from src.core.models import Challenge, ErrorViewData, Fault, RecordNotFound, RouteContext, TemplateOnlyViewData
+from src.core.config import load_config, load_keycloak_config, parse_data_set
+from src.core.manifest import build_manifest, parse_hosts_file
+from src.core.models import AUTH_FAULT_KINDS, FAULT_KINDS, Challenge, ErrorViewData, Fault, RecordNotFound, RouteContext, TemplateOnlyViewData
 from src.frontend.renderer import render
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
 _DATA_DIR = Path(__file__).parent.parent.parent / "data"
 _STATIC_DIR = Path(__file__).parent.parent.parent / "static"
+_HOSTS_FILE = Path(__file__).parent.parent.parent / "infra" / "hosts.txt"
 
-_FAULT_TO_STATUS: dict[str, int] = {
-    "server_error": 500,
-    "unavailable": 503,
-    "business_error": 409,
-    "not_found": 404,
-    "rate_limit": 429,
-    "auth_error": 401,
-    "forbidden": 403,
-}
 
 _STATUS_TITLES: dict[int, str] = {
     400: "Bad Request",
@@ -46,7 +39,7 @@ _STATUS_TITLES: dict[int, str] = {
     503: "Service Unavailable",
 }
 
-_API_PREFIXES = ("/challenges", "/match", "/resolve", "/health", "/metrics", "/static", "/scenario")
+_API_PREFIXES = ("/challenges", "/match", "/resolve", "/health", "/metrics", "/static", "/scenario", "/manifest")
 
 _sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep
 
@@ -147,6 +140,8 @@ async def lifespan(app: FastAPI):
     loader = DataLoader(_DATA_DIR, dataset)
     app.state.service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore())
     app.state.apps = load_config(_HARNESS_YAML)
+    app.state.keycloak = load_keycloak_config(_HARNESS_YAML)
+    app.state.hosts = parse_hosts_file(_HOSTS_FILE)
     yield
 
 
@@ -157,7 +152,7 @@ app.mount("/static", StaticFiles(directory=str(_STATIC_DIR)), name="static")
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
     request_id = _make_request_id(request)
-    retriable = exc.status_code in (503, 429)
+    retriable = any(v["http_status"] == exc.status_code and v["retriable"] for v in FAULT_KINDS.values())
     title = _STATUS_TITLES.get(exc.status_code, "Error")
     scope = getattr(request.state, "route_scope", "")
     support_code = f"{scope}:{exc.status_code}" if scope else ""
@@ -169,13 +164,14 @@ async def http_exception_handler(request: Request, exc: HTTPException):
         request_id=request_id,
         support_code=support_code,
     )
+    extra_headers: dict | None = dict(exc.headers) if exc.headers else None
 
     if _is_api_request(request):
-        return JSONResponse(status_code=exc.status_code, content=asdict(error_data))
+        return JSONResponse(status_code=exc.status_code, content=asdict(error_data), headers=extra_headers)
 
     representation = _negotiate(request)
     if representation == "json":
-        return JSONResponse(status_code=exc.status_code, content=asdict(error_data))
+        return JSONResponse(status_code=exc.status_code, content=asdict(error_data), headers=extra_headers)
 
     # HTML — try per-app branded template, fall back to shared/error, then plain
     apps = getattr(request.app.state, "apps", [])
@@ -197,15 +193,15 @@ async def http_exception_handler(request: Request, exc: HTTPException):
         ctx = RouteContext(app_id=matched_app.id, route_id="", env_id=matched_env_id, params={})
         try:
             html = render(matched_app, template_name, ctx, asdict(error_data))
-            return HTMLResponse(status_code=exc.status_code, content=html)
+            return HTMLResponse(status_code=exc.status_code, content=html, headers=extra_headers)
         except Exception:
             try:
                 html = render(matched_app, "shared/error", ctx, asdict(error_data))
-                return HTMLResponse(status_code=exc.status_code, content=html)
+                return HTMLResponse(status_code=exc.status_code, content=html, headers=extra_headers)
             except Exception:
                 pass
 
-    return HTMLResponse(status_code=exc.status_code, content=_render_plain_error(error_data))
+    return HTMLResponse(status_code=exc.status_code, content=_render_plain_error(error_data), headers=extra_headers)
 
 
 @app.get("/health")
@@ -216,6 +212,21 @@ def health():
 @app.get("/metrics")
 def metrics():
     return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
+
+@app.get("/manifest")
+def manifest(request: Request):
+    from src.api import __version__  # noqa: PLC0415
+    apps = request.app.state.apps
+    service: HarnessService = request.app.state.service
+    entity_records = service.get_all_entity_records(apps)
+    return build_manifest(
+        apps=apps,
+        entity_records=entity_records,
+        hosts=request.app.state.hosts,
+        keycloak=request.app.state.keycloak,
+        version=__version__,
+    )
 
 
 @app.post("/resolve")
@@ -238,7 +249,10 @@ def set_challenge(app_id: str, env_id: str, route_id: str, body: dict, request: 
             detail=fault_data.get("detail", "Simulated fault"),
             retriable=fault_data.get("retriable", False),
         )
-    challenge = Challenge(delay_ms=body.get("delay_ms", 0), fault=fault)
+    on_request_n = body.get("on_request_n")
+    if on_request_n is not None and on_request_n < 1:
+        raise HTTPException(status_code=422, detail="on_request_n must be >= 1")
+    challenge = Challenge(delay_ms=body.get("delay_ms", 0), fault=fault, on_request_n=on_request_n)
     request.app.state.service.set_challenge((app_id, env_id, route_id), challenge)
     return {"status": "set", "app": app_id, "env": env_id, "route": route_id}
 
@@ -253,7 +267,11 @@ def clear_challenge(app_id: str, env_id: str, route_id: str, request: Request):
 def list_challenges(request: Request):
     challenges = request.app.state.service.get_challenges()
     return {
-        f"{k[0]}/{k[1]}/{k[2]}": {"delay_ms": v.delay_ms, "fault": asdict(v.fault) if v.fault else None}
+        f"{k[0]}/{k[1]}/{k[2]}": {
+            "delay_ms": v.delay_ms,
+            "fault": asdict(v.fault) if v.fault else None,
+            "on_request_n": v.on_request_n,
+        }
         for k, v in challenges.items()
     }
 
@@ -356,8 +374,17 @@ async def catch_all(request: Request, path: str):
         if challenge.delay_ms > 0:
             await _sleeper(challenge.delay_ms / 1000)
         if challenge.fault:
-            http_status = _FAULT_TO_STATUS.get(challenge.fault.kind, 500)
-            raise HTTPException(status_code=http_status, detail=challenge.fault.detail)
+            http_status = FAULT_KINDS.get(challenge.fault.kind, {"http_status": 500})["http_status"]
+            extra_headers = (
+                {"WWW-Authenticate": 'Bearer realm="harness"'}
+                if challenge.fault.kind in AUTH_FAULT_KINDS
+                else None
+            )
+            raise HTTPException(
+                status_code=http_status,
+                detail=challenge.fault.detail,
+                headers=extra_headers,
+            )
 
     representation = _negotiate(request)
     if representation is None:
