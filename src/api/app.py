@@ -16,7 +16,7 @@ from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore
 from src.core.config import load_config, parse_data_set
-from src.core.models import Challenge, ErrorViewData, Fault, RouteContext, TemplateOnlyViewData
+from src.core.models import Challenge, ErrorViewData, Fault, RecordNotFound, RouteContext, TemplateOnlyViewData
 from src.frontend.renderer import render
 
 _HARNESS_YAML = Path(__file__).parent.parent.parent / "harness.yaml"
@@ -29,10 +29,14 @@ _FAULT_TO_STATUS: dict[str, int] = {
     "business_error": 409,
     "not_found": 404,
     "rate_limit": 429,
+    "auth_error": 401,
+    "forbidden": 403,
 }
 
 _STATUS_TITLES: dict[int, str] = {
     400: "Bad Request",
+    401: "Unauthorized",
+    403: "Forbidden",
     404: "Not Found",
     406: "Not Acceptable",
     409: "Business Error",
@@ -155,12 +159,15 @@ async def http_exception_handler(request: Request, exc: HTTPException):
     request_id = _make_request_id(request)
     retriable = exc.status_code in (503, 429)
     title = _STATUS_TITLES.get(exc.status_code, "Error")
+    scope = getattr(request.state, "route_scope", "")
+    support_code = f"{scope}:{exc.status_code}" if scope else ""
     error_data = ErrorViewData(
         status_code=exc.status_code,
         title=title,
         message=str(exc.detail),
         retriable=retriable,
         request_id=request_id,
+        support_code=support_code,
     )
 
     if _is_api_request(request):
@@ -170,7 +177,7 @@ async def http_exception_handler(request: Request, exc: HTTPException):
     if representation == "json":
         return JSONResponse(status_code=exc.status_code, content=asdict(error_data))
 
-    # HTML — try branded template with app context, fall back to plain
+    # HTML — try per-app branded template, fall back to shared/error, then plain
     apps = getattr(request.app.state, "apps", [])
     host = request.headers.get("host", "").split(":")[0]
     matched_app = None
@@ -185,12 +192,18 @@ async def http_exception_handler(request: Request, exc: HTTPException):
             break
 
     if matched_app:
+        app_id = scope.split("/")[0] if scope else ""
+        template_name = f"{app_id}/error" if app_id else "shared/error"
+        ctx = RouteContext(app_id=matched_app.id, route_id="", env_id=matched_env_id, params={})
         try:
-            ctx = RouteContext(app_id=matched_app.id, route_id="", env_id=matched_env_id, params={})
-            html = render(matched_app, "shared/error", ctx, asdict(error_data))
+            html = render(matched_app, template_name, ctx, asdict(error_data))
             return HTMLResponse(status_code=exc.status_code, content=html)
         except Exception:
-            pass
+            try:
+                html = render(matched_app, "shared/error", ctx, asdict(error_data))
+                return HTMLResponse(status_code=exc.status_code, content=html)
+            except Exception:
+                pass
 
     return HTMLResponse(status_code=exc.status_code, content=_render_plain_error(error_data))
 
@@ -268,6 +281,7 @@ async def catch_all(request: Request, path: str):
     try:
         ctx = resolve_route(request, apps)
         status = 200
+        request.state.route_scope = f"{ctx.app_id}/{ctx.env_id}/{ctx.route_id}"
     except HTTPException as exc:
         status = exc.status_code
         if exc.status_code == 404 and not any(
@@ -304,7 +318,10 @@ async def catch_all(request: Request, path: str):
     if representation is None:
         raise HTTPException(status_code=406, detail="Not Acceptable")
 
-    view = service.prepare_view(matched_app, route, ctx)
+    try:
+        view = service.prepare_view(matched_app, route, ctx)
+    except RecordNotFound as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
 
     if representation == "json":
         if view is not None:

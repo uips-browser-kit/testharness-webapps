@@ -9,5 +9,8 @@
   <p style="color: var(--sol-cyan, #2aa198); font-size: 0.875rem;">This error is temporary — you can retry the request.</p>
   {% endif %}
   <p style="font-size: 11px; color: var(--sol-base01, #586e75); margin-top: 2rem;">Request ID: {{ request_id }}</p>
+  {% if support_code %}
+  <p style="font-size: 11px; color: var(--sol-base01, #586e75);">Support code: {{ support_code }}</p>
+  {% endif %}
 </div>
 {% endblock %}

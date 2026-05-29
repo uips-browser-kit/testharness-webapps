@@ -8,6 +8,7 @@ from src.core.models import (
     App,
     Challenge,
     ChallengeMap,
+    RecordNotFound,
     Route,
     RouteContext,
     ViewData,
@@ -53,6 +54,8 @@ class HarnessService:
             param_name = route.data_key_param or route.data_key_field
             key_value = ctx.params.get(param_name, "")
             raw = self._loader.get_record(ctx.app_id, route.data_entity, route.data_key_field, key_value)
+            if raw is None and key_value:
+                raise RecordNotFound(route.data_entity, key_value)
             return shape_detail(app, route, ctx, raw)
         else:
             raw_list = self._loader.get_all(ctx.app_id, route.data_entity)

@@ -122,6 +122,13 @@ class Fault:
     retriable: bool = False
 
 
+class RecordNotFound(Exception):
+    def __init__(self, entity: str, key_value: str) -> None:
+        self.entity = entity
+        self.key_value = key_value
+        super().__init__(f"{entity} {key_value!r} not found")
+
+
 @dataclass
 class Challenge:
     delay_ms: int = 0

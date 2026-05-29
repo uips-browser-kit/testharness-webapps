@@ -90,12 +90,12 @@ def test_account_detail_subnav_expanded(client):
     assert 'aria-expanded="true"' in r.text
 
 
-def test_nonexistent_account_still_renders(client):
+def test_nonexistent_account_returns_404(client):
     r = client.get(
         "/lightning/r/Account/does-not-exist/view",
         headers={"host": "salesforce-dev.local"},
     )
-    assert r.status_code == 200
+    assert r.status_code == 404
     assert "text/html" in r.headers["content-type"]
 
 

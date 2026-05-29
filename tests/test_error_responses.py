@@ -9,7 +9,9 @@ from unittest.mock import patch
 from src.api.app import app
 
 _SF_DEV = {"host": "salesforce-dev.local"}
+_SF_PROD = {"host": "salesforce-prod.local"}
 _SF_DETAIL = "/lightning/r/Account/001/view"
+_SF_OPP_DETAIL = "/lightning/r/Opportunity/opp001/view"
 
 
 @pytest.fixture(scope="module")
@@ -190,3 +192,84 @@ def test_fault_retriable_field_stored_and_returned(client):
     assert entry is not None
     assert entry["fault"]["retriable"] is True
     client.delete("/challenges/salesforce/dev/account-list")
+
+
+# --- #76: 401 / 403 fault kinds ------------------------------------------------
+
+
+def test_auth_error_fault_returns_401(client):
+    client.post("/challenges/salesforce/dev/account-detail",
+                json={"fault": {"kind": "auth_error"}})
+    r = client.get(_SF_DETAIL, headers={**_SF_DEV, "accept": "application/json"})
+    client.delete("/challenges/salesforce/dev/account-detail")
+    assert r.status_code == 401
+    assert r.json()["retriable"] is False
+
+
+def test_forbidden_fault_returns_403(client):
+    client.post("/challenges/salesforce/dev/account-detail",
+                json={"fault": {"kind": "forbidden"}})
+    r = client.get(_SF_DETAIL, headers={**_SF_DEV, "accept": "application/json"})
+    client.delete("/challenges/salesforce/dev/account-detail")
+    assert r.status_code == 403
+    assert r.json()["retriable"] is False
+
+
+# --- #73: 404 on missing records -----------------------------------------------
+
+
+def test_missing_record_returns_404_html(client):
+    r = client.get("/lightning/r/Opportunity/UNKNOWN/view",
+                   headers={**_SF_PROD, "accept": "text/html"})
+    assert r.status_code == 404
+    assert "Not Found" in r.text
+
+
+def test_missing_record_returns_404_json(client):
+    r = client.get("/lightning/r/Opportunity/UNKNOWN/view",
+                   headers={**_SF_PROD, "accept": "application/json"})
+    assert r.status_code == 404
+    assert r.json()["status_code"] == 404
+
+
+def test_existing_record_still_200(client):
+    r = client.get(_SF_OPP_DETAIL, headers={**_SF_PROD, "accept": "text/html"})
+    assert r.status_code == 200
+
+
+# --- #74: support_code ---------------------------------------------------------
+
+
+def test_support_code_populated_on_known_route(client):
+    client.post("/challenges/salesforce/dev/account-detail",
+                json={"fault": {"kind": "server_error"}})
+    r = client.get(_SF_DETAIL, headers={**_SF_DEV, "accept": "application/json"})
+    client.delete("/challenges/salesforce/dev/account-detail")
+    data = r.json()
+    assert data["support_code"].startswith("salesforce/dev/account-detail:")
+    assert "500" in data["support_code"]
+
+
+def test_support_code_empty_on_unmatched_route(client):
+    r = client.get("/no/such/path",
+                   headers={"host": "salesforce-dev.local", "accept": "application/json"})
+    data = r.json()
+    assert data["support_code"] == ""
+
+
+# --- #75: per-app branded error template ---------------------------------------
+
+
+def test_salesforce_error_uses_branded_template(client):
+    client.post("/challenges/salesforce/dev/account-detail",
+                json={"fault": {"kind": "server_error"}})
+    r = client.get(_SF_DETAIL, headers={**_SF_DEV, "accept": "text/html"})
+    client.delete("/challenges/salesforce/dev/account-detail")
+    assert r.status_code == 500
+    assert "Salesforce Sans" in r.text
+
+
+def test_non_salesforce_error_uses_shared_template(client):
+    r = client.get("/no/such/path",
+                   headers={"host": "salesforce-dev.local", "accept": "text/html"})
+    assert "Request ID:" in r.text
