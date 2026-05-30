@@ -1,562 +1,1178 @@
 [
   {
-    "region": "AMER",
-    "period": "2024-Q1",
-    "metric_name": "Churn Rate",
-    "value": 2551731.93,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2024-Q4",
-    "metric_name": "Churn Rate",
-    "value": 1419339.73,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q3",
-    "metric_name": "Churn Rate",
-    "value": 229992.36,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q2",
-    "metric_name": "Churn Rate",
-    "value": 645767.35,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2024-Q3",
-    "metric_name": "Gross Margin",
-    "value": 2156500.1,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q2",
-    "metric_name": "Churn Rate",
-    "value": 1268817.84,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2025-Q2",
-    "metric_name": "Gross Margin",
-    "value": 1982354.62,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2026-Q1",
-    "metric_name": "Gross Margin",
-    "value": 709010.18,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2025-Q4",
-    "metric_name": "Customer Count",
-    "value": 1997047.84,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2026-Q2",
-    "metric_name": "Units Sold",
-    "value": 4847580.93,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2024-Q3",
-    "metric_name": "Revenue",
-    "value": 441596.21,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2025-Q4",
-    "metric_name": "Gross Margin",
-    "value": 3996210.95,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2025-Q4",
-    "metric_name": "Customer Count",
-    "value": 2204059.18,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q3",
-    "metric_name": "Customer Count",
-    "value": 3205482.86,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2026-Q1",
-    "metric_name": "Revenue",
-    "value": 4457811.81,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q3",
-    "metric_name": "Gross Margin",
-    "value": 2268659.34,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q4",
-    "metric_name": "Customer Count",
-    "value": 2029339.93,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2026-Q3",
-    "metric_name": "Units Sold",
-    "value": 2628897.7,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q1",
-    "metric_name": "Revenue",
-    "value": 101339.52,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q1",
-    "metric_name": "Customer Count",
-    "value": 2949733.28,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q2",
-    "metric_name": "Revenue",
-    "value": 199813.79,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q2",
-    "metric_name": "Churn Rate",
-    "value": 1022649.9,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q2",
-    "metric_name": "Customer Count",
-    "value": 4749529.23,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q2",
-    "metric_name": "Gross Margin",
-    "value": 2472020.59,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q4",
-    "metric_name": "Gross Margin",
-    "value": 3582796.88,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q2",
-    "metric_name": "Revenue",
-    "value": 2327055.99,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q4",
-    "metric_name": "Gross Margin",
-    "value": 504808.33,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2024-Q4",
-    "metric_name": "Revenue",
-    "value": 4125861.25,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q4",
-    "metric_name": "Revenue",
-    "value": 1207890.69,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q1",
-    "metric_name": "Customer Count",
-    "value": 2173618.13,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q1",
-    "metric_name": "Churn Rate",
-    "value": 2103154.99,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q4",
-    "metric_name": "Units Sold",
-    "value": 8278.4,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2025-Q2",
-    "metric_name": "Gross Margin",
-    "value": 3283717.73,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q4",
-    "metric_name": "Customer Count",
-    "value": 3658916.51,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q2",
-    "metric_name": "Revenue",
-    "value": 3225781.88,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q3",
-    "metric_name": "Gross Margin",
-    "value": 2541306.51,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q1",
-    "metric_name": "Gross Margin",
-    "value": 4485770.43,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q3",
-    "metric_name": "Units Sold",
-    "value": 1482581.7,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q2",
-    "metric_name": "Gross Margin",
-    "value": 3273435.13,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q1",
-    "metric_name": "Customer Count",
-    "value": 1590343.17,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q1",
-    "metric_name": "Churn Rate",
-    "value": 2001558.62,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q3",
-    "metric_name": "Customer Count",
-    "value": 4480013.57,
-    "currency": "USD"
-  },
-  {
     "region": "EMEA",
     "period": "2024-Q3",
     "metric_name": "Revenue",
-    "value": 2833988.92,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q1",
-    "metric_name": "Units Sold",
-    "value": 4389245.58,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2026-Q2",
-    "metric_name": "Revenue",
-    "value": 310352.94,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2025-Q1",
-    "metric_name": "Customer Count",
-    "value": 385212.31,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2024-Q2",
-    "metric_name": "Revenue",
-    "value": 2579132.12,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2026-Q2",
-    "metric_name": "Churn Rate",
-    "value": 537515.13,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q2",
-    "metric_name": "Revenue",
-    "value": 1700877.54,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2026-Q4",
-    "metric_name": "Gross Margin",
-    "value": 1014364.87,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2025-Q2",
-    "metric_name": "Revenue",
-    "value": 4976159.22,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2024-Q1",
-    "metric_name": "Gross Margin",
-    "value": 1185780.96,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q3",
-    "metric_name": "Churn Rate",
-    "value": 1385171.56,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2026-Q1",
-    "metric_name": "Units Sold",
-    "value": 839591.8,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q1",
-    "metric_name": "Customer Count",
-    "value": 678150.0,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q1",
-    "metric_name": "Churn Rate",
-    "value": 2381112.53,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2026-Q2",
-    "metric_name": "Units Sold",
-    "value": 1201307.81,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2026-Q4",
-    "metric_name": "Customer Count",
-    "value": 2008005.22,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q2",
-    "metric_name": "Customer Count",
-    "value": 739375.8,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q4",
-    "metric_name": "Revenue",
-    "value": 4679413.3,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2024-Q1",
-    "metric_name": "Churn Rate",
-    "value": 3036848.97,
-    "currency": "USD"
-  },
-  {
-    "region": "APAC",
-    "period": "2025-Q2",
-    "metric_name": "Gross Margin",
-    "value": 446175.24,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q4",
-    "metric_name": "Customer Count",
-    "value": 1480111.2,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q3",
-    "metric_name": "Gross Margin",
-    "value": 1759166.55,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q4",
-    "metric_name": "Revenue",
-    "value": 876947.94,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2026-Q2",
-    "metric_name": "Units Sold",
-    "value": 244816.62,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2024-Q2",
-    "metric_name": "Customer Count",
-    "value": 4972983.74,
-    "currency": "USD"
-  },
-  {
-    "region": "AMER",
-    "period": "2025-Q2",
-    "metric_name": "Gross Margin",
-    "value": 1930910.99,
-    "currency": "USD"
-  },
-  {
-    "region": "EMEA",
-    "period": "2025-Q2",
-    "metric_name": "Revenue",
-    "value": 1990092.94,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q4",
-    "metric_name": "Units Sold",
-    "value": 617811.6,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q4",
-    "metric_name": "Units Sold",
-    "value": 1814324.78,
-    "currency": "USD"
-  },
-  {
-    "region": "LATAM",
-    "period": "2024-Q4",
-    "metric_name": "Gross Margin",
-    "value": 1145244.58,
+    "value": 3636918.14,
     "currency": "USD"
   },
   {
     "region": "APAC",
     "period": "2026-Q3",
     "metric_name": "Gross Margin",
-    "value": 1697267.42,
+    "value": 4313076.69,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q1",
+    "metric_name": "Gross Margin",
+    "value": 4810491.6,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Units Sold",
+    "value": 2323418.64,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q4",
+    "metric_name": "Units Sold",
+    "value": 2391019.34,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q2",
+    "metric_name": "Revenue",
+    "value": 3476608.84,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Customer Count",
+    "value": 2669914.12,
     "currency": "USD"
   },
   {
     "region": "APAC",
     "period": "2024-Q1",
     "metric_name": "Gross Margin",
-    "value": 1146057.14,
+    "value": 1855366.8,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q4",
+    "metric_name": "Churn Rate",
+    "value": 3530630.81,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q4",
+    "metric_name": "Customer Count",
+    "value": 4678967.1,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q3",
+    "metric_name": "Gross Margin",
+    "value": 3728755.19,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q4",
+    "metric_name": "Units Sold",
+    "value": 4465755.89,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q4",
+    "metric_name": "Gross Margin",
+    "value": 3381090.4,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q4",
+    "metric_name": "Churn Rate",
+    "value": 2897579.1,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q3",
+    "metric_name": "Gross Margin",
+    "value": 2448989.96,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q4",
+    "metric_name": "Revenue",
+    "value": 1308788.79,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q3",
+    "metric_name": "Churn Rate",
+    "value": 3620942.53,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q4",
+    "metric_name": "Units Sold",
+    "value": 3149113.68,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q1",
+    "metric_name": "Revenue",
+    "value": 3320789.27,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q3",
+    "metric_name": "Units Sold",
+    "value": 1335774.98,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q4",
+    "metric_name": "Gross Margin",
+    "value": 1827641.53,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q3",
+    "metric_name": "Revenue",
+    "value": 2666690.64,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q4",
+    "metric_name": "Customer Count",
+    "value": 3892592.36,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q2",
+    "metric_name": "Customer Count",
+    "value": 2420340.0,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q2",
+    "metric_name": "Revenue",
+    "value": 3216801.74,
     "currency": "USD"
   },
   {
     "region": "LATAM",
     "period": "2025-Q4",
     "metric_name": "Units Sold",
-    "value": 2883124.28,
+    "value": 244613.79,
     "currency": "USD"
   },
   {
-    "region": "AMER",
-    "period": "2026-Q2",
+    "region": "APAC",
+    "period": "2024-Q1",
     "metric_name": "Churn Rate",
-    "value": 1426522.73,
+    "value": 4787411.93,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q3",
+    "metric_name": "Churn Rate",
+    "value": 2097655.21,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q1",
+    "metric_name": "Gross Margin",
+    "value": 191585.95,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q2",
+    "metric_name": "Units Sold",
+    "value": 3841043.47,
     "currency": "USD"
   },
   {
     "region": "APAC",
     "period": "2024-Q4",
+    "metric_name": "Units Sold",
+    "value": 2708206.16,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Units Sold",
+    "value": 4846278.59,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q4",
+    "metric_name": "Units Sold",
+    "value": 1484759.59,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q3",
+    "metric_name": "Units Sold",
+    "value": 2055063.59,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q1",
+    "metric_name": "Customer Count",
+    "value": 4361125.6,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q4",
+    "metric_name": "Gross Margin",
+    "value": 4508546.15,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q4",
+    "metric_name": "Revenue",
+    "value": 2458552.5,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q4",
     "metric_name": "Churn Rate",
-    "value": 4104819.27,
+    "value": 3692371.54,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q2",
+    "metric_name": "Gross Margin",
+    "value": 4864815.96,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q2",
+    "metric_name": "Gross Margin",
+    "value": 3464597.84,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q2",
+    "metric_name": "Customer Count",
+    "value": 1763320.33,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q1",
+    "metric_name": "Customer Count",
+    "value": 4124646.96,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Gross Margin",
+    "value": 3731179.42,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q3",
+    "metric_name": "Churn Rate",
+    "value": 2310375.76,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q2",
+    "metric_name": "Churn Rate",
+    "value": 2420529.3,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Gross Margin",
+    "value": 2573473.91,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q3",
+    "metric_name": "Customer Count",
+    "value": 3690832.86,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q2",
+    "metric_name": "Units Sold",
+    "value": 2453265.49,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q2",
+    "metric_name": "Revenue",
+    "value": 1776549.74,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Gross Margin",
+    "value": 3055810.92,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q2",
+    "metric_name": "Gross Margin",
+    "value": 1308589.75,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q3",
+    "metric_name": "Customer Count",
+    "value": 4071536.82,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q4",
+    "metric_name": "Units Sold",
+    "value": 4061073.48,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q1",
+    "metric_name": "Gross Margin",
+    "value": 1886970.39,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q2",
+    "metric_name": "Gross Margin",
+    "value": 1004205.83,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q4",
+    "metric_name": "Customer Count",
+    "value": 4777540.81,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q2",
+    "metric_name": "Units Sold",
+    "value": 3050765.85,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q1",
+    "metric_name": "Gross Margin",
+    "value": 4257518.8,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q1",
+    "metric_name": "Revenue",
+    "value": 3747627.72,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q3",
+    "metric_name": "Units Sold",
+    "value": 2056939.29,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q1",
+    "metric_name": "Churn Rate",
+    "value": 2230384.7,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q2",
+    "metric_name": "Revenue",
+    "value": 1112901.66,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q2",
+    "metric_name": "Units Sold",
+    "value": 2047322.74,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q1",
+    "metric_name": "Churn Rate",
+    "value": 429513.4,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q4",
+    "metric_name": "Revenue",
+    "value": 3707909.1,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q1",
+    "metric_name": "Churn Rate",
+    "value": 4945043.27,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q1",
+    "metric_name": "Churn Rate",
+    "value": 3606051.14,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q2",
+    "metric_name": "Churn Rate",
+    "value": 3828339.0,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q3",
+    "metric_name": "Customer Count",
+    "value": 1481856.42,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q3",
+    "metric_name": "Gross Margin",
+    "value": 2217269.68,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Churn Rate",
+    "value": 4220992.39,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q2",
+    "metric_name": "Customer Count",
+    "value": 55670.4,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q2",
+    "metric_name": "Units Sold",
+    "value": 550952.97,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q3",
+    "metric_name": "Revenue",
+    "value": 3718817.43,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q1",
+    "metric_name": "Units Sold",
+    "value": 1789589.39,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q4",
+    "metric_name": "Revenue",
+    "value": 2518097.78,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q2",
+    "metric_name": "Gross Margin",
+    "value": 1312875.24,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q2",
+    "metric_name": "Churn Rate",
+    "value": 1319124.41,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q4",
+    "metric_name": "Gross Margin",
+    "value": 1919672.33,
     "currency": "USD"
   },
   {
     "region": "LATAM",
     "period": "2025-Q3",
-    "metric_name": "Revenue",
-    "value": 3592250.94,
+    "metric_name": "Units Sold",
+    "value": 2569863.42,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q3",
+    "metric_name": "Customer Count",
+    "value": 2584832.54,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q1",
+    "metric_name": "Customer Count",
+    "value": 464952.52,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q2",
+    "metric_name": "Customer Count",
+    "value": 2301217.2,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q3",
+    "metric_name": "Gross Margin",
+    "value": 3133936.3,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q4",
+    "metric_name": "Gross Margin",
+    "value": 4682415.71,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q4",
+    "metric_name": "Gross Margin",
+    "value": 897193.9,
     "currency": "USD"
   },
   {
     "region": "APAC",
     "period": "2024-Q3",
     "metric_name": "Customer Count",
-    "value": 4861921.28,
+    "value": 4974943.6,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q4",
+    "metric_name": "Customer Count",
+    "value": 2096861.35,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q1",
+    "metric_name": "Revenue",
+    "value": 2875708.35,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q3",
+    "metric_name": "Revenue",
+    "value": 3959088.17,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q4",
+    "metric_name": "Units Sold",
+    "value": 1262810.75,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q2",
+    "metric_name": "Churn Rate",
+    "value": 739240.56,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Churn Rate",
+    "value": 4455581.37,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q1",
+    "metric_name": "Gross Margin",
+    "value": 3031213.98,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q2",
+    "metric_name": "Units Sold",
+    "value": 2695984.59,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q3",
+    "metric_name": "Gross Margin",
+    "value": 1670208.86,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q1",
+    "metric_name": "Units Sold",
+    "value": 1000841.82,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q4",
+    "metric_name": "Customer Count",
+    "value": 403913.67,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q3",
+    "metric_name": "Revenue",
+    "value": 4746557.55,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q3",
+    "metric_name": "Churn Rate",
+    "value": 4128274.36,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q1",
+    "metric_name": "Revenue",
+    "value": 4743137.11,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q2",
+    "metric_name": "Churn Rate",
+    "value": 736934.73,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q2",
+    "metric_name": "Revenue",
+    "value": 3616043.35,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q2",
+    "metric_name": "Gross Margin",
+    "value": 613584.23,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q4",
+    "metric_name": "Revenue",
+    "value": 3368741.73,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q4",
+    "metric_name": "Revenue",
+    "value": 72621.28,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q2",
+    "metric_name": "Gross Margin",
+    "value": 1870736.74,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q4",
+    "metric_name": "Units Sold",
+    "value": 4819738.45,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q2",
+    "metric_name": "Units Sold",
+    "value": 2588731.23,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q1",
+    "metric_name": "Units Sold",
+    "value": 4531487.44,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q3",
+    "metric_name": "Units Sold",
+    "value": 1752602.25,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q4",
+    "metric_name": "Gross Margin",
+    "value": 1955368.27,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q2",
+    "metric_name": "Customer Count",
+    "value": 1033722.48,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q2",
+    "metric_name": "Customer Count",
+    "value": 413839.57,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q2",
+    "metric_name": "Units Sold",
+    "value": 3192906.75,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q2",
+    "metric_name": "Churn Rate",
+    "value": 4852161.92,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q2",
+    "metric_name": "Revenue",
+    "value": 4103938.94,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q3",
+    "metric_name": "Customer Count",
+    "value": 1603065.26,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q3",
+    "metric_name": "Customer Count",
+    "value": 2142481.65,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q1",
+    "metric_name": "Revenue",
+    "value": 3188915.53,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q3",
+    "metric_name": "Gross Margin",
+    "value": 2601315.8,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q3",
+    "metric_name": "Units Sold",
+    "value": 709430.83,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q1",
+    "metric_name": "Gross Margin",
+    "value": 2712793.5,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q2",
+    "metric_name": "Churn Rate",
+    "value": 78795.16,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q4",
+    "metric_name": "Revenue",
+    "value": 514227.76,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q3",
+    "metric_name": "Gross Margin",
+    "value": 3481235.2,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2024-Q2",
+    "metric_name": "Churn Rate",
+    "value": 1270871.94,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q1",
+    "metric_name": "Units Sold",
+    "value": 252491.63,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q4",
+    "metric_name": "Gross Margin",
+    "value": 2225502.79,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Gross Margin",
+    "value": 240049.6,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q2",
+    "metric_name": "Customer Count",
+    "value": 391065.69,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q2",
+    "metric_name": "Units Sold",
+    "value": 840827.1,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Customer Count",
+    "value": 557380.14,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q4",
+    "metric_name": "Churn Rate",
+    "value": 3695475.17,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q4",
+    "metric_name": "Customer Count",
+    "value": 2155711.16,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q3",
+    "metric_name": "Churn Rate",
+    "value": 809647.61,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q2",
+    "metric_name": "Units Sold",
+    "value": 1840715.65,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q2",
+    "metric_name": "Revenue",
+    "value": 796149.91,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q1",
+    "metric_name": "Units Sold",
+    "value": 1898699.32,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q3",
+    "metric_name": "Gross Margin",
+    "value": 3877788.85,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q3",
+    "metric_name": "Customer Count",
+    "value": 3144804.84,
     "currency": "USD"
   },
   {
     "region": "APAC",
     "period": "2026-Q1",
     "metric_name": "Customer Count",
-    "value": 371979.5,
+    "value": 403807.25,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q2",
+    "metric_name": "Revenue",
+    "value": 1996057.2,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q1",
+    "metric_name": "Churn Rate",
+    "value": 4034044.61,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q4",
+    "metric_name": "Customer Count",
+    "value": 1803176.58,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q4",
+    "metric_name": "Revenue",
+    "value": 2343981.83,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2025-Q2",
+    "metric_name": "Gross Margin",
+    "value": 2861372.62,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2026-Q1",
+    "metric_name": "Gross Margin",
+    "value": 4355299.33,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2025-Q4",
+    "metric_name": "Revenue",
+    "value": 4558688.16,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2024-Q4",
+    "metric_name": "Revenue",
+    "value": 1009962.7,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q3",
+    "metric_name": "Gross Margin",
+    "value": 3797388.55,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q2",
+    "metric_name": "Customer Count",
+    "value": 4286778.24,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q2",
+    "metric_name": "Revenue",
+    "value": 1667624.93,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2026-Q2",
+    "metric_name": "Churn Rate",
+    "value": 4451672.67,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q3",
+    "metric_name": "Churn Rate",
+    "value": 1933932.88,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q2",
+    "metric_name": "Revenue",
+    "value": 1390451.81,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2026-Q2",
+    "metric_name": "Churn Rate",
+    "value": 3557901.25,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q4",
+    "metric_name": "Gross Margin",
+    "value": 3270647.66,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q4",
+    "metric_name": "Gross Margin",
+    "value": 1142856.92,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Gross Margin",
+    "value": 4663030.85,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Revenue",
+    "value": 3443479.17,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q2",
+    "metric_name": "Units Sold",
+    "value": 3282944.2,
+    "currency": "USD"
+  },
+  {
+    "region": "LATAM",
+    "period": "2025-Q2",
+    "metric_name": "Units Sold",
+    "value": 2940429.9,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2025-Q2",
+    "metric_name": "Customer Count",
+    "value": 1036753.92,
+    "currency": "USD"
+  },
+  {
+    "region": "APAC",
+    "period": "2024-Q4",
+    "metric_name": "Units Sold",
+    "value": 2311812.97,
+    "currency": "USD"
+  },
+  {
+    "region": "AMER",
+    "period": "2024-Q1",
+    "metric_name": "Churn Rate",
+    "value": 2611204.67,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q4",
+    "metric_name": "Units Sold",
+    "value": 3677491.38,
+    "currency": "USD"
+  },
+  {
+    "region": "EMEA",
+    "period": "2026-Q4",
+    "metric_name": "Units Sold",
+    "value": 591580.96,
     "currency": "USD"
   }
 ]

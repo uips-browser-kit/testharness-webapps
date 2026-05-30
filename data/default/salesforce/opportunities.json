@@ -1,182 +1,380 @@
 [
   {
     "id": "opp001",
-    "name": "Garcia-Miles Deal",
-    "account_id": "018",
-    "amount": 930000,
-    "stage": "Qualification",
-    "close_date": "2026-10-05",
-    "owner": "Darryl Morgan"
+    "name": "Maxwell-Hardy Deal",
+    "account_id": "036",
+    "amount": 320000,
+    "stage": "Closed Won",
+    "close_date": "2026-11-22",
+    "owner": "James Taylor"
   },
   {
     "id": "opp002",
-    "name": "Ross-Blair Deal",
+    "name": "Adams-Thomas Deal",
     "account_id": "011",
-    "amount": 555000,
+    "amount": 565000,
     "stage": "Proposal",
-    "close_date": "2026-07-07",
-    "owner": "Christian Leblanc"
+    "close_date": "2026-10-02",
+    "owner": "Richard Ward"
   },
   {
     "id": "opp003",
-    "name": "Davis Inc Deal",
-    "account_id": "003",
-    "amount": 560000,
-    "stage": "Prospecting",
-    "close_date": "2026-09-05",
-    "owner": "Kristie Willis"
+    "name": "Le Group Deal",
+    "account_id": "039",
+    "amount": 795000,
+    "stage": "Qualification",
+    "close_date": "2026-10-21",
+    "owner": "Eric Rush"
   },
   {
     "id": "opp004",
-    "name": "Hoffman, Santiago and Jenkins Deal",
-    "account_id": "014",
-    "amount": 930000,
-    "stage": "Prospecting",
-    "close_date": "2026-07-24",
-    "owner": "Heather Lane"
+    "name": "Skinner-James Deal",
+    "account_id": "022",
+    "amount": 570000,
+    "stage": "Proposal",
+    "close_date": "2026-10-07",
+    "owner": "Shannon Mccann"
   },
   {
     "id": "opp005",
-    "name": "Moore Group Deal",
-    "account_id": "008",
-    "amount": 145000,
+    "name": "Evans PLC Deal",
+    "account_id": "013",
+    "amount": 620000,
     "stage": "Proposal",
-    "close_date": "2026-09-03",
-    "owner": "Donald Perez"
+    "close_date": "2026-05-30",
+    "owner": "Tracy Carter"
   },
   {
     "id": "opp006",
-    "name": "Bruce-Villegas Deal",
-    "account_id": "020",
-    "amount": 795000,
-    "stage": "Closed Lost",
-    "close_date": "2026-03-12",
-    "owner": "Mary Steele"
+    "name": "Chen, Faulkner and Casey Deal",
+    "account_id": "021",
+    "amount": 490000,
+    "stage": "Proposal",
+    "close_date": "2026-09-18",
+    "owner": "Timothy Gonzalez"
   },
   {
     "id": "opp007",
-    "name": "White Ltd Deal",
-    "account_id": "010",
-    "amount": 440000,
-    "stage": "Proposal",
-    "close_date": "2026-03-02",
-    "owner": "Charles Sandoval"
+    "name": "White, Saunders and Johnson Deal",
+    "account_id": "030",
+    "amount": 915000,
+    "stage": "Qualification",
+    "close_date": "2026-10-11",
+    "owner": "Sandra Jones"
   },
   {
     "id": "opp008",
-    "name": "Thomas Ltd Deal",
-    "account_id": "001",
-    "amount": 125000,
-    "stage": "Closed Lost",
-    "close_date": "2026-06-17",
-    "owner": "Jesse Moore"
+    "name": "Chambers-Taylor Deal",
+    "account_id": "020",
+    "amount": 315000,
+    "stage": "Proposal",
+    "close_date": "2026-05-18",
+    "owner": "Rachel Jones"
   },
   {
     "id": "opp009",
-    "name": "Griffith-Frank Deal",
-    "account_id": "019",
-    "amount": 770000,
+    "name": "Mendoza, Morales and Hunter Deal",
+    "account_id": "027",
+    "amount": 705000,
     "stage": "Prospecting",
-    "close_date": "2026-03-25",
-    "owner": "Paul Williams"
+    "close_date": "2026-09-01",
+    "owner": "Robin Wheeler"
   },
   {
     "id": "opp010",
-    "name": "Nelson Ltd Deal",
-    "account_id": "014",
-    "amount": 630000,
-    "stage": "Closed Won",
-    "close_date": "2026-10-11",
-    "owner": "Daniel Hunt"
+    "name": "Rodriguez and Sons Deal",
+    "account_id": "023",
+    "amount": 220000,
+    "stage": "Closed Lost",
+    "close_date": "2026-03-23",
+    "owner": "Maria Lucas"
   },
   {
     "id": "opp011",
-    "name": "Jordan-Campbell Deal",
-    "account_id": "019",
-    "amount": 630000,
-    "stage": "Closed Won",
-    "close_date": "2026-08-03",
-    "owner": "James Greene"
+    "name": "Sheppard-Jordan Deal",
+    "account_id": "001",
+    "amount": 135000,
+    "stage": "Proposal",
+    "close_date": "2026-06-22",
+    "owner": "Kelly Carpenter"
   },
   {
     "id": "opp012",
-    "name": "Harris and Sons Deal",
-    "account_id": "005",
-    "amount": 985000,
-    "stage": "Proposal",
-    "close_date": "2026-07-25",
-    "owner": "Adam Burgess"
+    "name": "Walker, Brooks and Ford Deal",
+    "account_id": "038",
+    "amount": 890000,
+    "stage": "Closed Won",
+    "close_date": "2026-05-17",
+    "owner": "Alexander Garcia"
   },
   {
     "id": "opp013",
-    "name": "Anderson PLC Deal",
-    "account_id": "008",
-    "amount": 650000,
-    "stage": "Closed Won",
-    "close_date": "2026-08-27",
-    "owner": "Scott Williams"
+    "name": "Knapp-Miller Deal",
+    "account_id": "010",
+    "amount": 455000,
+    "stage": "Proposal",
+    "close_date": "2026-08-23",
+    "owner": "Daniel Webb"
   },
   {
     "id": "opp014",
-    "name": "Stevens Inc Deal",
-    "account_id": "011",
-    "amount": 745000,
-    "stage": "Negotiation",
-    "close_date": "2026-09-22",
-    "owner": "Jennifer Wilson"
+    "name": "Davis-Bowen Deal",
+    "account_id": "029",
+    "amount": 415000,
+    "stage": "Prospecting",
+    "close_date": "2026-08-01",
+    "owner": "Michael Johnson"
   },
   {
     "id": "opp015",
-    "name": "Burch and Sons Deal",
-    "account_id": "020",
-    "amount": 595000,
-    "stage": "Closed Lost",
-    "close_date": "2026-08-31",
-    "owner": "Ryan Sanchez"
+    "name": "Wong-Byrd Deal",
+    "account_id": "011",
+    "amount": 955000,
+    "stage": "Qualification",
+    "close_date": "2026-11-20",
+    "owner": "Christopher Castro"
   },
   {
     "id": "opp016",
-    "name": "Morales, Miller and Harrell Deal",
-    "account_id": "011",
-    "amount": 290000,
-    "stage": "Proposal",
-    "close_date": "2026-05-24",
-    "owner": "Mark Schmidt"
+    "name": "Hall-Sullivan Deal",
+    "account_id": "012",
+    "amount": 245000,
+    "stage": "Closed Lost",
+    "close_date": "2026-10-08",
+    "owner": "Omar Ware"
   },
   {
     "id": "opp017",
-    "name": "Bullock LLC Deal",
-    "account_id": "012",
-    "amount": 940000,
-    "stage": "Closed Lost",
-    "close_date": "2026-05-13",
-    "owner": "Charles Gonzalez"
+    "name": "Vargas-Price Deal",
+    "account_id": "014",
+    "amount": 270000,
+    "stage": "Proposal",
+    "close_date": "2026-04-02",
+    "owner": "Rebecca Herrera"
   },
   {
     "id": "opp018",
-    "name": "Hernandez, Malone and Jones Deal",
-    "account_id": "016",
-    "amount": 600000,
-    "stage": "Closed Won",
-    "close_date": "2026-10-14",
-    "owner": "Sonia Day"
+    "name": "Nguyen-Ellis Deal",
+    "account_id": "017",
+    "amount": 865000,
+    "stage": "Negotiation",
+    "close_date": "2026-11-26",
+    "owner": "Emily Price"
   },
   {
     "id": "opp019",
-    "name": "Morris, Maddox and Stewart Deal",
-    "account_id": "015",
-    "amount": 95000,
-    "stage": "Negotiation",
-    "close_date": "2026-10-11",
-    "owner": "Rebecca Vargas"
+    "name": "Matthews-Bailey Deal",
+    "account_id": "030",
+    "amount": 800000,
+    "stage": "Qualification",
+    "close_date": "2026-07-31",
+    "owner": "Leslie Powers"
   },
   {
     "id": "opp020",
-    "name": "Romero-Collins Deal",
-    "account_id": "015",
-    "amount": 55000,
+    "name": "Wilson-Torres Deal",
+    "account_id": "012",
+    "amount": 485000,
+    "stage": "Closed Lost",
+    "close_date": "2026-05-12",
+    "owner": "Jennifer Taylor"
+  },
+  {
+    "id": "opp021",
+    "name": "Henderson-Tucker Deal",
+    "account_id": "035",
+    "amount": 895000,
+    "stage": "Closed Lost",
+    "close_date": "2026-05-28",
+    "owner": "Katherine Taylor"
+  },
+  {
+    "id": "opp022",
+    "name": "Wilkinson-Harvey Deal",
+    "account_id": "023",
+    "amount": 20000,
+    "stage": "Negotiation",
+    "close_date": "2026-05-09",
+    "owner": "James Hoffman"
+  },
+  {
+    "id": "opp023",
+    "name": "Simpson, Cohen and Perry Deal",
+    "account_id": "029",
+    "amount": 635000,
+    "stage": "Qualification",
+    "close_date": "2026-04-12",
+    "owner": "Rebecca Walker"
+  },
+  {
+    "id": "opp024",
+    "name": "Hill PLC Deal",
+    "account_id": "019",
+    "amount": 225000,
+    "stage": "Negotiation",
+    "close_date": "2026-11-09",
+    "owner": "Ashley Wilson"
+  },
+  {
+    "id": "opp025",
+    "name": "Morrow, Richardson and Carson Deal",
+    "account_id": "003",
+    "amount": 980000,
+    "stage": "Closed Lost",
+    "close_date": "2026-10-12",
+    "owner": "Wanda Garcia"
+  },
+  {
+    "id": "opp026",
+    "name": "Potter, Evans and Kidd Deal",
+    "account_id": "029",
+    "amount": 345000,
+    "stage": "Proposal",
+    "close_date": "2026-04-14",
+    "owner": "Xavier Rowe"
+  },
+  {
+    "id": "opp027",
+    "name": "Clark Ltd Deal",
+    "account_id": "038",
+    "amount": 890000,
+    "stage": "Proposal",
+    "close_date": "2026-10-06",
+    "owner": "Charles Clark"
+  },
+  {
+    "id": "opp028",
+    "name": "Trujillo PLC Deal",
+    "account_id": "023",
+    "amount": 690000,
+    "stage": "Proposal",
+    "close_date": "2026-05-26",
+    "owner": "Michael Roberts"
+  },
+  {
+    "id": "opp029",
+    "name": "Farley-Robertson Deal",
+    "account_id": "007",
+    "amount": 180000,
+    "stage": "Negotiation",
+    "close_date": "2026-03-31",
+    "owner": "Sharon Martinez DVM"
+  },
+  {
+    "id": "opp030",
+    "name": "Thomas LLC Deal",
+    "account_id": "016",
+    "amount": 980000,
+    "stage": "Closed Lost",
+    "close_date": "2026-09-18",
+    "owner": "Kenneth Adams MD"
+  },
+  {
+    "id": "opp031",
+    "name": "Jones-Norton Deal",
+    "account_id": "006",
+    "amount": 525000,
+    "stage": "Closed Won",
+    "close_date": "2026-07-21",
+    "owner": "Sherry Gibson"
+  },
+  {
+    "id": "opp032",
+    "name": "Murphy-Smith Deal",
+    "account_id": "006",
+    "amount": 945000,
+    "stage": "Negotiation",
+    "close_date": "2026-08-31",
+    "owner": "Rebecca Sanders"
+  },
+  {
+    "id": "opp033",
+    "name": "Summers-Simpson Deal",
+    "account_id": "021",
+    "amount": 370000,
+    "stage": "Proposal",
+    "close_date": "2026-05-06",
+    "owner": "Karina Cooper"
+  },
+  {
+    "id": "opp034",
+    "name": "Farmer, Williams and Sims Deal",
+    "account_id": "030",
+    "amount": 30000,
     "stage": "Prospecting",
-    "close_date": "2026-09-03",
-    "owner": "Angela Lin"
+    "close_date": "2026-05-20",
+    "owner": "Aaron Rubio"
+  },
+  {
+    "id": "opp035",
+    "name": "Forbes and Sons Deal",
+    "account_id": "042",
+    "amount": 395000,
+    "stage": "Qualification",
+    "close_date": "2026-07-19",
+    "owner": "Isaac Miller"
+  },
+  {
+    "id": "opp036",
+    "name": "Mckee, Martin and Sanders Deal",
+    "account_id": "020",
+    "amount": 935000,
+    "stage": "Closed Lost",
+    "close_date": "2026-06-28",
+    "owner": "Brandon Davis"
+  },
+  {
+    "id": "opp037",
+    "name": "Woods and Sons Deal",
+    "account_id": "038",
+    "amount": 295000,
+    "stage": "Closed Won",
+    "close_date": "2026-10-14",
+    "owner": "Michael Montoya"
+  },
+  {
+    "id": "opp038",
+    "name": "Benson-Woods Deal",
+    "account_id": "015",
+    "amount": 500000,
+    "stage": "Prospecting",
+    "close_date": "2026-04-22",
+    "owner": "Jacob Evans"
+  },
+  {
+    "id": "opp039",
+    "name": "Ayala-Mullins Deal",
+    "account_id": "009",
+    "amount": 830000,
+    "stage": "Closed Lost",
+    "close_date": "2026-05-13",
+    "owner": "Justin Bishop"
+  },
+  {
+    "id": "opp040",
+    "name": "Alexander Ltd Deal",
+    "account_id": "014",
+    "amount": 810000,
+    "stage": "Closed Lost",
+    "close_date": "2026-05-17",
+    "owner": "Lisa Ramos"
+  },
+  {
+    "id": "opp041",
+    "name": "Miller Inc Deal",
+    "account_id": "009",
+    "amount": 970000,
+    "stage": "Prospecting",
+    "close_date": "2026-09-13",
+    "owner": "Jeffrey Moody"
+  },
+  {
+    "id": "opp042",
+    "name": "Hill Inc Deal",
+    "account_id": "016",
+    "amount": 715000,
+    "stage": "Closed Won",
+    "close_date": "2026-07-24",
+    "owner": "Melissa Abbott"
   }
 ]

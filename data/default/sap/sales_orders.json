@@ -1,586 +1,1388 @@
 [
   {
     "order_number": "12345",
-    "customer_name": "Walker-Savage",
-    "order_date": "2026-03-18",
-    "delivery_date": "2026-04-03",
-    "status": "Shipped",
+    "customer_name": "Jordan-Williamson",
+    "order_date": "2026-03-05",
+    "delivery_date": "2026-03-11",
+    "status": "Cancelled",
     "line_items": [
       {
-        "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
-        "quantity": 42,
-        "unit_price": 125.65,
-        "total": 5277.3
+        "material_number": "MAT0012",
+        "description": "Configurable explicit Local Area Network",
+        "quantity": 33,
+        "unit_price": 1302.61,
+        "total": 42986.13
       },
       {
         "material_number": "MAT0003",
-        "description": "Synergized 4thgeneration encoding",
-        "quantity": 15,
-        "unit_price": 8013.76,
-        "total": 120206.4
+        "description": "Cross-group impactful extranet",
+        "quantity": 5,
+        "unit_price": 3938.98,
+        "total": 19694.9
       }
     ],
-    "total": 125483.7,
+    "total": 62681.03,
     "currency": "USD"
   },
   {
-    "order_number": "58717",
-    "customer_name": "Preston-Mason",
-    "order_date": "2026-04-25",
-    "delivery_date": "2026-05-25",
+    "order_number": "39372",
+    "customer_name": "Castaneda PLC",
+    "order_date": "2026-03-29",
+    "delivery_date": "2026-04-20",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0022",
+        "description": "Down-sized solution-oriented matrices",
+        "quantity": 23,
+        "unit_price": 6642.84,
+        "total": 152785.32
+      },
+      {
+        "material_number": "MAT0003",
+        "description": "Cross-group impactful extranet",
+        "quantity": 50,
+        "unit_price": 3938.98,
+        "total": 196949.0
+      },
+      {
+        "material_number": "MAT0036",
+        "description": "Up-sized content-based leverage",
+        "quantity": 18,
+        "unit_price": 7183.29,
+        "total": 129299.22
+      }
+    ],
+    "total": 479033.54,
+    "currency": "USD"
+  },
+  {
+    "order_number": "16608",
+    "customer_name": "Jackson Inc",
+    "order_date": "2026-04-04",
+    "delivery_date": "2026-05-04",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0008",
+        "description": "Networked methodical flexibility",
+        "quantity": 7,
+        "unit_price": 9840.54,
+        "total": 68883.78
+      },
+      {
+        "material_number": "MAT0040",
+        "description": "Synchronized mission-critical capacity",
+        "quantity": 40,
+        "unit_price": 3273.2,
+        "total": 130928.0
+      },
+      {
+        "material_number": "MAT0007",
+        "description": "Synchronized bandwidth-monitored hub",
+        "quantity": 36,
+        "unit_price": 3279.62,
+        "total": 118066.32
+      },
+      {
+        "material_number": "MAT0003",
+        "description": "Cross-group impactful extranet",
+        "quantity": 33,
+        "unit_price": 3938.98,
+        "total": 129986.34
+      }
+    ],
+    "total": 447864.44,
+    "currency": "USD"
+  },
+  {
+    "order_number": "57400",
+    "customer_name": "Cox, Fuentes and Martinez",
+    "order_date": "2026-05-10",
+    "delivery_date": "2026-05-19",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0029",
+        "description": "Organized optimal encryption",
+        "quantity": 49,
+        "unit_price": 4835.72,
+        "total": 236950.28
+      },
+      {
+        "material_number": "MAT0033",
+        "description": "Progressive 3rdgeneration interface",
+        "quantity": 32,
+        "unit_price": 5179.7,
+        "total": 165750.4
+      },
+      {
+        "material_number": "MAT0007",
+        "description": "Synchronized bandwidth-monitored hub",
+        "quantity": 10,
+        "unit_price": 3279.62,
+        "total": 32796.2
+      }
+    ],
+    "total": 435496.88,
+    "currency": "USD"
+  },
+  {
+    "order_number": "64493",
+    "customer_name": "Miller LLC",
+    "order_date": "2026-05-30",
+    "delivery_date": "2026-06-24",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0031",
+        "description": "User-centric optimal policy",
+        "quantity": 22,
+        "unit_price": 4769.4,
+        "total": 104926.8
+      },
+      {
+        "material_number": "MAT0019",
+        "description": "Versatile static knowledge user",
+        "quantity": 33,
+        "unit_price": 4347.43,
+        "total": 143465.19
+      }
+    ],
+    "total": 248391.99,
+    "currency": "USD"
+  },
+  {
+    "order_number": "57270",
+    "customer_name": "Taylor Group",
+    "order_date": "2026-03-11",
+    "delivery_date": "2026-03-27",
     "status": "Delivered",
     "line_items": [
       {
         "material_number": "MAT0010",
-        "description": "Monitored logistical extranet",
-        "quantity": 30,
-        "unit_price": 7651.38,
-        "total": 229541.4
-      },
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 31,
-        "unit_price": 5735.44,
-        "total": 177798.64
-      },
-      {
-        "material_number": "MAT0002",
-        "description": "Grass-roots holistic Local Area Network",
-        "quantity": 41,
-        "unit_price": 6508.81,
-        "total": 266861.21
-      },
-      {
-        "material_number": "MAT0019",
-        "description": "Synchronized heuristic middleware",
-        "quantity": 38,
-        "unit_price": 2790.84,
-        "total": 106051.92
-      },
-      {
-        "material_number": "MAT0020",
-        "description": "Enterprise-wide explicit attitude",
-        "quantity": 5,
-        "unit_price": 2101.94,
-        "total": 10509.7
-      }
-    ],
-    "total": 790762.87,
-    "currency": "USD"
-  },
-  {
-    "order_number": "79446",
-    "customer_name": "Stewart Ltd",
-    "order_date": "2026-04-20",
-    "delivery_date": "2026-04-28",
-    "status": "Open",
-    "line_items": [
-      {
-        "material_number": "MAT0002",
-        "description": "Grass-roots holistic Local Area Network",
-        "quantity": 10,
-        "unit_price": 6508.81,
-        "total": 65088.1
-      },
-      {
-        "material_number": "MAT0005",
-        "description": "Fundamental value-added solution",
-        "quantity": 13,
-        "unit_price": 4675.3,
-        "total": 60778.9
-      },
-      {
-        "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
-        "quantity": 27,
-        "unit_price": 125.65,
-        "total": 3392.55
-      },
-      {
-        "material_number": "MAT0019",
-        "description": "Synchronized heuristic middleware",
-        "quantity": 30,
-        "unit_price": 2790.84,
-        "total": 83725.2
-      }
-    ],
-    "total": 212984.75,
-    "currency": "USD"
-  },
-  {
-    "order_number": "73908",
-    "customer_name": "Hill-Juarez",
-    "order_date": "2026-04-16",
-    "delivery_date": "2026-04-24",
-    "status": "Cancelled",
-    "line_items": [
-      {
-        "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
-        "quantity": 41,
-        "unit_price": 125.65,
-        "total": 5151.65
-      },
-      {
-        "material_number": "MAT0002",
-        "description": "Grass-roots holistic Local Area Network",
-        "quantity": 1,
-        "unit_price": 6508.81,
-        "total": 6508.81
-      }
-    ],
-    "total": 11660.46,
-    "currency": "USD"
-  },
-  {
-    "order_number": "30766",
-    "customer_name": "Schultz-Powell",
-    "order_date": "2026-03-27",
-    "delivery_date": "2026-04-14",
-    "status": "Delivered",
-    "line_items": [
-      {
-        "material_number": "MAT0005",
-        "description": "Fundamental value-added solution",
-        "quantity": 40,
-        "unit_price": 4675.3,
-        "total": 187012.0
-      }
-    ],
-    "total": 187012.0,
-    "currency": "USD"
-  },
-  {
-    "order_number": "10611",
-    "customer_name": "Sims and Sons",
-    "order_date": "2026-05-24",
-    "delivery_date": "2026-06-03",
-    "status": "Shipped",
-    "line_items": [
-      {
-        "material_number": "MAT0007",
-        "description": "Synergistic demand-driven flexibility",
-        "quantity": 47,
-        "unit_price": 8414.2,
-        "total": 395467.4
-      },
-      {
-        "material_number": "MAT0012",
-        "description": "Realigned secondary policy",
-        "quantity": 1,
-        "unit_price": 4636.38,
-        "total": 4636.38
-      },
-      {
-        "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
+        "description": "Cross-group 6thgeneration migration",
         "quantity": 49,
-        "unit_price": 125.65,
-        "total": 6156.85
+        "unit_price": 7599.86,
+        "total": 372393.14
       },
       {
-        "material_number": "MAT0017",
-        "description": "Operative impactful info-mediaries",
-        "quantity": 13,
-        "unit_price": 9557.9,
-        "total": 124252.7
+        "material_number": "MAT0034",
+        "description": "Future-proofed secondary instruction set",
+        "quantity": 27,
+        "unit_price": 1920.63,
+        "total": 51857.01
+      }
+    ],
+    "total": 424250.15,
+    "currency": "USD"
+  },
+  {
+    "order_number": "70129",
+    "customer_name": "Acevedo, Miller and Edwards",
+    "order_date": "2026-03-25",
+    "delivery_date": "2026-04-21",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0002",
+        "description": "Inverse analyzing synergy",
+        "quantity": 29,
+        "unit_price": 8969.77,
+        "total": 260123.33
+      },
+      {
+        "material_number": "MAT0010",
+        "description": "Cross-group 6thgeneration migration",
+        "quantity": 50,
+        "unit_price": 7599.86,
+        "total": 379993.0
       },
       {
         "material_number": "MAT0001",
-        "description": "Fully-configurable 5thgeneration knowledgebase",
-        "quantity": 44,
-        "unit_price": 5909.9,
-        "total": 260035.6
+        "description": "Upgradable non-volatile capacity",
+        "quantity": 46,
+        "unit_price": 802.82,
+        "total": 36929.72
       }
     ],
-    "total": 790548.93,
+    "total": 677046.05,
     "currency": "USD"
   },
   {
-    "order_number": "50906",
-    "customer_name": "Torres, Brown and Williams",
-    "order_date": "2026-05-12",
-    "delivery_date": "2026-05-24",
-    "status": "Delivered",
-    "line_items": [
-      {
-        "material_number": "MAT0013",
-        "description": "Polarized asymmetric Graphical User Interface",
-        "quantity": 33,
-        "unit_price": 5332.35,
-        "total": 175967.55
-      }
-    ],
-    "total": 175967.55,
-    "currency": "USD"
-  },
-  {
-    "order_number": "78195",
-    "customer_name": "Walker and Sons",
-    "order_date": "2026-03-13",
-    "delivery_date": "2026-03-22",
-    "status": "Open",
-    "line_items": [
-      {
-        "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
-        "quantity": 28,
-        "unit_price": 125.65,
-        "total": 3518.2
-      },
-      {
-        "material_number": "MAT0005",
-        "description": "Fundamental value-added solution",
-        "quantity": 22,
-        "unit_price": 4675.3,
-        "total": 102856.6
-      },
-      {
-        "material_number": "MAT0016",
-        "description": "Synergized client-driven success",
-        "quantity": 23,
-        "unit_price": 8153.37,
-        "total": 187527.51
-      },
-      {
-        "material_number": "MAT0007",
-        "description": "Synergistic demand-driven flexibility",
-        "quantity": 11,
-        "unit_price": 8414.2,
-        "total": 92556.2
-      },
-      {
-        "material_number": "MAT0013",
-        "description": "Polarized asymmetric Graphical User Interface",
-        "quantity": 2,
-        "unit_price": 5332.35,
-        "total": 10664.7
-      }
-    ],
-    "total": 397123.21,
-    "currency": "USD"
-  },
-  {
-    "order_number": "87292",
-    "customer_name": "Scott, Nichols and Williams",
-    "order_date": "2026-03-25",
-    "delivery_date": "2026-03-29",
-    "status": "Open",
-    "line_items": [
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 24,
-        "unit_price": 5735.44,
-        "total": 137650.56
-      },
-      {
-        "material_number": "MAT0002",
-        "description": "Grass-roots holistic Local Area Network",
-        "quantity": 25,
-        "unit_price": 6508.81,
-        "total": 162720.25
-      }
-    ],
-    "total": 300370.81,
-    "currency": "USD"
-  },
-  {
-    "order_number": "95664",
-    "customer_name": "James-Kelley",
-    "order_date": "2026-05-26",
-    "delivery_date": "2026-06-13",
-    "status": "In Progress",
-    "line_items": [
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 27,
-        "unit_price": 5735.44,
-        "total": 154856.88
-      }
-    ],
-    "total": 154856.88,
-    "currency": "USD"
-  },
-  {
-    "order_number": "36934",
-    "customer_name": "Garcia, Meyer and Dean",
-    "order_date": "2026-03-01",
-    "delivery_date": "2026-03-26",
-    "status": "In Progress",
-    "line_items": [
-      {
-        "material_number": "MAT0010",
-        "description": "Monitored logistical extranet",
-        "quantity": 27,
-        "unit_price": 7651.38,
-        "total": 206587.26
-      }
-    ],
-    "total": 206587.26,
-    "currency": "USD"
-  },
-  {
-    "order_number": "64896",
-    "customer_name": "Decker-Dudley",
-    "order_date": "2026-05-15",
-    "delivery_date": "2026-05-29",
-    "status": "Delivered",
-    "line_items": [
-      {
-        "material_number": "MAT0020",
-        "description": "Enterprise-wide explicit attitude",
-        "quantity": 8,
-        "unit_price": 2101.94,
-        "total": 16815.52
-      },
-      {
-        "material_number": "MAT0010",
-        "description": "Monitored logistical extranet",
-        "quantity": 8,
-        "unit_price": 7651.38,
-        "total": 61211.04
-      },
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 32,
-        "unit_price": 5735.44,
-        "total": 183534.08
-      },
-      {
-        "material_number": "MAT0007",
-        "description": "Synergistic demand-driven flexibility",
-        "quantity": 39,
-        "unit_price": 8414.2,
-        "total": 328153.8
-      },
-      {
-        "material_number": "MAT0007",
-        "description": "Synergistic demand-driven flexibility",
-        "quantity": 50,
-        "unit_price": 8414.2,
-        "total": 420710.0
-      }
-    ],
-    "total": 1010424.44,
-    "currency": "USD"
-  },
-  {
-    "order_number": "48712",
-    "customer_name": "Watts Group",
-    "order_date": "2026-05-08",
-    "delivery_date": "2026-05-21",
-    "status": "In Progress",
-    "line_items": [
-      {
-        "material_number": "MAT0018",
-        "description": "Ergonomic global success",
-        "quantity": 32,
-        "unit_price": 8764.81,
-        "total": 280473.92
-      }
-    ],
-    "total": 280473.92,
-    "currency": "USD"
-  },
-  {
-    "order_number": "10358",
-    "customer_name": "Snyder, Herring and Chan",
-    "order_date": "2026-05-27",
-    "delivery_date": "2026-06-01",
-    "status": "Open",
-    "line_items": [
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 37,
-        "unit_price": 5735.44,
-        "total": 212211.28
-      }
-    ],
-    "total": 212211.28,
-    "currency": "USD"
-  },
-  {
-    "order_number": "43540",
-    "customer_name": "Garcia and Sons",
-    "order_date": "2026-03-07",
-    "delivery_date": "2026-04-06",
-    "status": "Open",
-    "line_items": [
-      {
-        "material_number": "MAT0015",
-        "description": "Virtual disintermediate approach",
-        "quantity": 19,
-        "unit_price": 6625.84,
-        "total": 125890.96
-      },
-      {
-        "material_number": "MAT0009",
-        "description": "Function-based real-time workforce",
-        "quantity": 30,
-        "unit_price": 4516.54,
-        "total": 135496.2
-      }
-    ],
-    "total": 261387.16,
-    "currency": "USD"
-  },
-  {
-    "order_number": "48085",
-    "customer_name": "Alvarado and Sons",
-    "order_date": "2026-04-12",
-    "delivery_date": "2026-04-25",
-    "status": "Shipped",
-    "line_items": [
-      {
-        "material_number": "MAT0014",
-        "description": "Streamlined transitional projection",
-        "quantity": 48,
-        "unit_price": 3091.19,
-        "total": 148377.12
-      },
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 7,
-        "unit_price": 5735.44,
-        "total": 40148.08
-      },
-      {
-        "material_number": "MAT0002",
-        "description": "Grass-roots holistic Local Area Network",
-        "quantity": 1,
-        "unit_price": 6508.81,
-        "total": 6508.81
-      }
-    ],
-    "total": 195034.01,
-    "currency": "USD"
-  },
-  {
-    "order_number": "67372",
-    "customer_name": "Rivers-Nelson",
-    "order_date": "2026-03-10",
-    "delivery_date": "2026-03-25",
-    "status": "Delivered",
-    "line_items": [
-      {
-        "material_number": "MAT0003",
-        "description": "Synergized 4thgeneration encoding",
-        "quantity": 24,
-        "unit_price": 8013.76,
-        "total": 192330.24
-      },
-      {
-        "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
-        "quantity": 12,
-        "unit_price": 125.65,
-        "total": 1507.8
-      },
-      {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 26,
-        "unit_price": 5735.44,
-        "total": 149121.44
-      }
-    ],
-    "total": 342959.48,
-    "currency": "USD"
-  },
-  {
-    "order_number": "65278",
-    "customer_name": "Perry PLC",
-    "order_date": "2026-03-06",
-    "delivery_date": "2026-03-24",
+    "order_number": "66894",
+    "customer_name": "Liu, Kaufman and Barnes",
+    "order_date": "2026-05-23",
+    "delivery_date": "2026-06-16",
     "status": "Cancelled",
     "line_items": [
       {
-        "material_number": "MAT0004",
-        "description": "Enhanced methodical parallelism",
-        "quantity": 9,
-        "unit_price": 5735.44,
-        "total": 51618.96
+        "material_number": "MAT0003",
+        "description": "Cross-group impactful extranet",
+        "quantity": 43,
+        "unit_price": 3938.98,
+        "total": 169376.14
       },
       {
-        "material_number": "MAT0002",
-        "description": "Grass-roots holistic Local Area Network",
-        "quantity": 11,
-        "unit_price": 6508.81,
-        "total": 71596.91
+        "material_number": "MAT0042",
+        "description": "Expanded next generation application",
+        "quantity": 10,
+        "unit_price": 5883.33,
+        "total": 58833.3
+      },
+      {
+        "material_number": "MAT0037",
+        "description": "Face-to-face optimizing software",
+        "quantity": 4,
+        "unit_price": 9869.91,
+        "total": 39479.64
+      },
+      {
+        "material_number": "MAT0041",
+        "description": "Pre-emptive bandwidth-monitored utilization",
+        "quantity": 46,
+        "unit_price": 8094.38,
+        "total": 372341.48
       }
     ],
-    "total": 123215.87,
+    "total": 640030.56,
     "currency": "USD"
   },
   {
-    "order_number": "98918",
-    "customer_name": "Huffman Ltd",
-    "order_date": "2026-04-02",
-    "delivery_date": "2026-04-09",
-    "status": "Delivered",
+    "order_number": "49888",
+    "customer_name": "Griffin-Harris",
+    "order_date": "2026-04-20",
+    "delivery_date": "2026-05-10",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0001",
+        "description": "Upgradable non-volatile capacity",
+        "quantity": 18,
+        "unit_price": 802.82,
+        "total": 14450.76
+      },
+      {
+        "material_number": "MAT0034",
+        "description": "Future-proofed secondary instruction set",
+        "quantity": 40,
+        "unit_price": 1920.63,
+        "total": 76825.2
+      },
+      {
+        "material_number": "MAT0010",
+        "description": "Cross-group 6thgeneration migration",
+        "quantity": 45,
+        "unit_price": 7599.86,
+        "total": 341993.7
+      }
+    ],
+    "total": 433269.66,
+    "currency": "USD"
+  },
+  {
+    "order_number": "91027",
+    "customer_name": "Cook, Hardy and Singh",
+    "order_date": "2026-03-08",
+    "delivery_date": "2026-03-15",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0023",
+        "description": "Up-sized mobile framework",
+        "quantity": 42,
+        "unit_price": 5915.88,
+        "total": 248466.96
+      },
+      {
+        "material_number": "MAT0026",
+        "description": "Streamlined disintermediate Internet solution",
+        "quantity": 50,
+        "unit_price": 3132.11,
+        "total": 156605.5
+      },
+      {
+        "material_number": "MAT0013",
+        "description": "Distributed clear-thinking software",
+        "quantity": 20,
+        "unit_price": 4078.66,
+        "total": 81573.2
+      },
+      {
+        "material_number": "MAT0006",
+        "description": "Optional user-facing workforce",
+        "quantity": 3,
+        "unit_price": 9892.16,
+        "total": 29676.48
+      }
+    ],
+    "total": 516322.14,
+    "currency": "USD"
+  },
+  {
+    "order_number": "80882",
+    "customer_name": "Peterson, Reid and Johnson",
+    "order_date": "2026-04-24",
+    "delivery_date": "2026-05-22",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0006",
+        "description": "Optional user-facing workforce",
+        "quantity": 33,
+        "unit_price": 9892.16,
+        "total": 326441.28
+      },
+      {
+        "material_number": "MAT0036",
+        "description": "Up-sized content-based leverage",
+        "quantity": 20,
+        "unit_price": 7183.29,
+        "total": 143665.8
+      }
+    ],
+    "total": 470107.08,
+    "currency": "USD"
+  },
+  {
+    "order_number": "87660",
+    "customer_name": "Dennis LLC",
+    "order_date": "2026-04-27",
+    "delivery_date": "2026-05-08",
+    "status": "Cancelled",
     "line_items": [
       {
         "material_number": "MAT0020",
-        "description": "Enterprise-wide explicit attitude",
-        "quantity": 25,
-        "unit_price": 2101.94,
-        "total": 52548.5
+        "description": "Extended contextually-based artificial intelligence",
+        "quantity": 47,
+        "unit_price": 4253.86,
+        "total": 199931.42
       },
       {
-        "material_number": "MAT0012",
-        "description": "Realigned secondary policy",
-        "quantity": 40,
-        "unit_price": 4636.38,
-        "total": 185455.2
+        "material_number": "MAT0028",
+        "description": "Down-sized coherent support",
+        "quantity": 33,
+        "unit_price": 7952.6,
+        "total": 262435.8
       }
     ],
-    "total": 238003.7,
+    "total": 462367.22,
     "currency": "USD"
   },
   {
-    "order_number": "73979",
-    "customer_name": "Ray, Cunningham and Levine",
-    "order_date": "2026-05-14",
-    "delivery_date": "2026-06-07",
+    "order_number": "56461",
+    "customer_name": "Evans-Doyle",
+    "order_date": "2026-05-15",
+    "delivery_date": "2026-06-01",
     "status": "Shipped",
     "line_items": [
       {
+        "material_number": "MAT0042",
+        "description": "Expanded next generation application",
+        "quantity": 8,
+        "unit_price": 5883.33,
+        "total": 47066.64
+      }
+    ],
+    "total": 47066.64,
+    "currency": "USD"
+  },
+  {
+    "order_number": "40945",
+    "customer_name": "Klein PLC",
+    "order_date": "2026-03-17",
+    "delivery_date": "2026-04-12",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0041",
+        "description": "Pre-emptive bandwidth-monitored utilization",
+        "quantity": 43,
+        "unit_price": 8094.38,
+        "total": 348058.34
+      },
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 39,
+        "unit_price": 345.2,
+        "total": 13462.8
+      },
+      {
         "material_number": "MAT0015",
-        "description": "Virtual disintermediate approach",
+        "description": "Customer-focused multimedia interface",
+        "quantity": 23,
+        "unit_price": 1553.59,
+        "total": 35732.57
+      },
+      {
+        "material_number": "MAT0020",
+        "description": "Extended contextually-based artificial intelligence",
+        "quantity": 19,
+        "unit_price": 4253.86,
+        "total": 80823.34
+      },
+      {
+        "material_number": "MAT0037",
+        "description": "Face-to-face optimizing software",
+        "quantity": 44,
+        "unit_price": 9869.91,
+        "total": 434276.04
+      }
+    ],
+    "total": 912353.09,
+    "currency": "USD"
+  },
+  {
+    "order_number": "23792",
+    "customer_name": "Coleman and Sons",
+    "order_date": "2026-04-19",
+    "delivery_date": "2026-05-07",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0038",
+        "description": "De-engineered explicit success",
+        "quantity": 13,
+        "unit_price": 6834.86,
+        "total": 88853.18
+      },
+      {
+        "material_number": "MAT0024",
+        "description": "Innovative background capacity",
+        "quantity": 30,
+        "unit_price": 232.24,
+        "total": 6967.2
+      },
+      {
+        "material_number": "MAT0007",
+        "description": "Synchronized bandwidth-monitored hub",
+        "quantity": 10,
+        "unit_price": 3279.62,
+        "total": 32796.2
+      },
+      {
+        "material_number": "MAT0028",
+        "description": "Down-sized coherent support",
+        "quantity": 27,
+        "unit_price": 7952.6,
+        "total": 214720.2
+      },
+      {
+        "material_number": "MAT0006",
+        "description": "Optional user-facing workforce",
+        "quantity": 6,
+        "unit_price": 9892.16,
+        "total": 59352.96
+      }
+    ],
+    "total": 402689.74,
+    "currency": "USD"
+  },
+  {
+    "order_number": "68479",
+    "customer_name": "Wiggins-Silva",
+    "order_date": "2026-05-21",
+    "delivery_date": "2026-06-13",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0034",
+        "description": "Future-proofed secondary instruction set",
+        "quantity": 26,
+        "unit_price": 1920.63,
+        "total": 49936.38
+      },
+      {
+        "material_number": "MAT0038",
+        "description": "De-engineered explicit success",
+        "quantity": 36,
+        "unit_price": 6834.86,
+        "total": 246054.96
+      },
+      {
+        "material_number": "MAT0034",
+        "description": "Future-proofed secondary instruction set",
+        "quantity": 50,
+        "unit_price": 1920.63,
+        "total": 96031.5
+      }
+    ],
+    "total": 392022.84,
+    "currency": "USD"
+  },
+  {
+    "order_number": "67682",
+    "customer_name": "Palmer, Rice and Benson",
+    "order_date": "2026-03-03",
+    "delivery_date": "2026-03-20",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0027",
+        "description": "Visionary maximized circuit",
+        "quantity": 11,
+        "unit_price": 6917.2,
+        "total": 76089.2
+      },
+      {
+        "material_number": "MAT0010",
+        "description": "Cross-group 6thgeneration migration",
+        "quantity": 33,
+        "unit_price": 7599.86,
+        "total": 250795.38
+      },
+      {
+        "material_number": "MAT0009",
+        "description": "Versatile interactive workforce",
+        "quantity": 32,
+        "unit_price": 3058.55,
+        "total": 97873.6
+      },
+      {
+        "material_number": "MAT0030",
+        "description": "Business-focused full-range access",
+        "quantity": 9,
+        "unit_price": 7079.53,
+        "total": 63715.77
+      }
+    ],
+    "total": 488473.95,
+    "currency": "USD"
+  },
+  {
+    "order_number": "14273",
+    "customer_name": "Hernandez, Watson and Ritter",
+    "order_date": "2026-05-10",
+    "delivery_date": "2026-05-22",
+    "status": "Shipped",
+    "line_items": [
+      {
+        "material_number": "MAT0024",
+        "description": "Innovative background capacity",
+        "quantity": 8,
+        "unit_price": 232.24,
+        "total": 1857.92
+      },
+      {
+        "material_number": "MAT0039",
+        "description": "Phased cohesive process improvement",
+        "quantity": 27,
+        "unit_price": 4632.88,
+        "total": 125087.76
+      },
+      {
+        "material_number": "MAT0008",
+        "description": "Networked methodical flexibility",
+        "quantity": 8,
+        "unit_price": 9840.54,
+        "total": 78724.32
+      },
+      {
+        "material_number": "MAT0024",
+        "description": "Innovative background capacity",
+        "quantity": 37,
+        "unit_price": 232.24,
+        "total": 8592.88
+      },
+      {
+        "material_number": "MAT0019",
+        "description": "Versatile static knowledge user",
         "quantity": 3,
-        "unit_price": 6625.84,
-        "total": 19877.52
+        "unit_price": 4347.43,
+        "total": 13042.29
+      }
+    ],
+    "total": 227305.17,
+    "currency": "USD"
+  },
+  {
+    "order_number": "73691",
+    "customer_name": "Small-Lewis",
+    "order_date": "2026-05-27",
+    "delivery_date": "2026-06-25",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0010",
+        "description": "Cross-group 6thgeneration migration",
+        "quantity": 38,
+        "unit_price": 7599.86,
+        "total": 288794.68
+      },
+      {
+        "material_number": "MAT0027",
+        "description": "Visionary maximized circuit",
+        "quantity": 4,
+        "unit_price": 6917.2,
+        "total": 27668.8
+      }
+    ],
+    "total": 316463.48,
+    "currency": "USD"
+  },
+  {
+    "order_number": "10273",
+    "customer_name": "Alvarez-Cortez",
+    "order_date": "2026-05-15",
+    "delivery_date": "2026-06-06",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0023",
+        "description": "Up-sized mobile framework",
+        "quantity": 5,
+        "unit_price": 5915.88,
+        "total": 29579.4
       },
       {
         "material_number": "MAT0003",
-        "description": "Synergized 4thgeneration encoding",
-        "quantity": 17,
-        "unit_price": 8013.76,
-        "total": 136233.92
+        "description": "Cross-group impactful extranet",
+        "quantity": 27,
+        "unit_price": 3938.98,
+        "total": 106352.46
+      },
+      {
+        "material_number": "MAT0031",
+        "description": "User-centric optimal policy",
+        "quantity": 37,
+        "unit_price": 4769.4,
+        "total": 176467.8
+      },
+      {
+        "material_number": "MAT0020",
+        "description": "Extended contextually-based artificial intelligence",
+        "quantity": 37,
+        "unit_price": 4253.86,
+        "total": 157392.82
+      },
+      {
+        "material_number": "MAT0029",
+        "description": "Organized optimal encryption",
+        "quantity": 22,
+        "unit_price": 4835.72,
+        "total": 106385.84
+      }
+    ],
+    "total": 576178.32,
+    "currency": "USD"
+  },
+  {
+    "order_number": "28156",
+    "customer_name": "Ortiz, Hall and Foster",
+    "order_date": "2026-03-27",
+    "delivery_date": "2026-04-16",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0029",
+        "description": "Organized optimal encryption",
+        "quantity": 43,
+        "unit_price": 4835.72,
+        "total": 207935.96
+      },
+      {
+        "material_number": "MAT0029",
+        "description": "Organized optimal encryption",
+        "quantity": 10,
+        "unit_price": 4835.72,
+        "total": 48357.2
+      },
+      {
+        "material_number": "MAT0021",
+        "description": "Optional national adapter",
+        "quantity": 6,
+        "unit_price": 6475.14,
+        "total": 38850.84
+      },
+      {
+        "material_number": "MAT0040",
+        "description": "Synchronized mission-critical capacity",
+        "quantity": 43,
+        "unit_price": 3273.2,
+        "total": 140747.6
+      }
+    ],
+    "total": 435891.6,
+    "currency": "USD"
+  },
+  {
+    "order_number": "97876",
+    "customer_name": "Hogan, Zimmerman and Hoffman",
+    "order_date": "2026-04-04",
+    "delivery_date": "2026-04-10",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0042",
+        "description": "Expanded next generation application",
+        "quantity": 6,
+        "unit_price": 5883.33,
+        "total": 35299.98
       },
       {
         "material_number": "MAT0011",
-        "description": "Secured hybrid paradigm",
-        "quantity": 1,
-        "unit_price": 125.65,
-        "total": 125.65
+        "description": "Stand-alone systemic structure",
+        "quantity": 46,
+        "unit_price": 8120.67,
+        "total": 373550.82
+      },
+      {
+        "material_number": "MAT0002",
+        "description": "Inverse analyzing synergy",
+        "quantity": 37,
+        "unit_price": 8969.77,
+        "total": 331881.49
+      }
+    ],
+    "total": 740732.29,
+    "currency": "USD"
+  },
+  {
+    "order_number": "21161",
+    "customer_name": "Mayer, White and Smith",
+    "order_date": "2026-05-06",
+    "delivery_date": "2026-06-03",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 37,
+        "unit_price": 345.2,
+        "total": 12772.4
+      },
+      {
+        "material_number": "MAT0004",
+        "description": "Cross-group 3rdgeneration database",
+        "quantity": 37,
+        "unit_price": 6370.99,
+        "total": 235726.63
+      },
+      {
+        "material_number": "MAT0034",
+        "description": "Future-proofed secondary instruction set",
+        "quantity": 13,
+        "unit_price": 1920.63,
+        "total": 24968.19
+      },
+      {
+        "material_number": "MAT0031",
+        "description": "User-centric optimal policy",
+        "quantity": 33,
+        "unit_price": 4769.4,
+        "total": 157390.2
+      },
+      {
+        "material_number": "MAT0002",
+        "description": "Inverse analyzing synergy",
+        "quantity": 8,
+        "unit_price": 8969.77,
+        "total": 71758.16
+      }
+    ],
+    "total": 502615.58,
+    "currency": "USD"
+  },
+  {
+    "order_number": "42150",
+    "customer_name": "Kim-Perry",
+    "order_date": "2026-03-01",
+    "delivery_date": "2026-03-31",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0029",
+        "description": "Organized optimal encryption",
+        "quantity": 6,
+        "unit_price": 4835.72,
+        "total": 29014.32
+      },
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 39,
+        "unit_price": 345.2,
+        "total": 13462.8
+      },
+      {
+        "material_number": "MAT0021",
+        "description": "Optional national adapter",
+        "quantity": 26,
+        "unit_price": 6475.14,
+        "total": 168353.64
+      },
+      {
+        "material_number": "MAT0038",
+        "description": "De-engineered explicit success",
+        "quantity": 3,
+        "unit_price": 6834.86,
+        "total": 20504.58
+      },
+      {
+        "material_number": "MAT0032",
+        "description": "Open-architected mobile migration",
+        "quantity": 2,
+        "unit_price": 7998.29,
+        "total": 15996.58
+      }
+    ],
+    "total": 247331.92,
+    "currency": "USD"
+  },
+  {
+    "order_number": "51599",
+    "customer_name": "White Inc",
+    "order_date": "2026-04-12",
+    "delivery_date": "2026-04-19",
+    "status": "Shipped",
+    "line_items": [
+      {
+        "material_number": "MAT0006",
+        "description": "Optional user-facing workforce",
+        "quantity": 8,
+        "unit_price": 9892.16,
+        "total": 79137.28
+      },
+      {
+        "material_number": "MAT0007",
+        "description": "Synchronized bandwidth-monitored hub",
+        "quantity": 35,
+        "unit_price": 3279.62,
+        "total": 114786.7
+      },
+      {
+        "material_number": "MAT0011",
+        "description": "Stand-alone systemic structure",
+        "quantity": 19,
+        "unit_price": 8120.67,
+        "total": 154292.73
+      }
+    ],
+    "total": 348216.71,
+    "currency": "USD"
+  },
+  {
+    "order_number": "63382",
+    "customer_name": "Reeves LLC",
+    "order_date": "2026-03-05",
+    "delivery_date": "2026-03-20",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0004",
+        "description": "Cross-group 3rdgeneration database",
+        "quantity": 40,
+        "unit_price": 6370.99,
+        "total": 254839.6
+      },
+      {
+        "material_number": "MAT0021",
+        "description": "Optional national adapter",
+        "quantity": 12,
+        "unit_price": 6475.14,
+        "total": 77701.68
+      }
+    ],
+    "total": 332541.28,
+    "currency": "USD"
+  },
+  {
+    "order_number": "51948",
+    "customer_name": "Willis, Vasquez and Goodwin",
+    "order_date": "2026-05-12",
+    "delivery_date": "2026-05-27",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0021",
+        "description": "Optional national adapter",
+        "quantity": 17,
+        "unit_price": 6475.14,
+        "total": 110077.38
+      },
+      {
+        "material_number": "MAT0025",
+        "description": "Ameliorated tangible core",
+        "quantity": 8,
+        "unit_price": 3433.61,
+        "total": 27468.88
+      },
+      {
+        "material_number": "MAT0004",
+        "description": "Cross-group 3rdgeneration database",
+        "quantity": 13,
+        "unit_price": 6370.99,
+        "total": 82822.87
+      },
+      {
+        "material_number": "MAT0016",
+        "description": "Function-based heuristic extranet",
+        "quantity": 49,
+        "unit_price": 1344.98,
+        "total": 65904.02
+      }
+    ],
+    "total": 286273.15,
+    "currency": "USD"
+  },
+  {
+    "order_number": "45296",
+    "customer_name": "Schultz-Mcintyre",
+    "order_date": "2026-05-23",
+    "delivery_date": "2026-05-26",
+    "status": "Shipped",
+    "line_items": [
+      {
+        "material_number": "MAT0030",
+        "description": "Business-focused full-range access",
+        "quantity": 36,
+        "unit_price": 7079.53,
+        "total": 254863.08
+      },
+      {
+        "material_number": "MAT0027",
+        "description": "Visionary maximized circuit",
+        "quantity": 5,
+        "unit_price": 6917.2,
+        "total": 34586.0
+      },
+      {
+        "material_number": "MAT0031",
+        "description": "User-centric optimal policy",
+        "quantity": 2,
+        "unit_price": 4769.4,
+        "total": 9538.8
+      }
+    ],
+    "total": 298987.88,
+    "currency": "USD"
+  },
+  {
+    "order_number": "82623",
+    "customer_name": "Pearson, Martinez and Carroll",
+    "order_date": "2026-03-16",
+    "delivery_date": "2026-04-02",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0016",
+        "description": "Function-based heuristic extranet",
+        "quantity": 49,
+        "unit_price": 1344.98,
+        "total": 65904.02
+      }
+    ],
+    "total": 65904.02,
+    "currency": "USD"
+  },
+  {
+    "order_number": "93335",
+    "customer_name": "Medina Group",
+    "order_date": "2026-03-27",
+    "delivery_date": "2026-04-16",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0010",
+        "description": "Cross-group 6thgeneration migration",
+        "quantity": 24,
+        "unit_price": 7599.86,
+        "total": 182396.64
+      },
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 11,
+        "unit_price": 345.2,
+        "total": 3797.2
+      }
+    ],
+    "total": 186193.84,
+    "currency": "USD"
+  },
+  {
+    "order_number": "15477",
+    "customer_name": "King, Frazier and Kidd",
+    "order_date": "2026-05-30",
+    "delivery_date": "2026-06-28",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0040",
+        "description": "Synchronized mission-critical capacity",
+        "quantity": 19,
+        "unit_price": 3273.2,
+        "total": 62190.8
+      },
+      {
+        "material_number": "MAT0042",
+        "description": "Expanded next generation application",
+        "quantity": 11,
+        "unit_price": 5883.33,
+        "total": 64716.63
+      },
+      {
+        "material_number": "MAT0001",
+        "description": "Upgradable non-volatile capacity",
+        "quantity": 4,
+        "unit_price": 802.82,
+        "total": 3211.28
+      },
+      {
+        "material_number": "MAT0031",
+        "description": "User-centric optimal policy",
+        "quantity": 18,
+        "unit_price": 4769.4,
+        "total": 85849.2
+      }
+    ],
+    "total": 215967.91,
+    "currency": "USD"
+  },
+  {
+    "order_number": "86697",
+    "customer_name": "Foster Inc",
+    "order_date": "2026-03-26",
+    "delivery_date": "2026-04-24",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0003",
+        "description": "Cross-group impactful extranet",
+        "quantity": 11,
+        "unit_price": 3938.98,
+        "total": 43328.78
+      },
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 37,
+        "unit_price": 345.2,
+        "total": 12772.4
+      },
+      {
+        "material_number": "MAT0005",
+        "description": "Horizontal secondary system engine",
+        "quantity": 20,
+        "unit_price": 1980.38,
+        "total": 39607.6
+      }
+    ],
+    "total": 95708.78,
+    "currency": "USD"
+  },
+  {
+    "order_number": "82938",
+    "customer_name": "Chavez, Sanchez and Bird",
+    "order_date": "2026-04-25",
+    "delivery_date": "2026-05-08",
+    "status": "In Progress",
+    "line_items": [
+      {
+        "material_number": "MAT0014",
+        "description": "Implemented non-volatile application",
+        "quantity": 40,
+        "unit_price": 1258.5,
+        "total": 50340.0
+      },
+      {
+        "material_number": "MAT0033",
+        "description": "Progressive 3rdgeneration interface",
+        "quantity": 21,
+        "unit_price": 5179.7,
+        "total": 108773.7
+      },
+      {
+        "material_number": "MAT0022",
+        "description": "Down-sized solution-oriented matrices",
+        "quantity": 41,
+        "unit_price": 6642.84,
+        "total": 272356.44
       },
       {
         "material_number": "MAT0017",
-        "description": "Operative impactful info-mediaries",
-        "quantity": 50,
-        "unit_price": 9557.9,
-        "total": 477895.0
+        "description": "Ameliorated bifurcated support",
+        "quantity": 49,
+        "unit_price": 2946.23,
+        "total": 144365.27
       }
     ],
-    "total": 634132.09,
+    "total": 575835.41,
+    "currency": "USD"
+  },
+  {
+    "order_number": "70266",
+    "customer_name": "Smith-Smith",
+    "order_date": "2026-03-15",
+    "delivery_date": "2026-03-23",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0002",
+        "description": "Inverse analyzing synergy",
+        "quantity": 45,
+        "unit_price": 8969.77,
+        "total": 403639.65
+      },
+      {
+        "material_number": "MAT0009",
+        "description": "Versatile interactive workforce",
+        "quantity": 42,
+        "unit_price": 3058.55,
+        "total": 128459.1
+      },
+      {
+        "material_number": "MAT0001",
+        "description": "Upgradable non-volatile capacity",
+        "quantity": 39,
+        "unit_price": 802.82,
+        "total": 31309.98
+      }
+    ],
+    "total": 563408.73,
+    "currency": "USD"
+  },
+  {
+    "order_number": "82848",
+    "customer_name": "Wallace, Martinez and Stanton",
+    "order_date": "2026-03-02",
+    "delivery_date": "2026-03-17",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0026",
+        "description": "Streamlined disintermediate Internet solution",
+        "quantity": 35,
+        "unit_price": 3132.11,
+        "total": 109623.85
+      },
+      {
+        "material_number": "MAT0006",
+        "description": "Optional user-facing workforce",
+        "quantity": 42,
+        "unit_price": 9892.16,
+        "total": 415470.72
+      },
+      {
+        "material_number": "MAT0042",
+        "description": "Expanded next generation application",
+        "quantity": 5,
+        "unit_price": 5883.33,
+        "total": 29416.65
+      },
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 2,
+        "unit_price": 345.2,
+        "total": 690.4
+      }
+    ],
+    "total": 555201.62,
+    "currency": "USD"
+  },
+  {
+    "order_number": "56919",
+    "customer_name": "Wallace and Sons",
+    "order_date": "2026-04-11",
+    "delivery_date": "2026-05-07",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0001",
+        "description": "Upgradable non-volatile capacity",
+        "quantity": 8,
+        "unit_price": 802.82,
+        "total": 6422.56
+      },
+      {
+        "material_number": "MAT0030",
+        "description": "Business-focused full-range access",
+        "quantity": 24,
+        "unit_price": 7079.53,
+        "total": 169908.72
+      }
+    ],
+    "total": 176331.28,
+    "currency": "USD"
+  },
+  {
+    "order_number": "46848",
+    "customer_name": "Young Group",
+    "order_date": "2026-03-04",
+    "delivery_date": "2026-03-18",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0013",
+        "description": "Distributed clear-thinking software",
+        "quantity": 6,
+        "unit_price": 4078.66,
+        "total": 24471.96
+      },
+      {
+        "material_number": "MAT0040",
+        "description": "Synchronized mission-critical capacity",
+        "quantity": 41,
+        "unit_price": 3273.2,
+        "total": 134201.2
+      },
+      {
+        "material_number": "MAT0020",
+        "description": "Extended contextually-based artificial intelligence",
+        "quantity": 46,
+        "unit_price": 4253.86,
+        "total": 195677.56
+      }
+    ],
+    "total": 354350.72,
+    "currency": "USD"
+  },
+  {
+    "order_number": "46799",
+    "customer_name": "Arnold Ltd",
+    "order_date": "2026-03-28",
+    "delivery_date": "2026-04-23",
+    "status": "Cancelled",
+    "line_items": [
+      {
+        "material_number": "MAT0014",
+        "description": "Implemented non-volatile application",
+        "quantity": 1,
+        "unit_price": 1258.5,
+        "total": 1258.5
+      },
+      {
+        "material_number": "MAT0013",
+        "description": "Distributed clear-thinking software",
+        "quantity": 41,
+        "unit_price": 4078.66,
+        "total": 167225.06
+      },
+      {
+        "material_number": "MAT0026",
+        "description": "Streamlined disintermediate Internet solution",
+        "quantity": 8,
+        "unit_price": 3132.11,
+        "total": 25056.88
+      },
+      {
+        "material_number": "MAT0018",
+        "description": "Balanced attitude-oriented instruction set",
+        "quantity": 37,
+        "unit_price": 5148.75,
+        "total": 190503.75
+      },
+      {
+        "material_number": "MAT0033",
+        "description": "Progressive 3rdgeneration interface",
+        "quantity": 32,
+        "unit_price": 5179.7,
+        "total": 165750.4
+      }
+    ],
+    "total": 549794.59,
+    "currency": "USD"
+  },
+  {
+    "order_number": "98103",
+    "customer_name": "Ibarra Ltd",
+    "order_date": "2026-03-04",
+    "delivery_date": "2026-04-01",
+    "status": "Shipped",
+    "line_items": [
+      {
+        "material_number": "MAT0037",
+        "description": "Face-to-face optimizing software",
+        "quantity": 12,
+        "unit_price": 9869.91,
+        "total": 118438.92
+      },
+      {
+        "material_number": "MAT0005",
+        "description": "Horizontal secondary system engine",
+        "quantity": 38,
+        "unit_price": 1980.38,
+        "total": 75254.44
+      },
+      {
+        "material_number": "MAT0009",
+        "description": "Versatile interactive workforce",
+        "quantity": 48,
+        "unit_price": 3058.55,
+        "total": 146810.4
+      },
+      {
+        "material_number": "MAT0005",
+        "description": "Horizontal secondary system engine",
+        "quantity": 9,
+        "unit_price": 1980.38,
+        "total": 17823.42
+      },
+      {
+        "material_number": "MAT0017",
+        "description": "Ameliorated bifurcated support",
+        "quantity": 37,
+        "unit_price": 2946.23,
+        "total": 109010.51
+      }
+    ],
+    "total": 467337.69,
+    "currency": "USD"
+  },
+  {
+    "order_number": "35146",
+    "customer_name": "Becker-Ware",
+    "order_date": "2026-03-05",
+    "delivery_date": "2026-03-08",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0035",
+        "description": "Stand-alone grid-enabled knowledge user",
+        "quantity": 40,
+        "unit_price": 345.2,
+        "total": 13808.0
+      }
+    ],
+    "total": 13808.0,
+    "currency": "USD"
+  },
+  {
+    "order_number": "94012",
+    "customer_name": "Hill-Frazier",
+    "order_date": "2026-03-05",
+    "delivery_date": "2026-03-22",
+    "status": "Delivered",
+    "line_items": [
+      {
+        "material_number": "MAT0021",
+        "description": "Optional national adapter",
+        "quantity": 28,
+        "unit_price": 6475.14,
+        "total": 181303.92
+      }
+    ],
+    "total": 181303.92,
+    "currency": "USD"
+  },
+  {
+    "order_number": "57378",
+    "customer_name": "Hull-Patel",
+    "order_date": "2026-03-25",
+    "delivery_date": "2026-04-07",
+    "status": "Open",
+    "line_items": [
+      {
+        "material_number": "MAT0015",
+        "description": "Customer-focused multimedia interface",
+        "quantity": 4,
+        "unit_price": 1553.59,
+        "total": 6214.36
+      }
+    ],
+    "total": 6214.36,
     "currency": "USD"
   }
 ]
