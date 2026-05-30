@@ -318,5 +318,357 @@
     "website": "https://bradshaw.org",
     "annual_revenue": 33900000,
     "owner": "Christina Wilson"
+  },
+  {
+    "id": "021",
+    "name": "Holland LLC",
+    "industry": "Education",
+    "phone": "(310)924-9947",
+    "billing_address": {
+      "street": "648 Kim Rapid Apt. 659",
+      "city": "Anthonybury",
+      "state": "TX",
+      "zip": "75893",
+      "country": "US"
+    },
+    "website": "https://sampson.com",
+    "annual_revenue": 29600000,
+    "owner": "Peter Ruiz"
+  },
+  {
+    "id": "022",
+    "name": "Ramos, Ramirez and Shea",
+    "industry": "Retail",
+    "phone": "+1-671-875-6551x2567",
+    "billing_address": {
+      "street": "1545 Tara Lodge",
+      "city": "Lake Mollymouth",
+      "state": "MT",
+      "zip": "07605",
+      "country": "US"
+    },
+    "website": "https://stone.info",
+    "annual_revenue": 32100000,
+    "owner": "Anthony Adams"
+  },
+  {
+    "id": "023",
+    "name": "Pennington Group",
+    "industry": "Energy",
+    "phone": "310.993.2480x8613",
+    "billing_address": {
+      "street": "274 Perry Orchard",
+      "city": "Sanchezside",
+      "state": "FL",
+      "zip": "50778",
+      "country": "US"
+    },
+    "website": "https://weeks.com",
+    "annual_revenue": 44300000,
+    "owner": "Raymond Dickerson"
+  },
+  {
+    "id": "024",
+    "name": "Villa-Romero",
+    "industry": "Education",
+    "phone": "9447997278",
+    "billing_address": {
+      "street": "867 Kane Square Apt. 963",
+      "city": "Williamsfort",
+      "state": "VT",
+      "zip": "50469",
+      "country": "US"
+    },
+    "website": "https://mcneil-sparks.com",
+    "annual_revenue": 25400000,
+    "owner": "Beth Sanford"
+  },
+  {
+    "id": "025",
+    "name": "Kane-Sawyer",
+    "industry": "Retail",
+    "phone": "687-702-6217",
+    "billing_address": {
+      "street": "158 Finley Road Suite 809",
+      "city": "East Crystalport",
+      "state": "IN",
+      "zip": "98381",
+      "country": "US"
+    },
+    "website": "https://hamilton.com",
+    "annual_revenue": 22800000,
+    "owner": "Elijah Johnson"
+  },
+  {
+    "id": "026",
+    "name": "Flynn-Carter",
+    "industry": "Healthcare",
+    "phone": "(923)486-9222x19693",
+    "billing_address": {
+      "street": "4740 Santana Springs",
+      "city": "North Scott",
+      "state": "MI",
+      "zip": "77515",
+      "country": "US"
+    },
+    "website": "https://fowler-coleman.com",
+    "annual_revenue": 23400000,
+    "owner": "Christina Cruz"
+  },
+  {
+    "id": "027",
+    "name": "Rodriguez-James",
+    "industry": "Healthcare",
+    "phone": "001-944-606-4090",
+    "billing_address": {
+      "street": "533 Byrd Stravenue",
+      "city": "Lake Colton",
+      "state": "SC",
+      "zip": "85218",
+      "country": "US"
+    },
+    "website": "https://parker.com",
+    "annual_revenue": 29700000,
+    "owner": "Carlos Browning"
+  },
+  {
+    "id": "028",
+    "name": "Burgess-Thompson",
+    "industry": "Finance",
+    "phone": "+1-758-384-2474",
+    "billing_address": {
+      "street": "23685 Krystal Bridge Suite 817",
+      "city": "Emilyview",
+      "state": "OR",
+      "zip": "50442",
+      "country": "US"
+    },
+    "website": "https://bentley.com",
+    "annual_revenue": 31800000,
+    "owner": "Kristina Herman"
+  },
+  {
+    "id": "029",
+    "name": "Holland Ltd",
+    "industry": "Education",
+    "phone": "446.812.0047x113",
+    "billing_address": {
+      "street": "8692 Pena Village Suite 964",
+      "city": "Lake Mitchellmouth",
+      "state": "NV",
+      "zip": "31448",
+      "country": "US"
+    },
+    "website": "https://garcia-jennings.net",
+    "annual_revenue": 46200000,
+    "owner": "Heather Sanders"
+  },
+  {
+    "id": "030",
+    "name": "Donaldson Group",
+    "industry": "Technology",
+    "phone": "+1-539-500-5329x31839",
+    "billing_address": {
+      "street": "90422 Lindsey Creek Apt. 205",
+      "city": "New Mario",
+      "state": "HI",
+      "zip": "35283",
+      "country": "US"
+    },
+    "website": "https://martinez.net",
+    "annual_revenue": 5900000,
+    "owner": "Karen Strickland"
+  },
+  {
+    "id": "031",
+    "name": "Wheeler, Hayes and Walker",
+    "industry": "Manufacturing",
+    "phone": "3849700766",
+    "billing_address": {
+      "street": "15921 Joshua Roads Suite 698",
+      "city": "Shawnchester",
+      "state": "CT",
+      "zip": "92484",
+      "country": "US"
+    },
+    "website": "https://farrell.net",
+    "annual_revenue": 37000000,
+    "owner": "Jessica Beasley"
+  },
+  {
+    "id": "032",
+    "name": "Morgan-Chavez",
+    "industry": "Retail",
+    "phone": "001-815-365-4527x1111",
+    "billing_address": {
+      "street": "80988 Santiago Loop Suite 604",
+      "city": "Michaelshire",
+      "state": "NY",
+      "zip": "28385",
+      "country": "US"
+    },
+    "website": "https://douglas.com",
+    "annual_revenue": 18000000,
+    "owner": "Holly Farmer"
+  },
+  {
+    "id": "033",
+    "name": "Perez, Patterson and Hoffman",
+    "industry": "Education",
+    "phone": "+1-298-409-4024x455",
+    "billing_address": {
+      "street": "612 Christopher Pines",
+      "city": "South Robert",
+      "state": "MA",
+      "zip": "21132",
+      "country": "US"
+    },
+    "website": "https://collins-nguyen.org",
+    "annual_revenue": 30600000,
+    "owner": "Anthony Moore"
+  },
+  {
+    "id": "034",
+    "name": "Williams, Miller and Ramos",
+    "industry": "Retail",
+    "phone": "997.664.3815x6149",
+    "billing_address": {
+      "street": "69003 Dougherty Trafficway",
+      "city": "Port Jonathan",
+      "state": "MD",
+      "zip": "16227",
+      "country": "US"
+    },
+    "website": "https://jimenez.com",
+    "annual_revenue": 6700000,
+    "owner": "Michael Mason"
+  },
+  {
+    "id": "035",
+    "name": "Drake, Jones and Hensley",
+    "industry": "Technology",
+    "phone": "(707)415-9696x64160",
+    "billing_address": {
+      "street": "516 John Radial Suite 816",
+      "city": "Juliebury",
+      "state": "MA",
+      "zip": "22538",
+      "country": "US"
+    },
+    "website": "https://dixon.net",
+    "annual_revenue": 26200000,
+    "owner": "Ricardo Bell"
+  },
+  {
+    "id": "036",
+    "name": "Briggs, Young and Thomas",
+    "industry": "Finance",
+    "phone": "(992)712-7799",
+    "billing_address": {
+      "street": "71774 Vargas Knoll Apt. 477",
+      "city": "North Miguelport",
+      "state": "CA",
+      "zip": "84998",
+      "country": "US"
+    },
+    "website": "https://gilbert.biz",
+    "annual_revenue": 23700000,
+    "owner": "Tiffany Stevenson"
+  },
+  {
+    "id": "037",
+    "name": "Cole PLC",
+    "industry": "Energy",
+    "phone": "759.378.2071",
+    "billing_address": {
+      "street": "37788 Michael Haven",
+      "city": "Ortizmouth",
+      "state": "TX",
+      "zip": "78867",
+      "country": "US"
+    },
+    "website": "https://mccormick.com",
+    "annual_revenue": 3400000,
+    "owner": "Justin Hughes"
+  },
+  {
+    "id": "038",
+    "name": "Cummings-Douglas",
+    "industry": "Manufacturing",
+    "phone": "(351)692-5462",
+    "billing_address": {
+      "street": "528 Debbie Manors Suite 054",
+      "city": "East Matthew",
+      "state": "WI",
+      "zip": "64237",
+      "country": "US"
+    },
+    "website": "https://perez.com",
+    "annual_revenue": 4000000,
+    "owner": "Richard Romero"
+  },
+  {
+    "id": "039",
+    "name": "Conley, Stephenson and Johnson",
+    "industry": "Healthcare",
+    "phone": "001-592-996-2229x27065",
+    "billing_address": {
+      "street": "738 Kyle Valleys Suite 359",
+      "city": "Murrayport",
+      "state": "WI",
+      "zip": "50553",
+      "country": "US"
+    },
+    "website": "https://rose.org",
+    "annual_revenue": 7100000,
+    "owner": "Amy Castillo"
+  },
+  {
+    "id": "040",
+    "name": "Spencer-Garcia",
+    "industry": "Education",
+    "phone": "214.812.4782x61375",
+    "billing_address": {
+      "street": "8536 Nicholas Burgs",
+      "city": "Sarahmouth",
+      "state": "WY",
+      "zip": "19643",
+      "country": "US"
+    },
+    "website": "https://johnson.com",
+    "annual_revenue": 38900000,
+    "owner": "Joan Smith"
+  },
+  {
+    "id": "041",
+    "name": "Smith and Sons",
+    "industry": "Education",
+    "phone": "(389)286-1434",
+    "billing_address": {
+      "street": "9711 Carlson Brook",
+      "city": "Lake Douglas",
+      "state": "NE",
+      "zip": "00706",
+      "country": "US"
+    },
+    "website": "https://gomez.com",
+    "annual_revenue": 26900000,
+    "owner": "Andrea Fox"
+  },
+  {
+    "id": "042",
+    "name": "Hartman, Romero and Smith",
+    "industry": "Education",
+    "phone": "406.254.0515x3195",
+    "billing_address": {
+      "street": "527 Welch Valleys Apt. 170",
+      "city": "Jamesborough",
+      "state": "FM",
+      "zip": "05993",
+      "country": "US"
+    },
+    "website": "https://mahoney-robertson.net",
+    "annual_revenue": 24300000,
+    "owner": "Paul Lee"
   }
 ]

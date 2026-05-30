@@ -720,6 +720,12 @@ def generate_default_ng(fake: Faker, count: int, root: Path) -> None:
 
     orders = gen_orders(fake, accounts, closed_won_opps)
     order_items = gen_order_items(fake, orders, products)
+    # Reconcile order totals with actual line item sums so header and detail agree
+    _item_totals: dict[str, float] = {}
+    for _oi in order_items:
+        _item_totals[_oi["order_id"]] = round(_item_totals.get(_oi["order_id"], 0.0) + _oi["total_price"], 2)
+    for _o in orders:
+        _o["total_amount"] = _item_totals.get(_o["id"], 0.0)
     contracts = gen_contracts(fake, 6, account_ids)
     cases = gen_cases(fake, count, account_ids, contact_ids)
     fulfilled_orders = [o for o in orders if o["status"] == "Fulfilled"]

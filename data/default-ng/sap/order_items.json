@@ -2,2537 +2,4985 @@
   {
     "id": "OI-00001",
     "order_number": "ORD-0001",
-    "material_number": "MAT0007",
-    "quantity": 8,
-    "price_per_unit": 4717.76,
-    "total_price": 37742.08
+    "material_number": "MAT0027",
+    "quantity": 20,
+    "price_per_unit": 6990.59,
+    "total_price": 139811.8
   },
   {
     "id": "OI-00002",
     "order_number": "ORD-0001",
-    "material_number": "MAT0020",
-    "quantity": 3,
-    "price_per_unit": 749.28,
-    "total_price": 2247.84
+    "material_number": "MAT0010",
+    "quantity": 19,
+    "price_per_unit": 5985.14,
+    "total_price": 113717.66
   },
   {
     "id": "OI-00003",
-    "order_number": "ORD-0001",
-    "material_number": "MAT0017",
-    "quantity": 15,
-    "price_per_unit": 7264.84,
-    "total_price": 108972.6
+    "order_number": "ORD-0002",
+    "material_number": "MAT0040",
+    "quantity": 17,
+    "price_per_unit": 3201.49,
+    "total_price": 54425.33
   },
   {
     "id": "OI-00004",
-    "order_number": "ORD-0001",
+    "order_number": "ORD-0002",
     "material_number": "MAT0017",
-    "quantity": 12,
-    "price_per_unit": 7264.84,
-    "total_price": 87178.08
+    "quantity": 6,
+    "price_per_unit": 2730.82,
+    "total_price": 16384.92
   },
   {
     "id": "OI-00005",
-    "order_number": "ORD-0002",
-    "material_number": "MAT0019",
-    "quantity": 4,
-    "price_per_unit": 4645.86,
-    "total_price": 18583.44
+    "order_number": "ORD-0003",
+    "material_number": "MAT0022",
+    "quantity": 15,
+    "price_per_unit": 6820.1,
+    "total_price": 102301.5
   },
   {
     "id": "OI-00006",
-    "order_number": "ORD-0002",
-    "material_number": "MAT0002",
-    "quantity": 18,
-    "price_per_unit": 5558.58,
-    "total_price": 100054.44
+    "order_number": "ORD-0003",
+    "material_number": "MAT0039",
+    "quantity": 19,
+    "price_per_unit": 7394.79,
+    "total_price": 140501.01
   },
   {
     "id": "OI-00007",
     "order_number": "ORD-0003",
-    "material_number": "MAT0007",
-    "quantity": 19,
-    "price_per_unit": 4717.76,
-    "total_price": 89637.44
+    "material_number": "MAT0005",
+    "quantity": 8,
+    "price_per_unit": 3208.58,
+    "total_price": 25668.64
   },
   {
     "id": "OI-00008",
     "order_number": "ORD-0003",
-    "material_number": "MAT0018",
-    "quantity": 5,
-    "price_per_unit": 4480.27,
-    "total_price": 22401.35
+    "material_number": "MAT0025",
+    "quantity": 13,
+    "price_per_unit": 1890.2,
+    "total_price": 24572.6
   },
   {
     "id": "OI-00009",
-    "order_number": "ORD-0003",
-    "material_number": "MAT0006",
-    "quantity": 11,
-    "price_per_unit": 2007.52,
-    "total_price": 22082.72
+    "order_number": "ORD-0004",
+    "material_number": "MAT0007",
+    "quantity": 1,
+    "price_per_unit": 9743.17,
+    "total_price": 9743.17
   },
   {
     "id": "OI-00010",
-    "order_number": "ORD-0003",
-    "material_number": "MAT0017",
-    "quantity": 15,
-    "price_per_unit": 7264.84,
-    "total_price": 108972.6
+    "order_number": "ORD-0004",
+    "material_number": "MAT0013",
+    "quantity": 17,
+    "price_per_unit": 4144.84,
+    "total_price": 70462.28
   },
   {
     "id": "OI-00011",
-    "order_number": "ORD-0004",
-    "material_number": "MAT0007",
-    "quantity": 19,
-    "price_per_unit": 4717.76,
-    "total_price": 89637.44
+    "order_number": "ORD-0005",
+    "material_number": "MAT0027",
+    "quantity": 5,
+    "price_per_unit": 6990.59,
+    "total_price": 34952.95
   },
   {
     "id": "OI-00012",
-    "order_number": "ORD-0004",
-    "material_number": "MAT0016",
-    "quantity": 3,
-    "price_per_unit": 2584.96,
-    "total_price": 7754.88
+    "order_number": "ORD-0005",
+    "material_number": "MAT0039",
+    "quantity": 4,
+    "price_per_unit": 7394.79,
+    "total_price": 29579.16
   },
   {
     "id": "OI-00013",
     "order_number": "ORD-0005",
-    "material_number": "MAT0015",
-    "quantity": 2,
-    "price_per_unit": 5319.99,
-    "total_price": 10639.98
+    "material_number": "MAT0012",
+    "quantity": 16,
+    "price_per_unit": 1138.52,
+    "total_price": 18216.32
   },
   {
     "id": "OI-00014",
     "order_number": "ORD-0005",
-    "material_number": "MAT0015",
-    "quantity": 5,
-    "price_per_unit": 5319.99,
-    "total_price": 26599.95
+    "material_number": "MAT0040",
+    "quantity": 20,
+    "price_per_unit": 3201.49,
+    "total_price": 64029.8
   },
   {
     "id": "OI-00015",
-    "order_number": "ORD-0005",
-    "material_number": "MAT0017",
-    "quantity": 14,
-    "price_per_unit": 7264.84,
-    "total_price": 101707.76
+    "order_number": "ORD-0006",
+    "material_number": "MAT0035",
+    "quantity": 17,
+    "price_per_unit": 1936.3,
+    "total_price": 32917.1
   },
   {
     "id": "OI-00016",
-    "order_number": "ORD-0005",
-    "material_number": "MAT0015",
-    "quantity": 19,
-    "price_per_unit": 5319.99,
-    "total_price": 101079.81
+    "order_number": "ORD-0006",
+    "material_number": "MAT0008",
+    "quantity": 3,
+    "price_per_unit": 7853.4,
+    "total_price": 23560.2
   },
   {
     "id": "OI-00017",
-    "order_number": "ORD-0006",
-    "material_number": "MAT0018",
-    "quantity": 15,
-    "price_per_unit": 4480.27,
-    "total_price": 67204.05
+    "order_number": "ORD-0007",
+    "material_number": "MAT0009",
+    "quantity": 20,
+    "price_per_unit": 9440.31,
+    "total_price": 188806.2
   },
   {
     "id": "OI-00018",
-    "order_number": "ORD-0006",
-    "material_number": "MAT0010",
+    "order_number": "ORD-0007",
+    "material_number": "MAT0035",
     "quantity": 1,
-    "price_per_unit": 9195.98,
-    "total_price": 9195.98
+    "price_per_unit": 1936.3,
+    "total_price": 1936.3
   },
   {
     "id": "OI-00019",
     "order_number": "ORD-0007",
-    "material_number": "MAT0009",
-    "quantity": 1,
-    "price_per_unit": 6027.14,
-    "total_price": 6027.14
+    "material_number": "MAT0042",
+    "quantity": 14,
+    "price_per_unit": 510.97,
+    "total_price": 7153.58
   },
   {
     "id": "OI-00020",
-    "order_number": "ORD-0007",
-    "material_number": "MAT0007",
-    "quantity": 19,
-    "price_per_unit": 4717.76,
-    "total_price": 89637.44
+    "order_number": "ORD-0008",
+    "material_number": "MAT0027",
+    "quantity": 12,
+    "price_per_unit": 6990.59,
+    "total_price": 83887.08
   },
   {
     "id": "OI-00021",
-    "order_number": "ORD-0007",
+    "order_number": "ORD-0008",
     "material_number": "MAT0003",
-    "quantity": 2,
-    "price_per_unit": 6997.4,
-    "total_price": 13994.8
+    "quantity": 17,
+    "price_per_unit": 2744.55,
+    "total_price": 46657.35
   },
   {
     "id": "OI-00022",
     "order_number": "ORD-0008",
-    "material_number": "MAT0012",
-    "quantity": 3,
-    "price_per_unit": 5572.44,
-    "total_price": 16717.32
+    "material_number": "MAT0028",
+    "quantity": 8,
+    "price_per_unit": 7085.5,
+    "total_price": 56684.0
   },
   {
     "id": "OI-00023",
     "order_number": "ORD-0008",
-    "material_number": "MAT0018",
-    "quantity": 2,
-    "price_per_unit": 4480.27,
-    "total_price": 8960.54
+    "material_number": "MAT0031",
+    "quantity": 13,
+    "price_per_unit": 3068.46,
+    "total_price": 39889.98
   },
   {
     "id": "OI-00024",
-    "order_number": "ORD-0008",
-    "material_number": "MAT0003",
-    "quantity": 16,
-    "price_per_unit": 6997.4,
-    "total_price": 111958.4
+    "order_number": "ORD-0009",
+    "material_number": "MAT0038",
+    "quantity": 19,
+    "price_per_unit": 9096.21,
+    "total_price": 172827.99
   },
   {
     "id": "OI-00025",
     "order_number": "ORD-0009",
-    "material_number": "MAT0010",
+    "material_number": "MAT0007",
     "quantity": 14,
-    "price_per_unit": 9195.98,
-    "total_price": 128743.72
+    "price_per_unit": 9743.17,
+    "total_price": 136404.38
   },
   {
     "id": "OI-00026",
     "order_number": "ORD-0009",
-    "material_number": "MAT0006",
-    "quantity": 5,
-    "price_per_unit": 2007.52,
-    "total_price": 10037.6
+    "material_number": "MAT0009",
+    "quantity": 9,
+    "price_per_unit": 9440.31,
+    "total_price": 84962.79
   },
   {
     "id": "OI-00027",
     "order_number": "ORD-0010",
-    "material_number": "MAT0014",
-    "quantity": 12,
-    "price_per_unit": 6168.53,
-    "total_price": 74022.36
+    "material_number": "MAT0015",
+    "quantity": 3,
+    "price_per_unit": 8305.88,
+    "total_price": 24917.64
   },
   {
     "id": "OI-00028",
     "order_number": "ORD-0010",
-    "material_number": "MAT0013",
-    "quantity": 15,
-    "price_per_unit": 1145.18,
-    "total_price": 17177.7
+    "material_number": "MAT0019",
+    "quantity": 20,
+    "price_per_unit": 8371.95,
+    "total_price": 167439.0
   },
   {
     "id": "OI-00029",
     "order_number": "ORD-0010",
-    "material_number": "MAT0013",
-    "quantity": 13,
-    "price_per_unit": 1145.18,
-    "total_price": 14887.34
+    "material_number": "MAT0035",
+    "quantity": 14,
+    "price_per_unit": 1936.3,
+    "total_price": 27108.2
   },
   {
     "id": "OI-00030",
-    "order_number": "ORD-0010",
-    "material_number": "MAT0003",
-    "quantity": 18,
-    "price_per_unit": 6997.4,
-    "total_price": 125953.2
+    "order_number": "ORD-0011",
+    "material_number": "MAT0013",
+    "quantity": 1,
+    "price_per_unit": 4144.84,
+    "total_price": 4144.84
   },
   {
     "id": "OI-00031",
     "order_number": "ORD-0011",
-    "material_number": "MAT0012",
-    "quantity": 4,
-    "price_per_unit": 5572.44,
-    "total_price": 22289.76
+    "material_number": "MAT0001",
+    "quantity": 19,
+    "price_per_unit": 3982.73,
+    "total_price": 75671.87
   },
   {
     "id": "OI-00032",
     "order_number": "ORD-0011",
-    "material_number": "MAT0006",
-    "quantity": 18,
-    "price_per_unit": 2007.52,
-    "total_price": 36135.36
+    "material_number": "MAT0034",
+    "quantity": 4,
+    "price_per_unit": 4878.78,
+    "total_price": 19515.12
   },
   {
     "id": "OI-00033",
     "order_number": "ORD-0012",
-    "material_number": "MAT0017",
-    "quantity": 5,
-    "price_per_unit": 7264.84,
-    "total_price": 36324.2
+    "material_number": "MAT0001",
+    "quantity": 13,
+    "price_per_unit": 3982.73,
+    "total_price": 51775.49
   },
   {
     "id": "OI-00034",
     "order_number": "ORD-0012",
-    "material_number": "MAT0008",
-    "quantity": 1,
-    "price_per_unit": 3490.19,
-    "total_price": 3490.19
+    "material_number": "MAT0042",
+    "quantity": 7,
+    "price_per_unit": 510.97,
+    "total_price": 3576.79
   },
   {
     "id": "OI-00035",
     "order_number": "ORD-0012",
-    "material_number": "MAT0001",
-    "quantity": 10,
-    "price_per_unit": 9038.92,
-    "total_price": 90389.2
+    "material_number": "MAT0021",
+    "quantity": 14,
+    "price_per_unit": 8204.19,
+    "total_price": 114858.66
   },
   {
     "id": "OI-00036",
-    "order_number": "ORD-0013",
-    "material_number": "MAT0018",
-    "quantity": 14,
-    "price_per_unit": 4480.27,
-    "total_price": 62723.78
+    "order_number": "ORD-0012",
+    "material_number": "MAT0024",
+    "quantity": 4,
+    "price_per_unit": 1604.56,
+    "total_price": 6418.24
   },
   {
     "id": "OI-00037",
     "order_number": "ORD-0013",
-    "material_number": "MAT0018",
-    "quantity": 13,
-    "price_per_unit": 4480.27,
-    "total_price": 58243.51
+    "material_number": "MAT0028",
+    "quantity": 19,
+    "price_per_unit": 7085.5,
+    "total_price": 134624.5
   },
   {
     "id": "OI-00038",
     "order_number": "ORD-0013",
-    "material_number": "MAT0008",
-    "quantity": 8,
-    "price_per_unit": 3490.19,
-    "total_price": 27921.52
+    "material_number": "MAT0017",
+    "quantity": 9,
+    "price_per_unit": 2730.82,
+    "total_price": 24577.38
   },
   {
     "id": "OI-00039",
     "order_number": "ORD-0014",
-    "material_number": "MAT0012",
-    "quantity": 5,
-    "price_per_unit": 5572.44,
-    "total_price": 27862.2
+    "material_number": "MAT0028",
+    "quantity": 19,
+    "price_per_unit": 7085.5,
+    "total_price": 134624.5
   },
   {
     "id": "OI-00040",
     "order_number": "ORD-0014",
-    "material_number": "MAT0009",
-    "quantity": 7,
-    "price_per_unit": 6027.14,
-    "total_price": 42189.98
+    "material_number": "MAT0024",
+    "quantity": 20,
+    "price_per_unit": 1604.56,
+    "total_price": 32091.2
   },
   {
     "id": "OI-00041",
     "order_number": "ORD-0014",
-    "material_number": "MAT0004",
-    "quantity": 2,
-    "price_per_unit": 1104.11,
-    "total_price": 2208.22
+    "material_number": "MAT0018",
+    "quantity": 13,
+    "price_per_unit": 5437.55,
+    "total_price": 70688.15
   },
   {
     "id": "OI-00042",
-    "order_number": "ORD-0015",
+    "order_number": "ORD-0014",
     "material_number": "MAT0014",
-    "quantity": 20,
-    "price_per_unit": 6168.53,
-    "total_price": 123370.6
+    "quantity": 14,
+    "price_per_unit": 1216.57,
+    "total_price": 17031.98
   },
   {
     "id": "OI-00043",
     "order_number": "ORD-0015",
-    "material_number": "MAT0001",
-    "quantity": 8,
-    "price_per_unit": 9038.92,
-    "total_price": 72311.36
+    "material_number": "MAT0036",
+    "quantity": 16,
+    "price_per_unit": 8374.49,
+    "total_price": 133991.84
   },
   {
     "id": "OI-00044",
     "order_number": "ORD-0015",
-    "material_number": "MAT0007",
-    "quantity": 3,
-    "price_per_unit": 4717.76,
-    "total_price": 14153.28
+    "material_number": "MAT0012",
+    "quantity": 12,
+    "price_per_unit": 1138.52,
+    "total_price": 13662.24
   },
   {
     "id": "OI-00045",
     "order_number": "ORD-0015",
-    "material_number": "MAT0004",
-    "quantity": 20,
-    "price_per_unit": 1104.11,
-    "total_price": 22082.2
+    "material_number": "MAT0036",
+    "quantity": 18,
+    "price_per_unit": 8374.49,
+    "total_price": 150740.82
   },
   {
     "id": "OI-00046",
-    "order_number": "ORD-0016",
-    "material_number": "MAT0015",
-    "quantity": 20,
-    "price_per_unit": 5319.99,
-    "total_price": 106399.8
+    "order_number": "ORD-0015",
+    "material_number": "MAT0031",
+    "quantity": 9,
+    "price_per_unit": 3068.46,
+    "total_price": 27616.14
   },
   {
     "id": "OI-00047",
     "order_number": "ORD-0016",
-    "material_number": "MAT0002",
-    "quantity": 8,
-    "price_per_unit": 5558.58,
-    "total_price": 44468.64
+    "material_number": "MAT0037",
+    "quantity": 12,
+    "price_per_unit": 6936.23,
+    "total_price": 83234.76
   },
   {
     "id": "OI-00048",
-    "order_number": "ORD-0017",
-    "material_number": "MAT0002",
-    "quantity": 13,
-    "price_per_unit": 5558.58,
-    "total_price": 72261.54
+    "order_number": "ORD-0016",
+    "material_number": "MAT0026",
+    "quantity": 5,
+    "price_per_unit": 4001.66,
+    "total_price": 20008.3
   },
   {
     "id": "OI-00049",
-    "order_number": "ORD-0017",
-    "material_number": "MAT0015",
+    "order_number": "ORD-0016",
+    "material_number": "MAT0008",
     "quantity": 8,
-    "price_per_unit": 5319.99,
-    "total_price": 42559.92
+    "price_per_unit": 7853.4,
+    "total_price": 62827.2
   },
   {
     "id": "OI-00050",
     "order_number": "ORD-0017",
-    "material_number": "MAT0018",
-    "quantity": 7,
-    "price_per_unit": 4480.27,
-    "total_price": 31361.89
+    "material_number": "MAT0011",
+    "quantity": 4,
+    "price_per_unit": 9017.3,
+    "total_price": 36069.2
   },
   {
     "id": "OI-00051",
     "order_number": "ORD-0017",
-    "material_number": "MAT0002",
-    "quantity": 5,
-    "price_per_unit": 5558.58,
-    "total_price": 27792.9
+    "material_number": "MAT0014",
+    "quantity": 17,
+    "price_per_unit": 1216.57,
+    "total_price": 20681.69
   },
   {
     "id": "OI-00052",
-    "order_number": "ORD-0018",
-    "material_number": "MAT0010",
-    "quantity": 8,
-    "price_per_unit": 9195.98,
-    "total_price": 73567.84
+    "order_number": "ORD-0017",
+    "material_number": "MAT0026",
+    "quantity": 11,
+    "price_per_unit": 4001.66,
+    "total_price": 44018.26
   },
   {
     "id": "OI-00053",
     "order_number": "ORD-0018",
-    "material_number": "MAT0019",
-    "quantity": 11,
-    "price_per_unit": 4645.86,
-    "total_price": 51104.46
+    "material_number": "MAT0040",
+    "quantity": 2,
+    "price_per_unit": 3201.49,
+    "total_price": 6402.98
   },
   {
     "id": "OI-00054",
     "order_number": "ORD-0018",
-    "material_number": "MAT0019",
-    "quantity": 20,
-    "price_per_unit": 4645.86,
-    "total_price": 92917.2
+    "material_number": "MAT0011",
+    "quantity": 13,
+    "price_per_unit": 9017.3,
+    "total_price": 117224.9
   },
   {
     "id": "OI-00055",
     "order_number": "ORD-0018",
-    "material_number": "MAT0011",
-    "quantity": 8,
-    "price_per_unit": 435.77,
-    "total_price": 3486.16
+    "material_number": "MAT0041",
+    "quantity": 1,
+    "price_per_unit": 8061.53,
+    "total_price": 8061.53
   },
   {
     "id": "OI-00056",
-    "order_number": "ORD-0019",
-    "material_number": "MAT0005",
-    "quantity": 17,
-    "price_per_unit": 2136.71,
-    "total_price": 36324.07
+    "order_number": "ORD-0018",
+    "material_number": "MAT0006",
+    "quantity": 5,
+    "price_per_unit": 5448.79,
+    "total_price": 27243.95
   },
   {
     "id": "OI-00057",
     "order_number": "ORD-0019",
-    "material_number": "MAT0008",
+    "material_number": "MAT0039",
     "quantity": 14,
-    "price_per_unit": 3490.19,
-    "total_price": 48862.66
+    "price_per_unit": 7394.79,
+    "total_price": 103527.06
   },
   {
     "id": "OI-00058",
     "order_number": "ORD-0019",
-    "material_number": "MAT0010",
-    "quantity": 9,
-    "price_per_unit": 9195.98,
-    "total_price": 82763.82
+    "material_number": "MAT0006",
+    "quantity": 3,
+    "price_per_unit": 5448.79,
+    "total_price": 16346.37
   },
   {
     "id": "OI-00059",
-    "order_number": "ORD-0020",
-    "material_number": "MAT0018",
-    "quantity": 19,
-    "price_per_unit": 4480.27,
-    "total_price": 85125.13
+    "order_number": "ORD-0019",
+    "material_number": "MAT0017",
+    "quantity": 8,
+    "price_per_unit": 2730.82,
+    "total_price": 21846.56
   },
   {
     "id": "OI-00060",
     "order_number": "ORD-0020",
     "material_number": "MAT0006",
-    "quantity": 14,
-    "price_per_unit": 2007.52,
-    "total_price": 28105.28
+    "quantity": 20,
+    "price_per_unit": 5448.79,
+    "total_price": 108975.8
   },
   {
     "id": "OI-00061",
-    "order_number": "ORD-0021",
-    "material_number": "MAT0016",
-    "quantity": 2,
-    "price_per_unit": 2584.96,
-    "total_price": 5169.92
+    "order_number": "ORD-0020",
+    "material_number": "MAT0003",
+    "quantity": 13,
+    "price_per_unit": 2744.55,
+    "total_price": 35679.15
   },
   {
     "id": "OI-00062",
-    "order_number": "ORD-0021",
-    "material_number": "MAT0012",
-    "quantity": 13,
-    "price_per_unit": 5572.44,
-    "total_price": 72441.72
+    "order_number": "ORD-0020",
+    "material_number": "MAT0026",
+    "quantity": 20,
+    "price_per_unit": 4001.66,
+    "total_price": 80033.2
   },
   {
     "id": "OI-00063",
     "order_number": "ORD-0021",
-    "material_number": "MAT0017",
-    "quantity": 11,
-    "price_per_unit": 7264.84,
-    "total_price": 79913.24
+    "material_number": "MAT0034",
+    "quantity": 10,
+    "price_per_unit": 4878.78,
+    "total_price": 48787.8
   },
   {
     "id": "OI-00064",
     "order_number": "ORD-0021",
-    "material_number": "MAT0014",
-    "quantity": 14,
-    "price_per_unit": 6168.53,
-    "total_price": 86359.42
+    "material_number": "MAT0039",
+    "quantity": 2,
+    "price_per_unit": 7394.79,
+    "total_price": 14789.58
   },
   {
     "id": "OI-00065",
-    "order_number": "ORD-0022",
-    "material_number": "MAT0010",
-    "quantity": 13,
-    "price_per_unit": 9195.98,
-    "total_price": 119547.74
+    "order_number": "ORD-0021",
+    "material_number": "MAT0012",
+    "quantity": 16,
+    "price_per_unit": 1138.52,
+    "total_price": 18216.32
   },
   {
     "id": "OI-00066",
-    "order_number": "ORD-0022",
-    "material_number": "MAT0006",
-    "quantity": 18,
-    "price_per_unit": 2007.52,
-    "total_price": 36135.36
+    "order_number": "ORD-0021",
+    "material_number": "MAT0029",
+    "quantity": 1,
+    "price_per_unit": 9707.54,
+    "total_price": 9707.54
   },
   {
     "id": "OI-00067",
-    "order_number": "ORD-0023",
-    "material_number": "MAT0008",
-    "quantity": 8,
-    "price_per_unit": 3490.19,
-    "total_price": 27921.52
+    "order_number": "ORD-0022",
+    "material_number": "MAT0034",
+    "quantity": 10,
+    "price_per_unit": 4878.78,
+    "total_price": 48787.8
   },
   {
     "id": "OI-00068",
-    "order_number": "ORD-0023",
-    "material_number": "MAT0010",
-    "quantity": 5,
-    "price_per_unit": 9195.98,
-    "total_price": 45979.9
+    "order_number": "ORD-0022",
+    "material_number": "MAT0013",
+    "quantity": 2,
+    "price_per_unit": 4144.84,
+    "total_price": 8289.68
   },
   {
     "id": "OI-00069",
     "order_number": "ORD-0023",
-    "material_number": "MAT0015",
-    "quantity": 2,
-    "price_per_unit": 5319.99,
-    "total_price": 10639.98
+    "material_number": "MAT0033",
+    "quantity": 17,
+    "price_per_unit": 9622.14,
+    "total_price": 163576.38
   },
   {
     "id": "OI-00070",
-    "order_number": "ORD-0024",
-    "material_number": "MAT0014",
-    "quantity": 14,
-    "price_per_unit": 6168.53,
-    "total_price": 86359.42
+    "order_number": "ORD-0023",
+    "material_number": "MAT0015",
+    "quantity": 20,
+    "price_per_unit": 8305.88,
+    "total_price": 166117.6
   },
   {
     "id": "OI-00071",
-    "order_number": "ORD-0024",
-    "material_number": "MAT0018",
-    "quantity": 17,
-    "price_per_unit": 4480.27,
-    "total_price": 76164.59
+    "order_number": "ORD-0023",
+    "material_number": "MAT0011",
+    "quantity": 2,
+    "price_per_unit": 9017.3,
+    "total_price": 18034.6
   },
   {
     "id": "OI-00072",
-    "order_number": "ORD-0024",
-    "material_number": "MAT0005",
-    "quantity": 13,
-    "price_per_unit": 2136.71,
-    "total_price": 27777.23
+    "order_number": "ORD-0023",
+    "material_number": "MAT0024",
+    "quantity": 8,
+    "price_per_unit": 1604.56,
+    "total_price": 12836.48
   },
   {
     "id": "OI-00073",
     "order_number": "ORD-0024",
-    "material_number": "MAT0008",
-    "quantity": 9,
-    "price_per_unit": 3490.19,
-    "total_price": 31411.71
+    "material_number": "MAT0001",
+    "quantity": 6,
+    "price_per_unit": 3982.73,
+    "total_price": 23896.38
   },
   {
     "id": "OI-00074",
-    "order_number": "ORD-0025",
-    "material_number": "MAT0011",
-    "quantity": 3,
-    "price_per_unit": 435.77,
-    "total_price": 1307.31
+    "order_number": "ORD-0024",
+    "material_number": "MAT0006",
+    "quantity": 9,
+    "price_per_unit": 5448.79,
+    "total_price": 49039.11
   },
   {
     "id": "OI-00075",
-    "order_number": "ORD-0025",
-    "material_number": "MAT0015",
+    "order_number": "ORD-0024",
+    "material_number": "MAT0026",
     "quantity": 12,
-    "price_per_unit": 5319.99,
-    "total_price": 63839.88
+    "price_per_unit": 4001.66,
+    "total_price": 48019.92
   },
   {
     "id": "OI-00076",
-    "order_number": "ORD-0026",
-    "material_number": "MAT0018",
-    "quantity": 7,
-    "price_per_unit": 4480.27,
-    "total_price": 31361.89
+    "order_number": "ORD-0024",
+    "material_number": "MAT0026",
+    "quantity": 13,
+    "price_per_unit": 4001.66,
+    "total_price": 52021.58
   },
   {
     "id": "OI-00077",
-    "order_number": "ORD-0026",
-    "material_number": "MAT0002",
-    "quantity": 9,
-    "price_per_unit": 5558.58,
-    "total_price": 50027.22
+    "order_number": "ORD-0025",
+    "material_number": "MAT0013",
+    "quantity": 17,
+    "price_per_unit": 4144.84,
+    "total_price": 70462.28
   },
   {
     "id": "OI-00078",
-    "order_number": "ORD-0027",
-    "material_number": "MAT0020",
-    "quantity": 20,
-    "price_per_unit": 749.28,
-    "total_price": 14985.6
+    "order_number": "ORD-0025",
+    "material_number": "MAT0001",
+    "quantity": 3,
+    "price_per_unit": 3982.73,
+    "total_price": 11948.19
   },
   {
     "id": "OI-00079",
-    "order_number": "ORD-0027",
-    "material_number": "MAT0002",
-    "quantity": 3,
-    "price_per_unit": 5558.58,
-    "total_price": 16675.74
+    "order_number": "ORD-0025",
+    "material_number": "MAT0006",
+    "quantity": 18,
+    "price_per_unit": 5448.79,
+    "total_price": 98078.22
   },
   {
     "id": "OI-00080",
-    "order_number": "ORD-0027",
-    "material_number": "MAT0007",
-    "quantity": 19,
-    "price_per_unit": 4717.76,
-    "total_price": 89637.44
+    "order_number": "ORD-0025",
+    "material_number": "MAT0019",
+    "quantity": 18,
+    "price_per_unit": 8371.95,
+    "total_price": 150695.1
   },
   {
     "id": "OI-00081",
-    "order_number": "ORD-0028",
-    "material_number": "MAT0018",
-    "quantity": 7,
-    "price_per_unit": 4480.27,
-    "total_price": 31361.89
+    "order_number": "ORD-0026",
+    "material_number": "MAT0023",
+    "quantity": 12,
+    "price_per_unit": 5625.58,
+    "total_price": 67506.96
   },
   {
     "id": "OI-00082",
-    "order_number": "ORD-0028",
-    "material_number": "MAT0016",
-    "quantity": 7,
-    "price_per_unit": 2584.96,
-    "total_price": 18094.72
+    "order_number": "ORD-0026",
+    "material_number": "MAT0018",
+    "quantity": 8,
+    "price_per_unit": 5437.55,
+    "total_price": 43500.4
   },
   {
     "id": "OI-00083",
-    "order_number": "ORD-0028",
-    "material_number": "MAT0011",
-    "quantity": 10,
-    "price_per_unit": 435.77,
-    "total_price": 4357.7
+    "order_number": "ORD-0026",
+    "material_number": "MAT0039",
+    "quantity": 7,
+    "price_per_unit": 7394.79,
+    "total_price": 51763.53
   },
   {
     "id": "OI-00084",
-    "order_number": "ORD-0028",
-    "material_number": "MAT0001",
-    "quantity": 7,
-    "price_per_unit": 9038.92,
-    "total_price": 63272.44
+    "order_number": "ORD-0026",
+    "material_number": "MAT0030",
+    "quantity": 13,
+    "price_per_unit": 4565.96,
+    "total_price": 59357.48
   },
   {
     "id": "OI-00085",
-    "order_number": "ORD-0029",
-    "material_number": "MAT0004",
-    "quantity": 16,
-    "price_per_unit": 1104.11,
-    "total_price": 17665.76
+    "order_number": "ORD-0027",
+    "material_number": "MAT0001",
+    "quantity": 9,
+    "price_per_unit": 3982.73,
+    "total_price": 35844.57
   },
   {
     "id": "OI-00086",
-    "order_number": "ORD-0029",
-    "material_number": "MAT0008",
-    "quantity": 20,
-    "price_per_unit": 3490.19,
-    "total_price": 69803.8
+    "order_number": "ORD-0027",
+    "material_number": "MAT0012",
+    "quantity": 14,
+    "price_per_unit": 1138.52,
+    "total_price": 15939.28
   },
   {
     "id": "OI-00087",
-    "order_number": "ORD-0030",
-    "material_number": "MAT0007",
-    "quantity": 13,
-    "price_per_unit": 4717.76,
-    "total_price": 61330.88
+    "order_number": "ORD-0027",
+    "material_number": "MAT0033",
+    "quantity": 4,
+    "price_per_unit": 9622.14,
+    "total_price": 38488.56
   },
   {
     "id": "OI-00088",
-    "order_number": "ORD-0030",
-    "material_number": "MAT0008",
-    "quantity": 18,
-    "price_per_unit": 3490.19,
-    "total_price": 62823.42
+    "order_number": "ORD-0027",
+    "material_number": "MAT0036",
+    "quantity": 3,
+    "price_per_unit": 8374.49,
+    "total_price": 25123.47
   },
   {
     "id": "OI-00089",
-    "order_number": "ORD-0030",
-    "material_number": "MAT0011",
-    "quantity": 10,
-    "price_per_unit": 435.77,
-    "total_price": 4357.7
+    "order_number": "ORD-0028",
+    "material_number": "MAT0019",
+    "quantity": 11,
+    "price_per_unit": 8371.95,
+    "total_price": 92091.45
   },
   {
     "id": "OI-00090",
-    "order_number": "ORD-0030",
-    "material_number": "MAT0013",
-    "quantity": 15,
-    "price_per_unit": 1145.18,
-    "total_price": 17177.7
+    "order_number": "ORD-0028",
+    "material_number": "MAT0008",
+    "quantity": 17,
+    "price_per_unit": 7853.4,
+    "total_price": 133507.8
   },
   {
     "id": "OI-00091",
-    "order_number": "ORD-0031",
-    "material_number": "MAT0012",
-    "quantity": 10,
-    "price_per_unit": 5572.44,
-    "total_price": 55724.4
+    "order_number": "ORD-0028",
+    "material_number": "MAT0017",
+    "quantity": 18,
+    "price_per_unit": 2730.82,
+    "total_price": 49154.76
   },
   {
     "id": "OI-00092",
-    "order_number": "ORD-0031",
-    "material_number": "MAT0009",
-    "quantity": 12,
-    "price_per_unit": 6027.14,
-    "total_price": 72325.68
+    "order_number": "ORD-0028",
+    "material_number": "MAT0037",
+    "quantity": 9,
+    "price_per_unit": 6936.23,
+    "total_price": 62426.07
   },
   {
     "id": "OI-00093",
-    "order_number": "ORD-0031",
-    "material_number": "MAT0017",
-    "quantity": 16,
-    "price_per_unit": 7264.84,
-    "total_price": 116237.44
+    "order_number": "ORD-0029",
+    "material_number": "MAT0029",
+    "quantity": 13,
+    "price_per_unit": 9707.54,
+    "total_price": 126198.02
   },
   {
     "id": "OI-00094",
-    "order_number": "ORD-0031",
-    "material_number": "MAT0015",
-    "quantity": 4,
-    "price_per_unit": 5319.99,
-    "total_price": 21279.96
+    "order_number": "ORD-0029",
+    "material_number": "MAT0037",
+    "quantity": 16,
+    "price_per_unit": 6936.23,
+    "total_price": 110979.68
   },
   {
     "id": "OI-00095",
-    "order_number": "ORD-0032",
+    "order_number": "ORD-0029",
     "material_number": "MAT0016",
     "quantity": 11,
-    "price_per_unit": 2584.96,
-    "total_price": 28434.56
+    "price_per_unit": 8801.76,
+    "total_price": 96819.36
   },
   {
     "id": "OI-00096",
-    "order_number": "ORD-0032",
-    "material_number": "MAT0007",
-    "quantity": 12,
-    "price_per_unit": 4717.76,
-    "total_price": 56613.12
+    "order_number": "ORD-0029",
+    "material_number": "MAT0030",
+    "quantity": 15,
+    "price_per_unit": 4565.96,
+    "total_price": 68489.4
   },
   {
     "id": "OI-00097",
-    "order_number": "ORD-0032",
-    "material_number": "MAT0011",
-    "quantity": 14,
-    "price_per_unit": 435.77,
-    "total_price": 6100.78
+    "order_number": "ORD-0030",
+    "material_number": "MAT0002",
+    "quantity": 16,
+    "price_per_unit": 2279.34,
+    "total_price": 36469.44
   },
   {
     "id": "OI-00098",
-    "order_number": "ORD-0032",
-    "material_number": "MAT0002",
-    "quantity": 19,
-    "price_per_unit": 5558.58,
-    "total_price": 105613.02
+    "order_number": "ORD-0030",
+    "material_number": "MAT0008",
+    "quantity": 9,
+    "price_per_unit": 7853.4,
+    "total_price": 70680.6
   },
   {
     "id": "OI-00099",
-    "order_number": "ORD-0033",
+    "order_number": "ORD-0030",
     "material_number": "MAT0005",
-    "quantity": 1,
-    "price_per_unit": 2136.71,
-    "total_price": 2136.71
+    "quantity": 13,
+    "price_per_unit": 3208.58,
+    "total_price": 41711.54
   },
   {
     "id": "OI-00100",
-    "order_number": "ORD-0033",
-    "material_number": "MAT0009",
-    "quantity": 18,
-    "price_per_unit": 6027.14,
-    "total_price": 108488.52
+    "order_number": "ORD-0030",
+    "material_number": "MAT0041",
+    "quantity": 8,
+    "price_per_unit": 8061.53,
+    "total_price": 64492.24
   },
   {
     "id": "OI-00101",
-    "order_number": "ORD-0034",
-    "material_number": "MAT0019",
-    "quantity": 14,
-    "price_per_unit": 4645.86,
-    "total_price": 65042.04
+    "order_number": "ORD-0031",
+    "material_number": "MAT0015",
+    "quantity": 11,
+    "price_per_unit": 8305.88,
+    "total_price": 91364.68
   },
   {
     "id": "OI-00102",
-    "order_number": "ORD-0034",
-    "material_number": "MAT0010",
-    "quantity": 5,
-    "price_per_unit": 9195.98,
-    "total_price": 45979.9
+    "order_number": "ORD-0031",
+    "material_number": "MAT0027",
+    "quantity": 12,
+    "price_per_unit": 6990.59,
+    "total_price": 83887.08
   },
   {
     "id": "OI-00103",
-    "order_number": "ORD-0034",
-    "material_number": "MAT0007",
-    "quantity": 11,
-    "price_per_unit": 4717.76,
-    "total_price": 51895.36
+    "order_number": "ORD-0031",
+    "material_number": "MAT0034",
+    "quantity": 18,
+    "price_per_unit": 4878.78,
+    "total_price": 87818.04
   },
   {
     "id": "OI-00104",
-    "order_number": "ORD-0034",
-    "material_number": "MAT0008",
-    "quantity": 13,
-    "price_per_unit": 3490.19,
-    "total_price": 45372.47
+    "order_number": "ORD-0031",
+    "material_number": "MAT0001",
+    "quantity": 9,
+    "price_per_unit": 3982.73,
+    "total_price": 35844.57
   },
   {
     "id": "OI-00105",
-    "order_number": "ORD-0035",
-    "material_number": "MAT0008",
-    "quantity": 16,
-    "price_per_unit": 3490.19,
-    "total_price": 55843.04
+    "order_number": "ORD-0032",
+    "material_number": "MAT0019",
+    "quantity": 3,
+    "price_per_unit": 8371.95,
+    "total_price": 25115.85
   },
   {
     "id": "OI-00106",
-    "order_number": "ORD-0035",
-    "material_number": "MAT0018",
+    "order_number": "ORD-0032",
+    "material_number": "MAT0026",
     "quantity": 11,
-    "price_per_unit": 4480.27,
-    "total_price": 49282.97
+    "price_per_unit": 4001.66,
+    "total_price": 44018.26
   },
   {
     "id": "OI-00107",
-    "order_number": "ORD-0035",
-    "material_number": "MAT0009",
-    "quantity": 16,
-    "price_per_unit": 6027.14,
-    "total_price": 96434.24
+    "order_number": "ORD-0033",
+    "material_number": "MAT0036",
+    "quantity": 6,
+    "price_per_unit": 8374.49,
+    "total_price": 50246.94
   },
   {
     "id": "OI-00108",
-    "order_number": "ORD-0035",
-    "material_number": "MAT0016",
-    "quantity": 15,
-    "price_per_unit": 2584.96,
-    "total_price": 38774.4
+    "order_number": "ORD-0033",
+    "material_number": "MAT0031",
+    "quantity": 11,
+    "price_per_unit": 3068.46,
+    "total_price": 33753.06
   },
   {
     "id": "OI-00109",
-    "order_number": "ORD-0036",
-    "material_number": "MAT0012",
-    "quantity": 6,
-    "price_per_unit": 5572.44,
-    "total_price": 33434.64
+    "order_number": "ORD-0034",
+    "material_number": "MAT0014",
+    "quantity": 19,
+    "price_per_unit": 1216.57,
+    "total_price": 23114.83
   },
   {
     "id": "OI-00110",
-    "order_number": "ORD-0036",
-    "material_number": "MAT0005",
-    "quantity": 18,
-    "price_per_unit": 2136.71,
-    "total_price": 38460.78
+    "order_number": "ORD-0034",
+    "material_number": "MAT0018",
+    "quantity": 6,
+    "price_per_unit": 5437.55,
+    "total_price": 32625.3
   },
   {
     "id": "OI-00111",
-    "order_number": "ORD-0037",
-    "material_number": "MAT0006",
-    "quantity": 18,
-    "price_per_unit": 2007.52,
-    "total_price": 36135.36
+    "order_number": "ORD-0034",
+    "material_number": "MAT0013",
+    "quantity": 16,
+    "price_per_unit": 4144.84,
+    "total_price": 66317.44
   },
   {
     "id": "OI-00112",
-    "order_number": "ORD-0037",
-    "material_number": "MAT0002",
-    "quantity": 17,
-    "price_per_unit": 5558.58,
-    "total_price": 94495.86
+    "order_number": "ORD-0035",
+    "material_number": "MAT0013",
+    "quantity": 8,
+    "price_per_unit": 4144.84,
+    "total_price": 33158.72
   },
   {
     "id": "OI-00113",
-    "order_number": "ORD-0037",
-    "material_number": "MAT0002",
-    "quantity": 3,
-    "price_per_unit": 5558.58,
-    "total_price": 16675.74
+    "order_number": "ORD-0035",
+    "material_number": "MAT0016",
+    "quantity": 9,
+    "price_per_unit": 8801.76,
+    "total_price": 79215.84
   },
   {
     "id": "OI-00114",
-    "order_number": "ORD-0038",
-    "material_number": "MAT0002",
-    "quantity": 1,
-    "price_per_unit": 5558.58,
-    "total_price": 5558.58
+    "order_number": "ORD-0035",
+    "material_number": "MAT0014",
+    "quantity": 8,
+    "price_per_unit": 1216.57,
+    "total_price": 9732.56
   },
   {
     "id": "OI-00115",
-    "order_number": "ORD-0038",
-    "material_number": "MAT0014",
-    "quantity": 5,
-    "price_per_unit": 6168.53,
-    "total_price": 30842.65
+    "order_number": "ORD-0035",
+    "material_number": "MAT0013",
+    "quantity": 8,
+    "price_per_unit": 4144.84,
+    "total_price": 33158.72
   },
   {
     "id": "OI-00116",
-    "order_number": "ORD-0038",
-    "material_number": "MAT0008",
-    "quantity": 3,
-    "price_per_unit": 3490.19,
-    "total_price": 10470.57
+    "order_number": "ORD-0036",
+    "material_number": "MAT0023",
+    "quantity": 5,
+    "price_per_unit": 5625.58,
+    "total_price": 28127.9
   },
   {
     "id": "OI-00117",
-    "order_number": "ORD-0038",
-    "material_number": "MAT0005",
-    "quantity": 1,
-    "price_per_unit": 2136.71,
-    "total_price": 2136.71
+    "order_number": "ORD-0036",
+    "material_number": "MAT0007",
+    "quantity": 4,
+    "price_per_unit": 9743.17,
+    "total_price": 38972.68
   },
   {
     "id": "OI-00118",
-    "order_number": "ORD-0039",
-    "material_number": "MAT0017",
-    "quantity": 15,
-    "price_per_unit": 7264.84,
-    "total_price": 108972.6
+    "order_number": "ORD-0036",
+    "material_number": "MAT0006",
+    "quantity": 16,
+    "price_per_unit": 5448.79,
+    "total_price": 87180.64
   },
   {
     "id": "OI-00119",
-    "order_number": "ORD-0039",
-    "material_number": "MAT0012",
-    "quantity": 2,
-    "price_per_unit": 5572.44,
-    "total_price": 11144.88
+    "order_number": "ORD-0036",
+    "material_number": "MAT0040",
+    "quantity": 1,
+    "price_per_unit": 3201.49,
+    "total_price": 3201.49
   },
   {
     "id": "OI-00120",
-    "order_number": "ORD-0040",
-    "material_number": "MAT0020",
+    "order_number": "ORD-0037",
+    "material_number": "MAT0003",
     "quantity": 16,
-    "price_per_unit": 749.28,
-    "total_price": 11988.48
+    "price_per_unit": 2744.55,
+    "total_price": 43912.8
   },
   {
     "id": "OI-00121",
-    "order_number": "ORD-0040",
-    "material_number": "MAT0016",
-    "quantity": 1,
-    "price_per_unit": 2584.96,
-    "total_price": 2584.96
+    "order_number": "ORD-0037",
+    "material_number": "MAT0024",
+    "quantity": 20,
+    "price_per_unit": 1604.56,
+    "total_price": 32091.2
   },
   {
     "id": "OI-00122",
-    "order_number": "ORD-0040",
-    "material_number": "MAT0001",
-    "quantity": 18,
-    "price_per_unit": 9038.92,
-    "total_price": 162700.56
+    "order_number": "ORD-0037",
+    "material_number": "MAT0021",
+    "quantity": 16,
+    "price_per_unit": 8204.19,
+    "total_price": 131267.04
   },
   {
     "id": "OI-00123",
-    "order_number": "ORD-0040",
-    "material_number": "MAT0018",
-    "quantity": 14,
-    "price_per_unit": 4480.27,
-    "total_price": 62723.78
+    "order_number": "ORD-0037",
+    "material_number": "MAT0037",
+    "quantity": 9,
+    "price_per_unit": 6936.23,
+    "total_price": 62426.07
   },
   {
     "id": "OI-00124",
-    "order_number": "ORD-0041",
-    "material_number": "MAT0001",
+    "order_number": "ORD-0038",
+    "material_number": "MAT0012",
     "quantity": 17,
-    "price_per_unit": 9038.92,
-    "total_price": 153661.64
+    "price_per_unit": 1138.52,
+    "total_price": 19354.84
   },
   {
     "id": "OI-00125",
-    "order_number": "ORD-0041",
-    "material_number": "MAT0009",
-    "quantity": 18,
-    "price_per_unit": 6027.14,
-    "total_price": 108488.52
+    "order_number": "ORD-0038",
+    "material_number": "MAT0018",
+    "quantity": 13,
+    "price_per_unit": 5437.55,
+    "total_price": 70688.15
   },
   {
     "id": "OI-00126",
-    "order_number": "ORD-0042",
-    "material_number": "MAT0001",
-    "quantity": 17,
-    "price_per_unit": 9038.92,
-    "total_price": 153661.64
+    "order_number": "ORD-0038",
+    "material_number": "MAT0015",
+    "quantity": 19,
+    "price_per_unit": 8305.88,
+    "total_price": 157811.72
   },
   {
     "id": "OI-00127",
-    "order_number": "ORD-0042",
-    "material_number": "MAT0014",
-    "quantity": 6,
-    "price_per_unit": 6168.53,
-    "total_price": 37011.18
+    "order_number": "ORD-0039",
+    "material_number": "MAT0004",
+    "quantity": 17,
+    "price_per_unit": 5921.32,
+    "total_price": 100662.44
   },
   {
     "id": "OI-00128",
-    "order_number": "ORD-0042",
-    "material_number": "MAT0004",
-    "quantity": 4,
-    "price_per_unit": 1104.11,
-    "total_price": 4416.44
+    "order_number": "ORD-0039",
+    "material_number": "MAT0028",
+    "quantity": 16,
+    "price_per_unit": 7085.5,
+    "total_price": 113368.0
   },
   {
     "id": "OI-00129",
-    "order_number": "ORD-0043",
-    "material_number": "MAT0005",
-    "quantity": 8,
-    "price_per_unit": 2136.71,
-    "total_price": 17093.68
+    "order_number": "ORD-0040",
+    "material_number": "MAT0003",
+    "quantity": 17,
+    "price_per_unit": 2744.55,
+    "total_price": 46657.35
   },
   {
     "id": "OI-00130",
-    "order_number": "ORD-0043",
-    "material_number": "MAT0007",
-    "quantity": 20,
-    "price_per_unit": 4717.76,
-    "total_price": 94355.2
+    "order_number": "ORD-0040",
+    "material_number": "MAT0023",
+    "quantity": 13,
+    "price_per_unit": 5625.58,
+    "total_price": 73132.54
   },
   {
     "id": "OI-00131",
-    "order_number": "ORD-0043",
-    "material_number": "MAT0017",
-    "quantity": 9,
-    "price_per_unit": 7264.84,
-    "total_price": 65383.56
+    "order_number": "ORD-0040",
+    "material_number": "MAT0012",
+    "quantity": 15,
+    "price_per_unit": 1138.52,
+    "total_price": 17077.8
   },
   {
     "id": "OI-00132",
-    "order_number": "ORD-0043",
-    "material_number": "MAT0012",
-    "quantity": 9,
-    "price_per_unit": 5572.44,
-    "total_price": 50151.96
+    "order_number": "ORD-0040",
+    "material_number": "MAT0008",
+    "quantity": 17,
+    "price_per_unit": 7853.4,
+    "total_price": 133507.8
   },
   {
     "id": "OI-00133",
-    "order_number": "ORD-0044",
-    "material_number": "MAT0003",
-    "quantity": 12,
-    "price_per_unit": 6997.4,
-    "total_price": 83968.8
+    "order_number": "ORD-0041",
+    "material_number": "MAT0021",
+    "quantity": 1,
+    "price_per_unit": 8204.19,
+    "total_price": 8204.19
   },
   {
     "id": "OI-00134",
-    "order_number": "ORD-0044",
-    "material_number": "MAT0013",
-    "quantity": 15,
-    "price_per_unit": 1145.18,
-    "total_price": 17177.7
+    "order_number": "ORD-0041",
+    "material_number": "MAT0001",
+    "quantity": 7,
+    "price_per_unit": 3982.73,
+    "total_price": 27879.11
   },
   {
     "id": "OI-00135",
-    "order_number": "ORD-0044",
-    "material_number": "MAT0019",
-    "quantity": 8,
-    "price_per_unit": 4645.86,
-    "total_price": 37166.88
+    "order_number": "ORD-0041",
+    "material_number": "MAT0025",
+    "quantity": 19,
+    "price_per_unit": 1890.2,
+    "total_price": 35913.8
   },
   {
     "id": "OI-00136",
-    "order_number": "ORD-0045",
-    "material_number": "MAT0008",
-    "quantity": 10,
-    "price_per_unit": 3490.19,
-    "total_price": 34901.9
+    "order_number": "ORD-0042",
+    "material_number": "MAT0021",
+    "quantity": 12,
+    "price_per_unit": 8204.19,
+    "total_price": 98450.28
   },
   {
     "id": "OI-00137",
-    "order_number": "ORD-0045",
-    "material_number": "MAT0003",
-    "quantity": 2,
-    "price_per_unit": 6997.4,
-    "total_price": 13994.8
+    "order_number": "ORD-0042",
+    "material_number": "MAT0040",
+    "quantity": 9,
+    "price_per_unit": 3201.49,
+    "total_price": 28813.41
   },
   {
     "id": "OI-00138",
-    "order_number": "ORD-0045",
-    "material_number": "MAT0003",
-    "quantity": 13,
-    "price_per_unit": 6997.4,
-    "total_price": 90966.2
+    "order_number": "ORD-0043",
+    "material_number": "MAT0036",
+    "quantity": 9,
+    "price_per_unit": 8374.49,
+    "total_price": 75370.41
   },
   {
     "id": "OI-00139",
-    "order_number": "ORD-0045",
-    "material_number": "MAT0013",
-    "quantity": 13,
-    "price_per_unit": 1145.18,
-    "total_price": 14887.34
+    "order_number": "ORD-0043",
+    "material_number": "MAT0016",
+    "quantity": 9,
+    "price_per_unit": 8801.76,
+    "total_price": 79215.84
   },
   {
     "id": "OI-00140",
-    "order_number": "ORD-0046",
-    "material_number": "MAT0016",
-    "quantity": 2,
-    "price_per_unit": 2584.96,
-    "total_price": 5169.92
+    "order_number": "ORD-0044",
+    "material_number": "MAT0040",
+    "quantity": 11,
+    "price_per_unit": 3201.49,
+    "total_price": 35216.39
   },
   {
     "id": "OI-00141",
-    "order_number": "ORD-0046",
-    "material_number": "MAT0001",
+    "order_number": "ORD-0044",
+    "material_number": "MAT0024",
     "quantity": 6,
-    "price_per_unit": 9038.92,
-    "total_price": 54233.52
+    "price_per_unit": 1604.56,
+    "total_price": 9627.36
   },
   {
     "id": "OI-00142",
-    "order_number": "ORD-0046",
-    "material_number": "MAT0003",
-    "quantity": 16,
-    "price_per_unit": 6997.4,
-    "total_price": 111958.4
+    "order_number": "ORD-0044",
+    "material_number": "MAT0032",
+    "quantity": 14,
+    "price_per_unit": 8024.67,
+    "total_price": 112345.38
   },
   {
     "id": "OI-00143",
-    "order_number": "ORD-0046",
-    "material_number": "MAT0014",
-    "quantity": 11,
-    "price_per_unit": 6168.53,
-    "total_price": 67853.83
+    "order_number": "ORD-0045",
+    "material_number": "MAT0027",
+    "quantity": 12,
+    "price_per_unit": 6990.59,
+    "total_price": 83887.08
   },
   {
     "id": "OI-00144",
-    "order_number": "ORD-0047",
-    "material_number": "MAT0004",
-    "quantity": 17,
-    "price_per_unit": 1104.11,
-    "total_price": 18769.87
+    "order_number": "ORD-0045",
+    "material_number": "MAT0024",
+    "quantity": 13,
+    "price_per_unit": 1604.56,
+    "total_price": 20859.28
   },
   {
     "id": "OI-00145",
-    "order_number": "ORD-0047",
-    "material_number": "MAT0002",
-    "quantity": 8,
-    "price_per_unit": 5558.58,
-    "total_price": 44468.64
+    "order_number": "ORD-0046",
+    "material_number": "MAT0029",
+    "quantity": 6,
+    "price_per_unit": 9707.54,
+    "total_price": 58245.24
   },
   {
     "id": "OI-00146",
-    "order_number": "ORD-0047",
-    "material_number": "MAT0007",
-    "quantity": 19,
-    "price_per_unit": 4717.76,
-    "total_price": 89637.44
+    "order_number": "ORD-0046",
+    "material_number": "MAT0037",
+    "quantity": 5,
+    "price_per_unit": 6936.23,
+    "total_price": 34681.15
   },
   {
     "id": "OI-00147",
-    "order_number": "ORD-0047",
-    "material_number": "MAT0016",
-    "quantity": 9,
-    "price_per_unit": 2584.96,
-    "total_price": 23264.64
+    "order_number": "ORD-0046",
+    "material_number": "MAT0037",
+    "quantity": 8,
+    "price_per_unit": 6936.23,
+    "total_price": 55489.84
   },
   {
     "id": "OI-00148",
-    "order_number": "ORD-0048",
-    "material_number": "MAT0003",
-    "quantity": 9,
-    "price_per_unit": 6997.4,
-    "total_price": 62976.6
+    "order_number": "ORD-0047",
+    "material_number": "MAT0018",
+    "quantity": 8,
+    "price_per_unit": 5437.55,
+    "total_price": 43500.4
   },
   {
     "id": "OI-00149",
-    "order_number": "ORD-0048",
-    "material_number": "MAT0018",
-    "quantity": 19,
-    "price_per_unit": 4480.27,
-    "total_price": 85125.13
+    "order_number": "ORD-0047",
+    "material_number": "MAT0036",
+    "quantity": 14,
+    "price_per_unit": 8374.49,
+    "total_price": 117242.86
   },
   {
     "id": "OI-00150",
-    "order_number": "ORD-0049",
-    "material_number": "MAT0002",
-    "quantity": 6,
-    "price_per_unit": 5558.58,
-    "total_price": 33351.48
+    "order_number": "ORD-0048",
+    "material_number": "MAT0013",
+    "quantity": 5,
+    "price_per_unit": 4144.84,
+    "total_price": 20724.2
   },
   {
     "id": "OI-00151",
-    "order_number": "ORD-0049",
-    "material_number": "MAT0011",
-    "quantity": 1,
-    "price_per_unit": 435.77,
-    "total_price": 435.77
+    "order_number": "ORD-0048",
+    "material_number": "MAT0010",
+    "quantity": 16,
+    "price_per_unit": 5985.14,
+    "total_price": 95762.24
   },
   {
     "id": "OI-00152",
-    "order_number": "ORD-0049",
-    "material_number": "MAT0007",
-    "quantity": 19,
-    "price_per_unit": 4717.76,
-    "total_price": 89637.44
+    "order_number": "ORD-0048",
+    "material_number": "MAT0001",
+    "quantity": 6,
+    "price_per_unit": 3982.73,
+    "total_price": 23896.38
   },
   {
     "id": "OI-00153",
     "order_number": "ORD-0049",
-    "material_number": "MAT0005",
-    "quantity": 13,
-    "price_per_unit": 2136.71,
-    "total_price": 27777.23
+    "material_number": "MAT0032",
+    "quantity": 5,
+    "price_per_unit": 8024.67,
+    "total_price": 40123.35
   },
   {
     "id": "OI-00154",
-    "order_number": "ORD-0050",
-    "material_number": "MAT0010",
-    "quantity": 6,
-    "price_per_unit": 9195.98,
-    "total_price": 55175.88
+    "order_number": "ORD-0049",
+    "material_number": "MAT0041",
+    "quantity": 17,
+    "price_per_unit": 8061.53,
+    "total_price": 137046.01
   },
   {
     "id": "OI-00155",
-    "order_number": "ORD-0050",
-    "material_number": "MAT0019",
-    "quantity": 8,
-    "price_per_unit": 4645.86,
-    "total_price": 37166.88
+    "order_number": "ORD-0049",
+    "material_number": "MAT0035",
+    "quantity": 11,
+    "price_per_unit": 1936.3,
+    "total_price": 21299.3
   },
   {
     "id": "OI-00156",
-    "order_number": "ORD-0051",
-    "material_number": "MAT0013",
-    "quantity": 18,
-    "price_per_unit": 1145.18,
-    "total_price": 20613.24
+    "order_number": "ORD-0050",
+    "material_number": "MAT0020",
+    "quantity": 9,
+    "price_per_unit": 3626.57,
+    "total_price": 32639.13
   },
   {
     "id": "OI-00157",
-    "order_number": "ORD-0051",
-    "material_number": "MAT0011",
-    "quantity": 13,
-    "price_per_unit": 435.77,
-    "total_price": 5665.01
+    "order_number": "ORD-0050",
+    "material_number": "MAT0036",
+    "quantity": 19,
+    "price_per_unit": 8374.49,
+    "total_price": 159115.31
   },
   {
     "id": "OI-00158",
-    "order_number": "ORD-0051",
-    "material_number": "MAT0005",
-    "quantity": 3,
-    "price_per_unit": 2136.71,
-    "total_price": 6410.13
+    "order_number": "ORD-0050",
+    "material_number": "MAT0004",
+    "quantity": 13,
+    "price_per_unit": 5921.32,
+    "total_price": 76977.16
   },
   {
     "id": "OI-00159",
     "order_number": "ORD-0051",
-    "material_number": "MAT0017",
-    "quantity": 12,
-    "price_per_unit": 7264.84,
-    "total_price": 87178.08
+    "material_number": "MAT0011",
+    "quantity": 2,
+    "price_per_unit": 9017.3,
+    "total_price": 18034.6
   },
   {
     "id": "OI-00160",
-    "order_number": "ORD-0052",
-    "material_number": "MAT0004",
-    "quantity": 14,
-    "price_per_unit": 1104.11,
-    "total_price": 15457.54
+    "order_number": "ORD-0051",
+    "material_number": "MAT0014",
+    "quantity": 9,
+    "price_per_unit": 1216.57,
+    "total_price": 10949.13
   },
   {
     "id": "OI-00161",
     "order_number": "ORD-0052",
-    "material_number": "MAT0008",
-    "quantity": 3,
-    "price_per_unit": 3490.19,
-    "total_price": 10470.57
+    "material_number": "MAT0041",
+    "quantity": 4,
+    "price_per_unit": 8061.53,
+    "total_price": 32246.12
   },
   {
     "id": "OI-00162",
-    "order_number": "ORD-0053",
-    "material_number": "MAT0020",
-    "quantity": 20,
-    "price_per_unit": 749.28,
-    "total_price": 14985.6
+    "order_number": "ORD-0052",
+    "material_number": "MAT0029",
+    "quantity": 11,
+    "price_per_unit": 9707.54,
+    "total_price": 106782.94
   },
   {
     "id": "OI-00163",
-    "order_number": "ORD-0053",
-    "material_number": "MAT0020",
-    "quantity": 13,
-    "price_per_unit": 749.28,
-    "total_price": 9740.64
+    "order_number": "ORD-0052",
+    "material_number": "MAT0017",
+    "quantity": 12,
+    "price_per_unit": 2730.82,
+    "total_price": 32769.84
   },
   {
     "id": "OI-00164",
     "order_number": "ORD-0053",
-    "material_number": "MAT0011",
-    "quantity": 1,
-    "price_per_unit": 435.77,
-    "total_price": 435.77
+    "material_number": "MAT0036",
+    "quantity": 18,
+    "price_per_unit": 8374.49,
+    "total_price": 150740.82
   },
   {
     "id": "OI-00165",
-    "order_number": "ORD-0054",
-    "material_number": "MAT0009",
-    "quantity": 15,
-    "price_per_unit": 6027.14,
-    "total_price": 90407.1
+    "order_number": "ORD-0053",
+    "material_number": "MAT0017",
+    "quantity": 12,
+    "price_per_unit": 2730.82,
+    "total_price": 32769.84
   },
   {
     "id": "OI-00166",
-    "order_number": "ORD-0054",
-    "material_number": "MAT0016",
-    "quantity": 8,
-    "price_per_unit": 2584.96,
-    "total_price": 20679.68
+    "order_number": "ORD-0053",
+    "material_number": "MAT0002",
+    "quantity": 14,
+    "price_per_unit": 2279.34,
+    "total_price": 31910.76
   },
   {
     "id": "OI-00167",
     "order_number": "ORD-0054",
-    "material_number": "MAT0012",
-    "quantity": 18,
-    "price_per_unit": 5572.44,
-    "total_price": 100303.92
+    "material_number": "MAT0023",
+    "quantity": 20,
+    "price_per_unit": 5625.58,
+    "total_price": 112511.6
   },
   {
     "id": "OI-00168",
     "order_number": "ORD-0054",
     "material_number": "MAT0013",
-    "quantity": 14,
-    "price_per_unit": 1145.18,
-    "total_price": 16032.52
+    "quantity": 19,
+    "price_per_unit": 4144.84,
+    "total_price": 78751.96
   },
   {
     "id": "OI-00169",
     "order_number": "ORD-0055",
-    "material_number": "MAT0019",
-    "quantity": 13,
-    "price_per_unit": 4645.86,
-    "total_price": 60396.18
+    "material_number": "MAT0042",
+    "quantity": 18,
+    "price_per_unit": 510.97,
+    "total_price": 9197.46
   },
   {
     "id": "OI-00170",
     "order_number": "ORD-0055",
-    "material_number": "MAT0003",
-    "quantity": 20,
-    "price_per_unit": 6997.4,
-    "total_price": 139948.0
+    "material_number": "MAT0012",
+    "quantity": 10,
+    "price_per_unit": 1138.52,
+    "total_price": 11385.2
   },
   {
     "id": "OI-00171",
-    "order_number": "ORD-0056",
-    "material_number": "MAT0008",
-    "quantity": 3,
-    "price_per_unit": 3490.19,
-    "total_price": 10470.57
+    "order_number": "ORD-0055",
+    "material_number": "MAT0023",
+    "quantity": 11,
+    "price_per_unit": 5625.58,
+    "total_price": 61881.38
   },
   {
     "id": "OI-00172",
-    "order_number": "ORD-0056",
-    "material_number": "MAT0003",
-    "quantity": 9,
-    "price_per_unit": 6997.4,
-    "total_price": 62976.6
+    "order_number": "ORD-0055",
+    "material_number": "MAT0033",
+    "quantity": 16,
+    "price_per_unit": 9622.14,
+    "total_price": 153954.24
   },
   {
     "id": "OI-00173",
     "order_number": "ORD-0056",
-    "material_number": "MAT0005",
-    "quantity": 13,
-    "price_per_unit": 2136.71,
-    "total_price": 27777.23
+    "material_number": "MAT0029",
+    "quantity": 3,
+    "price_per_unit": 9707.54,
+    "total_price": 29122.62
   },
   {
     "id": "OI-00174",
-    "order_number": "ORD-0057",
-    "material_number": "MAT0005",
-    "quantity": 13,
-    "price_per_unit": 2136.71,
-    "total_price": 27777.23
+    "order_number": "ORD-0056",
+    "material_number": "MAT0025",
+    "quantity": 20,
+    "price_per_unit": 1890.2,
+    "total_price": 37804.0
   },
   {
     "id": "OI-00175",
-    "order_number": "ORD-0057",
-    "material_number": "MAT0011",
-    "quantity": 12,
-    "price_per_unit": 435.77,
-    "total_price": 5229.24
+    "order_number": "ORD-0056",
+    "material_number": "MAT0019",
+    "quantity": 15,
+    "price_per_unit": 8371.95,
+    "total_price": 125579.25
   },
   {
     "id": "OI-00176",
-    "order_number": "ORD-0057",
-    "material_number": "MAT0004",
-    "quantity": 3,
-    "price_per_unit": 1104.11,
-    "total_price": 3312.33
+    "order_number": "ORD-0056",
+    "material_number": "MAT0041",
+    "quantity": 5,
+    "price_per_unit": 8061.53,
+    "total_price": 40307.65
   },
   {
     "id": "OI-00177",
     "order_number": "ORD-0057",
-    "material_number": "MAT0001",
-    "quantity": 10,
-    "price_per_unit": 9038.92,
-    "total_price": 90389.2
+    "material_number": "MAT0041",
+    "quantity": 11,
+    "price_per_unit": 8061.53,
+    "total_price": 88676.83
   },
   {
     "id": "OI-00178",
-    "order_number": "ORD-0058",
-    "material_number": "MAT0012",
-    "quantity": 9,
-    "price_per_unit": 5572.44,
-    "total_price": 50151.96
+    "order_number": "ORD-0057",
+    "material_number": "MAT0027",
+    "quantity": 20,
+    "price_per_unit": 6990.59,
+    "total_price": 139811.8
   },
   {
     "id": "OI-00179",
     "order_number": "ORD-0058",
-    "material_number": "MAT0004",
-    "quantity": 5,
-    "price_per_unit": 1104.11,
-    "total_price": 5520.55
+    "material_number": "MAT0026",
+    "quantity": 3,
+    "price_per_unit": 4001.66,
+    "total_price": 12004.98
   },
   {
     "id": "OI-00180",
     "order_number": "ORD-0058",
-    "material_number": "MAT0003",
+    "material_number": "MAT0006",
     "quantity": 6,
-    "price_per_unit": 6997.4,
-    "total_price": 41984.4
+    "price_per_unit": 5448.79,
+    "total_price": 32692.74
   },
   {
     "id": "OI-00181",
-    "order_number": "ORD-0059",
-    "material_number": "MAT0015",
-    "quantity": 18,
-    "price_per_unit": 5319.99,
-    "total_price": 95759.82
+    "order_number": "ORD-0058",
+    "material_number": "MAT0022",
+    "quantity": 8,
+    "price_per_unit": 6820.1,
+    "total_price": 54560.8
   },
   {
     "id": "OI-00182",
-    "order_number": "ORD-0059",
-    "material_number": "MAT0018",
-    "quantity": 17,
-    "price_per_unit": 4480.27,
-    "total_price": 76164.59
+    "order_number": "ORD-0058",
+    "material_number": "MAT0021",
+    "quantity": 11,
+    "price_per_unit": 8204.19,
+    "total_price": 90246.09
   },
   {
     "id": "OI-00183",
     "order_number": "ORD-0059",
-    "material_number": "MAT0014",
-    "quantity": 4,
-    "price_per_unit": 6168.53,
-    "total_price": 24674.12
+    "material_number": "MAT0019",
+    "quantity": 9,
+    "price_per_unit": 8371.95,
+    "total_price": 75347.55
   },
   {
     "id": "OI-00184",
-    "order_number": "ORD-0060",
-    "material_number": "MAT0003",
-    "quantity": 12,
-    "price_per_unit": 6997.4,
-    "total_price": 83968.8
+    "order_number": "ORD-0059",
+    "material_number": "MAT0039",
+    "quantity": 13,
+    "price_per_unit": 7394.79,
+    "total_price": 96132.27
   },
   {
     "id": "OI-00185",
-    "order_number": "ORD-0060",
+    "order_number": "ORD-0059",
     "material_number": "MAT0018",
-    "quantity": 3,
-    "price_per_unit": 4480.27,
-    "total_price": 13440.81
+    "quantity": 15,
+    "price_per_unit": 5437.55,
+    "total_price": 81563.25
   },
   {
     "id": "OI-00186",
-    "order_number": "ORD-0061",
-    "material_number": "MAT0020",
-    "quantity": 11,
-    "price_per_unit": 749.28,
-    "total_price": 8242.08
+    "order_number": "ORD-0059",
+    "material_number": "MAT0024",
+    "quantity": 19,
+    "price_per_unit": 1604.56,
+    "total_price": 30486.64
   },
   {
     "id": "OI-00187",
-    "order_number": "ORD-0061",
-    "material_number": "MAT0013",
-    "quantity": 1,
-    "price_per_unit": 1145.18,
-    "total_price": 1145.18
+    "order_number": "ORD-0060",
+    "material_number": "MAT0029",
+    "quantity": 14,
+    "price_per_unit": 9707.54,
+    "total_price": 135905.56
   },
   {
     "id": "OI-00188",
-    "order_number": "ORD-0061",
-    "material_number": "MAT0010",
-    "quantity": 14,
-    "price_per_unit": 9195.98,
-    "total_price": 128743.72
+    "order_number": "ORD-0060",
+    "material_number": "MAT0011",
+    "quantity": 6,
+    "price_per_unit": 9017.3,
+    "total_price": 54103.8
   },
   {
     "id": "OI-00189",
-    "order_number": "ORD-0061",
-    "material_number": "MAT0013",
-    "quantity": 3,
-    "price_per_unit": 1145.18,
-    "total_price": 3435.54
+    "order_number": "ORD-0060",
+    "material_number": "MAT0002",
+    "quantity": 5,
+    "price_per_unit": 2279.34,
+    "total_price": 11396.7
   },
   {
     "id": "OI-00190",
-    "order_number": "ORD-0062",
-    "material_number": "MAT0018",
-    "quantity": 8,
-    "price_per_unit": 4480.27,
-    "total_price": 35842.16
+    "order_number": "ORD-0060",
+    "material_number": "MAT0016",
+    "quantity": 9,
+    "price_per_unit": 8801.76,
+    "total_price": 79215.84
   },
   {
     "id": "OI-00191",
-    "order_number": "ORD-0062",
-    "material_number": "MAT0019",
-    "quantity": 17,
-    "price_per_unit": 4645.86,
-    "total_price": 78979.62
+    "order_number": "ORD-0061",
+    "material_number": "MAT0006",
+    "quantity": 7,
+    "price_per_unit": 5448.79,
+    "total_price": 38141.53
   },
   {
     "id": "OI-00192",
-    "order_number": "ORD-0062",
-    "material_number": "MAT0006",
+    "order_number": "ORD-0061",
+    "material_number": "MAT0011",
     "quantity": 13,
-    "price_per_unit": 2007.52,
-    "total_price": 26097.76
+    "price_per_unit": 9017.3,
+    "total_price": 117224.9
   },
   {
     "id": "OI-00193",
-    "order_number": "ORD-0062",
-    "material_number": "MAT0006",
-    "quantity": 5,
-    "price_per_unit": 2007.52,
-    "total_price": 10037.6
+    "order_number": "ORD-0061",
+    "material_number": "MAT0007",
+    "quantity": 4,
+    "price_per_unit": 9743.17,
+    "total_price": 38972.68
   },
   {
     "id": "OI-00194",
-    "order_number": "ORD-0063",
-    "material_number": "MAT0010",
-    "quantity": 9,
-    "price_per_unit": 9195.98,
-    "total_price": 82763.82
+    "order_number": "ORD-0061",
+    "material_number": "MAT0005",
+    "quantity": 16,
+    "price_per_unit": 3208.58,
+    "total_price": 51337.28
   },
   {
     "id": "OI-00195",
-    "order_number": "ORD-0063",
-    "material_number": "MAT0016",
-    "quantity": 5,
-    "price_per_unit": 2584.96,
-    "total_price": 12924.8
+    "order_number": "ORD-0062",
+    "material_number": "MAT0004",
+    "quantity": 1,
+    "price_per_unit": 5921.32,
+    "total_price": 5921.32
   },
   {
     "id": "OI-00196",
-    "order_number": "ORD-0063",
-    "material_number": "MAT0003",
-    "quantity": 6,
-    "price_per_unit": 6997.4,
-    "total_price": 41984.4
+    "order_number": "ORD-0062",
+    "material_number": "MAT0026",
+    "quantity": 17,
+    "price_per_unit": 4001.66,
+    "total_price": 68028.22
   },
   {
     "id": "OI-00197",
-    "order_number": "ORD-0064",
-    "material_number": "MAT0009",
-    "quantity": 14,
-    "price_per_unit": 6027.14,
-    "total_price": 84379.96
+    "order_number": "ORD-0062",
+    "material_number": "MAT0006",
+    "quantity": 4,
+    "price_per_unit": 5448.79,
+    "total_price": 21795.16
   },
   {
     "id": "OI-00198",
-    "order_number": "ORD-0064",
-    "material_number": "MAT0010",
-    "quantity": 16,
-    "price_per_unit": 9195.98,
-    "total_price": 147135.68
+    "order_number": "ORD-0062",
+    "material_number": "MAT0017",
+    "quantity": 20,
+    "price_per_unit": 2730.82,
+    "total_price": 54616.4
   },
   {
     "id": "OI-00199",
-    "order_number": "ORD-0064",
-    "material_number": "MAT0003",
-    "quantity": 12,
-    "price_per_unit": 6997.4,
-    "total_price": 83968.8
+    "order_number": "ORD-0063",
+    "material_number": "MAT0006",
+    "quantity": 13,
+    "price_per_unit": 5448.79,
+    "total_price": 70834.27
   },
   {
     "id": "OI-00200",
-    "order_number": "ORD-0065",
-    "material_number": "MAT0008",
-    "quantity": 16,
-    "price_per_unit": 3490.19,
-    "total_price": 55843.04
+    "order_number": "ORD-0063",
+    "material_number": "MAT0020",
+    "quantity": 8,
+    "price_per_unit": 3626.57,
+    "total_price": 29012.56
   },
   {
     "id": "OI-00201",
-    "order_number": "ORD-0065",
-    "material_number": "MAT0020",
-    "quantity": 20,
-    "price_per_unit": 749.28,
-    "total_price": 14985.6
+    "order_number": "ORD-0064",
+    "material_number": "MAT0019",
+    "quantity": 15,
+    "price_per_unit": 8371.95,
+    "total_price": 125579.25
   },
   {
     "id": "OI-00202",
-    "order_number": "ORD-0065",
-    "material_number": "MAT0007",
-    "quantity": 15,
-    "price_per_unit": 4717.76,
-    "total_price": 70766.4
+    "order_number": "ORD-0064",
+    "material_number": "MAT0041",
+    "quantity": 5,
+    "price_per_unit": 8061.53,
+    "total_price": 40307.65
   },
   {
     "id": "OI-00203",
-    "order_number": "ORD-0066",
-    "material_number": "MAT0005",
-    "quantity": 10,
-    "price_per_unit": 2136.71,
-    "total_price": 21367.1
+    "order_number": "ORD-0065",
+    "material_number": "MAT0034",
+    "quantity": 6,
+    "price_per_unit": 4878.78,
+    "total_price": 29272.68
   },
   {
     "id": "OI-00204",
-    "order_number": "ORD-0066",
-    "material_number": "MAT0001",
-    "quantity": 13,
-    "price_per_unit": 9038.92,
-    "total_price": 117505.96
+    "order_number": "ORD-0065",
+    "material_number": "MAT0002",
+    "quantity": 2,
+    "price_per_unit": 2279.34,
+    "total_price": 4558.68
   },
   {
     "id": "OI-00205",
-    "order_number": "ORD-0067",
-    "material_number": "MAT0020",
-    "quantity": 13,
-    "price_per_unit": 749.28,
-    "total_price": 9740.64
+    "order_number": "ORD-0066",
+    "material_number": "MAT0023",
+    "quantity": 11,
+    "price_per_unit": 5625.58,
+    "total_price": 61881.38
   },
   {
     "id": "OI-00206",
-    "order_number": "ORD-0067",
-    "material_number": "MAT0011",
+    "order_number": "ORD-0066",
+    "material_number": "MAT0031",
     "quantity": 15,
-    "price_per_unit": 435.77,
-    "total_price": 6536.55
+    "price_per_unit": 3068.46,
+    "total_price": 46026.9
   },
   {
     "id": "OI-00207",
-    "order_number": "ORD-0067",
-    "material_number": "MAT0011",
-    "quantity": 14,
-    "price_per_unit": 435.77,
-    "total_price": 6100.78
+    "order_number": "ORD-0066",
+    "material_number": "MAT0035",
+    "quantity": 9,
+    "price_per_unit": 1936.3,
+    "total_price": 17426.7
   },
   {
     "id": "OI-00208",
-    "order_number": "ORD-0068",
-    "material_number": "MAT0020",
-    "quantity": 5,
-    "price_per_unit": 749.28,
-    "total_price": 3746.4
+    "order_number": "ORD-0066",
+    "material_number": "MAT0036",
+    "quantity": 15,
+    "price_per_unit": 8374.49,
+    "total_price": 125617.35
   },
   {
     "id": "OI-00209",
-    "order_number": "ORD-0068",
-    "material_number": "MAT0010",
-    "quantity": 11,
-    "price_per_unit": 9195.98,
-    "total_price": 101155.78
+    "order_number": "ORD-0067",
+    "material_number": "MAT0035",
+    "quantity": 6,
+    "price_per_unit": 1936.3,
+    "total_price": 11617.8
   },
   {
     "id": "OI-00210",
-    "order_number": "ORD-0068",
-    "material_number": "MAT0020",
-    "quantity": 7,
-    "price_per_unit": 749.28,
-    "total_price": 5244.96
+    "order_number": "ORD-0067",
+    "material_number": "MAT0038",
+    "quantity": 20,
+    "price_per_unit": 9096.21,
+    "total_price": 181924.2
   },
   {
     "id": "OI-00211",
     "order_number": "ORD-0068",
-    "material_number": "MAT0016",
-    "quantity": 11,
-    "price_per_unit": 2584.96,
-    "total_price": 28434.56
+    "material_number": "MAT0041",
+    "quantity": 19,
+    "price_per_unit": 8061.53,
+    "total_price": 153169.07
   },
   {
     "id": "OI-00212",
-    "order_number": "ORD-0069",
-    "material_number": "MAT0013",
-    "quantity": 11,
-    "price_per_unit": 1145.18,
-    "total_price": 12596.98
+    "order_number": "ORD-0068",
+    "material_number": "MAT0028",
+    "quantity": 17,
+    "price_per_unit": 7085.5,
+    "total_price": 120453.5
   },
   {
     "id": "OI-00213",
-    "order_number": "ORD-0069",
-    "material_number": "MAT0010",
-    "quantity": 16,
-    "price_per_unit": 9195.98,
-    "total_price": 147135.68
+    "order_number": "ORD-0068",
+    "material_number": "MAT0041",
+    "quantity": 18,
+    "price_per_unit": 8061.53,
+    "total_price": 145107.54
   },
   {
     "id": "OI-00214",
-    "order_number": "ORD-0070",
-    "material_number": "MAT0008",
-    "quantity": 11,
-    "price_per_unit": 3490.19,
-    "total_price": 38392.09
+    "order_number": "ORD-0069",
+    "material_number": "MAT0023",
+    "quantity": 16,
+    "price_per_unit": 5625.58,
+    "total_price": 90009.28
   },
   {
     "id": "OI-00215",
-    "order_number": "ORD-0070",
-    "material_number": "MAT0013",
-    "quantity": 9,
-    "price_per_unit": 1145.18,
-    "total_price": 10306.62
+    "order_number": "ORD-0069",
+    "material_number": "MAT0035",
+    "quantity": 8,
+    "price_per_unit": 1936.3,
+    "total_price": 15490.4
   },
   {
     "id": "OI-00216",
-    "order_number": "ORD-0070",
-    "material_number": "MAT0013",
-    "quantity": 12,
-    "price_per_unit": 1145.18,
-    "total_price": 13742.16
+    "order_number": "ORD-0069",
+    "material_number": "MAT0006",
+    "quantity": 15,
+    "price_per_unit": 5448.79,
+    "total_price": 81731.85
   },
   {
     "id": "OI-00217",
     "order_number": "ORD-0070",
-    "material_number": "MAT0004",
-    "quantity": 19,
-    "price_per_unit": 1104.11,
-    "total_price": 20978.09
+    "material_number": "MAT0024",
+    "quantity": 14,
+    "price_per_unit": 1604.56,
+    "total_price": 22463.84
   },
   {
     "id": "OI-00218",
-    "order_number": "ORD-0071",
-    "material_number": "MAT0019",
-    "quantity": 18,
-    "price_per_unit": 4645.86,
-    "total_price": 83625.48
+    "order_number": "ORD-0070",
+    "material_number": "MAT0017",
+    "quantity": 5,
+    "price_per_unit": 2730.82,
+    "total_price": 13654.1
   },
   {
     "id": "OI-00219",
-    "order_number": "ORD-0071",
-    "material_number": "MAT0006",
-    "quantity": 18,
-    "price_per_unit": 2007.52,
-    "total_price": 36135.36
+    "order_number": "ORD-0070",
+    "material_number": "MAT0020",
+    "quantity": 1,
+    "price_per_unit": 3626.57,
+    "total_price": 3626.57
   },
   {
     "id": "OI-00220",
-    "order_number": "ORD-0072",
-    "material_number": "MAT0015",
-    "quantity": 7,
-    "price_per_unit": 5319.99,
-    "total_price": 37239.93
+    "order_number": "ORD-0071",
+    "material_number": "MAT0034",
+    "quantity": 5,
+    "price_per_unit": 4878.78,
+    "total_price": 24393.9
   },
   {
     "id": "OI-00221",
-    "order_number": "ORD-0072",
-    "material_number": "MAT0015",
+    "order_number": "ORD-0071",
+    "material_number": "MAT0023",
     "quantity": 10,
-    "price_per_unit": 5319.99,
-    "total_price": 53199.9
+    "price_per_unit": 5625.58,
+    "total_price": 56255.8
   },
   {
     "id": "OI-00222",
-    "order_number": "ORD-0073",
-    "material_number": "MAT0003",
-    "quantity": 14,
-    "price_per_unit": 6997.4,
-    "total_price": 97963.6
+    "order_number": "ORD-0072",
+    "material_number": "MAT0035",
+    "quantity": 1,
+    "price_per_unit": 1936.3,
+    "total_price": 1936.3
   },
   {
     "id": "OI-00223",
-    "order_number": "ORD-0073",
-    "material_number": "MAT0016",
-    "quantity": 5,
-    "price_per_unit": 2584.96,
-    "total_price": 12924.8
+    "order_number": "ORD-0072",
+    "material_number": "MAT0032",
+    "quantity": 16,
+    "price_per_unit": 8024.67,
+    "total_price": 128394.72
   },
   {
     "id": "OI-00224",
-    "order_number": "ORD-0073",
-    "material_number": "MAT0010",
-    "quantity": 8,
-    "price_per_unit": 9195.98,
-    "total_price": 73567.84
+    "order_number": "ORD-0072",
+    "material_number": "MAT0020",
+    "quantity": 1,
+    "price_per_unit": 3626.57,
+    "total_price": 3626.57
   },
   {
     "id": "OI-00225",
     "order_number": "ORD-0073",
-    "material_number": "MAT0009",
-    "quantity": 5,
-    "price_per_unit": 6027.14,
-    "total_price": 30135.7
+    "material_number": "MAT0019",
+    "quantity": 20,
+    "price_per_unit": 8371.95,
+    "total_price": 167439.0
   },
   {
     "id": "OI-00226",
-    "order_number": "ORD-0074",
-    "material_number": "MAT0014",
-    "quantity": 13,
-    "price_per_unit": 6168.53,
-    "total_price": 80190.89
+    "order_number": "ORD-0073",
+    "material_number": "MAT0015",
+    "quantity": 1,
+    "price_per_unit": 8305.88,
+    "total_price": 8305.88
   },
   {
     "id": "OI-00227",
-    "order_number": "ORD-0074",
-    "material_number": "MAT0003",
-    "quantity": 15,
-    "price_per_unit": 6997.4,
-    "total_price": 104961.0
+    "order_number": "ORD-0073",
+    "material_number": "MAT0036",
+    "quantity": 12,
+    "price_per_unit": 8374.49,
+    "total_price": 100493.88
   },
   {
     "id": "OI-00228",
     "order_number": "ORD-0074",
-    "material_number": "MAT0020",
-    "quantity": 16,
-    "price_per_unit": 749.28,
-    "total_price": 11988.48
+    "material_number": "MAT0027",
+    "quantity": 18,
+    "price_per_unit": 6990.59,
+    "total_price": 125830.62
   },
   {
     "id": "OI-00229",
     "order_number": "ORD-0074",
-    "material_number": "MAT0019",
+    "material_number": "MAT0028",
     "quantity": 13,
-    "price_per_unit": 4645.86,
-    "total_price": 60396.18
+    "price_per_unit": 7085.5,
+    "total_price": 92111.5
   },
   {
     "id": "OI-00230",
     "order_number": "ORD-0075",
-    "material_number": "MAT0017",
-    "quantity": 14,
-    "price_per_unit": 7264.84,
-    "total_price": 101707.76
+    "material_number": "MAT0011",
+    "quantity": 13,
+    "price_per_unit": 9017.3,
+    "total_price": 117224.9
   },
   {
     "id": "OI-00231",
     "order_number": "ORD-0075",
-    "material_number": "MAT0018",
-    "quantity": 2,
-    "price_per_unit": 4480.27,
-    "total_price": 8960.54
+    "material_number": "MAT0025",
+    "quantity": 8,
+    "price_per_unit": 1890.2,
+    "total_price": 15121.6
   },
   {
     "id": "OI-00232",
-    "order_number": "ORD-0075",
-    "material_number": "MAT0012",
-    "quantity": 18,
-    "price_per_unit": 5572.44,
-    "total_price": 100303.92
+    "order_number": "ORD-0076",
+    "material_number": "MAT0006",
+    "quantity": 14,
+    "price_per_unit": 5448.79,
+    "total_price": 76283.06
   },
   {
     "id": "OI-00233",
-    "order_number": "ORD-0075",
-    "material_number": "MAT0020",
-    "quantity": 3,
-    "price_per_unit": 749.28,
-    "total_price": 2247.84
+    "order_number": "ORD-0076",
+    "material_number": "MAT0041",
+    "quantity": 8,
+    "price_per_unit": 8061.53,
+    "total_price": 64492.24
   },
   {
     "id": "OI-00234",
     "order_number": "ORD-0076",
-    "material_number": "MAT0008",
-    "quantity": 12,
-    "price_per_unit": 3490.19,
-    "total_price": 41882.28
+    "material_number": "MAT0034",
+    "quantity": 20,
+    "price_per_unit": 4878.78,
+    "total_price": 97575.6
   },
   {
     "id": "OI-00235",
-    "order_number": "ORD-0076",
-    "material_number": "MAT0006",
-    "quantity": 20,
-    "price_per_unit": 2007.52,
-    "total_price": 40150.4
+    "order_number": "ORD-0077",
+    "material_number": "MAT0018",
+    "quantity": 10,
+    "price_per_unit": 5437.55,
+    "total_price": 54375.5
   },
   {
     "id": "OI-00236",
     "order_number": "ORD-0077",
-    "material_number": "MAT0019",
-    "quantity": 13,
-    "price_per_unit": 4645.86,
-    "total_price": 60396.18
+    "material_number": "MAT0042",
+    "quantity": 18,
+    "price_per_unit": 510.97,
+    "total_price": 9197.46
   },
   {
     "id": "OI-00237",
     "order_number": "ORD-0077",
-    "material_number": "MAT0011",
+    "material_number": "MAT0018",
     "quantity": 14,
-    "price_per_unit": 435.77,
-    "total_price": 6100.78
+    "price_per_unit": 5437.55,
+    "total_price": 76125.7
   },
   {
     "id": "OI-00238",
-    "order_number": "ORD-0078",
-    "material_number": "MAT0001",
-    "quantity": 4,
-    "price_per_unit": 9038.92,
-    "total_price": 36155.68
+    "order_number": "ORD-0077",
+    "material_number": "MAT0013",
+    "quantity": 3,
+    "price_per_unit": 4144.84,
+    "total_price": 12434.52
   },
   {
     "id": "OI-00239",
     "order_number": "ORD-0078",
     "material_number": "MAT0009",
-    "quantity": 8,
-    "price_per_unit": 6027.14,
-    "total_price": 48217.12
+    "quantity": 10,
+    "price_per_unit": 9440.31,
+    "total_price": 94403.1
   },
   {
     "id": "OI-00240",
-    "order_number": "ORD-0079",
-    "material_number": "MAT0017",
-    "quantity": 18,
-    "price_per_unit": 7264.84,
-    "total_price": 130767.12
+    "order_number": "ORD-0078",
+    "material_number": "MAT0008",
+    "quantity": 15,
+    "price_per_unit": 7853.4,
+    "total_price": 117801.0
   },
   {
     "id": "OI-00241",
     "order_number": "ORD-0079",
-    "material_number": "MAT0019",
-    "quantity": 19,
-    "price_per_unit": 4645.86,
-    "total_price": 88271.34
+    "material_number": "MAT0029",
+    "quantity": 9,
+    "price_per_unit": 9707.54,
+    "total_price": 87367.86
   },
   {
     "id": "OI-00242",
     "order_number": "ORD-0079",
-    "material_number": "MAT0008",
-    "quantity": 15,
-    "price_per_unit": 3490.19,
-    "total_price": 52352.85
+    "material_number": "MAT0040",
+    "quantity": 16,
+    "price_per_unit": 3201.49,
+    "total_price": 51223.84
   },
   {
     "id": "OI-00243",
     "order_number": "ORD-0079",
-    "material_number": "MAT0012",
-    "quantity": 13,
-    "price_per_unit": 5572.44,
-    "total_price": 72441.72
+    "material_number": "MAT0013",
+    "quantity": 11,
+    "price_per_unit": 4144.84,
+    "total_price": 45593.24
   },
   {
     "id": "OI-00244",
-    "order_number": "ORD-0080",
-    "material_number": "MAT0019",
-    "quantity": 17,
-    "price_per_unit": 4645.86,
-    "total_price": 78979.62
+    "order_number": "ORD-0079",
+    "material_number": "MAT0002",
+    "quantity": 5,
+    "price_per_unit": 2279.34,
+    "total_price": 11396.7
   },
   {
     "id": "OI-00245",
     "order_number": "ORD-0080",
-    "material_number": "MAT0005",
-    "quantity": 12,
-    "price_per_unit": 2136.71,
-    "total_price": 25640.52
+    "material_number": "MAT0035",
+    "quantity": 1,
+    "price_per_unit": 1936.3,
+    "total_price": 1936.3
   },
   {
     "id": "OI-00246",
     "order_number": "ORD-0080",
-    "material_number": "MAT0001",
-    "quantity": 16,
-    "price_per_unit": 9038.92,
-    "total_price": 144622.72
+    "material_number": "MAT0012",
+    "quantity": 4,
+    "price_per_unit": 1138.52,
+    "total_price": 4554.08
   },
   {
     "id": "OI-00247",
     "order_number": "ORD-0081",
-    "material_number": "MAT0010",
-    "quantity": 14,
-    "price_per_unit": 9195.98,
-    "total_price": 128743.72
+    "material_number": "MAT0018",
+    "quantity": 5,
+    "price_per_unit": 5437.55,
+    "total_price": 27187.75
   },
   {
     "id": "OI-00248",
     "order_number": "ORD-0081",
-    "material_number": "MAT0003",
-    "quantity": 4,
-    "price_per_unit": 6997.4,
-    "total_price": 27989.6
+    "material_number": "MAT0029",
+    "quantity": 1,
+    "price_per_unit": 9707.54,
+    "total_price": 9707.54
   },
   {
     "id": "OI-00249",
-    "order_number": "ORD-0082",
-    "material_number": "MAT0005",
-    "quantity": 12,
-    "price_per_unit": 2136.71,
-    "total_price": 25640.52
+    "order_number": "ORD-0081",
+    "material_number": "MAT0015",
+    "quantity": 3,
+    "price_per_unit": 8305.88,
+    "total_price": 24917.64
   },
   {
     "id": "OI-00250",
     "order_number": "ORD-0082",
-    "material_number": "MAT0010",
-    "quantity": 11,
-    "price_per_unit": 9195.98,
-    "total_price": 101155.78
+    "material_number": "MAT0001",
+    "quantity": 16,
+    "price_per_unit": 3982.73,
+    "total_price": 63723.68
   },
   {
     "id": "OI-00251",
     "order_number": "ORD-0082",
-    "material_number": "MAT0015",
-    "quantity": 7,
-    "price_per_unit": 5319.99,
-    "total_price": 37239.93
+    "material_number": "MAT0014",
+    "quantity": 11,
+    "price_per_unit": 1216.57,
+    "total_price": 13382.27
   },
   {
     "id": "OI-00252",
-    "order_number": "ORD-0082",
-    "material_number": "MAT0017",
+    "order_number": "ORD-0083",
+    "material_number": "MAT0020",
     "quantity": 16,
-    "price_per_unit": 7264.84,
-    "total_price": 116237.44
+    "price_per_unit": 3626.57,
+    "total_price": 58025.12
   },
   {
     "id": "OI-00253",
     "order_number": "ORD-0083",
-    "material_number": "MAT0016",
-    "quantity": 4,
-    "price_per_unit": 2584.96,
-    "total_price": 10339.84
+    "material_number": "MAT0024",
+    "quantity": 15,
+    "price_per_unit": 1604.56,
+    "total_price": 24068.4
   },
   {
     "id": "OI-00254",
     "order_number": "ORD-0083",
-    "material_number": "MAT0015",
-    "quantity": 15,
-    "price_per_unit": 5319.99,
-    "total_price": 79799.85
+    "material_number": "MAT0003",
+    "quantity": 11,
+    "price_per_unit": 2744.55,
+    "total_price": 30190.05
   },
   {
     "id": "OI-00255",
-    "order_number": "ORD-0083",
-    "material_number": "MAT0011",
-    "quantity": 3,
-    "price_per_unit": 435.77,
-    "total_price": 1307.31
+    "order_number": "ORD-0084",
+    "material_number": "MAT0010",
+    "quantity": 2,
+    "price_per_unit": 5985.14,
+    "total_price": 11970.28
   },
   {
     "id": "OI-00256",
     "order_number": "ORD-0084",
-    "material_number": "MAT0002",
-    "quantity": 4,
-    "price_per_unit": 5558.58,
-    "total_price": 22234.32
+    "material_number": "MAT0018",
+    "quantity": 13,
+    "price_per_unit": 5437.55,
+    "total_price": 70688.15
   },
   {
     "id": "OI-00257",
-    "order_number": "ORD-0084",
-    "material_number": "MAT0001",
-    "quantity": 11,
-    "price_per_unit": 9038.92,
-    "total_price": 99428.12
+    "order_number": "ORD-0085",
+    "material_number": "MAT0035",
+    "quantity": 16,
+    "price_per_unit": 1936.3,
+    "total_price": 30980.8
   },
   {
     "id": "OI-00258",
-    "order_number": "ORD-0084",
-    "material_number": "MAT0004",
-    "quantity": 6,
-    "price_per_unit": 1104.11,
-    "total_price": 6624.66
+    "order_number": "ORD-0085",
+    "material_number": "MAT0012",
+    "quantity": 7,
+    "price_per_unit": 1138.52,
+    "total_price": 7969.64
   },
   {
     "id": "OI-00259",
-    "order_number": "ORD-0085",
-    "material_number": "MAT0008",
-    "quantity": 17,
-    "price_per_unit": 3490.19,
-    "total_price": 59333.23
+    "order_number": "ORD-0086",
+    "material_number": "MAT0025",
+    "quantity": 1,
+    "price_per_unit": 1890.2,
+    "total_price": 1890.2
   },
   {
     "id": "OI-00260",
-    "order_number": "ORD-0085",
-    "material_number": "MAT0006",
-    "quantity": 18,
-    "price_per_unit": 2007.52,
-    "total_price": 36135.36
+    "order_number": "ORD-0086",
+    "material_number": "MAT0008",
+    "quantity": 8,
+    "price_per_unit": 7853.4,
+    "total_price": 62827.2
   },
   {
     "id": "OI-00261",
-    "order_number": "ORD-0085",
-    "material_number": "MAT0006",
-    "quantity": 11,
-    "price_per_unit": 2007.52,
-    "total_price": 22082.72
+    "order_number": "ORD-0086",
+    "material_number": "MAT0025",
+    "quantity": 15,
+    "price_per_unit": 1890.2,
+    "total_price": 28353.0
   },
   {
     "id": "OI-00262",
-    "order_number": "ORD-0085",
-    "material_number": "MAT0018",
-    "quantity": 14,
-    "price_per_unit": 4480.27,
-    "total_price": 62723.78
+    "order_number": "ORD-0087",
+    "material_number": "MAT0003",
+    "quantity": 7,
+    "price_per_unit": 2744.55,
+    "total_price": 19211.85
   },
   {
     "id": "OI-00263",
-    "order_number": "ORD-0086",
-    "material_number": "MAT0008",
-    "quantity": 13,
-    "price_per_unit": 3490.19,
-    "total_price": 45372.47
+    "order_number": "ORD-0087",
+    "material_number": "MAT0030",
+    "quantity": 4,
+    "price_per_unit": 4565.96,
+    "total_price": 18263.84
   },
   {
     "id": "OI-00264",
-    "order_number": "ORD-0086",
-    "material_number": "MAT0006",
-    "quantity": 6,
-    "price_per_unit": 2007.52,
-    "total_price": 12045.12
+    "order_number": "ORD-0088",
+    "material_number": "MAT0014",
+    "quantity": 16,
+    "price_per_unit": 1216.57,
+    "total_price": 19465.12
   },
   {
     "id": "OI-00265",
-    "order_number": "ORD-0086",
-    "material_number": "MAT0014",
-    "quantity": 13,
-    "price_per_unit": 6168.53,
-    "total_price": 80190.89
+    "order_number": "ORD-0088",
+    "material_number": "MAT0025",
+    "quantity": 10,
+    "price_per_unit": 1890.2,
+    "total_price": 18902.0
   },
   {
     "id": "OI-00266",
-    "order_number": "ORD-0087",
-    "material_number": "MAT0020",
-    "quantity": 7,
-    "price_per_unit": 749.28,
-    "total_price": 5244.96
+    "order_number": "ORD-0088",
+    "material_number": "MAT0021",
+    "quantity": 6,
+    "price_per_unit": 8204.19,
+    "total_price": 49225.14
   },
   {
     "id": "OI-00267",
-    "order_number": "ORD-0087",
-    "material_number": "MAT0015",
-    "quantity": 19,
-    "price_per_unit": 5319.99,
-    "total_price": 101079.81
+    "order_number": "ORD-0088",
+    "material_number": "MAT0041",
+    "quantity": 2,
+    "price_per_unit": 8061.53,
+    "total_price": 16123.06
   },
   {
     "id": "OI-00268",
-    "order_number": "ORD-0088",
-    "material_number": "MAT0013",
-    "quantity": 1,
-    "price_per_unit": 1145.18,
-    "total_price": 1145.18
+    "order_number": "ORD-0089",
+    "material_number": "MAT0036",
+    "quantity": 17,
+    "price_per_unit": 8374.49,
+    "total_price": 142366.33
   },
   {
     "id": "OI-00269",
-    "order_number": "ORD-0088",
-    "material_number": "MAT0007",
-    "quantity": 7,
-    "price_per_unit": 4717.76,
-    "total_price": 33024.32
+    "order_number": "ORD-0089",
+    "material_number": "MAT0008",
+    "quantity": 9,
+    "price_per_unit": 7853.4,
+    "total_price": 70680.6
   },
   {
     "id": "OI-00270",
-    "order_number": "ORD-0088",
-    "material_number": "MAT0009",
-    "quantity": 3,
-    "price_per_unit": 6027.14,
-    "total_price": 18081.42
+    "order_number": "ORD-0089",
+    "material_number": "MAT0031",
+    "quantity": 10,
+    "price_per_unit": 3068.46,
+    "total_price": 30684.6
   },
   {
     "id": "OI-00271",
     "order_number": "ORD-0089",
-    "material_number": "MAT0004",
-    "quantity": 18,
-    "price_per_unit": 1104.11,
-    "total_price": 19873.98
+    "material_number": "MAT0013",
+    "quantity": 12,
+    "price_per_unit": 4144.84,
+    "total_price": 49738.08
   },
   {
     "id": "OI-00272",
-    "order_number": "ORD-0089",
-    "material_number": "MAT0006",
-    "quantity": 12,
-    "price_per_unit": 2007.52,
-    "total_price": 24090.24
+    "order_number": "ORD-0090",
+    "material_number": "MAT0014",
+    "quantity": 4,
+    "price_per_unit": 1216.57,
+    "total_price": 4866.28
   },
   {
     "id": "OI-00273",
-    "order_number": "ORD-0089",
-    "material_number": "MAT0011",
-    "quantity": 7,
-    "price_per_unit": 435.77,
-    "total_price": 3050.39
+    "order_number": "ORD-0090",
+    "material_number": "MAT0016",
+    "quantity": 14,
+    "price_per_unit": 8801.76,
+    "total_price": 123224.64
   },
   {
     "id": "OI-00274",
-    "order_number": "ORD-0089",
-    "material_number": "MAT0015",
-    "quantity": 4,
-    "price_per_unit": 5319.99,
-    "total_price": 21279.96
+    "order_number": "ORD-0091",
+    "material_number": "MAT0001",
+    "quantity": 6,
+    "price_per_unit": 3982.73,
+    "total_price": 23896.38
   },
   {
     "id": "OI-00275",
-    "order_number": "ORD-0090",
-    "material_number": "MAT0016",
-    "quantity": 17,
-    "price_per_unit": 2584.96,
-    "total_price": 43944.32
+    "order_number": "ORD-0091",
+    "material_number": "MAT0018",
+    "quantity": 19,
+    "price_per_unit": 5437.55,
+    "total_price": 103313.45
   },
   {
     "id": "OI-00276",
-    "order_number": "ORD-0090",
-    "material_number": "MAT0011",
-    "quantity": 20,
-    "price_per_unit": 435.77,
-    "total_price": 8715.4
+    "order_number": "ORD-0091",
+    "material_number": "MAT0008",
+    "quantity": 13,
+    "price_per_unit": 7853.4,
+    "total_price": 102094.2
   },
   {
     "id": "OI-00277",
-    "order_number": "ORD-0090",
-    "material_number": "MAT0013",
-    "quantity": 20,
-    "price_per_unit": 1145.18,
-    "total_price": 22903.6
+    "order_number": "ORD-0092",
+    "material_number": "MAT0001",
+    "quantity": 2,
+    "price_per_unit": 3982.73,
+    "total_price": 7965.46
   },
   {
     "id": "OI-00278",
-    "order_number": "ORD-0091",
-    "material_number": "MAT0019",
-    "quantity": 4,
-    "price_per_unit": 4645.86,
-    "total_price": 18583.44
+    "order_number": "ORD-0092",
+    "material_number": "MAT0038",
+    "quantity": 16,
+    "price_per_unit": 9096.21,
+    "total_price": 145539.36
   },
   {
     "id": "OI-00279",
-    "order_number": "ORD-0091",
-    "material_number": "MAT0012",
-    "quantity": 12,
-    "price_per_unit": 5572.44,
-    "total_price": 66869.28
+    "order_number": "ORD-0093",
+    "material_number": "MAT0039",
+    "quantity": 5,
+    "price_per_unit": 7394.79,
+    "total_price": 36973.95
   },
   {
     "id": "OI-00280",
-    "order_number": "ORD-0091",
-    "material_number": "MAT0015",
-    "quantity": 20,
-    "price_per_unit": 5319.99,
-    "total_price": 106399.8
+    "order_number": "ORD-0093",
+    "material_number": "MAT0024",
+    "quantity": 3,
+    "price_per_unit": 1604.56,
+    "total_price": 4813.68
   },
   {
     "id": "OI-00281",
-    "order_number": "ORD-0092",
-    "material_number": "MAT0010",
-    "quantity": 20,
-    "price_per_unit": 9195.98,
-    "total_price": 183919.6
+    "order_number": "ORD-0093",
+    "material_number": "MAT0016",
+    "quantity": 6,
+    "price_per_unit": 8801.76,
+    "total_price": 52810.56
   },
   {
     "id": "OI-00282",
-    "order_number": "ORD-0092",
-    "material_number": "MAT0019",
+    "order_number": "ORD-0093",
+    "material_number": "MAT0032",
     "quantity": 3,
-    "price_per_unit": 4645.86,
-    "total_price": 13937.58
+    "price_per_unit": 8024.67,
+    "total_price": 24074.01
   },
   {
     "id": "OI-00283",
-    "order_number": "ORD-0093",
-    "material_number": "MAT0005",
+    "order_number": "ORD-0094",
+    "material_number": "MAT0040",
     "quantity": 11,
-    "price_per_unit": 2136.71,
-    "total_price": 23503.81
+    "price_per_unit": 3201.49,
+    "total_price": 35216.39
   },
   {
     "id": "OI-00284",
-    "order_number": "ORD-0093",
-    "material_number": "MAT0004",
-    "quantity": 8,
-    "price_per_unit": 1104.11,
-    "total_price": 8832.88
+    "order_number": "ORD-0094",
+    "material_number": "MAT0041",
+    "quantity": 2,
+    "price_per_unit": 8061.53,
+    "total_price": 16123.06
   },
   {
     "id": "OI-00285",
-    "order_number": "ORD-0093",
-    "material_number": "MAT0010",
-    "quantity": 4,
-    "price_per_unit": 9195.98,
-    "total_price": 36783.92
+    "order_number": "ORD-0094",
+    "material_number": "MAT0004",
+    "quantity": 12,
+    "price_per_unit": 5921.32,
+    "total_price": 71055.84
   },
   {
     "id": "OI-00286",
-    "order_number": "ORD-0093",
-    "material_number": "MAT0006",
-    "quantity": 12,
-    "price_per_unit": 2007.52,
-    "total_price": 24090.24
+    "order_number": "ORD-0094",
+    "material_number": "MAT0042",
+    "quantity": 5,
+    "price_per_unit": 510.97,
+    "total_price": 2554.85
   },
   {
     "id": "OI-00287",
-    "order_number": "ORD-0094",
-    "material_number": "MAT0005",
-    "quantity": 17,
-    "price_per_unit": 2136.71,
-    "total_price": 36324.07
+    "order_number": "ORD-0095",
+    "material_number": "MAT0035",
+    "quantity": 4,
+    "price_per_unit": 1936.3,
+    "total_price": 7745.2
   },
   {
     "id": "OI-00288",
-    "order_number": "ORD-0094",
-    "material_number": "MAT0013",
-    "quantity": 14,
-    "price_per_unit": 1145.18,
-    "total_price": 16032.52
+    "order_number": "ORD-0095",
+    "material_number": "MAT0009",
+    "quantity": 16,
+    "price_per_unit": 9440.31,
+    "total_price": 151044.96
   },
   {
     "id": "OI-00289",
-    "order_number": "ORD-0094",
-    "material_number": "MAT0020",
-    "quantity": 5,
-    "price_per_unit": 749.28,
-    "total_price": 3746.4
+    "order_number": "ORD-0095",
+    "material_number": "MAT0015",
+    "quantity": 11,
+    "price_per_unit": 8305.88,
+    "total_price": 91364.68
   },
   {
     "id": "OI-00290",
-    "order_number": "ORD-0094",
-    "material_number": "MAT0019",
-    "quantity": 13,
-    "price_per_unit": 4645.86,
-    "total_price": 60396.18
+    "order_number": "ORD-0095",
+    "material_number": "MAT0036",
+    "quantity": 12,
+    "price_per_unit": 8374.49,
+    "total_price": 100493.88
   },
   {
     "id": "OI-00291",
-    "order_number": "ORD-0095",
-    "material_number": "MAT0006",
-    "quantity": 16,
-    "price_per_unit": 2007.52,
-    "total_price": 32120.32
+    "order_number": "ORD-0096",
+    "material_number": "MAT0013",
+    "quantity": 1,
+    "price_per_unit": 4144.84,
+    "total_price": 4144.84
   },
   {
     "id": "OI-00292",
-    "order_number": "ORD-0095",
-    "material_number": "MAT0018",
-    "quantity": 6,
-    "price_per_unit": 4480.27,
-    "total_price": 26881.62
+    "order_number": "ORD-0096",
+    "material_number": "MAT0025",
+    "quantity": 12,
+    "price_per_unit": 1890.2,
+    "total_price": 22682.4
   },
   {
     "id": "OI-00293",
-    "order_number": "ORD-0095",
-    "material_number": "MAT0018",
-    "quantity": 6,
-    "price_per_unit": 4480.27,
-    "total_price": 26881.62
+    "order_number": "ORD-0096",
+    "material_number": "MAT0009",
+    "quantity": 9,
+    "price_per_unit": 9440.31,
+    "total_price": 84962.79
   },
   {
     "id": "OI-00294",
-    "order_number": "ORD-0096",
-    "material_number": "MAT0010",
-    "quantity": 5,
-    "price_per_unit": 9195.98,
-    "total_price": 45979.9
+    "order_number": "ORD-0097",
+    "material_number": "MAT0032",
+    "quantity": 15,
+    "price_per_unit": 8024.67,
+    "total_price": 120370.05
   },
   {
     "id": "OI-00295",
-    "order_number": "ORD-0096",
-    "material_number": "MAT0006",
-    "quantity": 11,
-    "price_per_unit": 2007.52,
-    "total_price": 22082.72
+    "order_number": "ORD-0097",
+    "material_number": "MAT0036",
+    "quantity": 10,
+    "price_per_unit": 8374.49,
+    "total_price": 83744.9
   },
   {
     "id": "OI-00296",
-    "order_number": "ORD-0096",
-    "material_number": "MAT0015",
-    "quantity": 20,
-    "price_per_unit": 5319.99,
-    "total_price": 106399.8
+    "order_number": "ORD-0098",
+    "material_number": "MAT0032",
+    "quantity": 7,
+    "price_per_unit": 8024.67,
+    "total_price": 56172.69
   },
   {
     "id": "OI-00297",
-    "order_number": "ORD-0097",
-    "material_number": "MAT0012",
-    "quantity": 1,
-    "price_per_unit": 5572.44,
-    "total_price": 5572.44
+    "order_number": "ORD-0098",
+    "material_number": "MAT0037",
+    "quantity": 6,
+    "price_per_unit": 6936.23,
+    "total_price": 41617.38
   },
   {
     "id": "OI-00298",
-    "order_number": "ORD-0097",
-    "material_number": "MAT0016",
-    "quantity": 5,
-    "price_per_unit": 2584.96,
-    "total_price": 12924.8
+    "order_number": "ORD-0098",
+    "material_number": "MAT0035",
+    "quantity": 12,
+    "price_per_unit": 1936.3,
+    "total_price": 23235.6
   },
   {
     "id": "OI-00299",
     "order_number": "ORD-0098",
-    "material_number": "MAT0013",
-    "quantity": 18,
-    "price_per_unit": 1145.18,
-    "total_price": 20613.24
+    "material_number": "MAT0021",
+    "quantity": 15,
+    "price_per_unit": 8204.19,
+    "total_price": 123062.85
   },
   {
     "id": "OI-00300",
-    "order_number": "ORD-0098",
-    "material_number": "MAT0017",
-    "quantity": 16,
-    "price_per_unit": 7264.84,
-    "total_price": 116237.44
+    "order_number": "ORD-0099",
+    "material_number": "MAT0039",
+    "quantity": 18,
+    "price_per_unit": 7394.79,
+    "total_price": 133106.22
   },
   {
     "id": "OI-00301",
     "order_number": "ORD-0099",
-    "material_number": "MAT0016",
-    "quantity": 14,
-    "price_per_unit": 2584.96,
-    "total_price": 36189.44
+    "material_number": "MAT0011",
+    "quantity": 3,
+    "price_per_unit": 9017.3,
+    "total_price": 27051.9
   },
   {
     "id": "OI-00302",
     "order_number": "ORD-0099",
-    "material_number": "MAT0015",
-    "quantity": 16,
-    "price_per_unit": 5319.99,
-    "total_price": 85119.84
+    "material_number": "MAT0034",
+    "quantity": 5,
+    "price_per_unit": 4878.78,
+    "total_price": 24393.9
   },
   {
     "id": "OI-00303",
-    "order_number": "ORD-0099",
-    "material_number": "MAT0006",
-    "quantity": 3,
-    "price_per_unit": 2007.52,
-    "total_price": 6022.56
+    "order_number": "ORD-0100",
+    "material_number": "MAT0019",
+    "quantity": 9,
+    "price_per_unit": 8371.95,
+    "total_price": 75347.55
   },
   {
     "id": "OI-00304",
     "order_number": "ORD-0100",
-    "material_number": "MAT0001",
-    "quantity": 8,
-    "price_per_unit": 9038.92,
-    "total_price": 72311.36
+    "material_number": "MAT0035",
+    "quantity": 12,
+    "price_per_unit": 1936.3,
+    "total_price": 23235.6
   },
   {
     "id": "OI-00305",
     "order_number": "ORD-0100",
-    "material_number": "MAT0010",
-    "quantity": 2,
-    "price_per_unit": 9195.98,
-    "total_price": 18391.96
+    "material_number": "MAT0030",
+    "quantity": 1,
+    "price_per_unit": 4565.96,
+    "total_price": 4565.96
   },
   {
     "id": "OI-00306",
-    "order_number": "ORD-0100",
-    "material_number": "MAT0009",
-    "quantity": 8,
-    "price_per_unit": 6027.14,
-    "total_price": 48217.12
+    "order_number": "ORD-0101",
+    "material_number": "MAT0033",
+    "quantity": 13,
+    "price_per_unit": 9622.14,
+    "total_price": 125087.82
   },
   {
     "id": "OI-00307",
-    "order_number": "ORD-0100",
-    "material_number": "MAT0018",
-    "quantity": 10,
-    "price_per_unit": 4480.27,
-    "total_price": 44802.7
+    "order_number": "ORD-0101",
+    "material_number": "MAT0012",
+    "quantity": 1,
+    "price_per_unit": 1138.52,
+    "total_price": 1138.52
   },
   {
     "id": "OI-00308",
     "order_number": "ORD-0101",
-    "material_number": "MAT0015",
-    "quantity": 19,
-    "price_per_unit": 5319.99,
-    "total_price": 101079.81
+    "material_number": "MAT0040",
+    "quantity": 12,
+    "price_per_unit": 3201.49,
+    "total_price": 38417.88
   },
   {
     "id": "OI-00309",
     "order_number": "ORD-0101",
-    "material_number": "MAT0016",
-    "quantity": 18,
-    "price_per_unit": 2584.96,
-    "total_price": 46529.28
+    "material_number": "MAT0040",
+    "quantity": 8,
+    "price_per_unit": 3201.49,
+    "total_price": 25611.92
   },
   {
     "id": "OI-00310",
     "order_number": "ORD-0102",
-    "material_number": "MAT0004",
-    "quantity": 19,
-    "price_per_unit": 1104.11,
-    "total_price": 20978.09
+    "material_number": "MAT0005",
+    "quantity": 18,
+    "price_per_unit": 3208.58,
+    "total_price": 57754.44
   },
   {
     "id": "OI-00311",
     "order_number": "ORD-0102",
-    "material_number": "MAT0004",
-    "quantity": 9,
-    "price_per_unit": 1104.11,
-    "total_price": 9936.99
+    "material_number": "MAT0025",
+    "quantity": 7,
+    "price_per_unit": 1890.2,
+    "total_price": 13231.4
   },
   {
     "id": "OI-00312",
     "order_number": "ORD-0102",
-    "material_number": "MAT0018",
-    "quantity": 12,
-    "price_per_unit": 4480.27,
-    "total_price": 53763.24
+    "material_number": "MAT0034",
+    "quantity": 16,
+    "price_per_unit": 4878.78,
+    "total_price": 78060.48
   },
   {
     "id": "OI-00313",
-    "order_number": "ORD-0102",
-    "material_number": "MAT0018",
-    "quantity": 2,
-    "price_per_unit": 4480.27,
-    "total_price": 8960.54
+    "order_number": "ORD-0103",
+    "material_number": "MAT0010",
+    "quantity": 20,
+    "price_per_unit": 5985.14,
+    "total_price": 119702.8
   },
   {
     "id": "OI-00314",
     "order_number": "ORD-0103",
-    "material_number": "MAT0015",
-    "quantity": 18,
-    "price_per_unit": 5319.99,
-    "total_price": 95759.82
+    "material_number": "MAT0019",
+    "quantity": 11,
+    "price_per_unit": 8371.95,
+    "total_price": 92091.45
   },
   {
     "id": "OI-00315",
     "order_number": "ORD-0103",
-    "material_number": "MAT0007",
-    "quantity": 14,
-    "price_per_unit": 4717.76,
-    "total_price": 66048.64
+    "material_number": "MAT0027",
+    "quantity": 11,
+    "price_per_unit": 6990.59,
+    "total_price": 76896.49
   },
   {
     "id": "OI-00316",
     "order_number": "ORD-0103",
-    "material_number": "MAT0004",
-    "quantity": 8,
-    "price_per_unit": 1104.11,
-    "total_price": 8832.88
+    "material_number": "MAT0008",
+    "quantity": 4,
+    "price_per_unit": 7853.4,
+    "total_price": 31413.6
   },
   {
     "id": "OI-00317",
-    "order_number": "ORD-0103",
-    "material_number": "MAT0010",
+    "order_number": "ORD-0104",
+    "material_number": "MAT0005",
     "quantity": 2,
-    "price_per_unit": 9195.98,
-    "total_price": 18391.96
+    "price_per_unit": 3208.58,
+    "total_price": 6417.16
+  },
+  {
+    "id": "OI-00318",
+    "order_number": "ORD-0104",
+    "material_number": "MAT0009",
+    "quantity": 6,
+    "price_per_unit": 9440.31,
+    "total_price": 56641.86
+  },
+  {
+    "id": "OI-00319",
+    "order_number": "ORD-0104",
+    "material_number": "MAT0003",
+    "quantity": 7,
+    "price_per_unit": 2744.55,
+    "total_price": 19211.85
+  },
+  {
+    "id": "OI-00320",
+    "order_number": "ORD-0104",
+    "material_number": "MAT0007",
+    "quantity": 16,
+    "price_per_unit": 9743.17,
+    "total_price": 155890.72
+  },
+  {
+    "id": "OI-00321",
+    "order_number": "ORD-0105",
+    "material_number": "MAT0007",
+    "quantity": 2,
+    "price_per_unit": 9743.17,
+    "total_price": 19486.34
+  },
+  {
+    "id": "OI-00322",
+    "order_number": "ORD-0105",
+    "material_number": "MAT0037",
+    "quantity": 13,
+    "price_per_unit": 6936.23,
+    "total_price": 90170.99
+  },
+  {
+    "id": "OI-00323",
+    "order_number": "ORD-0106",
+    "material_number": "MAT0032",
+    "quantity": 17,
+    "price_per_unit": 8024.67,
+    "total_price": 136419.39
+  },
+  {
+    "id": "OI-00324",
+    "order_number": "ORD-0106",
+    "material_number": "MAT0040",
+    "quantity": 19,
+    "price_per_unit": 3201.49,
+    "total_price": 60828.31
+  },
+  {
+    "id": "OI-00325",
+    "order_number": "ORD-0106",
+    "material_number": "MAT0017",
+    "quantity": 2,
+    "price_per_unit": 2730.82,
+    "total_price": 5461.64
+  },
+  {
+    "id": "OI-00326",
+    "order_number": "ORD-0106",
+    "material_number": "MAT0024",
+    "quantity": 8,
+    "price_per_unit": 1604.56,
+    "total_price": 12836.48
+  },
+  {
+    "id": "OI-00327",
+    "order_number": "ORD-0107",
+    "material_number": "MAT0005",
+    "quantity": 1,
+    "price_per_unit": 3208.58,
+    "total_price": 3208.58
+  },
+  {
+    "id": "OI-00328",
+    "order_number": "ORD-0107",
+    "material_number": "MAT0014",
+    "quantity": 16,
+    "price_per_unit": 1216.57,
+    "total_price": 19465.12
+  },
+  {
+    "id": "OI-00329",
+    "order_number": "ORD-0107",
+    "material_number": "MAT0006",
+    "quantity": 15,
+    "price_per_unit": 5448.79,
+    "total_price": 81731.85
+  },
+  {
+    "id": "OI-00330",
+    "order_number": "ORD-0107",
+    "material_number": "MAT0041",
+    "quantity": 2,
+    "price_per_unit": 8061.53,
+    "total_price": 16123.06
+  },
+  {
+    "id": "OI-00331",
+    "order_number": "ORD-0108",
+    "material_number": "MAT0036",
+    "quantity": 14,
+    "price_per_unit": 8374.49,
+    "total_price": 117242.86
+  },
+  {
+    "id": "OI-00332",
+    "order_number": "ORD-0108",
+    "material_number": "MAT0024",
+    "quantity": 2,
+    "price_per_unit": 1604.56,
+    "total_price": 3209.12
+  },
+  {
+    "id": "OI-00333",
+    "order_number": "ORD-0108",
+    "material_number": "MAT0040",
+    "quantity": 9,
+    "price_per_unit": 3201.49,
+    "total_price": 28813.41
+  },
+  {
+    "id": "OI-00334",
+    "order_number": "ORD-0109",
+    "material_number": "MAT0003",
+    "quantity": 3,
+    "price_per_unit": 2744.55,
+    "total_price": 8233.65
+  },
+  {
+    "id": "OI-00335",
+    "order_number": "ORD-0109",
+    "material_number": "MAT0020",
+    "quantity": 3,
+    "price_per_unit": 3626.57,
+    "total_price": 10879.71
+  },
+  {
+    "id": "OI-00336",
+    "order_number": "ORD-0109",
+    "material_number": "MAT0014",
+    "quantity": 17,
+    "price_per_unit": 1216.57,
+    "total_price": 20681.69
+  },
+  {
+    "id": "OI-00337",
+    "order_number": "ORD-0109",
+    "material_number": "MAT0007",
+    "quantity": 4,
+    "price_per_unit": 9743.17,
+    "total_price": 38972.68
+  },
+  {
+    "id": "OI-00338",
+    "order_number": "ORD-0110",
+    "material_number": "MAT0015",
+    "quantity": 18,
+    "price_per_unit": 8305.88,
+    "total_price": 149505.84
+  },
+  {
+    "id": "OI-00339",
+    "order_number": "ORD-0110",
+    "material_number": "MAT0025",
+    "quantity": 7,
+    "price_per_unit": 1890.2,
+    "total_price": 13231.4
+  },
+  {
+    "id": "OI-00340",
+    "order_number": "ORD-0110",
+    "material_number": "MAT0013",
+    "quantity": 17,
+    "price_per_unit": 4144.84,
+    "total_price": 70462.28
+  },
+  {
+    "id": "OI-00341",
+    "order_number": "ORD-0110",
+    "material_number": "MAT0016",
+    "quantity": 19,
+    "price_per_unit": 8801.76,
+    "total_price": 167233.44
+  },
+  {
+    "id": "OI-00342",
+    "order_number": "ORD-0111",
+    "material_number": "MAT0012",
+    "quantity": 18,
+    "price_per_unit": 1138.52,
+    "total_price": 20493.36
+  },
+  {
+    "id": "OI-00343",
+    "order_number": "ORD-0111",
+    "material_number": "MAT0036",
+    "quantity": 14,
+    "price_per_unit": 8374.49,
+    "total_price": 117242.86
+  },
+  {
+    "id": "OI-00344",
+    "order_number": "ORD-0111",
+    "material_number": "MAT0007",
+    "quantity": 19,
+    "price_per_unit": 9743.17,
+    "total_price": 185120.23
+  },
+  {
+    "id": "OI-00345",
+    "order_number": "ORD-0111",
+    "material_number": "MAT0023",
+    "quantity": 15,
+    "price_per_unit": 5625.58,
+    "total_price": 84383.7
+  },
+  {
+    "id": "OI-00346",
+    "order_number": "ORD-0112",
+    "material_number": "MAT0028",
+    "quantity": 4,
+    "price_per_unit": 7085.5,
+    "total_price": 28342.0
+  },
+  {
+    "id": "OI-00347",
+    "order_number": "ORD-0112",
+    "material_number": "MAT0011",
+    "quantity": 6,
+    "price_per_unit": 9017.3,
+    "total_price": 54103.8
+  },
+  {
+    "id": "OI-00348",
+    "order_number": "ORD-0112",
+    "material_number": "MAT0036",
+    "quantity": 13,
+    "price_per_unit": 8374.49,
+    "total_price": 108868.37
+  },
+  {
+    "id": "OI-00349",
+    "order_number": "ORD-0112",
+    "material_number": "MAT0033",
+    "quantity": 11,
+    "price_per_unit": 9622.14,
+    "total_price": 105843.54
+  },
+  {
+    "id": "OI-00350",
+    "order_number": "ORD-0113",
+    "material_number": "MAT0011",
+    "quantity": 18,
+    "price_per_unit": 9017.3,
+    "total_price": 162311.4
+  },
+  {
+    "id": "OI-00351",
+    "order_number": "ORD-0113",
+    "material_number": "MAT0039",
+    "quantity": 15,
+    "price_per_unit": 7394.79,
+    "total_price": 110921.85
+  },
+  {
+    "id": "OI-00352",
+    "order_number": "ORD-0113",
+    "material_number": "MAT0023",
+    "quantity": 11,
+    "price_per_unit": 5625.58,
+    "total_price": 61881.38
+  },
+  {
+    "id": "OI-00353",
+    "order_number": "ORD-0113",
+    "material_number": "MAT0036",
+    "quantity": 11,
+    "price_per_unit": 8374.49,
+    "total_price": 92119.39
+  },
+  {
+    "id": "OI-00354",
+    "order_number": "ORD-0114",
+    "material_number": "MAT0027",
+    "quantity": 14,
+    "price_per_unit": 6990.59,
+    "total_price": 97868.26
+  },
+  {
+    "id": "OI-00355",
+    "order_number": "ORD-0114",
+    "material_number": "MAT0021",
+    "quantity": 20,
+    "price_per_unit": 8204.19,
+    "total_price": 164083.8
+  },
+  {
+    "id": "OI-00356",
+    "order_number": "ORD-0114",
+    "material_number": "MAT0016",
+    "quantity": 19,
+    "price_per_unit": 8801.76,
+    "total_price": 167233.44
+  },
+  {
+    "id": "OI-00357",
+    "order_number": "ORD-0115",
+    "material_number": "MAT0014",
+    "quantity": 13,
+    "price_per_unit": 1216.57,
+    "total_price": 15815.41
+  },
+  {
+    "id": "OI-00358",
+    "order_number": "ORD-0115",
+    "material_number": "MAT0036",
+    "quantity": 9,
+    "price_per_unit": 8374.49,
+    "total_price": 75370.41
+  },
+  {
+    "id": "OI-00359",
+    "order_number": "ORD-0115",
+    "material_number": "MAT0024",
+    "quantity": 15,
+    "price_per_unit": 1604.56,
+    "total_price": 24068.4
+  },
+  {
+    "id": "OI-00360",
+    "order_number": "ORD-0115",
+    "material_number": "MAT0029",
+    "quantity": 13,
+    "price_per_unit": 9707.54,
+    "total_price": 126198.02
+  },
+  {
+    "id": "OI-00361",
+    "order_number": "ORD-0116",
+    "material_number": "MAT0003",
+    "quantity": 10,
+    "price_per_unit": 2744.55,
+    "total_price": 27445.5
+  },
+  {
+    "id": "OI-00362",
+    "order_number": "ORD-0116",
+    "material_number": "MAT0039",
+    "quantity": 1,
+    "price_per_unit": 7394.79,
+    "total_price": 7394.79
+  },
+  {
+    "id": "OI-00363",
+    "order_number": "ORD-0117",
+    "material_number": "MAT0009",
+    "quantity": 10,
+    "price_per_unit": 9440.31,
+    "total_price": 94403.1
+  },
+  {
+    "id": "OI-00364",
+    "order_number": "ORD-0117",
+    "material_number": "MAT0001",
+    "quantity": 10,
+    "price_per_unit": 3982.73,
+    "total_price": 39827.3
+  },
+  {
+    "id": "OI-00365",
+    "order_number": "ORD-0117",
+    "material_number": "MAT0015",
+    "quantity": 7,
+    "price_per_unit": 8305.88,
+    "total_price": 58141.16
+  },
+  {
+    "id": "OI-00366",
+    "order_number": "ORD-0117",
+    "material_number": "MAT0021",
+    "quantity": 1,
+    "price_per_unit": 8204.19,
+    "total_price": 8204.19
+  },
+  {
+    "id": "OI-00367",
+    "order_number": "ORD-0118",
+    "material_number": "MAT0018",
+    "quantity": 18,
+    "price_per_unit": 5437.55,
+    "total_price": 97875.9
+  },
+  {
+    "id": "OI-00368",
+    "order_number": "ORD-0118",
+    "material_number": "MAT0033",
+    "quantity": 18,
+    "price_per_unit": 9622.14,
+    "total_price": 173198.52
+  },
+  {
+    "id": "OI-00369",
+    "order_number": "ORD-0118",
+    "material_number": "MAT0037",
+    "quantity": 19,
+    "price_per_unit": 6936.23,
+    "total_price": 131788.37
+  },
+  {
+    "id": "OI-00370",
+    "order_number": "ORD-0118",
+    "material_number": "MAT0010",
+    "quantity": 4,
+    "price_per_unit": 5985.14,
+    "total_price": 23940.56
+  },
+  {
+    "id": "OI-00371",
+    "order_number": "ORD-0119",
+    "material_number": "MAT0030",
+    "quantity": 12,
+    "price_per_unit": 4565.96,
+    "total_price": 54791.52
+  },
+  {
+    "id": "OI-00372",
+    "order_number": "ORD-0119",
+    "material_number": "MAT0010",
+    "quantity": 5,
+    "price_per_unit": 5985.14,
+    "total_price": 29925.7
+  },
+  {
+    "id": "OI-00373",
+    "order_number": "ORD-0120",
+    "material_number": "MAT0024",
+    "quantity": 19,
+    "price_per_unit": 1604.56,
+    "total_price": 30486.64
+  },
+  {
+    "id": "OI-00374",
+    "order_number": "ORD-0120",
+    "material_number": "MAT0016",
+    "quantity": 8,
+    "price_per_unit": 8801.76,
+    "total_price": 70414.08
+  },
+  {
+    "id": "OI-00375",
+    "order_number": "ORD-0120",
+    "material_number": "MAT0017",
+    "quantity": 10,
+    "price_per_unit": 2730.82,
+    "total_price": 27308.2
+  },
+  {
+    "id": "OI-00376",
+    "order_number": "ORD-0121",
+    "material_number": "MAT0037",
+    "quantity": 13,
+    "price_per_unit": 6936.23,
+    "total_price": 90170.99
+  },
+  {
+    "id": "OI-00377",
+    "order_number": "ORD-0121",
+    "material_number": "MAT0037",
+    "quantity": 7,
+    "price_per_unit": 6936.23,
+    "total_price": 48553.61
+  },
+  {
+    "id": "OI-00378",
+    "order_number": "ORD-0122",
+    "material_number": "MAT0005",
+    "quantity": 11,
+    "price_per_unit": 3208.58,
+    "total_price": 35294.38
+  },
+  {
+    "id": "OI-00379",
+    "order_number": "ORD-0122",
+    "material_number": "MAT0031",
+    "quantity": 6,
+    "price_per_unit": 3068.46,
+    "total_price": 18410.76
+  },
+  {
+    "id": "OI-00380",
+    "order_number": "ORD-0122",
+    "material_number": "MAT0032",
+    "quantity": 19,
+    "price_per_unit": 8024.67,
+    "total_price": 152468.73
+  },
+  {
+    "id": "OI-00381",
+    "order_number": "ORD-0122",
+    "material_number": "MAT0007",
+    "quantity": 20,
+    "price_per_unit": 9743.17,
+    "total_price": 194863.4
+  },
+  {
+    "id": "OI-00382",
+    "order_number": "ORD-0123",
+    "material_number": "MAT0020",
+    "quantity": 2,
+    "price_per_unit": 3626.57,
+    "total_price": 7253.14
+  },
+  {
+    "id": "OI-00383",
+    "order_number": "ORD-0123",
+    "material_number": "MAT0037",
+    "quantity": 13,
+    "price_per_unit": 6936.23,
+    "total_price": 90170.99
+  },
+  {
+    "id": "OI-00384",
+    "order_number": "ORD-0123",
+    "material_number": "MAT0006",
+    "quantity": 2,
+    "price_per_unit": 5448.79,
+    "total_price": 10897.58
+  },
+  {
+    "id": "OI-00385",
+    "order_number": "ORD-0123",
+    "material_number": "MAT0022",
+    "quantity": 12,
+    "price_per_unit": 6820.1,
+    "total_price": 81841.2
+  },
+  {
+    "id": "OI-00386",
+    "order_number": "ORD-0124",
+    "material_number": "MAT0027",
+    "quantity": 4,
+    "price_per_unit": 6990.59,
+    "total_price": 27962.36
+  },
+  {
+    "id": "OI-00387",
+    "order_number": "ORD-0124",
+    "material_number": "MAT0015",
+    "quantity": 20,
+    "price_per_unit": 8305.88,
+    "total_price": 166117.6
+  },
+  {
+    "id": "OI-00388",
+    "order_number": "ORD-0124",
+    "material_number": "MAT0001",
+    "quantity": 13,
+    "price_per_unit": 3982.73,
+    "total_price": 51775.49
+  },
+  {
+    "id": "OI-00389",
+    "order_number": "ORD-0125",
+    "material_number": "MAT0020",
+    "quantity": 17,
+    "price_per_unit": 3626.57,
+    "total_price": 61651.69
+  },
+  {
+    "id": "OI-00390",
+    "order_number": "ORD-0125",
+    "material_number": "MAT0003",
+    "quantity": 11,
+    "price_per_unit": 2744.55,
+    "total_price": 30190.05
+  },
+  {
+    "id": "OI-00391",
+    "order_number": "ORD-0126",
+    "material_number": "MAT0037",
+    "quantity": 5,
+    "price_per_unit": 6936.23,
+    "total_price": 34681.15
+  },
+  {
+    "id": "OI-00392",
+    "order_number": "ORD-0126",
+    "material_number": "MAT0021",
+    "quantity": 17,
+    "price_per_unit": 8204.19,
+    "total_price": 139471.23
+  },
+  {
+    "id": "OI-00393",
+    "order_number": "ORD-0126",
+    "material_number": "MAT0015",
+    "quantity": 5,
+    "price_per_unit": 8305.88,
+    "total_price": 41529.4
+  },
+  {
+    "id": "OI-00394",
+    "order_number": "ORD-0126",
+    "material_number": "MAT0004",
+    "quantity": 13,
+    "price_per_unit": 5921.32,
+    "total_price": 76977.16
+  },
+  {
+    "id": "OI-00395",
+    "order_number": "ORD-0127",
+    "material_number": "MAT0039",
+    "quantity": 19,
+    "price_per_unit": 7394.79,
+    "total_price": 140501.01
+  },
+  {
+    "id": "OI-00396",
+    "order_number": "ORD-0127",
+    "material_number": "MAT0033",
+    "quantity": 3,
+    "price_per_unit": 9622.14,
+    "total_price": 28866.42
+  },
+  {
+    "id": "OI-00397",
+    "order_number": "ORD-0127",
+    "material_number": "MAT0015",
+    "quantity": 14,
+    "price_per_unit": 8305.88,
+    "total_price": 116282.32
+  },
+  {
+    "id": "OI-00398",
+    "order_number": "ORD-0128",
+    "material_number": "MAT0026",
+    "quantity": 5,
+    "price_per_unit": 4001.66,
+    "total_price": 20008.3
+  },
+  {
+    "id": "OI-00399",
+    "order_number": "ORD-0128",
+    "material_number": "MAT0009",
+    "quantity": 11,
+    "price_per_unit": 9440.31,
+    "total_price": 103843.41
+  },
+  {
+    "id": "OI-00400",
+    "order_number": "ORD-0128",
+    "material_number": "MAT0006",
+    "quantity": 16,
+    "price_per_unit": 5448.79,
+    "total_price": 87180.64
+  },
+  {
+    "id": "OI-00401",
+    "order_number": "ORD-0129",
+    "material_number": "MAT0004",
+    "quantity": 18,
+    "price_per_unit": 5921.32,
+    "total_price": 106583.76
+  },
+  {
+    "id": "OI-00402",
+    "order_number": "ORD-0129",
+    "material_number": "MAT0026",
+    "quantity": 9,
+    "price_per_unit": 4001.66,
+    "total_price": 36014.94
+  },
+  {
+    "id": "OI-00403",
+    "order_number": "ORD-0129",
+    "material_number": "MAT0006",
+    "quantity": 13,
+    "price_per_unit": 5448.79,
+    "total_price": 70834.27
+  },
+  {
+    "id": "OI-00404",
+    "order_number": "ORD-0129",
+    "material_number": "MAT0033",
+    "quantity": 14,
+    "price_per_unit": 9622.14,
+    "total_price": 134709.96
+  },
+  {
+    "id": "OI-00405",
+    "order_number": "ORD-0130",
+    "material_number": "MAT0009",
+    "quantity": 5,
+    "price_per_unit": 9440.31,
+    "total_price": 47201.55
+  },
+  {
+    "id": "OI-00406",
+    "order_number": "ORD-0130",
+    "material_number": "MAT0031",
+    "quantity": 18,
+    "price_per_unit": 3068.46,
+    "total_price": 55232.28
+  },
+  {
+    "id": "OI-00407",
+    "order_number": "ORD-0130",
+    "material_number": "MAT0013",
+    "quantity": 16,
+    "price_per_unit": 4144.84,
+    "total_price": 66317.44
+  },
+  {
+    "id": "OI-00408",
+    "order_number": "ORD-0130",
+    "material_number": "MAT0026",
+    "quantity": 19,
+    "price_per_unit": 4001.66,
+    "total_price": 76031.54
+  },
+  {
+    "id": "OI-00409",
+    "order_number": "ORD-0131",
+    "material_number": "MAT0036",
+    "quantity": 20,
+    "price_per_unit": 8374.49,
+    "total_price": 167489.8
+  },
+  {
+    "id": "OI-00410",
+    "order_number": "ORD-0131",
+    "material_number": "MAT0034",
+    "quantity": 8,
+    "price_per_unit": 4878.78,
+    "total_price": 39030.24
+  },
+  {
+    "id": "OI-00411",
+    "order_number": "ORD-0132",
+    "material_number": "MAT0005",
+    "quantity": 9,
+    "price_per_unit": 3208.58,
+    "total_price": 28877.22
+  },
+  {
+    "id": "OI-00412",
+    "order_number": "ORD-0132",
+    "material_number": "MAT0028",
+    "quantity": 11,
+    "price_per_unit": 7085.5,
+    "total_price": 77940.5
+  },
+  {
+    "id": "OI-00413",
+    "order_number": "ORD-0133",
+    "material_number": "MAT0037",
+    "quantity": 3,
+    "price_per_unit": 6936.23,
+    "total_price": 20808.69
+  },
+  {
+    "id": "OI-00414",
+    "order_number": "ORD-0133",
+    "material_number": "MAT0008",
+    "quantity": 14,
+    "price_per_unit": 7853.4,
+    "total_price": 109947.6
+  },
+  {
+    "id": "OI-00415",
+    "order_number": "ORD-0133",
+    "material_number": "MAT0028",
+    "quantity": 12,
+    "price_per_unit": 7085.5,
+    "total_price": 85026.0
+  },
+  {
+    "id": "OI-00416",
+    "order_number": "ORD-0133",
+    "material_number": "MAT0023",
+    "quantity": 7,
+    "price_per_unit": 5625.58,
+    "total_price": 39379.06
+  },
+  {
+    "id": "OI-00417",
+    "order_number": "ORD-0134",
+    "material_number": "MAT0023",
+    "quantity": 20,
+    "price_per_unit": 5625.58,
+    "total_price": 112511.6
+  },
+  {
+    "id": "OI-00418",
+    "order_number": "ORD-0134",
+    "material_number": "MAT0042",
+    "quantity": 1,
+    "price_per_unit": 510.97,
+    "total_price": 510.97
+  },
+  {
+    "id": "OI-00419",
+    "order_number": "ORD-0134",
+    "material_number": "MAT0020",
+    "quantity": 6,
+    "price_per_unit": 3626.57,
+    "total_price": 21759.42
+  },
+  {
+    "id": "OI-00420",
+    "order_number": "ORD-0135",
+    "material_number": "MAT0040",
+    "quantity": 15,
+    "price_per_unit": 3201.49,
+    "total_price": 48022.35
+  },
+  {
+    "id": "OI-00421",
+    "order_number": "ORD-0135",
+    "material_number": "MAT0040",
+    "quantity": 5,
+    "price_per_unit": 3201.49,
+    "total_price": 16007.45
+  },
+  {
+    "id": "OI-00422",
+    "order_number": "ORD-0135",
+    "material_number": "MAT0029",
+    "quantity": 2,
+    "price_per_unit": 9707.54,
+    "total_price": 19415.08
+  },
+  {
+    "id": "OI-00423",
+    "order_number": "ORD-0136",
+    "material_number": "MAT0013",
+    "quantity": 12,
+    "price_per_unit": 4144.84,
+    "total_price": 49738.08
+  },
+  {
+    "id": "OI-00424",
+    "order_number": "ORD-0136",
+    "material_number": "MAT0010",
+    "quantity": 3,
+    "price_per_unit": 5985.14,
+    "total_price": 17955.42
+  },
+  {
+    "id": "OI-00425",
+    "order_number": "ORD-0137",
+    "material_number": "MAT0004",
+    "quantity": 8,
+    "price_per_unit": 5921.32,
+    "total_price": 47370.56
+  },
+  {
+    "id": "OI-00426",
+    "order_number": "ORD-0137",
+    "material_number": "MAT0040",
+    "quantity": 5,
+    "price_per_unit": 3201.49,
+    "total_price": 16007.45
+  },
+  {
+    "id": "OI-00427",
+    "order_number": "ORD-0138",
+    "material_number": "MAT0001",
+    "quantity": 11,
+    "price_per_unit": 3982.73,
+    "total_price": 43810.03
+  },
+  {
+    "id": "OI-00428",
+    "order_number": "ORD-0138",
+    "material_number": "MAT0008",
+    "quantity": 10,
+    "price_per_unit": 7853.4,
+    "total_price": 78534.0
+  },
+  {
+    "id": "OI-00429",
+    "order_number": "ORD-0138",
+    "material_number": "MAT0029",
+    "quantity": 16,
+    "price_per_unit": 9707.54,
+    "total_price": 155320.64
+  },
+  {
+    "id": "OI-00430",
+    "order_number": "ORD-0139",
+    "material_number": "MAT0022",
+    "quantity": 7,
+    "price_per_unit": 6820.1,
+    "total_price": 47740.7
+  },
+  {
+    "id": "OI-00431",
+    "order_number": "ORD-0139",
+    "material_number": "MAT0035",
+    "quantity": 7,
+    "price_per_unit": 1936.3,
+    "total_price": 13554.1
+  },
+  {
+    "id": "OI-00432",
+    "order_number": "ORD-0140",
+    "material_number": "MAT0035",
+    "quantity": 17,
+    "price_per_unit": 1936.3,
+    "total_price": 32917.1
+  },
+  {
+    "id": "OI-00433",
+    "order_number": "ORD-0140",
+    "material_number": "MAT0017",
+    "quantity": 18,
+    "price_per_unit": 2730.82,
+    "total_price": 49154.76
+  },
+  {
+    "id": "OI-00434",
+    "order_number": "ORD-0141",
+    "material_number": "MAT0040",
+    "quantity": 5,
+    "price_per_unit": 3201.49,
+    "total_price": 16007.45
+  },
+  {
+    "id": "OI-00435",
+    "order_number": "ORD-0141",
+    "material_number": "MAT0002",
+    "quantity": 13,
+    "price_per_unit": 2279.34,
+    "total_price": 29631.42
+  },
+  {
+    "id": "OI-00436",
+    "order_number": "ORD-0141",
+    "material_number": "MAT0038",
+    "quantity": 17,
+    "price_per_unit": 9096.21,
+    "total_price": 154635.57
+  },
+  {
+    "id": "OI-00437",
+    "order_number": "ORD-0142",
+    "material_number": "MAT0017",
+    "quantity": 6,
+    "price_per_unit": 2730.82,
+    "total_price": 16384.92
+  },
+  {
+    "id": "OI-00438",
+    "order_number": "ORD-0142",
+    "material_number": "MAT0004",
+    "quantity": 10,
+    "price_per_unit": 5921.32,
+    "total_price": 59213.2
+  },
+  {
+    "id": "OI-00439",
+    "order_number": "ORD-0143",
+    "material_number": "MAT0040",
+    "quantity": 9,
+    "price_per_unit": 3201.49,
+    "total_price": 28813.41
+  },
+  {
+    "id": "OI-00440",
+    "order_number": "ORD-0143",
+    "material_number": "MAT0004",
+    "quantity": 15,
+    "price_per_unit": 5921.32,
+    "total_price": 88819.8
+  },
+  {
+    "id": "OI-00441",
+    "order_number": "ORD-0144",
+    "material_number": "MAT0001",
+    "quantity": 3,
+    "price_per_unit": 3982.73,
+    "total_price": 11948.19
+  },
+  {
+    "id": "OI-00442",
+    "order_number": "ORD-0144",
+    "material_number": "MAT0025",
+    "quantity": 9,
+    "price_per_unit": 1890.2,
+    "total_price": 17011.8
+  },
+  {
+    "id": "OI-00443",
+    "order_number": "ORD-0144",
+    "material_number": "MAT0024",
+    "quantity": 4,
+    "price_per_unit": 1604.56,
+    "total_price": 6418.24
+  },
+  {
+    "id": "OI-00444",
+    "order_number": "ORD-0144",
+    "material_number": "MAT0002",
+    "quantity": 10,
+    "price_per_unit": 2279.34,
+    "total_price": 22793.4
+  },
+  {
+    "id": "OI-00445",
+    "order_number": "ORD-0145",
+    "material_number": "MAT0025",
+    "quantity": 8,
+    "price_per_unit": 1890.2,
+    "total_price": 15121.6
+  },
+  {
+    "id": "OI-00446",
+    "order_number": "ORD-0145",
+    "material_number": "MAT0025",
+    "quantity": 17,
+    "price_per_unit": 1890.2,
+    "total_price": 32133.4
+  },
+  {
+    "id": "OI-00447",
+    "order_number": "ORD-0145",
+    "material_number": "MAT0007",
+    "quantity": 11,
+    "price_per_unit": 9743.17,
+    "total_price": 107174.87
+  },
+  {
+    "id": "OI-00448",
+    "order_number": "ORD-0145",
+    "material_number": "MAT0032",
+    "quantity": 20,
+    "price_per_unit": 8024.67,
+    "total_price": 160493.4
+  },
+  {
+    "id": "OI-00449",
+    "order_number": "ORD-0146",
+    "material_number": "MAT0006",
+    "quantity": 6,
+    "price_per_unit": 5448.79,
+    "total_price": 32692.74
+  },
+  {
+    "id": "OI-00450",
+    "order_number": "ORD-0146",
+    "material_number": "MAT0013",
+    "quantity": 17,
+    "price_per_unit": 4144.84,
+    "total_price": 70462.28
+  },
+  {
+    "id": "OI-00451",
+    "order_number": "ORD-0146",
+    "material_number": "MAT0030",
+    "quantity": 18,
+    "price_per_unit": 4565.96,
+    "total_price": 82187.28
+  },
+  {
+    "id": "OI-00452",
+    "order_number": "ORD-0146",
+    "material_number": "MAT0002",
+    "quantity": 2,
+    "price_per_unit": 2279.34,
+    "total_price": 4558.68
+  },
+  {
+    "id": "OI-00453",
+    "order_number": "ORD-0147",
+    "material_number": "MAT0034",
+    "quantity": 10,
+    "price_per_unit": 4878.78,
+    "total_price": 48787.8
+  },
+  {
+    "id": "OI-00454",
+    "order_number": "ORD-0147",
+    "material_number": "MAT0022",
+    "quantity": 16,
+    "price_per_unit": 6820.1,
+    "total_price": 109121.6
+  },
+  {
+    "id": "OI-00455",
+    "order_number": "ORD-0148",
+    "material_number": "MAT0011",
+    "quantity": 1,
+    "price_per_unit": 9017.3,
+    "total_price": 9017.3
+  },
+  {
+    "id": "OI-00456",
+    "order_number": "ORD-0148",
+    "material_number": "MAT0023",
+    "quantity": 12,
+    "price_per_unit": 5625.58,
+    "total_price": 67506.96
+  },
+  {
+    "id": "OI-00457",
+    "order_number": "ORD-0148",
+    "material_number": "MAT0023",
+    "quantity": 10,
+    "price_per_unit": 5625.58,
+    "total_price": 56255.8
+  },
+  {
+    "id": "OI-00458",
+    "order_number": "ORD-0149",
+    "material_number": "MAT0033",
+    "quantity": 9,
+    "price_per_unit": 9622.14,
+    "total_price": 86599.26
+  },
+  {
+    "id": "OI-00459",
+    "order_number": "ORD-0149",
+    "material_number": "MAT0004",
+    "quantity": 9,
+    "price_per_unit": 5921.32,
+    "total_price": 53291.88
+  },
+  {
+    "id": "OI-00460",
+    "order_number": "ORD-0150",
+    "material_number": "MAT0002",
+    "quantity": 18,
+    "price_per_unit": 2279.34,
+    "total_price": 41028.12
+  },
+  {
+    "id": "OI-00461",
+    "order_number": "ORD-0150",
+    "material_number": "MAT0018",
+    "quantity": 8,
+    "price_per_unit": 5437.55,
+    "total_price": 43500.4
+  },
+  {
+    "id": "OI-00462",
+    "order_number": "ORD-0150",
+    "material_number": "MAT0010",
+    "quantity": 11,
+    "price_per_unit": 5985.14,
+    "total_price": 65836.54
+  },
+  {
+    "id": "OI-00463",
+    "order_number": "ORD-0151",
+    "material_number": "MAT0009",
+    "quantity": 3,
+    "price_per_unit": 9440.31,
+    "total_price": 28320.93
+  },
+  {
+    "id": "OI-00464",
+    "order_number": "ORD-0151",
+    "material_number": "MAT0025",
+    "quantity": 17,
+    "price_per_unit": 1890.2,
+    "total_price": 32133.4
+  },
+  {
+    "id": "OI-00465",
+    "order_number": "ORD-0151",
+    "material_number": "MAT0040",
+    "quantity": 8,
+    "price_per_unit": 3201.49,
+    "total_price": 25611.92
+  },
+  {
+    "id": "OI-00466",
+    "order_number": "ORD-0152",
+    "material_number": "MAT0016",
+    "quantity": 19,
+    "price_per_unit": 8801.76,
+    "total_price": 167233.44
+  },
+  {
+    "id": "OI-00467",
+    "order_number": "ORD-0152",
+    "material_number": "MAT0010",
+    "quantity": 14,
+    "price_per_unit": 5985.14,
+    "total_price": 83791.96
+  },
+  {
+    "id": "OI-00468",
+    "order_number": "ORD-0152",
+    "material_number": "MAT0020",
+    "quantity": 20,
+    "price_per_unit": 3626.57,
+    "total_price": 72531.4
+  },
+  {
+    "id": "OI-00469",
+    "order_number": "ORD-0153",
+    "material_number": "MAT0029",
+    "quantity": 18,
+    "price_per_unit": 9707.54,
+    "total_price": 174735.72
+  },
+  {
+    "id": "OI-00470",
+    "order_number": "ORD-0153",
+    "material_number": "MAT0009",
+    "quantity": 7,
+    "price_per_unit": 9440.31,
+    "total_price": 66082.17
+  },
+  {
+    "id": "OI-00471",
+    "order_number": "ORD-0153",
+    "material_number": "MAT0042",
+    "quantity": 5,
+    "price_per_unit": 510.97,
+    "total_price": 2554.85
+  },
+  {
+    "id": "OI-00472",
+    "order_number": "ORD-0154",
+    "material_number": "MAT0035",
+    "quantity": 7,
+    "price_per_unit": 1936.3,
+    "total_price": 13554.1
+  },
+  {
+    "id": "OI-00473",
+    "order_number": "ORD-0154",
+    "material_number": "MAT0009",
+    "quantity": 10,
+    "price_per_unit": 9440.31,
+    "total_price": 94403.1
+  },
+  {
+    "id": "OI-00474",
+    "order_number": "ORD-0154",
+    "material_number": "MAT0034",
+    "quantity": 5,
+    "price_per_unit": 4878.78,
+    "total_price": 24393.9
+  },
+  {
+    "id": "OI-00475",
+    "order_number": "ORD-0154",
+    "material_number": "MAT0028",
+    "quantity": 5,
+    "price_per_unit": 7085.5,
+    "total_price": 35427.5
+  },
+  {
+    "id": "OI-00476",
+    "order_number": "ORD-0155",
+    "material_number": "MAT0037",
+    "quantity": 6,
+    "price_per_unit": 6936.23,
+    "total_price": 41617.38
+  },
+  {
+    "id": "OI-00477",
+    "order_number": "ORD-0155",
+    "material_number": "MAT0021",
+    "quantity": 3,
+    "price_per_unit": 8204.19,
+    "total_price": 24612.57
+  },
+  {
+    "id": "OI-00478",
+    "order_number": "ORD-0155",
+    "material_number": "MAT0036",
+    "quantity": 18,
+    "price_per_unit": 8374.49,
+    "total_price": 150740.82
+  },
+  {
+    "id": "OI-00479",
+    "order_number": "ORD-0155",
+    "material_number": "MAT0008",
+    "quantity": 6,
+    "price_per_unit": 7853.4,
+    "total_price": 47120.4
+  },
+  {
+    "id": "OI-00480",
+    "order_number": "ORD-0156",
+    "material_number": "MAT0010",
+    "quantity": 1,
+    "price_per_unit": 5985.14,
+    "total_price": 5985.14
+  },
+  {
+    "id": "OI-00481",
+    "order_number": "ORD-0156",
+    "material_number": "MAT0021",
+    "quantity": 14,
+    "price_per_unit": 8204.19,
+    "total_price": 114858.66
+  },
+  {
+    "id": "OI-00482",
+    "order_number": "ORD-0156",
+    "material_number": "MAT0027",
+    "quantity": 10,
+    "price_per_unit": 6990.59,
+    "total_price": 69905.9
+  },
+  {
+    "id": "OI-00483",
+    "order_number": "ORD-0157",
+    "material_number": "MAT0041",
+    "quantity": 9,
+    "price_per_unit": 8061.53,
+    "total_price": 72553.77
+  },
+  {
+    "id": "OI-00484",
+    "order_number": "ORD-0157",
+    "material_number": "MAT0010",
+    "quantity": 7,
+    "price_per_unit": 5985.14,
+    "total_price": 41895.98
+  },
+  {
+    "id": "OI-00485",
+    "order_number": "ORD-0157",
+    "material_number": "MAT0007",
+    "quantity": 5,
+    "price_per_unit": 9743.17,
+    "total_price": 48715.85
+  },
+  {
+    "id": "OI-00486",
+    "order_number": "ORD-0158",
+    "material_number": "MAT0002",
+    "quantity": 20,
+    "price_per_unit": 2279.34,
+    "total_price": 45586.8
+  },
+  {
+    "id": "OI-00487",
+    "order_number": "ORD-0158",
+    "material_number": "MAT0040",
+    "quantity": 9,
+    "price_per_unit": 3201.49,
+    "total_price": 28813.41
+  },
+  {
+    "id": "OI-00488",
+    "order_number": "ORD-0159",
+    "material_number": "MAT0037",
+    "quantity": 20,
+    "price_per_unit": 6936.23,
+    "total_price": 138724.6
+  },
+  {
+    "id": "OI-00489",
+    "order_number": "ORD-0159",
+    "material_number": "MAT0015",
+    "quantity": 20,
+    "price_per_unit": 8305.88,
+    "total_price": 166117.6
+  },
+  {
+    "id": "OI-00490",
+    "order_number": "ORD-0159",
+    "material_number": "MAT0015",
+    "quantity": 8,
+    "price_per_unit": 8305.88,
+    "total_price": 66447.04
+  },
+  {
+    "id": "OI-00491",
+    "order_number": "ORD-0159",
+    "material_number": "MAT0002",
+    "quantity": 12,
+    "price_per_unit": 2279.34,
+    "total_price": 27352.08
+  },
+  {
+    "id": "OI-00492",
+    "order_number": "ORD-0160",
+    "material_number": "MAT0031",
+    "quantity": 5,
+    "price_per_unit": 3068.46,
+    "total_price": 15342.3
+  },
+  {
+    "id": "OI-00493",
+    "order_number": "ORD-0160",
+    "material_number": "MAT0033",
+    "quantity": 20,
+    "price_per_unit": 9622.14,
+    "total_price": 192442.8
+  },
+  {
+    "id": "OI-00494",
+    "order_number": "ORD-0161",
+    "material_number": "MAT0042",
+    "quantity": 12,
+    "price_per_unit": 510.97,
+    "total_price": 6131.64
+  },
+  {
+    "id": "OI-00495",
+    "order_number": "ORD-0161",
+    "material_number": "MAT0012",
+    "quantity": 13,
+    "price_per_unit": 1138.52,
+    "total_price": 14800.76
+  },
+  {
+    "id": "OI-00496",
+    "order_number": "ORD-0161",
+    "material_number": "MAT0032",
+    "quantity": 16,
+    "price_per_unit": 8024.67,
+    "total_price": 128394.72
+  },
+  {
+    "id": "OI-00497",
+    "order_number": "ORD-0162",
+    "material_number": "MAT0011",
+    "quantity": 7,
+    "price_per_unit": 9017.3,
+    "total_price": 63121.1
+  },
+  {
+    "id": "OI-00498",
+    "order_number": "ORD-0162",
+    "material_number": "MAT0015",
+    "quantity": 2,
+    "price_per_unit": 8305.88,
+    "total_price": 16611.76
+  },
+  {
+    "id": "OI-00499",
+    "order_number": "ORD-0163",
+    "material_number": "MAT0001",
+    "quantity": 9,
+    "price_per_unit": 3982.73,
+    "total_price": 35844.57
+  },
+  {
+    "id": "OI-00500",
+    "order_number": "ORD-0163",
+    "material_number": "MAT0027",
+    "quantity": 8,
+    "price_per_unit": 6990.59,
+    "total_price": 55924.72
+  },
+  {
+    "id": "OI-00501",
+    "order_number": "ORD-0163",
+    "material_number": "MAT0013",
+    "quantity": 7,
+    "price_per_unit": 4144.84,
+    "total_price": 29013.88
+  },
+  {
+    "id": "OI-00502",
+    "order_number": "ORD-0164",
+    "material_number": "MAT0012",
+    "quantity": 15,
+    "price_per_unit": 1138.52,
+    "total_price": 17077.8
+  },
+  {
+    "id": "OI-00503",
+    "order_number": "ORD-0164",
+    "material_number": "MAT0040",
+    "quantity": 16,
+    "price_per_unit": 3201.49,
+    "total_price": 51223.84
+  },
+  {
+    "id": "OI-00504",
+    "order_number": "ORD-0165",
+    "material_number": "MAT0021",
+    "quantity": 15,
+    "price_per_unit": 8204.19,
+    "total_price": 123062.85
+  },
+  {
+    "id": "OI-00505",
+    "order_number": "ORD-0165",
+    "material_number": "MAT0016",
+    "quantity": 14,
+    "price_per_unit": 8801.76,
+    "total_price": 123224.64
+  },
+  {
+    "id": "OI-00506",
+    "order_number": "ORD-0165",
+    "material_number": "MAT0026",
+    "quantity": 2,
+    "price_per_unit": 4001.66,
+    "total_price": 8003.32
+  },
+  {
+    "id": "OI-00507",
+    "order_number": "ORD-0165",
+    "material_number": "MAT0039",
+    "quantity": 13,
+    "price_per_unit": 7394.79,
+    "total_price": 96132.27
+  },
+  {
+    "id": "OI-00508",
+    "order_number": "ORD-0166",
+    "material_number": "MAT0021",
+    "quantity": 13,
+    "price_per_unit": 8204.19,
+    "total_price": 106654.47
+  },
+  {
+    "id": "OI-00509",
+    "order_number": "ORD-0166",
+    "material_number": "MAT0040",
+    "quantity": 19,
+    "price_per_unit": 3201.49,
+    "total_price": 60828.31
+  },
+  {
+    "id": "OI-00510",
+    "order_number": "ORD-0166",
+    "material_number": "MAT0039",
+    "quantity": 18,
+    "price_per_unit": 7394.79,
+    "total_price": 133106.22
+  },
+  {
+    "id": "OI-00511",
+    "order_number": "ORD-0166",
+    "material_number": "MAT0034",
+    "quantity": 2,
+    "price_per_unit": 4878.78,
+    "total_price": 9757.56
+  },
+  {
+    "id": "OI-00512",
+    "order_number": "ORD-0167",
+    "material_number": "MAT0007",
+    "quantity": 15,
+    "price_per_unit": 9743.17,
+    "total_price": 146147.55
+  },
+  {
+    "id": "OI-00513",
+    "order_number": "ORD-0167",
+    "material_number": "MAT0030",
+    "quantity": 2,
+    "price_per_unit": 4565.96,
+    "total_price": 9131.92
+  },
+  {
+    "id": "OI-00514",
+    "order_number": "ORD-0167",
+    "material_number": "MAT0016",
+    "quantity": 17,
+    "price_per_unit": 8801.76,
+    "total_price": 149629.92
+  },
+  {
+    "id": "OI-00515",
+    "order_number": "ORD-0167",
+    "material_number": "MAT0035",
+    "quantity": 13,
+    "price_per_unit": 1936.3,
+    "total_price": 25171.9
+  },
+  {
+    "id": "OI-00516",
+    "order_number": "ORD-0168",
+    "material_number": "MAT0003",
+    "quantity": 18,
+    "price_per_unit": 2744.55,
+    "total_price": 49401.9
+  },
+  {
+    "id": "OI-00517",
+    "order_number": "ORD-0168",
+    "material_number": "MAT0025",
+    "quantity": 17,
+    "price_per_unit": 1890.2,
+    "total_price": 32133.4
+  },
+  {
+    "id": "OI-00518",
+    "order_number": "ORD-0168",
+    "material_number": "MAT0041",
+    "quantity": 2,
+    "price_per_unit": 8061.53,
+    "total_price": 16123.06
+  },
+  {
+    "id": "OI-00519",
+    "order_number": "ORD-0168",
+    "material_number": "MAT0013",
+    "quantity": 10,
+    "price_per_unit": 4144.84,
+    "total_price": 41448.4
+  },
+  {
+    "id": "OI-00520",
+    "order_number": "ORD-0169",
+    "material_number": "MAT0026",
+    "quantity": 10,
+    "price_per_unit": 4001.66,
+    "total_price": 40016.6
+  },
+  {
+    "id": "OI-00521",
+    "order_number": "ORD-0169",
+    "material_number": "MAT0019",
+    "quantity": 15,
+    "price_per_unit": 8371.95,
+    "total_price": 125579.25
+  },
+  {
+    "id": "OI-00522",
+    "order_number": "ORD-0169",
+    "material_number": "MAT0011",
+    "quantity": 14,
+    "price_per_unit": 9017.3,
+    "total_price": 126242.2
+  },
+  {
+    "id": "OI-00523",
+    "order_number": "ORD-0170",
+    "material_number": "MAT0040",
+    "quantity": 2,
+    "price_per_unit": 3201.49,
+    "total_price": 6402.98
+  },
+  {
+    "id": "OI-00524",
+    "order_number": "ORD-0170",
+    "material_number": "MAT0034",
+    "quantity": 5,
+    "price_per_unit": 4878.78,
+    "total_price": 24393.9
+  },
+  {
+    "id": "OI-00525",
+    "order_number": "ORD-0170",
+    "material_number": "MAT0030",
+    "quantity": 15,
+    "price_per_unit": 4565.96,
+    "total_price": 68489.4
+  },
+  {
+    "id": "OI-00526",
+    "order_number": "ORD-0171",
+    "material_number": "MAT0033",
+    "quantity": 4,
+    "price_per_unit": 9622.14,
+    "total_price": 38488.56
+  },
+  {
+    "id": "OI-00527",
+    "order_number": "ORD-0171",
+    "material_number": "MAT0012",
+    "quantity": 19,
+    "price_per_unit": 1138.52,
+    "total_price": 21631.88
+  },
+  {
+    "id": "OI-00528",
+    "order_number": "ORD-0172",
+    "material_number": "MAT0035",
+    "quantity": 5,
+    "price_per_unit": 1936.3,
+    "total_price": 9681.5
+  },
+  {
+    "id": "OI-00529",
+    "order_number": "ORD-0172",
+    "material_number": "MAT0026",
+    "quantity": 14,
+    "price_per_unit": 4001.66,
+    "total_price": 56023.24
+  },
+  {
+    "id": "OI-00530",
+    "order_number": "ORD-0172",
+    "material_number": "MAT0021",
+    "quantity": 15,
+    "price_per_unit": 8204.19,
+    "total_price": 123062.85
+  },
+  {
+    "id": "OI-00531",
+    "order_number": "ORD-0172",
+    "material_number": "MAT0002",
+    "quantity": 6,
+    "price_per_unit": 2279.34,
+    "total_price": 13676.04
+  },
+  {
+    "id": "OI-00532",
+    "order_number": "ORD-0173",
+    "material_number": "MAT0038",
+    "quantity": 7,
+    "price_per_unit": 9096.21,
+    "total_price": 63673.47
+  },
+  {
+    "id": "OI-00533",
+    "order_number": "ORD-0173",
+    "material_number": "MAT0030",
+    "quantity": 3,
+    "price_per_unit": 4565.96,
+    "total_price": 13697.88
+  },
+  {
+    "id": "OI-00534",
+    "order_number": "ORD-0173",
+    "material_number": "MAT0017",
+    "quantity": 11,
+    "price_per_unit": 2730.82,
+    "total_price": 30039.02
+  },
+  {
+    "id": "OI-00535",
+    "order_number": "ORD-0174",
+    "material_number": "MAT0042",
+    "quantity": 6,
+    "price_per_unit": 510.97,
+    "total_price": 3065.82
+  },
+  {
+    "id": "OI-00536",
+    "order_number": "ORD-0174",
+    "material_number": "MAT0008",
+    "quantity": 3,
+    "price_per_unit": 7853.4,
+    "total_price": 23560.2
+  },
+  {
+    "id": "OI-00537",
+    "order_number": "ORD-0174",
+    "material_number": "MAT0008",
+    "quantity": 15,
+    "price_per_unit": 7853.4,
+    "total_price": 117801.0
+  },
+  {
+    "id": "OI-00538",
+    "order_number": "ORD-0174",
+    "material_number": "MAT0041",
+    "quantity": 12,
+    "price_per_unit": 8061.53,
+    "total_price": 96738.36
+  },
+  {
+    "id": "OI-00539",
+    "order_number": "ORD-0175",
+    "material_number": "MAT0034",
+    "quantity": 13,
+    "price_per_unit": 4878.78,
+    "total_price": 63424.14
+  },
+  {
+    "id": "OI-00540",
+    "order_number": "ORD-0175",
+    "material_number": "MAT0033",
+    "quantity": 20,
+    "price_per_unit": 9622.14,
+    "total_price": 192442.8
+  },
+  {
+    "id": "OI-00541",
+    "order_number": "ORD-0176",
+    "material_number": "MAT0025",
+    "quantity": 18,
+    "price_per_unit": 1890.2,
+    "total_price": 34023.6
+  },
+  {
+    "id": "OI-00542",
+    "order_number": "ORD-0176",
+    "material_number": "MAT0025",
+    "quantity": 2,
+    "price_per_unit": 1890.2,
+    "total_price": 3780.4
+  },
+  {
+    "id": "OI-00543",
+    "order_number": "ORD-0177",
+    "material_number": "MAT0022",
+    "quantity": 19,
+    "price_per_unit": 6820.1,
+    "total_price": 129581.9
+  },
+  {
+    "id": "OI-00544",
+    "order_number": "ORD-0177",
+    "material_number": "MAT0010",
+    "quantity": 6,
+    "price_per_unit": 5985.14,
+    "total_price": 35910.84
+  },
+  {
+    "id": "OI-00545",
+    "order_number": "ORD-0178",
+    "material_number": "MAT0012",
+    "quantity": 2,
+    "price_per_unit": 1138.52,
+    "total_price": 2277.04
+  },
+  {
+    "id": "OI-00546",
+    "order_number": "ORD-0178",
+    "material_number": "MAT0027",
+    "quantity": 10,
+    "price_per_unit": 6990.59,
+    "total_price": 69905.9
+  },
+  {
+    "id": "OI-00547",
+    "order_number": "ORD-0179",
+    "material_number": "MAT0029",
+    "quantity": 10,
+    "price_per_unit": 9707.54,
+    "total_price": 97075.4
+  },
+  {
+    "id": "OI-00548",
+    "order_number": "ORD-0179",
+    "material_number": "MAT0041",
+    "quantity": 6,
+    "price_per_unit": 8061.53,
+    "total_price": 48369.18
+  },
+  {
+    "id": "OI-00549",
+    "order_number": "ORD-0179",
+    "material_number": "MAT0008",
+    "quantity": 5,
+    "price_per_unit": 7853.4,
+    "total_price": 39267.0
+  },
+  {
+    "id": "OI-00550",
+    "order_number": "ORD-0180",
+    "material_number": "MAT0001",
+    "quantity": 20,
+    "price_per_unit": 3982.73,
+    "total_price": 79654.6
+  },
+  {
+    "id": "OI-00551",
+    "order_number": "ORD-0180",
+    "material_number": "MAT0017",
+    "quantity": 1,
+    "price_per_unit": 2730.82,
+    "total_price": 2730.82
+  },
+  {
+    "id": "OI-00552",
+    "order_number": "ORD-0181",
+    "material_number": "MAT0032",
+    "quantity": 16,
+    "price_per_unit": 8024.67,
+    "total_price": 128394.72
+  },
+  {
+    "id": "OI-00553",
+    "order_number": "ORD-0181",
+    "material_number": "MAT0035",
+    "quantity": 1,
+    "price_per_unit": 1936.3,
+    "total_price": 1936.3
+  },
+  {
+    "id": "OI-00554",
+    "order_number": "ORD-0181",
+    "material_number": "MAT0039",
+    "quantity": 16,
+    "price_per_unit": 7394.79,
+    "total_price": 118316.64
+  },
+  {
+    "id": "OI-00555",
+    "order_number": "ORD-0182",
+    "material_number": "MAT0014",
+    "quantity": 19,
+    "price_per_unit": 1216.57,
+    "total_price": 23114.83
+  },
+  {
+    "id": "OI-00556",
+    "order_number": "ORD-0182",
+    "material_number": "MAT0031",
+    "quantity": 15,
+    "price_per_unit": 3068.46,
+    "total_price": 46026.9
+  },
+  {
+    "id": "OI-00557",
+    "order_number": "ORD-0183",
+    "material_number": "MAT0029",
+    "quantity": 3,
+    "price_per_unit": 9707.54,
+    "total_price": 29122.62
+  },
+  {
+    "id": "OI-00558",
+    "order_number": "ORD-0183",
+    "material_number": "MAT0039",
+    "quantity": 20,
+    "price_per_unit": 7394.79,
+    "total_price": 147895.8
+  },
+  {
+    "id": "OI-00559",
+    "order_number": "ORD-0183",
+    "material_number": "MAT0001",
+    "quantity": 8,
+    "price_per_unit": 3982.73,
+    "total_price": 31861.84
+  },
+  {
+    "id": "OI-00560",
+    "order_number": "ORD-0184",
+    "material_number": "MAT0018",
+    "quantity": 20,
+    "price_per_unit": 5437.55,
+    "total_price": 108751.0
+  },
+  {
+    "id": "OI-00561",
+    "order_number": "ORD-0184",
+    "material_number": "MAT0041",
+    "quantity": 18,
+    "price_per_unit": 8061.53,
+    "total_price": 145107.54
+  },
+  {
+    "id": "OI-00562",
+    "order_number": "ORD-0184",
+    "material_number": "MAT0014",
+    "quantity": 2,
+    "price_per_unit": 1216.57,
+    "total_price": 2433.14
+  },
+  {
+    "id": "OI-00563",
+    "order_number": "ORD-0184",
+    "material_number": "MAT0012",
+    "quantity": 5,
+    "price_per_unit": 1138.52,
+    "total_price": 5692.6
+  },
+  {
+    "id": "OI-00564",
+    "order_number": "ORD-0185",
+    "material_number": "MAT0042",
+    "quantity": 12,
+    "price_per_unit": 510.97,
+    "total_price": 6131.64
+  },
+  {
+    "id": "OI-00565",
+    "order_number": "ORD-0185",
+    "material_number": "MAT0003",
+    "quantity": 5,
+    "price_per_unit": 2744.55,
+    "total_price": 13722.75
+  },
+  {
+    "id": "OI-00566",
+    "order_number": "ORD-0186",
+    "material_number": "MAT0037",
+    "quantity": 20,
+    "price_per_unit": 6936.23,
+    "total_price": 138724.6
+  },
+  {
+    "id": "OI-00567",
+    "order_number": "ORD-0186",
+    "material_number": "MAT0020",
+    "quantity": 11,
+    "price_per_unit": 3626.57,
+    "total_price": 39892.27
+  },
+  {
+    "id": "OI-00568",
+    "order_number": "ORD-0187",
+    "material_number": "MAT0004",
+    "quantity": 4,
+    "price_per_unit": 5921.32,
+    "total_price": 23685.28
+  },
+  {
+    "id": "OI-00569",
+    "order_number": "ORD-0187",
+    "material_number": "MAT0027",
+    "quantity": 6,
+    "price_per_unit": 6990.59,
+    "total_price": 41943.54
+  },
+  {
+    "id": "OI-00570",
+    "order_number": "ORD-0188",
+    "material_number": "MAT0019",
+    "quantity": 20,
+    "price_per_unit": 8371.95,
+    "total_price": 167439.0
+  },
+  {
+    "id": "OI-00571",
+    "order_number": "ORD-0188",
+    "material_number": "MAT0039",
+    "quantity": 19,
+    "price_per_unit": 7394.79,
+    "total_price": 140501.01
+  },
+  {
+    "id": "OI-00572",
+    "order_number": "ORD-0189",
+    "material_number": "MAT0012",
+    "quantity": 15,
+    "price_per_unit": 1138.52,
+    "total_price": 17077.8
+  },
+  {
+    "id": "OI-00573",
+    "order_number": "ORD-0189",
+    "material_number": "MAT0038",
+    "quantity": 12,
+    "price_per_unit": 9096.21,
+    "total_price": 109154.52
+  },
+  {
+    "id": "OI-00574",
+    "order_number": "ORD-0189",
+    "material_number": "MAT0003",
+    "quantity": 3,
+    "price_per_unit": 2744.55,
+    "total_price": 8233.65
+  },
+  {
+    "id": "OI-00575",
+    "order_number": "ORD-0189",
+    "material_number": "MAT0020",
+    "quantity": 11,
+    "price_per_unit": 3626.57,
+    "total_price": 39892.27
+  },
+  {
+    "id": "OI-00576",
+    "order_number": "ORD-0190",
+    "material_number": "MAT0025",
+    "quantity": 3,
+    "price_per_unit": 1890.2,
+    "total_price": 5670.6
+  },
+  {
+    "id": "OI-00577",
+    "order_number": "ORD-0190",
+    "material_number": "MAT0028",
+    "quantity": 18,
+    "price_per_unit": 7085.5,
+    "total_price": 127539.0
+  },
+  {
+    "id": "OI-00578",
+    "order_number": "ORD-0190",
+    "material_number": "MAT0005",
+    "quantity": 10,
+    "price_per_unit": 3208.58,
+    "total_price": 32085.8
+  },
+  {
+    "id": "OI-00579",
+    "order_number": "ORD-0191",
+    "material_number": "MAT0009",
+    "quantity": 4,
+    "price_per_unit": 9440.31,
+    "total_price": 37761.24
+  },
+  {
+    "id": "OI-00580",
+    "order_number": "ORD-0191",
+    "material_number": "MAT0018",
+    "quantity": 11,
+    "price_per_unit": 5437.55,
+    "total_price": 59813.05
+  },
+  {
+    "id": "OI-00581",
+    "order_number": "ORD-0191",
+    "material_number": "MAT0034",
+    "quantity": 14,
+    "price_per_unit": 4878.78,
+    "total_price": 68302.92
+  },
+  {
+    "id": "OI-00582",
+    "order_number": "ORD-0192",
+    "material_number": "MAT0014",
+    "quantity": 7,
+    "price_per_unit": 1216.57,
+    "total_price": 8515.99
+  },
+  {
+    "id": "OI-00583",
+    "order_number": "ORD-0192",
+    "material_number": "MAT0040",
+    "quantity": 2,
+    "price_per_unit": 3201.49,
+    "total_price": 6402.98
+  },
+  {
+    "id": "OI-00584",
+    "order_number": "ORD-0192",
+    "material_number": "MAT0007",
+    "quantity": 19,
+    "price_per_unit": 9743.17,
+    "total_price": 185120.23
+  },
+  {
+    "id": "OI-00585",
+    "order_number": "ORD-0192",
+    "material_number": "MAT0041",
+    "quantity": 17,
+    "price_per_unit": 8061.53,
+    "total_price": 137046.01
+  },
+  {
+    "id": "OI-00586",
+    "order_number": "ORD-0193",
+    "material_number": "MAT0031",
+    "quantity": 20,
+    "price_per_unit": 3068.46,
+    "total_price": 61369.2
+  },
+  {
+    "id": "OI-00587",
+    "order_number": "ORD-0193",
+    "material_number": "MAT0019",
+    "quantity": 14,
+    "price_per_unit": 8371.95,
+    "total_price": 117207.3
+  },
+  {
+    "id": "OI-00588",
+    "order_number": "ORD-0194",
+    "material_number": "MAT0021",
+    "quantity": 9,
+    "price_per_unit": 8204.19,
+    "total_price": 73837.71
+  },
+  {
+    "id": "OI-00589",
+    "order_number": "ORD-0194",
+    "material_number": "MAT0034",
+    "quantity": 19,
+    "price_per_unit": 4878.78,
+    "total_price": 92696.82
+  },
+  {
+    "id": "OI-00590",
+    "order_number": "ORD-0194",
+    "material_number": "MAT0040",
+    "quantity": 12,
+    "price_per_unit": 3201.49,
+    "total_price": 38417.88
+  },
+  {
+    "id": "OI-00591",
+    "order_number": "ORD-0194",
+    "material_number": "MAT0009",
+    "quantity": 20,
+    "price_per_unit": 9440.31,
+    "total_price": 188806.2
+  },
+  {
+    "id": "OI-00592",
+    "order_number": "ORD-0195",
+    "material_number": "MAT0032",
+    "quantity": 17,
+    "price_per_unit": 8024.67,
+    "total_price": 136419.39
+  },
+  {
+    "id": "OI-00593",
+    "order_number": "ORD-0195",
+    "material_number": "MAT0041",
+    "quantity": 16,
+    "price_per_unit": 8061.53,
+    "total_price": 128984.48
+  },
+  {
+    "id": "OI-00594",
+    "order_number": "ORD-0195",
+    "material_number": "MAT0032",
+    "quantity": 6,
+    "price_per_unit": 8024.67,
+    "total_price": 48148.02
+  },
+  {
+    "id": "OI-00595",
+    "order_number": "ORD-0195",
+    "material_number": "MAT0040",
+    "quantity": 8,
+    "price_per_unit": 3201.49,
+    "total_price": 25611.92
+  },
+  {
+    "id": "OI-00596",
+    "order_number": "ORD-0196",
+    "material_number": "MAT0019",
+    "quantity": 7,
+    "price_per_unit": 8371.95,
+    "total_price": 58603.65
+  },
+  {
+    "id": "OI-00597",
+    "order_number": "ORD-0196",
+    "material_number": "MAT0001",
+    "quantity": 4,
+    "price_per_unit": 3982.73,
+    "total_price": 15930.92
+  },
+  {
+    "id": "OI-00598",
+    "order_number": "ORD-0196",
+    "material_number": "MAT0002",
+    "quantity": 15,
+    "price_per_unit": 2279.34,
+    "total_price": 34190.1
+  },
+  {
+    "id": "OI-00599",
+    "order_number": "ORD-0196",
+    "material_number": "MAT0041",
+    "quantity": 4,
+    "price_per_unit": 8061.53,
+    "total_price": 32246.12
+  },
+  {
+    "id": "OI-00600",
+    "order_number": "ORD-0197",
+    "material_number": "MAT0014",
+    "quantity": 20,
+    "price_per_unit": 1216.57,
+    "total_price": 24331.4
+  },
+  {
+    "id": "OI-00601",
+    "order_number": "ORD-0197",
+    "material_number": "MAT0027",
+    "quantity": 14,
+    "price_per_unit": 6990.59,
+    "total_price": 97868.26
+  },
+  {
+    "id": "OI-00602",
+    "order_number": "ORD-0197",
+    "material_number": "MAT0003",
+    "quantity": 11,
+    "price_per_unit": 2744.55,
+    "total_price": 30190.05
+  },
+  {
+    "id": "OI-00603",
+    "order_number": "ORD-0197",
+    "material_number": "MAT0023",
+    "quantity": 18,
+    "price_per_unit": 5625.58,
+    "total_price": 101260.44
+  },
+  {
+    "id": "OI-00604",
+    "order_number": "ORD-0198",
+    "material_number": "MAT0014",
+    "quantity": 1,
+    "price_per_unit": 1216.57,
+    "total_price": 1216.57
+  },
+  {
+    "id": "OI-00605",
+    "order_number": "ORD-0198",
+    "material_number": "MAT0041",
+    "quantity": 7,
+    "price_per_unit": 8061.53,
+    "total_price": 56430.71
+  },
+  {
+    "id": "OI-00606",
+    "order_number": "ORD-0198",
+    "material_number": "MAT0019",
+    "quantity": 9,
+    "price_per_unit": 8371.95,
+    "total_price": 75347.55
+  },
+  {
+    "id": "OI-00607",
+    "order_number": "ORD-0198",
+    "material_number": "MAT0005",
+    "quantity": 10,
+    "price_per_unit": 3208.58,
+    "total_price": 32085.8
+  },
+  {
+    "id": "OI-00608",
+    "order_number": "ORD-0199",
+    "material_number": "MAT0033",
+    "quantity": 18,
+    "price_per_unit": 9622.14,
+    "total_price": 173198.52
+  },
+  {
+    "id": "OI-00609",
+    "order_number": "ORD-0199",
+    "material_number": "MAT0021",
+    "quantity": 1,
+    "price_per_unit": 8204.19,
+    "total_price": 8204.19
+  },
+  {
+    "id": "OI-00610",
+    "order_number": "ORD-0199",
+    "material_number": "MAT0008",
+    "quantity": 11,
+    "price_per_unit": 7853.4,
+    "total_price": 86387.4
+  },
+  {
+    "id": "OI-00611",
+    "order_number": "ORD-0200",
+    "material_number": "MAT0026",
+    "quantity": 19,
+    "price_per_unit": 4001.66,
+    "total_price": 76031.54
+  },
+  {
+    "id": "OI-00612",
+    "order_number": "ORD-0200",
+    "material_number": "MAT0040",
+    "quantity": 1,
+    "price_per_unit": 3201.49,
+    "total_price": 3201.49
+  },
+  {
+    "id": "OI-00613",
+    "order_number": "ORD-0200",
+    "material_number": "MAT0012",
+    "quantity": 7,
+    "price_per_unit": 1138.52,
+    "total_price": 7969.64
+  },
+  {
+    "id": "OI-00614",
+    "order_number": "ORD-0201",
+    "material_number": "MAT0022",
+    "quantity": 16,
+    "price_per_unit": 6820.1,
+    "total_price": 109121.6
+  },
+  {
+    "id": "OI-00615",
+    "order_number": "ORD-0201",
+    "material_number": "MAT0031",
+    "quantity": 2,
+    "price_per_unit": 3068.46,
+    "total_price": 6136.92
+  },
+  {
+    "id": "OI-00616",
+    "order_number": "ORD-0201",
+    "material_number": "MAT0042",
+    "quantity": 5,
+    "price_per_unit": 510.97,
+    "total_price": 2554.85
+  },
+  {
+    "id": "OI-00617",
+    "order_number": "ORD-0202",
+    "material_number": "MAT0010",
+    "quantity": 15,
+    "price_per_unit": 5985.14,
+    "total_price": 89777.1
+  },
+  {
+    "id": "OI-00618",
+    "order_number": "ORD-0202",
+    "material_number": "MAT0035",
+    "quantity": 11,
+    "price_per_unit": 1936.3,
+    "total_price": 21299.3
+  },
+  {
+    "id": "OI-00619",
+    "order_number": "ORD-0202",
+    "material_number": "MAT0030",
+    "quantity": 14,
+    "price_per_unit": 4565.96,
+    "total_price": 63923.44
+  },
+  {
+    "id": "OI-00620",
+    "order_number": "ORD-0203",
+    "material_number": "MAT0004",
+    "quantity": 17,
+    "price_per_unit": 5921.32,
+    "total_price": 100662.44
+  },
+  {
+    "id": "OI-00621",
+    "order_number": "ORD-0203",
+    "material_number": "MAT0020",
+    "quantity": 19,
+    "price_per_unit": 3626.57,
+    "total_price": 68904.83
+  },
+  {
+    "id": "OI-00622",
+    "order_number": "ORD-0203",
+    "material_number": "MAT0021",
+    "quantity": 18,
+    "price_per_unit": 8204.19,
+    "total_price": 147675.42
+  },
+  {
+    "id": "OI-00623",
+    "order_number": "ORD-0203",
+    "material_number": "MAT0035",
+    "quantity": 1,
+    "price_per_unit": 1936.3,
+    "total_price": 1936.3
   }
 ]

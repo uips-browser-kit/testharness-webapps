@@ -1,162 +1,338 @@
 [
   {
     "material_number": "MAT0001",
-    "description": "Optional bandwidth-monitored utilization",
-    "unit": "EA",
-    "price": 9038.92,
+    "description": "Networked zero-defect artificial intelligence",
+    "unit": "BOX",
+    "price": 3982.73,
     "currency": "USD",
-    "category": "Software"
+    "category": "Equipment"
   },
   {
     "material_number": "MAT0002",
-    "description": "Optional local emulation",
-    "unit": "M",
-    "price": 5558.58,
+    "description": "Down-sized systemic implementation",
+    "unit": "KG",
+    "price": 2279.34,
     "currency": "USD",
-    "category": "Consumables"
+    "category": "Services"
   },
   {
     "material_number": "MAT0003",
-    "description": "Operative upward-trending attitude",
-    "unit": "LT",
-    "price": 6997.4,
+    "description": "Future-proofed modular circuit",
+    "unit": "EA",
+    "price": 2744.55,
     "currency": "USD",
     "category": "Services"
   },
   {
     "material_number": "MAT0004",
-    "description": "Multi-layered coherent software",
-    "unit": "M",
-    "price": 1104.11,
+    "description": "Operative exuding matrices",
+    "unit": "EA",
+    "price": 5921.32,
     "currency": "USD",
-    "category": "Hardware"
+    "category": "Software"
   },
   {
     "material_number": "MAT0005",
-    "description": "Cross-group intermediate attitude",
-    "unit": "LT",
-    "price": 2136.71,
+    "description": "Up-sized responsive methodology",
+    "unit": "BOX",
+    "price": 3208.58,
     "currency": "USD",
     "category": "Hardware"
   },
   {
     "material_number": "MAT0006",
-    "description": "Reverse-engineered next generation open architecture",
-    "unit": "LT",
-    "price": 2007.52,
+    "description": "Devolved exuding ability",
+    "unit": "M",
+    "price": 5448.79,
     "currency": "USD",
-    "category": "Services"
+    "category": "Consumables"
   },
   {
     "material_number": "MAT0007",
-    "description": "Synchronized web-enabled interface",
-    "unit": "EA",
-    "price": 4717.76,
+    "description": "Managed leadingedge groupware",
+    "unit": "M",
+    "price": 9743.17,
     "currency": "USD",
     "category": "Services"
   },
   {
     "material_number": "MAT0008",
-    "description": "Multi-channeled bi-directional orchestration",
-    "unit": "BOX",
-    "price": 3490.19,
+    "description": "Inverse real-time solution",
+    "unit": "KG",
+    "price": 7853.4,
     "currency": "USD",
-    "category": "Consumables"
+    "category": "Software"
   },
   {
     "material_number": "MAT0009",
-    "description": "Face-to-face bi-directional hardware",
-    "unit": "BOX",
-    "price": 6027.14,
+    "description": "Object-based foreground frame",
+    "unit": "M",
+    "price": 9440.31,
     "currency": "USD",
     "category": "Services"
   },
   {
     "material_number": "MAT0010",
-    "description": "Re-engineered directional workforce",
+    "description": "Multi-tiered even-keeled toolset",
     "unit": "M",
-    "price": 9195.98,
+    "price": 5985.14,
     "currency": "USD",
     "category": "Equipment"
   },
   {
     "material_number": "MAT0011",
-    "description": "Seamless systematic project",
-    "unit": "BOX",
-    "price": 435.77,
+    "description": "Exclusive optimizing moratorium",
+    "unit": "KG",
+    "price": 9017.3,
     "currency": "USD",
-    "category": "Services"
+    "category": "Consumables"
   },
   {
     "material_number": "MAT0012",
-    "description": "Assimilated contextually-based flexibility",
+    "description": "Triple-buffered demand-driven intranet",
     "unit": "LT",
-    "price": 5572.44,
+    "price": 1138.52,
     "currency": "USD",
-    "category": "Hardware"
+    "category": "Consumables"
   },
   {
     "material_number": "MAT0013",
-    "description": "Enterprise-wide client-server open system",
+    "description": "Devolved scalable framework",
+    "unit": "KG",
+    "price": 4144.84,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0014",
+    "description": "Universal interactive utilization",
     "unit": "M",
-    "price": 1145.18,
+    "price": 1216.57,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0015",
+    "description": "Polarized optimal initiative",
+    "unit": "BOX",
+    "price": 8305.88,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0016",
+    "description": "Quality-focused 5thgeneration utilization",
+    "unit": "LT",
+    "price": 8801.76,
     "currency": "USD",
     "category": "Hardware"
   },
   {
-    "material_number": "MAT0014",
-    "description": "Cross-group value-added moderator",
-    "unit": "KG",
-    "price": 6168.53,
-    "currency": "USD",
-    "category": "Consumables"
-  },
-  {
-    "material_number": "MAT0015",
-    "description": "Mandatory cohesive hub",
-    "unit": "LT",
-    "price": 5319.99,
-    "currency": "USD",
-    "category": "Equipment"
-  },
-  {
-    "material_number": "MAT0016",
-    "description": "Right-sized attitude-oriented application",
-    "unit": "KG",
-    "price": 2584.96,
-    "currency": "USD",
-    "category": "Equipment"
-  },
-  {
     "material_number": "MAT0017",
-    "description": "Business-focused systematic artificial intelligence",
+    "description": "Customer-focused zero administration encryption",
     "unit": "LT",
-    "price": 7264.84,
+    "price": 2730.82,
     "currency": "USD",
-    "category": "Consumables"
+    "category": "Equipment"
   },
   {
     "material_number": "MAT0018",
-    "description": "Pre-emptive real-time intranet",
+    "description": "Balanced non-volatile project",
     "unit": "M",
-    "price": 4480.27,
+    "price": 5437.55,
     "currency": "USD",
-    "category": "Equipment"
+    "category": "Hardware"
   },
   {
     "material_number": "MAT0019",
-    "description": "Customizable grid-enabled Internet solution",
-    "unit": "EA",
-    "price": 4645.86,
+    "description": "Advanced bandwidth-monitored firmware",
+    "unit": "KG",
+    "price": 8371.95,
     "currency": "USD",
     "category": "Equipment"
   },
   {
     "material_number": "MAT0020",
-    "description": "Pre-emptive multi-tasking secured line",
+    "description": "Realigned optimal solution",
+    "unit": "BOX",
+    "price": 3626.57,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0021",
+    "description": "Object-based maximized throughput",
+    "unit": "BOX",
+    "price": 8204.19,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0022",
+    "description": "Assimilated mission-critical benchmark",
     "unit": "LT",
-    "price": 749.28,
+    "price": 6820.1,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0023",
+    "description": "Upgradable client-server hardware",
+    "unit": "LT",
+    "price": 5625.58,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0024",
+    "description": "Programmable mission-critical hardware",
+    "unit": "M",
+    "price": 1604.56,
     "currency": "USD",
     "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0025",
+    "description": "Intuitive asymmetric framework",
+    "unit": "EA",
+    "price": 1890.2,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0026",
+    "description": "Stand-alone bi-directional service-desk",
+    "unit": "KG",
+    "price": 4001.66,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0027",
+    "description": "Reactive cohesive groupware",
+    "unit": "BOX",
+    "price": 6990.59,
+    "currency": "USD",
+    "category": "Software"
+  },
+  {
+    "material_number": "MAT0028",
+    "description": "Open-architected responsive contingency",
+    "unit": "KG",
+    "price": 7085.5,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0029",
+    "description": "User-centric reciprocal customer loyalty",
+    "unit": "M",
+    "price": 9707.54,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0030",
+    "description": "Adaptive tertiary data-warehouse",
+    "unit": "KG",
+    "price": 4565.96,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0031",
+    "description": "Re-engineered bi-directional website",
+    "unit": "BOX",
+    "price": 3068.46,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0032",
+    "description": "Exclusive logistical budgetary management",
+    "unit": "LT",
+    "price": 8024.67,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0033",
+    "description": "Right-sized human-resource pricing structure",
+    "unit": "M",
+    "price": 9622.14,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0034",
+    "description": "Multi-channeled logistical process improvement",
+    "unit": "KG",
+    "price": 4878.78,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0035",
+    "description": "Configurable systematic challenge",
+    "unit": "LT",
+    "price": 1936.3,
+    "currency": "USD",
+    "category": "Services"
+  },
+  {
+    "material_number": "MAT0036",
+    "description": "Customizable contextually-based hub",
+    "unit": "KG",
+    "price": 8374.49,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0037",
+    "description": "Right-sized client-driven orchestration",
+    "unit": "M",
+    "price": 6936.23,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0038",
+    "description": "Sharable national solution",
+    "unit": "KG",
+    "price": 9096.21,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0039",
+    "description": "Horizontal client-driven contingency",
+    "unit": "LT",
+    "price": 7394.79,
+    "currency": "USD",
+    "category": "Hardware"
+  },
+  {
+    "material_number": "MAT0040",
+    "description": "Multi-channeled 24/7 matrix",
+    "unit": "KG",
+    "price": 3201.49,
+    "currency": "USD",
+    "category": "Equipment"
+  },
+  {
+    "material_number": "MAT0041",
+    "description": "Profit-focused solution-oriented methodology",
+    "unit": "M",
+    "price": 8061.53,
+    "currency": "USD",
+    "category": "Consumables"
+  },
+  {
+    "material_number": "MAT0042",
+    "description": "Pre-emptive composite artificial intelligence",
+    "unit": "BOX",
+    "price": 510.97,
+    "currency": "USD",
+    "category": "Software"
   }
 ]

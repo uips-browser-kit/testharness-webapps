@@ -1,27 +1,27 @@
 [
   {
     "quarter": "2025-Q2",
-    "order_count": 2,
-    "revenue": 83000.0
+    "order_count": 8,
+    "revenue": 1737519.35
   },
   {
     "quarter": "2025-Q3",
-    "order_count": 5,
-    "revenue": 332000.0
+    "order_count": 18,
+    "revenue": 3479739.19
   },
   {
     "quarter": "2025-Q4",
-    "order_count": 8,
-    "revenue": 1137125.21
+    "order_count": 10,
+    "revenue": 2084339.89
   },
   {
     "quarter": "2026-Q1",
-    "order_count": 11,
-    "revenue": 1695800.0
+    "order_count": 15,
+    "revenue": 2365762.24
   },
   {
     "quarter": "2026-Q2",
-    "order_count": 1,
-    "revenue": 97000.0
+    "order_count": 7,
+    "revenue": 1185211.73
   }
 ]
