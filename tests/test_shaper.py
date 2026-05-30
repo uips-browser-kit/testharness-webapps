@@ -5,10 +5,12 @@ import dataclasses
 import pytest
 from pathlib import Path
 
+from src.backend.canonical_store import CanonicalStore
 from src.backend.data_loader import DataLoader
 from src.backend.shaper import shape_detail, shape_list
 from src.core.config import load_config
 from src.core.models import DetailViewData, ListViewData, RelatedConfig, RouteContext
+from src.core.schema import load_schema
 
 _HARNESS_YAML = Path(__file__).parent.parent / "harness.yaml"
 _DATA_DIR = Path(__file__).parent.parent / "data"
@@ -295,3 +297,41 @@ def test_shape_detail_no_loader_empty_panels(salesforce):
     ctx = RouteContext(app_id="salesforce", route_id="account-detail", env_id="dev", params={"id": "001"})
     view = shape_detail(salesforce, route, ctx, {"id": "001"}, loader=None)
     assert view.related_panels == []
+
+
+# --- collection hydration ---------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def sap(apps):
+    return next(a for a in apps if a.id == "sap")
+
+
+@pytest.fixture(scope="module")
+def sap_store():
+    from src.backend.data_loader import DataLoader as DL
+    from src.core.config import parse_shared_entities
+    schema = load_schema(_HARNESS_YAML)
+    loader = DL(_DATA_DIR, "default-ng")
+    store = CanonicalStore()
+    shared = parse_shared_entities(_HARNESS_YAML)
+    loader.seed(store, schema, shared)
+    return store
+
+
+def test_shape_detail_embeds_line_items(sap, loader_ng, sap_store):
+    """SAP order detail assembles order_items as line_items via collection hydration."""
+    schema = load_schema(_HARNESS_YAML)
+    # Pick an order that has order_items
+    order_items = loader_ng.get_all("sap", "order_items") if hasattr(loader_ng, "get_all") else []
+    # Use ORD-0001 which is a known anchor record
+    raw = loader_ng.get_record("sap", "sales_orders", "order_number", "ORD-0001")
+    route = sap.route("shell")
+    ctx = RouteContext(app_id="sap", route_id="shell", env_id="dev", params={"sap-client": "100", "so": "ORD-0001"})
+    view = shape_detail(sap, route, ctx, raw, loader_ng, schema=schema, store=sap_store)
+    assert "line_items" in view.record
+    assert isinstance(view.record["line_items"], list)
+    assert len(view.record["line_items"]) > 0
+    item = view.record["line_items"][0]
+    assert "material_number" in item
+    assert "quantity" in item

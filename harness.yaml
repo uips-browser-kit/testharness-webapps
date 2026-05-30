@@ -838,6 +838,11 @@ data:
             systems:
               canonical: { pk: id, alias: { id: order_number } }
               sap:       { pk: order_number }
+            collections:
+              line_items:
+                entity: order_item
+                via: order_number
+                fields: [material_number, quantity, price_per_unit, total_price]
 
           order_item:
             business_key: id

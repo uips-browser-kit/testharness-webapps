@@ -30,11 +30,16 @@ class Format(str, Enum):
 
 
 def _make_service() -> tuple[HarnessService, list]:
+    from src.backend.canonical_store import CanonicalStore  # noqa: PLC0415
+    from src.core.config import parse_shared_entities  # noqa: PLC0415
     dataset = parse_data_set(_HARNESS_YAML)
     loader = DataLoader(_DATA_DIR, dataset)
     apps = load_config(_HARNESS_YAML)
     schema = load_schema(_HARNESS_YAML)
-    service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore(), schema=schema)
+    store = CanonicalStore()
+    shared = parse_shared_entities(_HARNESS_YAML)
+    loader.seed(store, schema, shared)
+    service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore(), schema=schema, store=store)
     return service, apps
 
 

@@ -45,6 +45,44 @@ def _hydrate_fk_refs(
     return result
 
 
+def _hydrate_collections(
+    record: dict,
+    entity_schema: EntitySchema,
+    schema: dict[str, EntitySchema],
+    store: object,
+) -> dict:
+    """Embed child collections declared in the entity schema into the record dict.
+
+    For each entry in entity_schema.collections, queries the canonical store for
+    child records whose FK field matches this entity's business key, optionally
+    enriches each child via scalar FK hydration, and embeds the list under the
+    declared collection name (e.g. 'line_items').
+    """
+    from src.backend.canonical_store import CanonicalStore  # noqa: PLC0415
+
+    if not isinstance(store, CanonicalStore) or not entity_schema.collections:
+        return record
+
+    pk_value = str(record.get(entity_schema.business_key) or "")
+    if not pk_value:
+        return record
+
+    result = dict(record)
+    for coll_name, coll_def in entity_schema.collections.items():
+        child_objs = store.find_by(coll_def.entity, coll_def.via, pk_value)
+        child_schema = schema.get(coll_def.entity)
+        children = []
+        for obj in child_objs:
+            child_dict = obj.model_dump()
+            if child_schema:
+                child_dict = _hydrate_fk_refs(child_dict, child_schema, store)
+            if coll_def.fields:
+                child_dict = {f: child_dict.get(f) for f in coll_def.fields}
+            children.append(child_dict)
+        result[coll_name] = children
+    return result
+
+
 def shape_detail(
     app: App,
     route: Route,
@@ -68,12 +106,13 @@ def shape_detail(
         except (NotServerVisible, KeyError, ValueError):
             pass
 
-    # Auto-hydrate FK refs from schema when store is available
+    # Auto-hydrate FK refs and child collections from schema when store is available
     if raw and schema and store:
         from src.backend.app_repository import _schema_name  # noqa: PLC0415
         entity_schema = schema.get(_schema_name(route.data_entity))
         if entity_schema:
             raw = _hydrate_fk_refs(raw, entity_schema, store)
+            raw = _hydrate_collections(raw, entity_schema, schema, store)
 
     panels: list[RelatedPanel] = []
     if raw and loader and route.related:

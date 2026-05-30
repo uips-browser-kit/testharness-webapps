@@ -25,11 +25,19 @@ class SystemMapping:
 
 
 @dataclass
+class CollectionDef:
+    entity: str             # child entity name in the schema (e.g. "order_item")
+    via: str                # FK field on the child that points at this entity's business key
+    fields: list[str] = field(default_factory=list)  # optional projection; empty = all fields
+
+
+@dataclass
 class EntitySchema:
     name: str
     business_key: str
     fields: dict[str, FieldDef]
     systems: dict[str, SystemMapping]
+    collections: dict[str, CollectionDef] = field(default_factory=dict)
 
     def pk_for(self, app_id: str) -> str:
         """Return the PK field name as used by this app's data files."""
@@ -77,6 +85,14 @@ def _parse_field(raw: dict) -> FieldDef:
     )
 
 
+def _parse_collection(raw: dict) -> CollectionDef:
+    return CollectionDef(
+        entity=str(raw["entity"]),
+        via=str(raw["via"]),
+        fields=list(raw.get("fields", [])),
+    )
+
+
 def _parse_system(raw: dict) -> SystemMapping:
     return SystemMapping(
         pk=str(raw.get("pk", "id")),
@@ -117,11 +133,17 @@ def load_schema(path: Path) -> dict[str, EntitySchema]:
             sname: _parse_system(sdef if isinstance(sdef, dict) else {})
             for sname, sdef in entity_raw.get("systems", {}).items()
         }
+        collections = {
+            cname: _parse_collection(cdef)
+            for cname, cdef in entity_raw.get("collections", {}).items()
+            if isinstance(cdef, dict)
+        }
         result[entity_name] = EntitySchema(
             name=entity_name,
             business_key=str(business_key),
             fields=fields,
             systems=systems,
+            collections=collections,
         )
 
     return result
