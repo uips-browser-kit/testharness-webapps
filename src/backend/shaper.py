@@ -168,4 +168,5 @@ def shape_list(
         detail_key_field=detail_key_field,
         row_urls=row_urls,
         filterable_fields=filterable_fields,
+        page_size=app.list_page_size,
     )

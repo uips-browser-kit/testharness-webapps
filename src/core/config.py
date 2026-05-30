@@ -172,6 +172,7 @@ def _parse_app(path: Path, raw: dict, index: int) -> App:
         layout=raw.get("layout", "layouts/default.html"),
         scenarios=scenarios,
         latency=latency,
+        list_page_size=int(raw.get("list_page_size", 15)),
     )
 
 

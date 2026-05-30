@@ -103,6 +103,7 @@ class App:
     layout: str = "layouts/default.html"
     scenarios: list[ScenarioDefinition] = field(default_factory=list)
     latency: LatencyConfig = field(default_factory=LatencyConfig)
+    list_page_size: int = 15
 
     def route(self, route_id: str) -> Route:
         for r in self.routes:
@@ -140,6 +141,7 @@ class ListViewData:
     detail_key_field: str = ""
     row_urls: list[str] = field(default_factory=list)  # per-record detail URLs, parallel to records
     filterable_fields: list[str] = field(default_factory=list)  # from schema; drives JS filter inputs
+    page_size: int = 15
 
 
 @dataclass

@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  var PAGE_SIZE = 15;
   var currentPage = 1;
 
   var metaEl = document.getElementById('list-meta');
@@ -10,6 +9,7 @@
 
   var meta = JSON.parse(metaEl.textContent);
   var payload = JSON.parse(dataEl.textContent);
+  var PAGE_SIZE = (meta.page_size && meta.page_size > 0) ? meta.page_size : 15;
   var allRecords = payload.records;
   var allUrls = payload.row_urls || [];
   var columns = meta.columns || [];

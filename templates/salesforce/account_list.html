@@ -35,7 +35,7 @@
 </table>
 <div id="list-pagination" style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;"></div>
 <script id="list-data" type="application/json">{{ {"records": records, "row_urls": row_urls} | tojson }}</script>
-<script id="list-meta" type="application/json">{{ {"columns": ["name", "industry", "phone", "owner", "annual_revenue"], "filterable_fields": filterable_fields or []} | tojson }}</script>
+<script id="list-meta" type="application/json">{{ {"columns": ["name", "industry", "phone", "owner", "annual_revenue"], "filterable_fields": filterable_fields or [], "page_size": page_size or 15} | tojson }}</script>
 <script>
 window.LIST_FORMATTERS = {
   annual_revenue: function (v) {
