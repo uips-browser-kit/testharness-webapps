@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "faker>=40.19.1",
+    "pydantic>=2.0",
     "pyyaml>=6.0.3",
     "fastapi>=0.115",
     "uvicorn[standard]>=0.34",
@@ -59,14 +60,27 @@ quote-style = "double"
 root_packages = ["src"]
 
 [[tool.importlinter.contracts]]
+name = "datamodel has no internal src imports"
+type = "forbidden"
+source_modules = ["src.datamodel"]
+forbidden_modules = [
+    "src.core",
+    "src.backend",
+    "src.api",
+    "src.frontend",
+    "src.runtime_cli",
+    "src.platform_cli",
+]
+
+[[tool.importlinter.contracts]]
 name = "core has no internal imports"
 type = "independence"
 modules = ["src.core"]
 
 [[tool.importlinter.contracts]]
-name = "backend imports only core"
+name = "backend imports only core and datamodel"
 type = "layers"
-layers = ["src.backend", "src.core"]
+layers = ["src.backend", "src.core", "src.datamodel"]
 
 [[tool.importlinter.contracts]]
 name = "frontend does not import api or backend"

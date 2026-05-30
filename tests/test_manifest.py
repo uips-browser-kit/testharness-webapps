@@ -214,10 +214,10 @@ def test_detail_route_reverse_relationships_shape(manifest):
         assert isinstance(rev["apps"], list)
 
 
-def test_detail_route_no_reverse_relationships_is_empty_dict(manifest):
-    # contact-detail has no reverse FK (nothing points to contacts in the canonical model)
+def test_detail_route_contact_has_incident_reverse_relationship(manifest):
+    # incidents.contact_id → contacts; ServiceNow incidents reference contacts
     r = _sf_dev_route(manifest, "contact-detail")
-    assert r["reverse_relationships"] == {}
+    assert "incidents" in r["reverse_relationships"]
 
 
 def test_manifest_network_hosts(manifest):

@@ -33,6 +33,25 @@ def parse_data_set(path: Path) -> str:
     return "default"
 
 
+# Singular schema entity name → data_entity name used in routes (exceptions only;
+# default is name + "s").
+_SCHEMA_TO_DATA_ENTITY: dict[str, str] = {
+    "opportunity": "opportunities",
+    "order": "sales_orders",
+    "order_item": "order_items",
+}
+
+
+def _data_entity_name(schema_name: str) -> str:
+    return _SCHEMA_TO_DATA_ENTITY.get(schema_name, f"{schema_name}s")
+
+
+def _active_dataset(data_raw: dict) -> dict:
+    """Return the dataset block for the currently active set, or {}."""
+    set_name = str(data_raw.get("set", "default"))
+    return data_raw.get("datasets", {}).get(set_name, {})
+
+
 def parse_shared_entities(path: Path) -> dict[str, list[str]]:
     """Return the shared_entities map from harness.yaml data section.
 
@@ -41,18 +60,37 @@ def parse_shared_entities(path: Path) -> dict[str, list[str]]:
     """
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
     data_raw = raw.get("data") if isinstance(raw, dict) else None
-    if isinstance(data_raw, dict):
-        return dict(data_raw.get("shared_entities", {}))
-    return {}
+    if not isinstance(data_raw, dict):
+        return {}
+    dataset = _active_dataset(data_raw)
+    return dict(dataset.get("shared_entities", {}))
 
 
 def parse_entities(path: Path) -> dict[str, dict]:
-    """Return entity FK definitions from harness.yaml data.entities section."""
+    """Derive entity FK definitions from the active dataset's schema.
+
+    Returns a dict keyed by data_entity name (plural, matching route data_entity
+    values) with FK field definitions in the format expected by the manifest.
+    """
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
     data_raw = raw.get("data") if isinstance(raw, dict) else None
-    if isinstance(data_raw, dict):
-        return dict(data_raw.get("entities", {}))
-    return {}
+    if not isinstance(data_raw, dict):
+        return {}
+    schema_entities = _active_dataset(data_raw).get("schema", {}).get("entities", {})
+    result: dict[str, dict] = {}
+    for entity_name, entity_def in schema_entities.items():
+        fk_fields = {}
+        for field_name, field_def in entity_def.get("fields", {}).items():
+            ref = field_def.get("ref", "")
+            if ref and "." in ref:
+                ref_entity, ref_field = ref.split(".", 1)
+                fk_fields[field_name] = {
+                    "references": _data_entity_name(ref_entity),
+                    "key_param": ref_field,
+                }
+        if fk_fields:
+            result[_data_entity_name(entity_name)] = {"fields": fk_fields}
+    return result
 
 
 def load_config(path: Path) -> list[App]:
