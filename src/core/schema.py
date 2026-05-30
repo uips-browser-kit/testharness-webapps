@@ -38,6 +38,7 @@ class EntitySchema:
     fields: dict[str, FieldDef]
     systems: dict[str, SystemMapping]
     collections: dict[str, CollectionDef] = field(default_factory=dict)
+    display_field: str = "name"  # field used as label when this entity is an FK target
 
     def pk_for(self, app_id: str) -> str:
         """Return the PK field name as used by this app's data files."""
@@ -144,6 +145,7 @@ def load_schema(path: Path) -> dict[str, EntitySchema]:
             fields=fields,
             systems=systems,
             collections=collections,
+            display_field=str(entity_raw.get("display_field", "name")),
         )
 
     return result

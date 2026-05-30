@@ -769,6 +769,7 @@ data:
 
           contact:
             business_key: id
+            display_field: last_name
             fields:
               id:         { type: string, nullable: false }
               account_id: { type: string, nullable: false, ref: account.id,   filterable: true }
@@ -797,6 +798,7 @@ data:
 
           case:
             business_key: id
+            display_field: subject
             fields:
               id:         { type: string, nullable: false }
               account_id: { type: string, nullable: false, ref: account.id, filterable: true }
@@ -811,6 +813,7 @@ data:
 
           lead:
             business_key: id
+            display_field: last_name
             fields:
               id:                       { type: string,  nullable: false }
               first_name:               { type: string,  nullable: false }
@@ -826,6 +829,7 @@ data:
 
           order:
             business_key: order_number
+            display_field: order_number
             fields:
               order_number:   { type: string,  nullable: false }
               account_id:     { type: string,  nullable: false, ref: account.id,       filterable: true }
@@ -842,7 +846,7 @@ data:
               line_items:
                 entity: order_item
                 via: order_number
-                fields: [material_number, quantity, price_per_unit, total_price]
+                fields: [material_number, product_name, quantity, price_per_unit, total_price]
 
           order_item:
             business_key: id
@@ -864,6 +868,7 @@ data:
 
           product:
             business_key: material_number
+            display_field: description
             fields:
               material_number: { type: string,  nullable: false }
               description:     { type: string,  nullable: false }
@@ -877,6 +882,7 @@ data:
 
           contract:
             business_key: id
+            display_field: status
             fields:
               id:                   { type: string,  nullable: false }
               account_id:           { type: string,  nullable: false, ref: account.id, filterable: true }
@@ -890,6 +896,7 @@ data:
 
           invoice:
             business_key: invoice_number
+            display_field: invoice_number
             fields:
               invoice_number: { type: string,  nullable: false }
               order_id:       { type: string,  nullable: true,  ref: order.order_number }
@@ -908,6 +915,7 @@ data:
 
           incident:
             business_key: number
+            display_field: short_description
             fields:
               sys_id:            { type: string, nullable: false }
               number:            { type: string, nullable: false }
@@ -922,6 +930,7 @@ data:
 
           employee:
             business_key: employee_id
+            display_field: last_name
             fields:
               employee_id: { type: string, nullable: false }
               first_name:  { type: string, nullable: false }
@@ -934,6 +943,7 @@ data:
 
           page:
             business_key: page_id
+            display_field: title
             fields:
               page_id:       { type: string, nullable: false }
               title:         { type: string, nullable: false }
@@ -945,6 +955,7 @@ data:
 
           issue:
             business_key: key
+            display_field: summary
             fields:
               key:        { type: string, nullable: false }
               summary:    { type: string, nullable: false }
@@ -958,6 +969,7 @@ data:
 
           document:
             business_key: id
+            display_field: filename
             fields:
               id:            { type: string, nullable: false }
               filename:      { type: string, nullable: false }

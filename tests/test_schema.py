@@ -67,3 +67,16 @@ def test_load_schema_order_has_line_items_collection():
 def test_account_has_no_collections():
     schema = load_schema(_HARNESS_YAML)
     assert schema["account"].collections == {}
+
+
+def test_display_field_defaults_to_name():
+    schema = load_schema(_HARNESS_YAML)
+    assert schema["account"].display_field == "name"
+    assert schema["opportunity"].display_field == "name"
+
+
+def test_display_field_custom():
+    schema = load_schema(_HARNESS_YAML)
+    assert schema["product"].display_field == "description"
+    assert schema["incident"].display_field == "short_description"
+    assert schema["page"].display_field == "title"

@@ -18,11 +18,14 @@ def _hydrate_fk_refs(
     record: dict,
     entity_schema: EntitySchema,
     store: object,  # CanonicalStore — avoid circular import
+    schema: dict[str, EntitySchema] | None = None,
 ) -> dict:
     """Inject resolved FK display values into the record dict.
 
     For each FK field declared in the entity schema, look up the referenced
-    entity in the store and inject its 'name' field as '{ref_entity}_name'.
+    entity in the store and inject its display value as '{ref_entity}_name'.
+    The display field is taken from the referenced entity's display_field
+    (defaults to 'name' when schema is not provided or entity not found).
     Returns a new dict with the injected keys; original keys are preserved.
     """
     from src.backend.canonical_store import CanonicalStore  # noqa: PLC0415
@@ -40,8 +43,11 @@ def _hydrate_fk_refs(
         if ref_obj is None:
             continue
         ref_dict = ref_obj.model_dump()
-        if "name" in ref_dict and ref_dict["name"] is not None:
-            result[f"{ref_entity}_name"] = ref_dict["name"]
+        ref_schema = schema.get(ref_entity) if schema else None
+        display_field = ref_schema.display_field if ref_schema else "name"
+        display_val = ref_dict.get(display_field)
+        if display_val is not None:
+            result[f"{ref_entity}_name"] = display_val
     return result
 
 
@@ -75,7 +81,7 @@ def _hydrate_collections(
         for obj in child_objs:
             child_dict = obj.model_dump()
             if child_schema:
-                child_dict = _hydrate_fk_refs(child_dict, child_schema, store)
+                child_dict = _hydrate_fk_refs(child_dict, child_schema, store, schema=schema)
             if coll_def.fields:
                 child_dict = {f: child_dict.get(f) for f in coll_def.fields}
             children.append(child_dict)
@@ -111,7 +117,7 @@ def shape_detail(
         from src.backend.app_repository import _schema_name  # noqa: PLC0415
         entity_schema = schema.get(_schema_name(route.data_entity))
         if entity_schema:
-            raw = _hydrate_fk_refs(raw, entity_schema, store)
+            raw = _hydrate_fk_refs(raw, entity_schema, store, schema=schema)
             raw = _hydrate_collections(raw, entity_schema, schema, store)
 
     panels: list[RelatedPanel] = []
