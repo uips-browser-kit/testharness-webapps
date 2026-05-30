@@ -11,10 +11,10 @@
   <thead><tr><th colspan="2">Order Header</th></tr></thead>
   <tbody>
     <tr><td>Customer</td><td>{{ record.account_name or record.account_id }}</td></tr>
-    <tr><td>Order Date</td><td>{{ record.order_date }}</td></tr>
-    <tr><td>Delivery Date</td><td>{{ record.delivery_date }}</td></tr>
+    <tr><td>Order Date</td><td>{{ record.order_date or record.effective_date }}</td></tr>
+    <tr><td>Delivery Date</td><td>{{ record.delivery_date or record.end_date }}</td></tr>
     <tr><td>Status</td><td>{{ record.status }}</td></tr>
-    <tr><td>Total</td><td>{{ record.currency }} {{ "{:,.2f}".format(record.total) }}</td></tr>
+    <tr><td>Total</td><td>{{ record.currency or "USD" }} {{ "{:,.2f}".format(record.total_amount or record.total or 0) }}</td></tr>
   </tbody>
 </table>
 <table style="max-width:720px;margin-top:1rem;">

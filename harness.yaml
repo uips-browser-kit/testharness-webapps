@@ -303,7 +303,7 @@ apps:
     server_visible: true
     template: shared/list
     data_entity: sales_orders
-    list_fields: [order_number, account_id, status, total, order_date]
+    list_fields: [order_number, account_id, status, total_amount, order_date]
   - id: home
     path: /sap/bc/ui5_ui5/ui2/ushell
     pattern_type: path
@@ -836,18 +836,8 @@ data:
               order_date:     { type: date,    nullable: false }
               delivery_date:  { type: date,    nullable: true  }
             systems:
-              canonical:
-                pk: id
-                alias:
-                  id: order_number
-                  effective_date: order_date
-                  end_date: delivery_date
-              sap:
-                pk: order_number
-                alias:
-                  effective_date: order_date
-                  end_date: delivery_date
-                  total: total_amount
+              canonical: { pk: id, alias: { id: order_number } }
+              sap:       { pk: order_number }
 
           order_item:
             business_key: id
