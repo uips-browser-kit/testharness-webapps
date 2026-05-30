@@ -25,10 +25,10 @@
     {% for item in record.line_items %}
     <tr>
       <td style="font-family:monospace;">{{ item.material_number }}</td>
-      <td>{{ item.description }}</td>
+      <td>{{ item.product_name or "" }}</td>
       <td>{{ item.quantity }}</td>
-      <td>{{ "{:,.2f}".format(item.unit_price) }}</td>
-      <td>{{ "{:,.2f}".format(item.total) }}</td>
+      <td>{{ "{:,.2f}".format(item.price_per_unit | float) }}</td>
+      <td>{{ "{:,.2f}".format(item.total_price | float) }}</td>
     </tr>
     {% endfor %}
   </tbody>
