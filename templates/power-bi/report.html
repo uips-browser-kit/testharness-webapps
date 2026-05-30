@@ -10,16 +10,14 @@
 </div>
 <table>
   <thead>
-    <tr><th>Region</th><th>Period</th><th>Metric</th><th>Value</th><th>Currency</th></tr>
+    <tr><th>Stage</th><th>Count</th><th>Total Amount</th></tr>
   </thead>
   <tbody>
     {% for r in records %}
     <tr>
-      <td>{{ r.region }}</td>
-      <td>{{ r.period }}</td>
-      <td>{{ r.metric_name }}</td>
-      <td>{{ "{:,.2f}".format(r.value) }}</td>
-      <td>{{ r.currency }}</td>
+      <td>{{ r.stage }}</td>
+      <td>{{ r.count }}</td>
+      <td>{{ "{:,.0f}".format(r.total_amount) }}</td>
     </tr>
     {% endfor %}
   </tbody>
