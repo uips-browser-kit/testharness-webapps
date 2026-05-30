@@ -22,6 +22,6 @@ class Order(BaseModel):
     opportunity_id: str | None = None
     status: str
     total_amount: Decimal
-    currency: str
+    currency: str = "USD"  # canonical data lacks this field; defaults to USD
     order_date: date
     delivery_date: date | None = None
