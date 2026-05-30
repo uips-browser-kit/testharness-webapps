@@ -11,6 +11,38 @@ from src.core.models import (
     RouteContext,
 )
 from src.core.resolver import resolve
+from src.core.schema import EntitySchema
+
+
+def _hydrate_fk_refs(
+    record: dict,
+    entity_schema: EntitySchema,
+    store: object,  # CanonicalStore — avoid circular import
+) -> dict:
+    """Inject resolved FK display values into the record dict.
+
+    For each FK field declared in the entity schema, look up the referenced
+    entity in the store and inject its 'name' field as '{ref_entity}_name'.
+    Returns a new dict with the injected keys; original keys are preserved.
+    """
+    from src.backend.canonical_store import CanonicalStore  # noqa: PLC0415
+
+    if not isinstance(store, CanonicalStore):
+        return record
+
+    result = dict(record)
+    for field_name, ref in entity_schema.refs():
+        fk_value = str(result.get(field_name) or "")
+        if not fk_value or fk_value == "None":
+            continue
+        ref_entity, _ = ref.split(".", 1)
+        ref_obj = store.get(ref_entity, fk_value)
+        if ref_obj is None:
+            continue
+        ref_dict = ref_obj.model_dump()
+        if "name" in ref_dict and ref_dict["name"] is not None:
+            result[f"{ref_entity}_name"] = ref_dict["name"]
+    return result
 
 
 def shape_detail(
@@ -19,6 +51,8 @@ def shape_detail(
     ctx: RouteContext,
     raw: dict | None,
     loader: DataLoader | None = None,
+    schema: dict[str, EntitySchema] | None = None,
+    store: object | None = None,
 ) -> DetailViewData:
     entity_title = route.data_entity.replace("_", " ").title()
     list_url = ""
@@ -33,6 +67,13 @@ def shape_detail(
             list_url = resolve(app, list_route.id, ctx.env_id, list_params)
         except (NotServerVisible, KeyError, ValueError):
             pass
+
+    # Auto-hydrate FK refs from schema when store is available
+    if raw and schema and store:
+        from src.backend.app_repository import _schema_name  # noqa: PLC0415
+        entity_schema = schema.get(_schema_name(route.data_entity))
+        if entity_schema:
+            raw = _hydrate_fk_refs(raw, entity_schema, store)
 
     panels: list[RelatedPanel] = []
     if raw and loader and route.related:

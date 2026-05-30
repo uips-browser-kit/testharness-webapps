@@ -10,7 +10,7 @@
 <table style="max-width:640px;">
   <thead><tr><th colspan="2">Order Header</th></tr></thead>
   <tbody>
-    <tr><td>Customer</td><td>{{ record.customer_name }}</td></tr>
+    <tr><td>Customer</td><td>{{ record.account_name or record.account_id }}</td></tr>
     <tr><td>Order Date</td><td>{{ record.order_date }}</td></tr>
     <tr><td>Delivery Date</td><td>{{ record.delivery_date }}</td></tr>
     <tr><td>Status</td><td>{{ record.status }}</td></tr>
