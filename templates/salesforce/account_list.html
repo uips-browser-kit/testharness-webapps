@@ -1,13 +1,16 @@
 {% extends layout %}
-
 {% block title %}Accounts — {{ app_name }}{% endblock %}
-
 {% block content %}
-<div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem;">
-  <h1 style="font-size:18px; font-weight:700; color:var(--app-primary);">Accounts</h1>
-  <span class="badge">{{ records | length }} records</span>
+{% if records %}
+<div style="margin-bottom:1rem;">
+  <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem;">
+    <h1 style="font-size:18px;font-weight:700;color:var(--app-primary);">Accounts</h1>
+    <span class="badge" id="record-count">{{ records | length }} records</span>
+  </div>
+  {% if filterable_fields %}
+  <div id="list-filters" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem;"></div>
+  {% endif %}
 </div>
-
 <table>
   <thead>
     <tr>
@@ -18,16 +21,30 @@
       <th>Annual Revenue</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="list-body">
     {% for r in records %}
     <tr>
-      <td><a href="/lightning/r/Account/{{ r.id }}/view">{{ r.name }}</a></td>
+      <td><a href="{{ row_urls[loop.index0] if (row_urls and loop.index0 < row_urls | length and row_urls[loop.index0]) else '#' }}">{{ r.name }}</a></td>
       <td>{{ r.industry }}</td>
       <td>{{ r.phone }}</td>
       <td>{{ r.owner }}</td>
-      <td>${{ "{:,.0f}".format(r.annual_revenue) }}</td>
+      <td>${{ "{:,.0f}".format(r.annual_revenue or 0) }}</td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
+<div id="list-pagination" style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;"></div>
+<script id="list-data" type="application/json">{{ {"records": records, "row_urls": row_urls} | tojson }}</script>
+<script id="list-meta" type="application/json">{{ {"columns": ["name", "industry", "phone", "owner", "annual_revenue"], "filterable_fields": filterable_fields or []} | tojson }}</script>
+<script>
+window.LIST_FORMATTERS = {
+  annual_revenue: function (v) {
+    return v != null ? '$' + Number(v).toLocaleString('en-US', { maximumFractionDigits: 0 }) : '';
+  }
+};
+</script>
+<script src="/static/js/list.js"></script>
+{% else %}
+<p style="color:var(--sol-base1);">No records found.</p>
+{% endif %}
 {% endblock %}

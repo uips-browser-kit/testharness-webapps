@@ -28,4 +28,4 @@ def prepare_view(
         return shape_detail(app, route, ctx, raw, loader, schema=schema, store=store)
     else:
         raw_list = loader.get_all(ctx.app_id, route.data_entity)
-        return shape_list(app, route, ctx, raw_list)
+        return shape_list(app, route, ctx, raw_list, schema=schema)

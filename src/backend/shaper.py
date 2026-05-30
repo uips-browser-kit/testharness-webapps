@@ -104,7 +104,11 @@ def shape_detail(
 
 
 def shape_list(
-    app: App, route: Route, ctx: RouteContext, raw: list[dict]
+    app: App,
+    route: Route,
+    ctx: RouteContext,
+    raw: list[dict],
+    schema: dict[str, EntitySchema] | None = None,
 ) -> ListViewData:
     records = list(raw)
 
@@ -148,10 +152,20 @@ def shape_list(
     if route.list_fields and records:
         records = [{f: r.get(f) for f in route.list_fields} for r in records]
 
+    # Derive filterable fields from schema; intersect with keys present in records
+    filterable_fields: list[str] = []
+    if schema and records:
+        from src.backend.app_repository import _schema_name  # noqa: PLC0415
+        entity_schema = schema.get(_schema_name(route.data_entity))
+        if entity_schema:
+            record_keys = set(records[0].keys())
+            filterable_fields = [f for f in entity_schema.filterable_fields() if f in record_keys]
+
     return ListViewData(
         entity_title=route.data_entity.replace("_", " ").title(),
         records=records,
         detail_urls=detail_urls,
         detail_key_field=detail_key_field,
         row_urls=row_urls,
+        filterable_fields=filterable_fields,
     )

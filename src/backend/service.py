@@ -107,7 +107,7 @@ class HarnessService:
             return shape_detail(app, route, ctx, raw, schema=self._schema, store=self._store)
         else:
             raw_list = self._loader.get_all(ctx.app_id, route.data_entity)
-            return shape_list(app, route, ctx, raw_list)
+            return shape_list(app, route, ctx, raw_list, schema=self._schema)
 
     def get_challenge(self, key: tuple[str, str, str]) -> Challenge | None:
         ch = self._challenges.get(key)

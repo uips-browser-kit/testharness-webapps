@@ -139,6 +139,7 @@ class ListViewData:
     detail_urls: dict[str, str] = field(default_factory=dict)
     detail_key_field: str = ""
     row_urls: list[str] = field(default_factory=list)  # per-record detail URLs, parallel to records
+    filterable_fields: list[str] = field(default_factory=list)  # from schema; drives JS filter inputs
 
 
 @dataclass

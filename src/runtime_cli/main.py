@@ -13,6 +13,7 @@ import typer
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
 from src.core.config import load_config, load_keycloak_config, parse_data_set
+from src.core.schema import load_schema
 from src.core.manifest import build_manifest, parse_hosts_file
 from src.core.matcher import match
 from src.core.models import Challenge, DetailViewData, Fault, RouteContext, TemplateOnlyViewData
@@ -32,7 +33,8 @@ def _make_service() -> tuple[HarnessService, list]:
     dataset = parse_data_set(_HARNESS_YAML)
     loader = DataLoader(_DATA_DIR, dataset)
     apps = load_config(_HARNESS_YAML)
-    service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore())
+    schema = load_schema(_HARNESS_YAML)
+    service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore(), schema=schema)
     return service, apps
 
 
