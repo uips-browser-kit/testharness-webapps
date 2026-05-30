@@ -80,10 +80,19 @@ class InMemoryScenarioStore:
 
 
 class HarnessService:
-    def __init__(self, loader: DataLoader, challenges: ChallengeStore, scenarios: ScenarioStore) -> None:
+    def __init__(
+        self,
+        loader: DataLoader,
+        challenges: ChallengeStore,
+        scenarios: ScenarioStore,
+        schema: dict | None = None,
+        store: object | None = None,
+    ) -> None:
         self._loader = loader
         self._challenges = challenges
         self._scenarios = scenarios
+        self._schema = schema
+        self._store = store
 
     def prepare_view(self, app: App, route: Route, ctx: RouteContext) -> ViewData | None:
         """Load and shape view data. Returns None for template-only routes."""
@@ -95,7 +104,7 @@ class HarnessService:
             raw = self._loader.get_record(ctx.app_id, route.data_entity, route.data_key_field, key_value)
             if raw is None and key_value:
                 raise RecordNotFound(route.data_entity, key_value)
-            return shape_detail(app, route, ctx, raw)
+            return shape_detail(app, route, ctx, raw, schema=self._schema, store=self._store)
         else:
             raw_list = self._loader.get_all(ctx.app_id, route.data_entity)
             return shape_list(app, route, ctx, raw_list)

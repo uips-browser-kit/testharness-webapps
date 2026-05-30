@@ -14,9 +14,11 @@ from fastapi.staticfiles import StaticFiles
 
 from src.api.metrics import CONTENT_TYPE_LATEST, generate_latest, record_request
 from src.api.router import MatchRequest, ResolveRequest, match_request, resolve_route, resolve_url
+from src.backend.canonical_store import CanonicalStore
 from src.backend.data_loader import DataLoader
 from src.backend.service import HarnessService, InMemoryChallengeStore, InMemoryScenarioStore
 from src.core.config import load_config, load_keycloak_config, parse_data_set, parse_entities, parse_shared_entities
+from src.core.schema import load_schema
 from src.core.manifest import build_manifest, parse_hosts_file
 from src.core.models import AUTH_FAULT_KINDS, FAULT_KINDS, Challenge, ErrorViewData, Fault, RecordNotFound, RouteContext, TemplateOnlyViewData
 from src.frontend.renderer import render
@@ -139,12 +141,20 @@ def _harness_index(apps: list) -> HTMLResponse:
 async def lifespan(app: FastAPI):
     dataset = os.environ.get("HARNESS_DATA_SET") or parse_data_set(_HARNESS_YAML)
     loader = DataLoader(_DATA_DIR, dataset)
-    app.state.service = HarnessService(loader, InMemoryChallengeStore(), InMemoryScenarioStore())
+    shared_entities = parse_shared_entities(_HARNESS_YAML)
+    schema = load_schema(_HARNESS_YAML)
+    store = CanonicalStore()
+    if schema:
+        loader.seed(store, schema, shared_entities)
+    app.state.service = HarnessService(
+        loader, InMemoryChallengeStore(), InMemoryScenarioStore(),
+        schema=schema, store=store,
+    )
     app.state.apps = load_config(_HARNESS_YAML)
     app.state.keycloak = load_keycloak_config(_HARNESS_YAML)
     app.state.hosts = parse_hosts_file(_HOSTS_FILE)
     app.state.dataset = dataset
-    app.state.shared_entities = parse_shared_entities(_HARNESS_YAML)
+    app.state.shared_entities = shared_entities
     app.state.entities = parse_entities(_HARNESS_YAML)
     yield
 
