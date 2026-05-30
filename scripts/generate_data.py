@@ -2,7 +2,7 @@
 Generate JSON test data for all 12 catalog apps.
 
 Usage:
-    just run python scripts/generate_data.py                          # default set, seed=42, count=20
+    just run python scripts/generate_data.py                          # default set, seed=42, count=42
     just run python scripts/generate_data.py --set large --count 200
     just run python scripts/generate_data.py --set dynamic --seed 0   # seed=0 → random
 
@@ -809,7 +809,7 @@ def main() -> None:
         help="Output set name (default: default)",
     )
     parser.add_argument("--seed", type=int, default=42, help="Faker seed; 0 = random (default: 42)")
-    parser.add_argument("--count", type=int, default=20, help="Records per entity (default: 20)")
+    parser.add_argument("--count", type=int, default=42, help="Records per entity (default: 42)")
     parser.add_argument("--app", default=None, metavar="APP_ID", help="Seed only this app id (default: all)")
     args = parser.parse_args()
 
