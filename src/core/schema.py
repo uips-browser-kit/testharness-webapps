@@ -15,6 +15,7 @@ class FieldDef:
     type: str           # string | integer | decimal | date | object | boolean
     nullable: bool
     ref: str = ""       # "entity.field" — FK target in canonical entity terms
+    filterable: bool = False  # opt-in: expose as filter input on list views
 
 
 @dataclass
@@ -38,6 +39,10 @@ class EntitySchema:
     def refs(self) -> list[tuple[str, str]]:
         """Return [(field_name, 'target_entity.target_field'), ...] for FK fields."""
         return [(name, f.ref) for name, f in self.fields.items() if f.ref]
+
+    def filterable_fields(self) -> list[str]:
+        """Return field names marked filterable: true."""
+        return [name for name, f in self.fields.items() if f.filterable]
 
     def canonical_field(self, app_id: str, app_field: str) -> str:
         """Translate an app-specific (data file) field name to the canonical field name.
@@ -68,6 +73,7 @@ def _parse_field(raw: dict) -> FieldDef:
         type=str(raw.get("type", "string")),
         nullable=bool(raw.get("nullable", True)),
         ref=str(raw.get("ref", "")),
+        filterable=bool(raw.get("filterable", False)),
     )
 
 

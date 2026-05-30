@@ -755,14 +755,14 @@ data:
           account:
             business_key: id
             fields:
-              id:              { type: string,  nullable: false }
-              name:            { type: string,  nullable: false }
+              id:              { type: string,  nullable: false, filterable: true }
+              name:            { type: string,  nullable: false, filterable: true }
               industry:        { type: string,  nullable: true  }
               phone:           { type: string,  nullable: true  }
               annual_revenue:  { type: decimal, nullable: true  }
               website:         { type: string,  nullable: true  }
               billing_address: { type: object,  nullable: true  }
-              owner:           { type: string,  nullable: true  }
+              owner:           { type: string,  nullable: true,  filterable: true }
             systems:
               salesforce: { pk: id }
               dynamics:   { pk: id }
@@ -771,9 +771,9 @@ data:
             business_key: id
             fields:
               id:         { type: string, nullable: false }
-              account_id: { type: string, nullable: false, ref: account.id }
+              account_id: { type: string, nullable: false, ref: account.id,   filterable: true }
               first_name: { type: string, nullable: false }
-              last_name:  { type: string, nullable: false }
+              last_name:  { type: string, nullable: false, filterable: true }
               email:      { type: string, nullable: true  }
               phone:      { type: string, nullable: true  }
               title:      { type: string, nullable: true  }
@@ -786,11 +786,11 @@ data:
             fields:
               id:         { type: string,  nullable: false }
               name:       { type: string,  nullable: false }
-              account_id: { type: string,  nullable: false, ref: account.id }
+              account_id: { type: string,  nullable: false, ref: account.id, filterable: true }
               amount:     { type: decimal, nullable: false }
-              stage:      { type: string,  nullable: false }
+              stage:      { type: string,  nullable: false, filterable: true }
               close_date: { type: date,    nullable: false }
-              owner:      { type: string,  nullable: true  }
+              owner:      { type: string,  nullable: true,  filterable: true }
             systems:
               salesforce: { pk: id }
               dynamics:   { pk: id }
@@ -799,11 +799,11 @@ data:
             business_key: id
             fields:
               id:         { type: string, nullable: false }
-              account_id: { type: string, nullable: false, ref: account.id }
+              account_id: { type: string, nullable: false, ref: account.id, filterable: true }
               contact_id: { type: string, nullable: true,  ref: contact.id }
               subject:    { type: string, nullable: false }
-              status:     { type: string, nullable: false }
-              priority:   { type: string, nullable: false }
+              status:     { type: string, nullable: false, filterable: true }
+              priority:   { type: string, nullable: false, filterable: true }
               type:       { type: string, nullable: true  }
               origin:     { type: string, nullable: true  }
             systems:
@@ -815,10 +815,10 @@ data:
               id:                       { type: string,  nullable: false }
               first_name:               { type: string,  nullable: false }
               last_name:                { type: string,  nullable: false }
-              company:                  { type: string,  nullable: true  }
+              company:                  { type: string,  nullable: true,  filterable: true }
               email:                    { type: string,  nullable: true  }
               phone:                    { type: string,  nullable: true  }
-              status:                   { type: string,  nullable: false }
+              status:                   { type: string,  nullable: false, filterable: true }
               is_converted:             { type: boolean, nullable: false }
               converted_opportunity_id: { type: string,  nullable: true, ref: opportunity.id }
             systems:
@@ -828,12 +828,12 @@ data:
             business_key: order_number
             fields:
               order_number:   { type: string,  nullable: false }
-              account_id:     { type: string,  nullable: false, ref: account.id }
+              account_id:     { type: string,  nullable: false, ref: account.id,       filterable: true }
               opportunity_id: { type: string,  nullable: true,  ref: opportunity.id }
-              status:         { type: string,  nullable: false }
+              status:         { type: string,  nullable: false, filterable: true }
               total_amount:   { type: decimal, nullable: false }
               currency:       { type: string,  nullable: false }
-              order_date:     { type: date,    nullable: false }
+              order_date:     { type: date,    nullable: false, filterable: true }
               delivery_date:  { type: date,    nullable: true  }
             systems:
               canonical: { pk: id, alias: { id: order_number } }
@@ -843,7 +843,7 @@ data:
             business_key: id
             fields:
               id:              { type: string,  nullable: false }
-              order_number:    { type: string,  nullable: false, ref: order.order_number }
+              order_number:    { type: string,  nullable: false, ref: order.order_number,   filterable: true }
               material_number: { type: string,  nullable: false, ref: product.material_number }
               quantity:        { type: integer, nullable: false }
               price_per_unit:  { type: decimal, nullable: false }
@@ -865,7 +865,7 @@ data:
               unit:            { type: string,  nullable: false }
               price:           { type: decimal, nullable: false }
               currency:        { type: string,  nullable: false }
-              category:        { type: string,  nullable: true  }
+              category:        { type: string,  nullable: true,  filterable: true }
             systems:
               canonical: { pk: material_number }
               sap:       { pk: material_number }
@@ -874,10 +874,10 @@ data:
             business_key: id
             fields:
               id:                   { type: string,  nullable: false }
-              account_id:           { type: string,  nullable: false, ref: account.id }
+              account_id:           { type: string,  nullable: false, ref: account.id, filterable: true }
               start_date:           { type: date,    nullable: false }
               end_date:             { type: date,    nullable: true  }
-              status:               { type: string,  nullable: false }
+              status:               { type: string,  nullable: false, filterable: true }
               contract_term_months: { type: integer, nullable: true  }
               total_amount:         { type: decimal, nullable: true  }
             systems:
@@ -888,12 +888,12 @@ data:
             fields:
               invoice_number: { type: string,  nullable: false }
               order_id:       { type: string,  nullable: true,  ref: order.order_number }
-              account_id:     { type: string,  nullable: false, ref: account.id }
+              account_id:     { type: string,  nullable: false, ref: account.id,        filterable: true }
               amount:         { type: decimal, nullable: false }
               currency:       { type: string,  nullable: false }
-              status:         { type: string,  nullable: false }
+              status:         { type: string,  nullable: false, filterable: true }
               issue_date:     { type: date,    nullable: false }
-              due_date:       { type: date,    nullable: false }
+              due_date:       { type: date,    nullable: false, filterable: true }
             systems:
               canonical: { pk: id,             alias: { id: invoice_number } }
               oracle:
@@ -906,11 +906,11 @@ data:
             fields:
               sys_id:            { type: string, nullable: false }
               number:            { type: string, nullable: false }
-              account_id:        { type: string, nullable: false, ref: account.id }
+              account_id:        { type: string, nullable: false, ref: account.id, filterable: true }
               contact_id:        { type: string, nullable: true,  ref: contact.id }
               short_description: { type: string, nullable: false }
-              state:             { type: string, nullable: false }
-              priority:          { type: string, nullable: false }
+              state:             { type: string, nullable: false, filterable: true }
+              priority:          { type: string, nullable: false, filterable: true }
               category:          { type: string, nullable: true  }
             systems:
               servicenow: { pk: sys_id }
@@ -921,8 +921,8 @@ data:
               employee_id: { type: string, nullable: false }
               first_name:  { type: string, nullable: false }
               last_name:   { type: string, nullable: false }
-              job_title:   { type: string, nullable: true  }
-              department:  { type: string, nullable: true  }
+              job_title:   { type: string, nullable: true,  filterable: true }
+              department:  { type: string, nullable: true,  filterable: true }
               manager:     { type: string, nullable: true  }
             systems:
               workday: { pk: employee_id }
@@ -932,8 +932,8 @@ data:
             fields:
               page_id:       { type: string, nullable: false }
               title:         { type: string, nullable: false }
-              space_key:     { type: string, nullable: false }
-              author:        { type: string, nullable: true  }
+              space_key:     { type: string, nullable: false, filterable: true }
+              author:        { type: string, nullable: true,  filterable: true }
               last_modified: { type: date,   nullable: true  }
             systems:
               confluence: { pk: page_id }
@@ -944,9 +944,9 @@ data:
               key:        { type: string, nullable: false }
               summary:    { type: string, nullable: false }
               issue_type: { type: string, nullable: false }
-              status:     { type: string, nullable: false }
-              priority:   { type: string, nullable: true  }
-              assignee:   { type: string, nullable: true  }
+              status:     { type: string, nullable: false, filterable: true }
+              priority:   { type: string, nullable: true,  filterable: true }
+              assignee:   { type: string, nullable: true,  filterable: true }
               reporter:   { type: string, nullable: true  }
             systems:
               jira: { pk: key }
@@ -956,8 +956,8 @@ data:
             fields:
               id:            { type: string, nullable: false }
               filename:      { type: string, nullable: false }
-              library:       { type: string, nullable: true  }
-              author:        { type: string, nullable: true  }
+              library:       { type: string, nullable: true,  filterable: true }
+              author:        { type: string, nullable: true,  filterable: true }
               modified_date: { type: date,   nullable: true  }
             systems:
               sharepoint: { pk: id }
